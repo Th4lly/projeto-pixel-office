@@ -1,0 +1,6 @@
+/* Fontes incluídas no projeto (licença SIL Open Font License — ver vendor/fonts) */
+@font-face { font-family: 'Pixelify Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('../vendor/fonts/pixelify-sans-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Pixelify Sans'; font-style: normal; font-weight: 500 600; font-display: swap; src: url('../vendor/fonts/pixelify-sans-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Pixelify Sans'; font-style: normal; font-weight: 700; font-display: swap; src: url('../vendor/fonts/pixelify-sans-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Nunito Local'; font-style: normal; font-weight: 800; font-display: swap; src: url('../vendor/fonts/nunito-latin-800-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Nunito Local'; font-style: normal; font-weight: 900; font-display: swap; src: url('../vendor/fonts/nunito-latin-900-normal.woff2') format('woff2'); }
