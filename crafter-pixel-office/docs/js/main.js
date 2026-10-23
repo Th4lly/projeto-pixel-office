@@ -1,8 +1,8 @@
 // Ponto de entrada: escolhe o backend, verifica a sessão e abre o login ou o escritório.
-import { createBackend } from './backend/index.js';
+import { createBackend } from './backend/index.js?v=a75cb96';
 import { showLogin } from './ui/login.js';
 import { applyTheme } from './ui/theme.js';
-import { App } from './app.js';
+import { App } from './app.js?v=a75cb96';
 import { $ } from './ui/dom.js';
 
 applyTheme();

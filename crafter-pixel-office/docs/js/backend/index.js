@@ -6,7 +6,7 @@ export async function createBackend() {
     throw new Error('Configuração incompleta do Supabase. Informe SUPABASE_URL e SUPABASE_ANON_KEY juntos.');
   }
   if (CONFIG.SUPABASE_URL && CONFIG.SUPABASE_ANON_KEY) {
-    const { SupabaseBackend } = await import('./supabase.js');
+    const { SupabaseBackend } = await import('./supabase.js?v=a75cb96');
     const b = new SupabaseBackend(CONFIG);
     await b.init();
     return b;

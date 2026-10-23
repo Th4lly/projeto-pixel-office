@@ -1,6 +1,6 @@
 // Orquestra a aplicação: mundo, presença em tempo real, edição, objetos e módulos de interface.
 import { CONFIG } from './config.js';
-import { levelFromXp } from './backend/index.js';
+import { levelFromXp } from './backend/index.js?v=a75cb96';
 import { $, toast, h } from './ui/dom.js';
 import { World, isNear } from './game/world.js';
 import { Player, LocalPlayer } from './game/players.js';
