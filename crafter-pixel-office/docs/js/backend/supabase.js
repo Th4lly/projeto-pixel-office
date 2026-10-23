@@ -381,9 +381,12 @@ export class SupabaseBackend {
     let ch = null;
     let generation = 0;
     let left = false;
+    let retryTimer = 0;
+    let retryCount = 0;
+    let connectedAt = 0;
 
     const connect = () => {
-      if (left) return;
+      if (left || ch) return;
       const current = ++generation;
       const channel = this.sb.channel('office:main', {
         config: { presence: { key }, broadcast: { self: false, ack: false } },
@@ -409,11 +412,12 @@ export class SupabaseBackend {
         }
         room.emit('status', status);
         if (status === 'SUBSCRIBED') {
+          connectedAt = Date.now();
           try {
             const result = await channel.track(last);
             if (result !== 'ok') throw new Error(`Presence tracking failed: ${result}`);
           } catch (trackError) {
-            disconnect(channel, current, 'CHANNEL_ERROR', trackError);
+            retry(channel, current, 'CHANNEL_ERROR', trackError);
             return;
           }
           if (!left && current === generation) room.emit('ready');
@@ -421,17 +425,36 @@ export class SupabaseBackend {
       });
     };
 
-    const disconnect = (channel, current, status, error) => {
+    const retry = (channel, current, status, error) => {
       if (left || current !== generation) return;
       generation++;
       ch = null;
+      if (connectedAt && Date.now() - connectedAt >= 30000) retryCount = 0;
+      connectedAt = 0;
       room.emit('status', status);
-      console.warn('Supabase room disconnected; reload the page to reconnect.', error || status);
+      console.warn('Supabase room disconnected; retrying automatically.', error || status);
+      const retryGeneration = generation;
       this.sb.removeChannel(channel).catch((removeError) => {
         console.error('Could not remove disconnected Supabase room channel.', removeError);
+      }).finally(() => {
+        if (left || retryGeneration !== generation || retryTimer) return;
+        const delay = Math.min(1000 * (2 ** retryCount), 30000);
+        retryCount++;
+        retryTimer = setTimeout(() => {
+          retryTimer = 0;
+          connect();
+        }, delay);
       });
     };
 
+    const retryWhenOnline = () => {
+      if (left || ch || !retryTimer) return;
+      clearTimeout(retryTimer);
+      retryTimer = 0;
+      connect();
+    };
+
+    window.addEventListener('online', retryWhenOnline);
     connect();
     room.send = (type, payload) => {
       if (ch && ch.state === 'joined') ch.send({ type: 'broadcast', event: type, payload });
@@ -443,6 +466,8 @@ export class SupabaseBackend {
     };
     room.leave = () => {
       left = true;
+      clearTimeout(retryTimer);
+      window.removeEventListener('online', retryWhenOnline);
       if (ch) return this.sb.removeChannel(ch);
       return Promise.resolve('ok');
     };

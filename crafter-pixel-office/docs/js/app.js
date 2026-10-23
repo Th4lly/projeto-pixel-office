@@ -147,19 +147,14 @@ export class App {
     const r = this.room;
     const conn = $('#conn-overlay');
     const message = $('#conn-message');
-    const spinner = $('#conn-spinner');
-    const reload = $('#conn-reload');
-    reload.addEventListener('click', () => window.location.reload());
     r.on('status', (s) => {
-      if (s === 'SUBSCRIBED') conn.hidden = true;
-      else if (['CHANNEL_ERROR', 'TIMED_OUT', 'CLOSED'].includes(s)) {
-        message.textContent = 'Conexão interrompida. Recarregue a página para tentar novamente.';
-        spinner.hidden = true;
-        reload.hidden = false;
+      if (['CHANNEL_ERROR', 'TIMED_OUT', 'CLOSED'].includes(s)) {
+        message.textContent = 'Conexão instável — tentando restaurar…';
         conn.hidden = false;
       }
     });
     r.on('ready', () => {
+      conn.hidden = true;
       this.started = true;
       this.media.reset();
     });
