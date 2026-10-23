@@ -51,8 +51,8 @@ Escritório virtual multiplayer inspirado no Gather, com visual de RPG anime em 
 
 ## Publicar (passo a passo)
 
-### 1. Suba o projeto no GitHub
-Crie um repositório vazio e envie **o conteúdo** desta pasta para a raiz (incluindo `.github/workflows/deploy.yml`). A branch padrão deve ser `main`, pois o workflow publica automaticamente a cada envio para essa branch.
+### 1. Repositório público
+O código está em [github.com/Th4lly/projeto-pixel-office](https://github.com/Th4lly/projeto-pixel-office), com o jogo na pasta `crafter-pixel-office`.
 
 ### 2. Crie o projeto no Supabase
 O projeto usado por este jogo é `efzyfwqgcahvftgbmvpy` (`https://efzyfwqgcahvftgbmvpy.supabase.co`). No painel desse projeto, abra **SQL Editor**, cole o conteúdo de `supabase/migrations/20261022000000_pixeloffice.sql` e execute. Sem essa migração, o banco não terá as tabelas necessárias e o jogo avisará ao iniciar.
@@ -77,8 +77,8 @@ Em **Authentication**:
 - **Email → Confirm email:** desative se não quiser que o time precise confirmar o e-mail.
 Depois do primeiro deploy, em **Authentication → URL Configuration**, coloque o endereço do site em **Site URL** e **Redirect URLs**, por exemplo `https://SEU-USUARIO.github.io/SEU-REPO/`.
 
-### 5. Ative o GitHub Pages
-No repositório, vá a **Settings → Pages → Build and deployment → Source** e escolha **GitHub Actions**. Envie um commit para `main` (ou execute o workflow em **Actions → Deploy Pixel Office → Run workflow**). O workflow verifica o JavaScript, gera a configuração do frontend, publica `/docs` e, se os segredos do CLI estiverem presentes, aplica as migrações e publica as funções.
+### 5. Publicação automática
+O workflow `.github/workflows/deploy-pages.yml` publica `crafter-pixel-office/docs` no GitHub Pages a cada envio para `main`. No primeiro deploy, confirme em **Settings → Pages → Build and deployment** que a fonte é **GitHub Actions**. O endereço público será `https://th4lly.github.io/projeto-pixel-office/`.
 
 ### 6. Primeiro acesso
 Abra o link e **cadastre-se primeiro**: a primeira conta vira **administradora** (modo Construir e configurações). No painel Construir dá para liberar a edição para todos os membros.
