@@ -24,7 +24,9 @@ body.building .zone-banner { left: 352px; }
 }
 body.sidebar-open .pomodoro { right: 352px; }
 
-.conn-overlay { position: fixed; inset: 0; z-index: 60; display: grid; place-content: center; justify-items: center; gap: 14px; background: rgba(14, 12, 30, 0.7); color: #fff; font-weight: 800; }
+.conn-overlay { position: fixed; inset: 0; z-index: 60; display: grid; place-content: center; justify-items: center; gap: 14px; background: rgba(14, 12, 30, 0.7); color: #fff; font-weight: 800; text-align: center; }
+.conn-overlay p { margin: 0; }
+.conn-overlay .px-btn { width: min(280px, calc(100vw - 40px)); }
 
 /* =============== Vídeos =============== */
 .video-strip { position: fixed; top: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 6; max-width: calc(100vw - 380px); overflow-x: auto; padding-bottom: 4px; }

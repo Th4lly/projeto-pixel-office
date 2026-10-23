@@ -379,9 +379,6 @@ export class SupabaseBackend {
     const room = new Emitter();
     let last = initial;
     let ch = null;
-    let retryTimer = 0;
-    let retryCount = 0;
-    let connectedAt = 0;
     let generation = 0;
     let left = false;
 
@@ -407,17 +404,16 @@ export class SupabaseBackend {
       channel.subscribe(async (status, error) => {
         if (left || current !== generation) return;
         if (['CHANNEL_ERROR', 'TIMED_OUT', 'CLOSED'].includes(status)) {
-          reconnect(channel, current, status, error);
+          disconnect(channel, current, status, error);
           return;
         }
         room.emit('status', status);
         if (status === 'SUBSCRIBED') {
-          connectedAt = Date.now();
           try {
             const result = await channel.track(last);
             if (result !== 'ok') throw new Error(`Presence tracking failed: ${result}`);
           } catch (trackError) {
-            reconnect(channel, current, 'CHANNEL_ERROR', trackError);
+            disconnect(channel, current, 'CHANNEL_ERROR', trackError);
             return;
           }
           if (!left && current === generation) room.emit('ready');
@@ -425,25 +421,14 @@ export class SupabaseBackend {
       });
     };
 
-    const reconnect = (channel, current, status, error) => {
+    const disconnect = (channel, current, status, error) => {
       if (left || current !== generation) return;
       generation++;
       ch = null;
-      if (connectedAt && Date.now() - connectedAt >= 30000) retryCount = 0;
-      connectedAt = 0;
       room.emit('status', status);
-      console.warn('Supabase room disconnected; reconnecting.', error || status);
-      const reconnectGeneration = generation;
+      console.warn('Supabase room disconnected; reload the page to reconnect.', error || status);
       this.sb.removeChannel(channel).catch((removeError) => {
         console.error('Could not remove disconnected Supabase room channel.', removeError);
-      }).finally(() => {
-        if (left || reconnectGeneration !== generation) return;
-        const delay = Math.min(1000 * (2 ** retryCount), 15000);
-        retryCount++;
-        retryTimer = setTimeout(() => {
-          retryTimer = 0;
-          connect();
-        }, delay);
       });
     };
 
@@ -458,7 +443,6 @@ export class SupabaseBackend {
     };
     room.leave = () => {
       left = true;
-      clearTimeout(retryTimer);
       if (ch) return this.sb.removeChannel(ch);
       return Promise.resolve('ok');
     };
