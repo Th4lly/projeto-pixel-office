@@ -55,7 +55,7 @@ Escritório virtual multiplayer inspirado no Gather, com visual de RPG anime em 
 Crie um repositório vazio e envie **o conteúdo** desta pasta para a raiz (incluindo `.github/workflows/deploy.yml`). A branch padrão deve ser `main`, pois o workflow publica automaticamente a cada envio para essa branch.
 
 ### 2. Crie o projeto no Supabase
-Em [supabase.com](https://supabase.com), clique em **New project** e crie o projeto. O workflow deste repositório aplica as migrações e publica as Edge Functions quando os segredos do CLI estiverem configurados.
+O projeto usado por este jogo é `efzyfwqgcahvftgbmvpy` (`https://efzyfwqgcahvftgbmvpy.supabase.co`). No painel desse projeto, abra **SQL Editor**, cole o conteúdo de `supabase/migrations/20261022000000_pixeloffice.sql` e execute. Sem essa migração, o banco não terá as tabelas necessárias e o jogo avisará ao iniciar.
 
 ### 3. Configure os segredos do GitHub
 No repositório, abra **Settings → Secrets and variables → Actions → New repository secret** e adicione:
@@ -110,7 +110,7 @@ Para desligar uma integração, ponha `false` em `INTEGRATIONS` no `config.js`.
 ## Testar localmente
 Sem configurar nada, o site abre em **modo demonstração**: os dados ficam no navegador e cada aba aberta vira uma pessoa diferente.
 
-Para usar seu projeto Supabase localmente, copie `.env.example` para `.env` e preencha `SUPABASE_URL` e `SUPABASE_ANON_KEY`. O `.env` e o arquivo gerado `docs/js/runtime-config.js` não são versionados.
+Para usar outro projeto Supabase localmente, copie `.env.example` para `.env` e preencha `SUPABASE_URL` e `SUPABASE_ANON_KEY`. O `.env` é ignorado pelo Git. `docs/js/runtime-config.js` contém a URL e a chave pública (`anon`/`publishable`) usadas pelo site; essa chave é pública por natureza e nunca deve ser substituída por uma chave `service_role`/`secret`.
 
 ```bash
 npm start        # http://localhost:8080 (não precisa instalar nada)

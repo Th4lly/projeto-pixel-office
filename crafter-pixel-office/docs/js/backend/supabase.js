@@ -74,6 +74,11 @@ export class SupabaseBackend {
       auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true, flowType: 'pkce', storage },
       realtime: { params: { eventsPerSecond: 40 } },
     });
+    const { error: schemaError } = await this.sb.from('profiles').select('id').limit(0);
+    if (schemaError && schemaError.code === 'PGRST205') {
+      throw new Error('O banco ainda não foi configurado. Execute supabase/migrations/20261022000000_pixeloffice.sql no SQL Editor do Supabase.');
+    }
+    if (schemaError) throw friendly(schemaError);
     this.sb.auth.onAuthStateChange((_evt, session) => this.captureProviderToken(session));
     const { data } = await this.sb.auth.getSession();
     this.captureProviderToken(data.session);
