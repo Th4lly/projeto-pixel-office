@@ -407,7 +407,7 @@ export class SupabaseBackend {
       channel.subscribe(async (status, error) => {
         if (left || current !== generation) return;
         if (['CHANNEL_ERROR', 'TIMED_OUT', 'CLOSED'].includes(status)) {
-          disconnect(channel, current, status, error);
+          retry(channel, current, status, error);
           return;
         }
         room.emit('status', status);
