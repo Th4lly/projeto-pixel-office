@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Crafter Pixel Office</title>
+  <meta name="description" content="Escritório virtual multiplayer em estilo RPG: ande, converse por proximidade, faça reuniões e complete quests com o time." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2c1 6 9 9 9 17a9 9 0 0 1-18 0c0-5 3-7 4-11 1 3 2 4 4 5 1-4 0-7 1-11z' fill='%23FFB300'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Silkscreen&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/login.css" />
+  <link rel="stylesheet" href="css/game.css" />
+  <link rel="stylesheet" href="css/panels.css" />
+  <script>
+    try {
+      var t = localStorage.getItem('po.theme');
+      document.documentElement.dataset.theme = t || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    } catch (e) { document.documentElement.dataset.theme = 'dark'; }
+  </script>
+</head>
+<body>
+  <div id="boot" class="boot"><div class="spinner"></div></div>
+
+  <!-- ============================ LOGIN ============================ -->
+  <section id="login-screen" class="login" hidden>
+    <div class="px-decor px-decor-tl" aria-hidden="true"></div>
+    <div class="px-decor px-decor-br" aria-hidden="true"></div>
+    <div class="login-shell">
+      <aside class="login-hero">
+        <div class="brand">
+          <span class="brand-logo" data-logo></span>
+          <span class="brand-sub">PIXEL OFFICE</span>
+        </div>
+        <div class="px-frame hero-frame"><canvas id="hero-canvas" width="528" height="336" aria-hidden="true"></canvas></div>
+        <h2>Seu time no mesmo espaço,<br />de onde estiver.</h2>
+        <p>Colabore, converse e personalize tudo —<br />do avatar à decoração.</p>
+      </aside>
+
+      <div class="px-frame login-card">
+        <button id="login-theme" class="icon-btn theme-btn" type="button" aria-label="Alternar tema"></button>
+        <div class="card-logo" data-logo></div>
+
+        <p id="demo-banner" class="demo-banner" hidden>Modo demonstração: os dados ficam só neste navegador. Configure o Supabase em <code>js/config.js</code> para usar com o time.</p>
+
+        <form id="form-login" class="auth-form" novalidate>
+          <h1>Login</h1>
+          <label class="field"><span class="field-icon" data-icon="mail"></span><input type="email" name="email" placeholder="E-mail" autocomplete="email" required /></label>
+          <label class="field"><span class="field-icon" data-icon="lock"></span><input type="password" name="password" placeholder="Senha" autocomplete="current-password" required /><button type="button" class="eye" aria-label="Mostrar senha"></button></label>
+          <label class="check"><input type="checkbox" name="remember" checked /> <span>Lembrar de mim</span></label>
+          <p class="form-error" role="alert"></p>
+          <button class="px-btn" type="submit"><span>ENTRAR</span><span class="chev">›</span></button>
+          <p class="switch">Não tem uma conta? <a href="#" data-go="register">Cadastre-se ›</a></p>
+        </form>
+
+        <form id="form-register" class="auth-form" novalidate hidden>
+          <h1>Criar conta</h1>
+          <label class="field"><span class="field-icon" data-icon="user"></span><input type="text" name="name" placeholder="Nome" autocomplete="name" maxlength="24" required /></label>
+          <label class="field"><span class="field-icon" data-icon="mail"></span><input type="email" name="email" placeholder="E-mail" autocomplete="email" required /></label>
+          <label class="field"><span class="field-icon" data-icon="lock"></span><input type="password" name="password" placeholder="Senha (mín. 6 caracteres)" autocomplete="new-password" required /><button type="button" class="eye" aria-label="Mostrar senha"></button></label>
+          <label class="field"><span class="field-icon" data-icon="lock"></span><input type="password" name="confirm" placeholder="Confirmar senha" autocomplete="new-password" required /><button type="button" class="eye" aria-label="Mostrar senha"></button></label>
+          <p class="form-error" role="alert"></p>
+          <button class="px-btn" type="submit"><span>CADASTRAR</span><span class="chev">›</span></button>
+          <p class="switch">Já tem uma conta? <a href="#" data-go="login">Entrar ›</a></p>
+        </form>
+
+        <div id="oauth-row" class="oauth-row" hidden></div>
+
+        <div class="divider"><span>ou</span></div>
+        <form id="form-guest" class="guest-form" novalidate>
+          <input type="text" name="name" placeholder="Seu nome" maxlength="24" aria-label="Seu nome" />
+          <button type="submit" class="px-btn-ghost">Entrar como convidado</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ ESCRITÓRIO ============================ -->
+  <main id="app" hidden>
+    <canvas id="game" aria-label="Escritório virtual"></canvas>
+
+    <div id="zone-banner" class="zone-banner" hidden></div>
+    <div id="video-strip" class="video-strip"></div>
+    <div id="interact-hint" class="interact-hint" hidden></div>
+    <div id="pomodoro" class="pomodoro" hidden></div>
+
+    <aside id="build-panel" class="panel win build-panel" hidden></aside>
+
+    <aside id="sidebar" class="panel win sidebar" hidden>
+      <div class="tabs" role="tablist">
+        <button class="tab" data-tab="people" role="tab">Pessoas <span id="people-count" class="pill"></span></button>
+        <button class="tab" data-tab="chat" role="tab">Chat <span id="chat-unread" class="pill pill-accent" hidden></span></button>
+        <button class="tab" data-tab="myquests" role="tab">Minhas quests</button>
+        <button class="icon-btn close-sidebar" aria-label="Fechar painel" data-icon="close"></button>
+      </div>
+      <section id="people-panel" class="tab-panel"></section>
+      <section id="chat-panel" class="tab-panel" hidden>
+        <div id="chat-log" class="chat-log" aria-live="polite"></div>
+        <form id="chat-form" class="chat-form">
+          <div class="scope" role="radiogroup" aria-label="Enviar para">
+            <button type="button" data-scope="all" class="on">Todos</button>
+            <button type="button" data-scope="near">Perto de mim</button>
+          </div>
+          <div class="chat-input-row">
+            <input id="chat-input" type="text" maxlength="500" placeholder="Mensagem para todos… (Enter)" autocomplete="off" />
+            <button type="submit" class="icon-btn accent" aria-label="Enviar" data-icon="send"></button>
+          </div>
+        </form>
+      </section>
+      <section id="myquests-panel" class="tab-panel" hidden></section>
+    </aside>
+
+    <nav id="bottombar" class="bottombar win" aria-label="Controles">
+      <div class="me-card">
+        <button id="me-avatar" class="me-avatar" title="Personalizar avatar"><canvas width="36" height="36"></canvas></button>
+        <div class="me-info">
+          <div class="me-line"><span id="me-level" class="lv">Lv1</span><strong id="me-name"></strong></div>
+          <div class="xpbar" title="XP"><span id="me-xp"></span></div>
+          <select id="status-select" aria-label="Status">
+            <option value="online">🟢 Disponível</option>
+            <option value="busy">🔴 Ocupado</option>
+            <option value="away">🟡 Ausente</option>
+          </select>
+        </div>
+      </div>
+      <div class="bar-group">
+        <button id="btn-media" class="bar-btn" title="Ativar câmera e microfone" data-icon="video"></button>
+        <button id="btn-mic" class="bar-btn" title="Microfone" data-icon="mic" hidden></button>
+        <button id="btn-cam" class="bar-btn" title="Câmera" data-icon="cam" hidden></button>
+        <button id="btn-screen" class="bar-btn" title="Compartilhar tela" data-icon="screen" hidden></button>
+      </div>
+      <div class="bar-group emotes" id="emote-bar"></div>
+      <div class="bar-group">
+        <button id="btn-quests" class="bar-btn" title="Quadro de quests (Q)"><span data-icon="scroll"></span><span class="lbl">Quests</span></button>
+        <button id="btn-notes" class="bar-btn" title="Notas de reunião (N)" data-icon="notes"></button>
+        <button id="btn-build" class="bar-btn" title="Construir (B)" hidden><span data-icon="build"></span></button>
+        <button id="btn-people" class="bar-btn" title="Pessoas"><span data-icon="users"></span><span id="people-count-bar" class="badge"></span></button>
+        <button id="btn-chat" class="bar-btn" title="Chat (Enter)"><span data-icon="chat"></span><span id="chat-badge" class="badge accent" hidden></span></button>
+      </div>
+      <div class="bar-group">
+        <button id="btn-pip" class="bar-btn small" title="Modo mini (janela flutuante)" data-icon="pip"></button>
+        <button id="btn-integrations" class="bar-btn small" title="Integrações" data-icon="plug"></button>
+        <button id="btn-theme" class="bar-btn small" title="Tema claro/escuro"></button>
+        <button id="btn-zoom-out" class="bar-btn small" title="Diminuir zoom (-)" data-icon="minus"></button>
+        <button id="btn-zoom-in" class="bar-btn small" title="Aumentar zoom (+)" data-icon="plus"></button>
+        <button id="btn-help" class="bar-btn small" title="Ajuda">?</button>
+        <button id="btn-logout" class="bar-btn small" title="Sair" data-icon="logout"></button>
+      </div>
+    </nav>
+
+    <div id="conn-overlay" class="conn-overlay" hidden><div class="spinner"></div>Reconectando…</div>
+  </main>
+
+  <div id="modal-root"></div>
+  <div id="toasts" class="toasts"></div>
+
+  <noscript>Ative o JavaScript para usar o PixelOffice.</noscript>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Configuração usada pela integração Supabase ↔ GitHub e pelo Supabase CLI.
+project_id = "pixeloffice"
+
+[db.migrations]
+enabled = true
+
+[functions.webhook]
+enabled = true
+# Webhooks externos (GitHub, Asana, HubSpot) não enviam o login do Supabase;
+# a função valida um token próprio por objeto.
+verify_jwt = false
+
+[functions.summarize]
+enabled = true
+verify_jwt = true

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>Folha de sprites — PixelOffice</title>
+<style>
+  body { background: #2a2540; color: #eee; font: 13px system-ui; margin: 16px; }
+  canvas { image-rendering: pixelated; display: block; }
+  h2 { margin: 18px 0 8px; font-size: 15px; }
+</style>
+</head>
+<body>
+<h2>Avatares (modelos prontos · 4 direções · caminhada · sentado)</h2>
+<canvas id="av"></canvas>
+<h2>Objetos</h2>
+<canvas id="obj"></canvas>
+<h2>Pisos e paredes</h2>
+<canvas id="tiles"></canvas>
+<script type="module">
+  import { avatarSprite, fromPreset, PRESETS, OPTIONS, normalizeAvatar } from '../js/art/avatar.js';
+  import { OBJECTS, objectSprite } from '../js/art/objects.js';
+  import { FLOORS, floorTile, wallTile } from '../js/art/tiles.js';
+  const S = 3;
+  // avatares
+  const av = document.getElementById('av');
+  const rows = PRESETS.map(fromPreset);
+  const extra = OPTIONS.headgear.map(([h]) => normalizeAvatar({ headgear: h, hair: 'short', gearColor: '#ff8fb8' }));
+  const all = [...rows];
+  const cols = 4 + 4 + 2;
+  av.width = cols * 28 * S; av.height = (all.length) * 44 * S + 50 * S;
+  const a = av.getContext('2d'); a.imageSmoothingEnabled = false;
+  all.forEach((cfg, r) => {
+    const frames = [['down',0],['left',0],['up',0],['right',0],['down',1],['down',3],['left',1],['left',3],['down',0,true],['left',0,true]];
+    frames.forEach(([d, f, sit], i) => a.drawImage(avatarSprite(cfg, d, f, !!sit), i * 28 * S, r * 44 * S, 26 * S, 42 * S));
+  });
+  extra.forEach((cfg, i) => a.drawImage(avatarSprite(cfg, 'down', 0), (i % 10) * 28 * S, all.length * 44 * S + (i >= 10 ? 0 : 0) , 26 * S, 42 * S));
+  // objetos
+  const ob = document.getElementById('obj');
+  const list = Object.entries(OBJECTS);
+  ob.width = 1500; ob.height = 1400;
+  const o = ob.getContext('2d'); o.imageSmoothingEnabled = false; o.fillStyle = '#c9bfae'; o.fillRect(0,0,ob.width,ob.height);
+  let x = 10, y = 10, rowH = 0;
+  for (const [type, def] of list) {
+    const st = { on: true, g: 2, used: true, badge: true };
+    const spr = objectSprite({ type, state: st }, def, 1);
+    const w = spr.width * 2, h = spr.height * 2;
+    if (x + w > ob.width - 10) { x = 10; y += rowH + 22; rowH = 0; }
+    o.drawImage(spr, x, y, w, h);
+    o.fillStyle = '#222'; o.font = '11px system-ui'; o.fillText(type, x, y + h + 12);
+    x += Math.max(w, 70) + 14; rowH = Math.max(rowH, h);
+  }
+  // tiles
+  const tc = document.getElementById('tiles');
+  const keys = Object.keys(FLOORS);
+  tc.width = keys.length * 3 * 24 * S; tc.height = 24 * S * 3;
+  const t = tc.getContext('2d'); t.imageSmoothingEnabled = false;
+  keys.forEach((k, i) => {
+    for (let yy = 0; yy < 3; yy++) for (let xx = 0; xx < 3; xx++) {
+      const img = FLOORS[k].wall ? wallTile(k, yy !== 0) : floorTile(k, xx, yy);
+      t.drawImage(img, (i * 3 + xx) * 24 * S, yy * 24 * S, 24 * S, 24 * S);
+    }
+  });
+  document.title = 'ok';
+</script>
+</body>
+</html>
