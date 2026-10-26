@@ -2,7 +2,7 @@
 import { Emitter } from './emitter.js';
 import { PROVIDERS } from './index.js';
 
-const TABLES = ['quests', 'quest_comments', 'object_feed', 'object_docs', 'profiles'];
+const TABLES = ['quests', 'quest_comments', 'object_feed', 'object_docs', 'profiles', 'meeting_items'];
 const REMEMBER = 'po.remember';
 const PENDING = 'po.pendingProvider';
 const TOKEN = (p) => `po.ptok.${p}`;
@@ -121,6 +121,7 @@ export class SupabaseBackend {
       avatar: (profile && profile.avatar) || null,
       admin: !!(profile && profile.is_admin),
       xp: (profile && profile.xp) || 0,
+      combat: (profile && profile.combat) || {},
       guest,
       identities: (authUser.identities || []).map((i) => i.provider),
     };
@@ -184,6 +185,7 @@ export class SupabaseBackend {
     const row = {};
     if (patch.name) row.name = patch.name;
     if (patch.avatar) row.avatar = patch.avatar;
+    if (patch.combat) row.combat = patch.combat;
     if (!Object.keys(row).length) return;
     await run(this.sb.from('profiles').update(row).eq('id', this.uid));
   }
@@ -206,14 +208,88 @@ export class SupabaseBackend {
       run(this.sb.from('zones').select('*').eq('map_id', 'main')),
     ]);
     return {
-      map: { width: map.width, height: map.height, floor: map.floor, spawn: map.spawn, openEdit: map.open_edit },
+      map: { width: map.width, height: map.height, floor: map.floor, spawn: map.spawn, openEdit: map.open_edit, version: map.version || 1 },
       objects: objects.map(toObj),
-      zones: zones.map((z) => ({ id: z.id, name: z.name, kind: z.kind, x: z.x, y: z.y, w: z.w, h: z.h })),
+      zones: zones.map((z) => ({ id: z.id, name: z.name, kind: z.kind, x: z.x, y: z.y, w: z.w, h: z.h, meeting: !!z.meeting })),
     };
   }
 
   resetWorld(def) {
     return run(this.sb.rpc('reset_map', { p_map: def.map, p_objects: def.objects, p_zones: def.zones }));
+  }
+
+  /** Troca o escritório antigo pelo v2 (uma vez, para todos). */
+  async upgradeWorld(def) {
+    try {
+      return await run(this.sb.rpc('upgrade_map', { p_map: def.map, p_objects: def.objects, p_zones: def.zones }));
+    } catch (e) {
+      if (/upgrade_map|function/i.test(e.message)) throw new Error('Rode supabase/migrations/20261024000000_pixeloffice_v2.sql no SQL Editor do Supabase para usar o escritório novo.');
+      throw e;
+    }
+  }
+
+  // ------------------------------------------------------------------ mesas
+  claimDesk(id) { return run(this.sb.rpc('claim_desk', { p_id: id })); }
+  releaseDesk(id) { return run(this.sb.rpc('release_desk', { p_id: id })); }
+  setDeskDecor(id, decor, chair = null, color = null, skin = null) {
+    return run(this.sb.rpc('set_desk_decor', { p_id: id, p_decor: decor, p_chair: chair, p_color: color, p_skin: skin }));
+  }
+
+  // ------------------------------------------------------------------ anexos e planilhas das reuniões
+  meetingItems(room) {
+    return run(this.sb.from('meeting_items').select('*').eq('room', room).order('created_at', { ascending: false }).limit(200));
+  }
+
+  async addMeetingItem(item, file) {
+    const row = { ...item };
+    if (file) {
+      const safeName = file.name.normalize('NFKD').replace(/[^\w.-]+/g, '_').slice(-80);
+      const path = `${item.room}/${Date.now()}-${safeName}`;
+      const { error } = await this.sb.storage.from('meeting-files').upload(path, file, { contentType: file.type || 'application/octet-stream' });
+      if (error) throw friendly(error);
+      Object.assign(row, { path, size: file.size, mime: file.type, kind: 'file', title: item.title || file.name });
+    }
+    return run(this.sb.from('meeting_items').insert(row).select().single());
+  }
+
+  async removeMeetingItem(it) {
+    if (it.path) await this.sb.storage.from('meeting-files').remove([it.path]);
+    return run(this.sb.from('meeting_items').delete().eq('id', it.id));
+  }
+
+  async fileUrl(it) {
+    if (!it.path) return it.url;
+    const { data, error } = await this.sb.storage.from('meeting-files').createSignedUrl(it.path, 3600);
+    if (error) throw friendly(error);
+    return data.signedUrl;
+  }
+
+  // ------------------------------------------------------------------ Notion
+  notionBoards() {
+    return run(this.sb.from('notion_boards').select('*').order('created_at'));
+  }
+
+  addNotionBoard(b) {
+    return run(this.sb.from('notion_boards').insert(b).select().single());
+  }
+
+  removeNotionBoard(id) {
+    return run(this.sb.from('notion_boards').delete().eq('id', id));
+  }
+
+  saveNotionToken(token) {
+    if (!token) return run(this.sb.from('notion_tokens').delete().eq('owner', this.uid));
+    return run(this.sb.from('notion_tokens').upsert({ owner: this.uid, token, updated_at: new Date().toISOString() }));
+  }
+
+  async notion(body) {
+    const { data, error } = await this.sb.functions.invoke('notion', { body });
+    if (error) {
+      let msg = error.message;
+      try { msg = (await error.context.json()).error || msg; } catch { /* sem corpo */ }
+      throw new Error(/not found|404/i.test(msg) ? 'A função "notion" não foi publicada no Supabase (veja o README).' : msg);
+    }
+    return data;
   }
 
   paintFloor(cells) {

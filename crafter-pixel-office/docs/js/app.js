@@ -6,7 +6,8 @@ import { World, isNear } from './game/world.js';
 import { Player, LocalPlayer } from './game/players.js';
 import { Input, isTyping } from './game/input.js';
 import { Renderer } from './game/renderer.js';
-import { buildDefaultMap } from './game/defaultMap.js';
+import { buildDefaultMap, MAP_VERSION } from './game/defaultMap.js';
+import { FLOORS } from './art/tiles.js';
 import { OBJECTS } from './art/objects.js';
 import { normalizeAvatar, randomAvatar } from './art/avatar.js';
 import { playNote, blip } from './audio.js';
@@ -24,6 +25,13 @@ import { Integrations } from './features/integrations.js';
 import { MiniMode } from './features/pip.js';
 import { DocsUi } from './features/docs.js';
 import { Media } from './media/rtc.js';
+import { Calls } from './media/calls.js';
+import { Desks } from './features/desks.js';
+import { Combat } from './features/combat.js';
+import { Meetings } from './features/meetings.js';
+import { NotionBoards } from './features/notion.js';
+import { Clock } from './ui/clock.js';
+import { Npcs } from './features/npcs.js';
 
 const TAB = Math.random().toString(36).slice(2, 7);
 
@@ -56,7 +64,7 @@ export class App {
 
   // ------------------------------------------------------------------ início
   async start() {
-    const data = await this.backend.loadWorld(buildDefaultMap);
+    const data = await this.loadWorldV2();
     this.world = new World(data);
     const spawn = this.spawnPoint();
     const xp = this.user.xp || 0;
@@ -91,6 +99,13 @@ export class App {
     this.games = new Games(this);
     this.docs = new DocsUi(this);
     this.media = new Media(this);
+    this.calls = new Calls(this);
+    this.desks = new Desks(this);
+    this.meetings = new Meetings(this);
+    this.notion = new NotionBoards(this);
+    this.combat = new Combat(this);
+    this.clock = new Clock(this);
+    this.npcs = new Npcs(this);
     this.mini = new MiniMode(this);
     this.integrations = new Integrations(this);
     this.hud = new Hud(this);
@@ -114,6 +129,25 @@ export class App {
     if (this.backend.mode === 'local') toast('Modo demonstração: abra outra aba para simular outra pessoa.', 'info', 6000);
   }
 
+  /** Carrega o mapa; se for o escritório antigo (desenhado em código), troca pelo novo com os sprites. */
+  async loadWorldV2() {
+    let data = await this.backend.loadWorld(buildDefaultMap);
+    const old = (data.map.version || 1) < MAP_VERSION || data.map.floor.some((t) => !FLOORS[t]);
+    if (!old) return data;
+    try {
+      if (this.backend.upgradeWorld) await this.backend.upgradeWorld(buildDefaultMap());
+      data = await this.backend.loadWorld(buildDefaultMap);
+      if ((data.map.version || 1) < MAP_VERSION || data.map.floor.some((t) => !FLOORS[t])) throw new Error('mapa antigo');
+      toast('O escritório foi atualizado para o visual novo.', 'ok', 4000);
+      return data;
+    } catch (e) {
+      console.warn(e);
+      toast(e.message && !/mapa antigo/.test(e.message) ? e.message : 'Usando o escritório novo só neste navegador (rode a migração v2 do Supabase para salvar para todos).', 'warn', 7000);
+      const def = buildDefaultMap();
+      return { map: { ...def.map, openEdit: false }, objects: def.objects, zones: def.zones };
+    }
+  }
+
   spawnPoint() {
     const s = this.world.map.spawn || { x: 1, y: 1 };
     for (let i = 0; i < 60; i++) {
@@ -129,6 +163,8 @@ export class App {
     return {
       uid: m.uid, name: m.name, avatar: m.avatar, x: m.x, y: m.y, dir: m.dir, status: m.status, statusText: m.statusText || '',
       media: m.media, level: m.level, buffs: m.activeBuffs(), music: m.music || '', guest: m.guest, admin: m.admin,
+      call: m.call || null, hp: Math.round(m.hp || 0), maxHp: m.maxHp || 0, sp: Math.round(m.sp || 0), maxSp: m.maxSp || 0, dead: !!m.dead,
+      cls: m.cls || '', baseLevel: m.baseLevel || 1, statuses: m.statuses || [],
     };
   }
 
@@ -213,6 +249,14 @@ export class App {
     r.on('notes', (d) => this.notes.onRemoteState(d));
     r.on('ttt', (d) => this.games.onTicTacToe(d));
     r.on('signal', (d) => this.media.onSignal(d));
+    r.on('call', (d) => this.calls.onSignal(d));
+    r.on('cbt', (d) => this.combat.onNet(d));
+    r.on('meeting', (d) => {
+      const z = this.world.zones.find((zz) => zz.id === d.room);
+      const here = z && this.world.zonesAt(this.me.x, this.me.y).includes(z);
+      const inCall = this.calls.call && (this.calls.call.room === d.room || this.calls.call.id === d.room);
+      if (here || inCall) toast(`📎 ${d.by} ${d.what} na reunião.`, 'info', 3000);
+    });
   }
 
   bindDb() {
@@ -299,12 +343,14 @@ export class App {
     const dt = Math.min(0.05, (t - this.lastT) / 1000);
     this.lastT = t;
     const me = this.me;
-    me.step(dt, this.input, this.world, (moved) => {
+    const frozen = me.dead || (this.combat && (this.combat.statuses.stun || this.combat.statuses.freeze || this.combat.statuses.petrify));
+    me.step(dt, frozen ? { direction: () => null } : this.input, this.world, (moved) => {
       this.room.send('move', { id: me.id, x: me.x, y: me.y, dir: me.dir });
       this.trackSoon();
       if (moved) this.onStep();
     });
     for (const p of this.players.values()) if (p !== me) p.update(dt);
+    if (this.npcs) this.npcs.update(dt);
 
     const still = !me.moving && (!me.path || !me.path.length);
     this.target = still ? this.world.interactableNear(me.x, me.y) : null;
@@ -405,6 +451,16 @@ export class App {
   clickTo(t) {
     const { world, me } = this;
     if (!world.inBounds(t.x, t.y) || (t.x === me.x && t.y === me.y)) return;
+    if (this.combat && this.combat.inArena()) {
+      const mob = [...this.combat.mobs.values()].find((m) => !m.dead && Math.floor(m.x) === t.x && Math.abs(Math.floor(m.y - 0.5) - t.y) <= 1);
+      if (mob) {
+        const dist = Math.hypot(mob.x - (me.x + 0.5), mob.y - (me.y + 0.9));
+        if (dist <= this.combat.sheet.range + 0.9) return this.combat.basic({ mob });
+        const path = world.pathTo(me.x, me.y, (x, y) => Math.hypot(mob.x - (x + 0.5), mob.y - (y + 0.9)) <= this.combat.sheet.range + 0.5);
+        if (path) me.path = path;
+        return;
+      }
+    }
     me.pendingInteract = null;
     const objs = world.objectsAt(t.x, t.y).filter((o) => OBJECTS[o.type] && OBJECTS[o.type].interact);
     const obj = objs.find((o) => !OBJECTS[o.type].flat && OBJECTS[o.type].interact !== 'sit' && OBJECTS[o.type].interact !== 'portal');
@@ -552,6 +608,21 @@ export class App {
           break;
         case 'KeyQ':
           this.quests.open();
+          break;
+        case 'KeyF':
+          this.combat.basic();
+          break;
+        case 'KeyR':
+          this.combat.skill(1);
+          break;
+        case 'KeyT':
+          this.combat.skill(2);
+          break;
+        case 'KeyG':
+          this.combat.amplify();
+          break;
+        case 'KeyL':
+          this.calls.openDialer();
           break;
         case 'KeyN':
           this.notes.open();

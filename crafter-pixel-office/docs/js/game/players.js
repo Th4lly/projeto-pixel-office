@@ -3,7 +3,7 @@ import { normalizeAvatar } from '../art/avatar.js';
 
 export const SPEED = 5.5; // tiles por segundo
 
-const FIELDS = ['name', 'status', 'media', 'guest', 'admin', 'dir', 'uid', 'level', 'buffs', 'music', 'statusText'];
+const FIELDS = ['name', 'status', 'media', 'guest', 'admin', 'dir', 'uid', 'level', 'buffs', 'music', 'statusText', 'call', 'hp', 'maxHp', 'sp', 'maxSp', 'dead', 'cls', 'baseLevel', 'statuses', 'action', 'actionStart'];
 
 export class Player {
   constructor(data) {
@@ -26,6 +26,7 @@ export class Player {
 
   apply(d, { position = true } = {}) {
     for (const k of FIELDS) if (d[k] !== undefined) this[k] = d[k];
+    if (d.action && d.actionStart) { this.actionUntil = performance.now() + 450; this.actionStart = performance.now(); }
     if (d.avatar !== undefined) {
       this.hasAvatar = !!d.avatar;
       this.avatar = normalizeAvatar(d.avatar);

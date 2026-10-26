@@ -2,65 +2,90 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8" />
-<title>Folha de sprites — PixelOffice</title>
+<title>Catálogo de sprites — PixelOffice</title>
 <style>
   body { background: #2a2540; color: #eee; font: 13px system-ui; margin: 16px; }
-  canvas { image-rendering: pixelated; display: block; }
-  h2 { margin: 18px 0 8px; font-size: 15px; }
+  nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; position: sticky; top: 0; background: #2a2540; padding: 6px 0; }
+  nav button { background: #3d3766; color: #eee; border: 0; border-radius: 8px; padding: 6px 10px; cursor: pointer; }
+  nav button.on { background: #ffd84d; color: #3a2a00; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; }
+  .cell { background: #352f5a; border-radius: 8px; padding: 6px; display: grid; justify-items: center; gap: 4px; }
+  .cell span { font-size: 11px; text-align: center; word-break: break-word; }
+  canvas { image-rendering: pixelated; }
+  input { padding: 6px 10px; border-radius: 8px; border: 0; width: 260px; }
 </style>
 </head>
 <body>
-<h2>Avatares (modelos prontos · 4 direções · caminhada · sentado)</h2>
-<canvas id="av"></canvas>
-<h2>Objetos</h2>
-<canvas id="obj"></canvas>
-<h2>Pisos e paredes</h2>
-<canvas id="tiles"></canvas>
+<h2>Catálogo gerado de "Pixel office" (tools/build_assets.py)</h2>
+<nav id="tabs"></nav>
+<input id="q" placeholder="Filtrar pelo nome…" />
+<p id="info"></p>
+<div class="grid" id="grid"></div>
 <script type="module">
-  import { avatarSprite, fromPreset, PRESETS, OPTIONS, normalizeAvatar } from '../js/art/avatar.js';
-  import { OBJECTS, objectSprite } from '../js/art/objects.js';
-  import { FLOORS, floorTile, wallTile } from '../js/art/tiles.js';
-  const S = 3;
-  // avatares
-  const av = document.getElementById('av');
-  const rows = PRESETS.map(fromPreset);
-  const extra = OPTIONS.headgear.map(([h]) => normalizeAvatar({ headgear: h, hair: 'short', gearColor: '#ff8fb8' }));
-  const all = [...rows];
-  const cols = 4 + 4 + 2;
-  av.width = cols * 28 * S; av.height = (all.length) * 44 * S + 50 * S;
-  const a = av.getContext('2d'); a.imageSmoothingEnabled = false;
-  all.forEach((cfg, r) => {
-    const frames = [['down',0],['left',0],['up',0],['right',0],['down',1],['down',3],['left',1],['left',3],['down',0,true],['left',0,true]];
-    frames.forEach(([d, f, sit], i) => a.drawImage(avatarSprite(cfg, d, f, !!sit), i * 28 * S, r * 44 * S, 26 * S, 42 * S));
-  });
-  extra.forEach((cfg, i) => a.drawImage(avatarSprite(cfg, 'down', 0), (i % 10) * 28 * S, all.length * 44 * S + (i >= 10 ? 0 : 0) , 26 * S, 42 * S));
-  // objetos
-  const ob = document.getElementById('obj');
-  const list = Object.entries(OBJECTS);
-  ob.width = 1500; ob.height = 1400;
-  const o = ob.getContext('2d'); o.imageSmoothingEnabled = false; o.fillStyle = '#c9bfae'; o.fillRect(0,0,ob.width,ob.height);
-  let x = 10, y = 10, rowH = 0;
-  for (const [type, def] of list) {
-    const st = { on: true, g: 2, used: true, badge: true };
-    const spr = objectSprite({ type, state: st }, def, 1);
-    const w = spr.width * 2, h = spr.height * 2;
-    if (x + w > ob.width - 10) { x = 10; y += rowH + 22; rowH = 0; }
-    o.drawImage(spr, x, y, w, h);
-    o.fillStyle = '#222'; o.font = '11px system-ui'; o.fillText(type, x, y + h + 12);
-    x += Math.max(w, 70) + 14; rowH = Math.max(rowH, h);
+  import { loadCatalog, CAT, drawFrame, frameAt, onAssetLoad } from '../js/art/assets.js';
+  await loadCatalog('../assets/catalog.json');
+  for (let i = 0; i < CAT.sheets.length; i++) CAT.sheets[i] = `../${CAT.sheets[i]}`;
+  const LISTS = ['bodies', 'heads', 'headgears', 'weapons', 'mobs', 'npcs', 'pets', 'effects', 'emotes', 'props', 'floors', 'icons', 'gallery'];
+  let tab = 'bodies';
+  const cells = [];
+  function frames(e) {
+    if (e.stand) return { s: e.s, f: e.walk[0] };
+    if (e.dirs) return { s: e.s, f: [e.dirs[0]] };
+    if (e.icon) return { s: e.s, f: [e.icon] };
+    if (e.anims) { const a = e.anims.walk || e.anims.idle || Object.values(e.anims)[0]; return { s: a.s ?? e.s, f: a.frames }; }
+    if (e.frames) return { s: e.s, f: e.frames };
+    if (e.idle) return { s: e.s, f: e.idle };
+    if (e.files) return { files: e.files };
+    if (e.f) return { s: e.s, f: [e.f] };
+    if (e.big !== undefined || e.small !== undefined) return { whole: e.big ?? e.small };
+    return { whole: e.s };
   }
-  // tiles
-  const tc = document.getElementById('tiles');
-  const keys = Object.keys(FLOORS);
-  tc.width = keys.length * 3 * 24 * S; tc.height = 24 * S * 3;
-  const t = tc.getContext('2d'); t.imageSmoothingEnabled = false;
-  keys.forEach((k, i) => {
-    for (let yy = 0; yy < 3; yy++) for (let xx = 0; xx < 3; xx++) {
-      const img = FLOORS[k].wall ? wallTile(k, yy !== 0) : floorTile(k, xx, yy);
-      t.drawImage(img, (i * 3 + xx) * 24 * S, yy * 24 * S, 24 * S, 24 * S);
+  function render() {
+    document.getElementById('tabs').innerHTML = '';
+    for (const l of LISTS) {
+      const b = document.createElement('button');
+      b.textContent = `${l} (${(CAT[l] || []).length})`;
+      b.className = l === tab ? 'on' : '';
+      b.onclick = () => { tab = l; render(); };
+      document.getElementById('tabs').append(b);
     }
-  });
-  document.title = 'ok';
+    const q = document.getElementById('q').value.toLowerCase();
+    const list = (CAT[tab] || []).filter((e) => !q || (e.name || '').toLowerCase().includes(q)).slice(0, 400);
+    document.getElementById('info').textContent = `${list.length} mostrados (máx. 400 por vez).`;
+    const grid = document.getElementById('grid');
+    grid.innerHTML = '';
+    cells.length = 0;
+    for (const e of list) {
+      const c = document.createElement('canvas');
+      c.width = 96; c.height = 96;
+      const d = document.createElement('div');
+      d.className = 'cell';
+      const s = document.createElement('span');
+      s.textContent = e.name || e.id;
+      d.append(c, s);
+      grid.append(d);
+      cells.push({ c, e, fr: frames(e) });
+    }
+  }
+  document.getElementById('q').oninput = render;
+  const imgs = new Map();
+  const img = (u) => { if (!imgs.has(u)) { const i = new Image(); i.src = u; imgs.set(u, i); } return imgs.get(u); };
+  function loop(t) {
+    for (const { c, fr } of cells) {
+      const ctx = c.getContext('2d');
+      ctx.imageSmoothingEnabled = false;
+      ctx.clearRect(0, 0, 96, 96);
+      if (fr.files) { const i = img(CAT.sheets[fr.files[Math.floor(t / 120) % fr.files.length]]); if (i.complete) ctx.drawImage(i, 16, 16, 64, 64); continue; }
+      if (fr.whole !== undefined) { const i = img(CAT.sheets[fr.whole]); if (i.complete && i.naturalWidth) { const k = Math.min(90 / i.naturalWidth, 90 / i.naturalHeight); ctx.drawImage(i, 48 - (i.naturalWidth * k) / 2, 48 - (i.naturalHeight * k) / 2, i.naturalWidth * k, i.naturalHeight * k); } continue; }
+      const f = frameAt(fr.f, t / 1000, 8);
+      if (!f) continue;
+      const k = Math.min(88 / f[2], 88 / f[3], 3);
+      drawFrame(ctx, fr.s, f, 48, 48 + (f[3] * k) / 2, k);
+    }
+    requestAnimationFrame(loop);
+  }
+  render();
+  requestAnimationFrame(loop);
 </script>
 </body>
 </html>

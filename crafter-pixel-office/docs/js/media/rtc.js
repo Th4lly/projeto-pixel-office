@@ -166,6 +166,7 @@ export class Media {
     const me = app.me;
     const connected = this.peers.has(p.id);
     if (this.on && p.media && p.media.on && isNear(app.world, me, p, app.proximity + (connected ? 1 : 0))) return true;
+    if (this.on && p.media && p.media.on && app.calls && (app.calls.wants(p) || app.calls.roomWants(p))) return true; // chamada direta
     if (onStage(app.world, p)) return true; // ouvir quem está no palco
     if (onStage(app.world, me) && this.on) return true; // estou no palco: todos me ouvem
     return false;
@@ -298,6 +299,7 @@ export class Media {
       let vol = clamp(1 - (dist - 1) / (app.proximity + 1), 0.15, 1);
       let pan = clamp((p.x - me.x) / (app.proximity + 1), -0.8, 0.8);
       if (sameRoom && near) vol = 1;
+      if (app.calls && (app.calls.wants(p) || app.calls.roomWants(p))) { vol = 1; pan = 0; }
       if (onStage(app.world, p) && !near) { vol = 1; pan = 0; }
       const audience = meOnStage && !near && !onStage(app.world, p);
       if (audience) vol = 0; // no palco, eu não ouço a plateia inteira

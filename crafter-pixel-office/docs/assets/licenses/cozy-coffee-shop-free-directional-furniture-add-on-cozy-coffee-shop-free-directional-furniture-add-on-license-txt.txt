@@ -1,0 +1,15 @@
+COZY COFFEE SHOP ASSET PACK — LICENSE
+
+You may:
+- Use these assets in personal and commercial games and applications.
+- Modify the assets for use inside your own projects.
+- Use the assets in screenshots, trailers, promotional material and game builds for your projects.
+
+You may not:
+- Redistribute, resell, sublicense, or republish the assets themselves, modified or unmodified.
+- Upload the source asset files to another asset marketplace or stock library.
+- Claim authorship of the original source asset pack.
+
+Generative AI tools were used as part of the asset creation workflow. The final pack was curated, organized, resized and prepared for game-development use.
+
+This text is a practical asset-pack license draft and is not legal advice.

@@ -57,7 +57,7 @@ export class LocalBackend {
 
   userFromRow(u) {
     this.uid = u.id;
-    return { id: u.id, email: u.email || '', name: u.name, avatar: u.avatar || null, admin: !!u.admin, xp: u.xp || 0, guest: !!u.guest, identities: [] };
+    return { id: u.id, email: u.email || '', name: u.name, avatar: u.avatar || null, admin: !!u.admin, xp: u.xp || 0, combat: u.combat || {}, guest: !!u.guest, identities: [] };
   }
 
   users() { return read('users', {}); }
@@ -126,6 +126,7 @@ export class LocalBackend {
     if (!u) return;
     if (patch.name) u.name = patch.name;
     if (patch.avatar) u.avatar = patch.avatar;
+    if (patch.combat) u.combat = patch.combat;
     this.saveUsers(users);
     this.changed('profiles');
   }
@@ -161,6 +162,97 @@ export class LocalBackend {
     write('map', { ...def.map, openEdit: !!open });
     write('objects', def.objects);
     write('zones', def.zones);
+  }
+
+  async upgradeWorld(def) {
+    const cur = read('map', null);
+    if (cur && (cur.version || 1) >= (def.map.version || 2)) return false;
+    write('map', { ...def.map, openEdit: !!(cur && cur.openEdit) });
+    write('objects', def.objects);
+    write('zones', def.zones);
+    return true;
+  }
+
+  // ------------------------------------------------------------------ mesas
+  async claimDesk(id) {
+    const u = this.users()[this.uid];
+    if (!u || u.guest) throw new Error('Convidados não podem reivindicar mesa.');
+    const list = read('objects', []);
+    const desk = list.find((o) => o.id === id);
+    if (!desk) throw new Error('Mesa não encontrada.');
+    if (desk.data && desk.data.owner && desk.data.owner.uid !== this.uid) throw new Error('Esta mesa já tem dono.');
+    for (const o of list) {
+      if (o !== desk && o.data && o.data.owner && o.data.owner.uid === this.uid) {
+        const { owner: _o, decor: _d, chair: _c, deskSkin: _s, deskColor: _k, ...rest } = o.data;
+        o.data = rest;
+      }
+    }
+    desk.data = { ...(desk.data || {}), owner: { uid: this.uid, name: u.name } };
+    write('objects', list);
+    return desk.data;
+  }
+
+  async releaseDesk(id) {
+    const list = read('objects', []);
+    const desk = list.find((o) => o.id === id);
+    if (!desk || !desk.data || !desk.data.owner) return;
+    if (desk.data.owner.uid !== this.uid && !this.isAdmin()) throw new Error('Só o dono libera a mesa.');
+    const { owner: _o, decor: _d, chair: _c, deskSkin: _s, deskColor: _k, ...rest } = desk.data;
+    desk.data = rest;
+    write('objects', list);
+  }
+
+  async setDeskDecor(id, decor, chair = null, color = null, skin = null) {
+    const list = read('objects', []);
+    const desk = list.find((o) => o.id === id);
+    if (!desk || !desk.data || !desk.data.owner || (desk.data.owner.uid !== this.uid && !this.isAdmin())) throw new Error('Só o dono da mesa pode decorá-la.');
+    if (!Array.isArray(decor) || decor.length > 60) throw new Error('Decoração inválida (máximo de 60 itens).');
+    desk.data = { ...desk.data, decor, chair: chair || '', deskColor: color || '', deskSkin: skin || '' };
+    write('objects', list);
+    return desk.data;
+  }
+
+  // ------------------------------------------------------------------ anexos e planilhas das reuniões
+  async meetingItems(room) {
+    return read('meeting', []).filter((m) => m.room === room).sort((a, b) => b.created_at.localeCompare(a.created_at));
+  }
+
+  async addMeetingItem(item, file) {
+    const u = this.users()[this.uid] || {};
+    const row = { id: uuid(), created_at: now(), created_by: this.uid, created_name: u.name, data: {}, ...item };
+    if (file) {
+      if (file.size > 2.5e6) throw new Error('No modo demonstração os anexos ficam no navegador: até 2,5 MB.');
+      row.url = await new Promise((resolve, reject) => {
+        const r = new FileReader();
+        r.onload = () => resolve(r.result);
+        r.onerror = () => reject(new Error('Não consegui ler o arquivo.'));
+        r.readAsDataURL(file);
+      });
+      Object.assign(row, { kind: 'file', title: item.title || file.name, size: file.size, mime: file.type });
+    }
+    write('meeting', [...read('meeting', []), row]);
+    this.changed('meeting_items', { new: row });
+    return row;
+  }
+
+  async removeMeetingItem(it) {
+    write('meeting', read('meeting', []).filter((m) => m.id !== it.id));
+    this.changed('meeting_items', { old: it });
+  }
+
+  async fileUrl(it) { return it.url; }
+
+  // ------------------------------------------------------------------ Notion (demonstração: sem servidor)
+  async notionBoards() { return read('notion', []).filter((b) => b.scope === 'company' || b.owner === this.uid); }
+  async addNotionBoard(b) {
+    const row = { id: uuid(), owner: this.uid, created_at: now(), ...b };
+    write('notion', [...read('notion', []), row]);
+    return row;
+  }
+  async removeNotionBoard(id) { write('notion', read('notion', []).filter((b) => b.id !== id)); }
+  async saveNotionToken() { throw new Error('No modo demonstração não há servidor para guardar o token do Notion.'); }
+  async notion() {
+    throw new Error('O Notion precisa do Supabase: a função "notion" faz a ponte (o navegador não pode chamar a API do Notion direto).');
   }
 
   async paintFloor(cells) {

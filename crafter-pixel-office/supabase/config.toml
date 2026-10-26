@@ -13,3 +13,7 @@ verify_jwt = false
 [functions.summarize]
 enabled = true
 verify_jwt = true
+
+[functions.notion]
+enabled = true
+verify_jwt = true
