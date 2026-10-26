@@ -9,6 +9,7 @@ import { ICONS } from '../ui/icons.js';
 import { CAT, IDX, TILE, drawFrame, frameAt, findIn, frameCanvas } from '../art/assets.js';
 import { OBJECTS } from '../art/objects.js';
 import { blip } from '../audio.js';
+import { dirFromVec } from '../game/dirs.js';
 import {
   CLASSES, STATUS, ATTR_NAMES, classOf, sheet, mobSheet, attack, save, roll, d, ROUND_MS, ACTION_MS, addExp, expToNext,
 } from './d20.js';
@@ -309,6 +310,7 @@ export class Combat {
         }
         break;
       case 'summon':
+        if (!msg.mid) { const z = this.app.world.zones.find((zz) => zz.id === msg.zone); if (z && this.isAuthority(z)) this.spawn(z); break; }
         this.onSummon(msg);
         break;
       case 'pvpkill':
@@ -400,6 +402,7 @@ export class Combat {
   reward(msg) {
     const app = this.app;
     const { state, up } = addExp(this.progress, msg.xp || 10);
+    if (app.inventory) app.inventory.addZeny(Math.max(1, Math.round((msg.xp || 10) / 2)));
     this.progress = { ...state, kills: (this.progress.kills || 0) + 1 };
     app.renderer.float(app.me.x, app.me.y - 1.6, `+${msg.xp} EXP`, '#ffd84d');
     if (msg.loot) {
@@ -468,7 +471,7 @@ export class Combat {
     const me = this.app.me;
     const dx = tx - (me.x + 0.5);
     const dy = ty - (me.y + 0.9);
-    me.dir = Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? 'right' : 'left') : dy > 0 ? 'down' : 'up';
+    me.dir = dirFromVec(dx, dy);
   }
 
   swing() {

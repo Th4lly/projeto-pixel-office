@@ -58,7 +58,7 @@ async function run(q) {
   return data;
 }
 
-const toObj = (r) => ({ id: r.id, type: r.type, x: r.x, y: r.y, color: r.color || undefined, state: r.state || {}, data: r.data || {} });
+const toObj = (r) => ({ id: r.id, type: r.type, x: r.x, y: r.y, color: r.color || undefined, state: r.state || {}, data: r.data || {}, ...(r.rot !== null && r.rot !== undefined ? { rot: r.rot } : {}), ...(r.flip ? { flip: true } : {}) });
 
 export class SupabaseBackend {
   constructor(cfg) {
@@ -122,6 +122,7 @@ export class SupabaseBackend {
       admin: !!(profile && profile.is_admin),
       xp: (profile && profile.xp) || 0,
       combat: (profile && profile.combat) || {},
+      inventory: (profile && profile.inventory) || {},
       guest,
       identities: (authUser.identities || []).map((i) => i.provider),
     };
@@ -186,6 +187,7 @@ export class SupabaseBackend {
     if (patch.name) row.name = patch.name;
     if (patch.avatar) row.avatar = patch.avatar;
     if (patch.combat) row.combat = patch.combat;
+    if (patch.inventory) row.inventory = patch.inventory;
     if (!Object.keys(row).length) return;
     await run(this.sb.from('profiles').update(row).eq('id', this.uid));
   }
@@ -208,7 +210,7 @@ export class SupabaseBackend {
       run(this.sb.from('zones').select('*').eq('map_id', 'main')),
     ]);
     return {
-      map: { width: map.width, height: map.height, floor: map.floor, spawn: map.spawn, openEdit: map.open_edit, version: map.version || 1 },
+      map: { width: map.width, height: map.height, floor: map.floor, spawn: map.spawn, openEdit: map.open_edit, version: map.version || 1, fg: map.fg || {}, fx: map.fx || {}, bg: map.bg || null, fgImg: map.fg_img || null },
       objects: objects.map(toObj),
       zones: zones.map((z) => ({ id: z.id, name: z.name, kind: z.kind, x: z.x, y: z.y, w: z.w, h: z.h, meeting: !!z.meeting })),
     };
@@ -223,9 +225,41 @@ export class SupabaseBackend {
     try {
       return await run(this.sb.rpc('upgrade_map', { p_map: def.map, p_objects: def.objects, p_zones: def.zones }));
     } catch (e) {
-      if (/upgrade_map|function/i.test(e.message)) throw new Error('Rode supabase/migrations/20261024000000_pixeloffice_v2.sql no SQL Editor do Supabase para usar o escritório novo.');
+      if (/upgrade_map|function/i.test(e.message)) throw new Error('Rode as migrações v2 e v3 (supabase/migrations/20261024000000_pixeloffice_v2.sql e 20261026000000_pixeloffice_v3.sql) no SQL Editor do Supabase para usar o escritório novo.');
       throw e;
     }
+  }
+
+  // ------------------------------------------------------------------ camadas, rotação e construção
+  paintLayer(layer, cells) { return run(this.sb.rpc('paint_layer', { p_layer: layer, p_cells: cells })); }
+  setMapImage(which, value) { return run(this.sb.rpc('set_map_image', { p_which: which, p_value: value })); }
+  moveObject(id, op) {
+    return run(this.sb.rpc('move_object', { p_id: id, p_x: op.x ?? null, p_y: op.y ?? null, p_rot: op.rot ?? null, p_flip: op.flip ?? null }));
+  }
+  placeOwned(o, w, h) {
+    return run(this.sb.rpc('place_owned_object', { p_obj: o, p_w: w, p_h: h }));
+  }
+  pickupObject(id) { return run(this.sb.rpc('pickup_object', { p_id: id })); }
+
+  async customObjects() {
+    const { data, error } = await this.sb.from('custom_objects').select('*').order('created_at');
+    if (error) return []; // migração v3 ainda não rodou
+    return data;
+  }
+
+  async uploadMapAsset(blob, name) {
+    const path = `${Date.now()}-${String(name).normalize('NFKD').replace(/[^\w.-]+/g, '_').slice(-60)}`;
+    const { error } = await this.sb.storage.from('map-assets').upload(path, blob, { contentType: blob.type || 'image/png' });
+    if (error) throw friendly(error);
+    return this.sb.storage.from('map-assets').getPublicUrl(path).data.publicUrl;
+  }
+
+  addCustomObject(row) {
+    return run(this.sb.from('custom_objects').insert(row).select().single());
+  }
+
+  removeCustomObject(id) {
+    return run(this.sb.from('custom_objects').delete().eq('id', id));
   }
 
   // ------------------------------------------------------------------ mesas
@@ -297,7 +331,7 @@ export class SupabaseBackend {
   }
 
   addObject(o) {
-    return run(this.sb.from('map_objects').insert({ id: o.id, type: o.type, x: o.x, y: o.y, color: o.color || null, state: o.state || {}, data: o.data || {} }));
+    return run(this.sb.from('map_objects').insert({ id: o.id, type: o.type, x: o.x, y: o.y, color: o.color || null, state: o.state || {}, data: o.data || {}, rot: o.rot ?? null, flip: !!o.flip }));
   }
 
   removeObject(id) {

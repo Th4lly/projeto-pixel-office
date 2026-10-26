@@ -30,11 +30,15 @@ export class Input {
     window.addEventListener('blur', () => { this.held = []; });
   }
 
+  /** Direção em 8 lados: combina a última tecla vertical com a última horizontal. */
   direction() {
     if (blocked()) {
       this.held = [];
       return null;
     }
-    return this.held[this.held.length - 1] || null;
+    const v = [...this.held].reverse().find((d) => d === 'up' || d === 'down');
+    const h = [...this.held].reverse().find((d) => d === 'left' || d === 'right');
+    if (v && h) return `${v}${h}`;
+    return v || h || null;
   }
 }

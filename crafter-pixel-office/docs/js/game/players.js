@@ -1,5 +1,6 @@
 // Jogadores: posição em tiles (x, y) e posição suavizada para desenho (rx, ry).
 import { normalizeAvatar } from '../art/avatar.js';
+import { VEC, dirFromVec } from './dirs.js';
 
 export const SPEED = 5.5; // tiles por segundo
 
@@ -68,14 +69,14 @@ export class Player {
   }
 }
 
-const VEC = {
-  up: { dx: 0, dy: -1, dir: 'up' },
-  down: { dx: 0, dy: 1, dir: 'down' },
-  left: { dx: -1, dy: 0, dir: 'left' },
-  right: { dx: 1, dy: 0, dir: 'right' },
-};
+const dirFrom = (dx, dy) => dirFromVec(dx, dy);
 
-const dirFrom = (dx, dy) => (dx > 0 ? 'right' : dx < 0 ? 'left' : dy < 0 ? 'up' : 'down');
+/** Pode andar de (x, y) com (dx, dy)? Diagonal só se os dois lados estiverem livres (não corta quina). */
+export function canStep(world, x, y, dx, dy) {
+  if (!world.walkable(x + dx, y + dy)) return false;
+  if (dx && dy) return world.walkable(x + dx, y) && world.walkable(x, y + dy);
+  return true;
+}
 
 export class LocalPlayer extends Player {
   constructor(data) {
@@ -88,7 +89,7 @@ export class LocalPlayer extends Player {
   step(dt, input, world, onMove) {
     if (this.rx === this.x && this.ry === this.y) {
       const key = input.direction();
-      let d = key ? VEC[key] : null;
+      let d = key ? { dx: VEC[key][0], dy: VEC[key][1], dir: key } : null;
       let fromPath = false;
       if (d) {
         this.path = null;
@@ -104,10 +105,17 @@ export class LocalPlayer extends Player {
         this.dir = d.dir;
         const nx = this.x + d.dx;
         const ny = this.y + d.dy;
-        if (Math.abs(d.dx) + Math.abs(d.dy) === 1 && world.walkable(nx, ny)) {
+        if (Math.max(Math.abs(d.dx), Math.abs(d.dy)) === 1 && canStep(world, this.x, this.y, d.dx, d.dy)) {
           this.x = nx;
           this.y = ny;
           if (fromPath) this.path.shift();
+          onMove(true);
+        } else if (!fromPath && d.dx && d.dy && canStep(world, this.x, this.y, d.dx, 0)) {
+          // diagonal bloqueada: desliza no eixo livre
+          this.x += d.dx;
+          onMove(true);
+        } else if (!fromPath && d.dx && d.dy && canStep(world, this.x, this.y, 0, d.dy)) {
+          this.y += d.dy;
           onMove(true);
         } else {
           this.path = null;

@@ -8,7 +8,7 @@ import { drawAvatar, normalizeAvatar, randomAvatar, bodiesFor, headsFor } from '
 import { classOf, CLASSES } from '../features/d20.js';
 
 const TABS = ['Classe', 'Cabelo', 'Acessório', 'Arma', 'Mascote', 'Minha mesa'];
-const DIRS = ['down', 'left', 'up', 'right'];
+const DIRS = ['down', 'downleft', 'left', 'upleft', 'up', 'upright', 'right', 'downright'];
 const PAGE = 60;
 
 function portrait(cfg, w = 60, hgt = 76) {
@@ -32,7 +32,7 @@ export function openAvatarEditor(app, { welcome = false, tab: startTab } = {}) {
   let hairColor = (IDX.heads.get(cfg.head) || {}).colorKey || 'black';
   let group = '';
 
-  const preview = h('canvas', { class: 'avatar-preview', width: 440, height: 150 });
+  const preview = h('canvas', { class: 'avatar-preview', width: 640, height: 130 });
   const nameInput = h('input', { type: 'text', maxlength: 24, value: app.me.name, placeholder: 'Seu nome', 'aria-label': 'Nome de exibição' });
   const tabsEl = h('div', { class: 'seg seg-wide' });
   const optionsBox = h('div', { class: 'avatar-options' });
@@ -45,12 +45,12 @@ export function openAvatarEditor(app, { welcome = false, tab: startTab } = {}) {
     const phase = Math.floor(t / 2200) % 3;
     const action = phase === 1 ? 'walk' : phase === 2 ? 'attack' : 'stand';
     DIRS.forEach((dir, i) => {
-      const cx = 55 + i * 110;
+      const cx = 40 + i * 80;
       ctx.fillStyle = 'rgba(20,10,40,0.22)';
       ctx.beginPath();
-      ctx.ellipse(cx, 140, 22, 6, 0, 0, Math.PI * 2);
+      ctx.ellipse(cx, 122, 18, 5, 0, 0, Math.PI * 2);
       ctx.fill();
-      drawAvatar(ctx, cfg, dir, action, action === 'attack' ? ((t % 2200) / 1000) % 0.6 : t / 1000, cx, 142, 1.6);
+      drawAvatar(ctx, cfg, dir, action, action === 'attack' ? ((t % 2200) / 1000) % 0.6 : t / 1000, cx, 124, 1.35);
     });
     raf = requestAnimationFrame(drawPreview);
   }

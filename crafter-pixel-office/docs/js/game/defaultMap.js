@@ -109,76 +109,126 @@ export function buildDefaultMap() {
   fill(12, 18, 20, 20, T.dungeon);
 
   const objects = [];
+  const zones = [];
+  const fg = {};
+  const fx = {};
   let n = 0;
   const add = (type, x, y, extra = {}) => objects.push({ id: `d${String(n++).padStart(3, '0')}`, type, x, y, state: {}, data: {}, ...extra });
   const on = { state: { on: true } };
+  const rect = (x0, y0, x1, y1, fn) => { for (let y = y0; y <= y1; y++) for (let x = x0; x <= x1; x++) fn(x, y); };
+  const roofWood = F('roofs-png-2', 'roofs-png-1');
+  const roofStone = F('roofs-png-8', 'roofs-png-1');
+  // rot = para onde o móvel olha (0 ↓, 90 ←, 180 ↑, 270 →)
+  const S = 0, Wd = 90, N = 180, E = 270;
+  const npc = (role, sprite, x, y, extra = {}) => add('npc', x, y, { data: { role, sprite: CAT.npcs.some((q) => q.id === sprite) ? sprite : '', ...extra } });
+  const RO = 'pc-computer-ragnarok-online-non-playable-characters-';
+
+  /** Mesa redonda (1x1) com 4 cadeiras viradas para ela. */
+  const tableFor4 = (x, y, chair = 'chair_wood', table = 'table_round') => {
+    add(table, x, y);
+    add(chair, x, y - 1, { rot: S }); add(chair, x, y + 1, { rot: N });
+    add(chair, x - 1, y, { rot: E }); add(chair, x + 1, y, { rot: Wd });
+  };
+  /** Mesa de reunião 3x3 com 12 cadeiras em volta, todas viradas para o centro. */
+  const meetingTable = (x, y) => {
+    add('meeting_table', x, y);
+    for (let i = 0; i < 3; i++) {
+      add('chair', x + i, y - 1, { rot: S }); add('chair', x + i, y + 3, { rot: N });
+      add('chair', x - 1, y + i, { rot: E }); add('chair', x + 3, y + i, { rot: Wd });
+    }
+  };
+  /** Sala de estar: tapete redondo, sofás e poltronas virados para a mesinha do centro. */
+  const lounge = (x, y) => {
+    add('rug_round', x, y);
+    add('table_round', x + 1, y + 1);
+    add('sofa', x, y - 1, { rot: S, data: { ox: 16 } }); add('sofa', x, y + 3, { rot: N, data: { ox: 16 } });
+    add('armchair', x - 1, y + 1, { rot: E }); add('armchair', x + 3, y + 1, { rot: Wd });
+  };
 
   // ===== Arenas
-  add('arena_gate', 4, 23); add('signpost', 10, 2, { data: { text: 'Ala das Arenas — PvP só vale dentro da Arena PvP. Monstros ficam nas arenas da esquerda.' } });
+  add('arena_gate', 4, 23); add('signpost', 10, 1, { data: { text: 'Ala das Arenas — PvP só vale dentro da Arena PvP. Monstros ficam nas arenas da esquerda.' } });
   add('mob_spawner', 2, 2, { data: { pool: 'arena' } }); add('mob_spawner', 7, 20, { data: { pool: 'arena' } });
   add('mob_spawner', 4, 27, { data: { pool: 'boss' } });
-  add('torch', 1, 12, on); add('torch', 8, 1, on); add('torch', 1, 25, on); add('torch', 8, 25, on); add('torch', 1, 47, on); add('torch', 8, 47, on);
-  add('torch', 12, 1, on); add('torch', 20, 1, on); add('torch', 12, 22, on); add('torch', 20, 22, on);
-  add('dummy', 14, 28); add('dummy', 17, 28); add('dummy', 14, 32); add('dummy', 17, 32);
+  for (const [x, y] of [[1, 12], [8, 1], [1, 25], [8, 25], [1, 47], [8, 47], [12, 1], [20, 1], [12, 22], [20, 22]]) add('torch', x, y, on);
+  for (const x of [14, 17]) for (const y of [28, 32]) add('dummy', x, y);
   add('chest', 19, 45); add('crate', 13, 45); add('barrel', 14, 45);
-  // decoração das arenas
-  add('banner', 2, 1); add('banner', 6, 1); add('banner', 13, 1); add('banner', 19, 1); add('banner', 2, 25); add('banner', 6, 25);
+  for (const [x, y] of [[2, 1], [6, 1], [13, 1], [19, 1], [2, 25], [6, 25]]) add('banner', x, y);
   add('statue', 12, 21); add('statue', 20, 21); add('column', 1, 20); add('column', 8, 20);
-  add('portal', 10, 46); add('signpost', 13, 26, { data: { text: 'Sala de treino: teste seus golpes nos bonecos. Equipamentos no baú.' } });
+  add('signpost', 13, 26, { data: { text: 'Sala de treino: teste seus golpes nos bonecos. Equipamentos no baú.' } });
+  npc('arena', `${RO}npcs-walking-png-2`, 10, 6, { name: 'Mestre Garrick' });
+  // portal da ala ↔ jardim (efeito de tile + o vórtice para enxergar)
+  add('portal', 10, 3); fx['10,3'] = 'o:39,4';
+  add('portal', 39, 2); fx['39,2'] = 'o:10,5';
+  // arco de pedra na passagem para o jardim (fica na frente do personagem)
+  rect(21, 6, 21, 10, (x, y) => { fg[`${x},${y}`] = roofStone; });
 
   // ===== Jardim
-  add('fountain', 35, 1); add('tree', 23, 11); add('tree', 38, 12); add('tree', 23, 1); add('tree', 39, 9);
-  add('flowers', 29, 3); add('flowers', 29, 13); add('bush', 33, 10); add('bush', 36, 14); add('bush', 25, 15);
-  add('bench', 27, 9); add('bench', 34, 9); add('bench', 27, 14);
-  add('signpost', 30, 9, { data: { text: 'Jardim — à esquerda fica a Ala das Arenas. Boa caçada!' } });
-  add('portal', 39, 1);
+  add('fountain', 35, 1); add('tree', 23, 11); add('tree', 38, 12); add('tree', 23, 1); add('tree', 38, 8);
+  add('flowers', 29, 3); add('flowers', 33, 3); add('flowers', 29, 13); add('flowers', 33, 13);
+  add('bush', 24, 4); add('bush', 24, 6); add('bush', 39, 14); add('bush', 25, 15);
+  // pergolado sobre o cruzamento dos caminhos: telhado na camada da frente (passa por baixo)
+  rect(30, 7, 32, 9, (x, y) => { fg[`${x},${y}`] = roofWood; });
+  add('bench', 26, 10); add('bench', 26, 13); add('bench', 34, 10); add('bench', 34, 13);
+  add('signpost', 29, 6, { data: { text: 'Jardim — o portal leva à Ala das Arenas. Boa caçada!' } });
+  rect(33, 3, 38, 6, (x, y) => { if (floor[y * W + x] === T.water) fx[`${x},${y}`] = 'x'; });
 
-  // ===== Salão / recepção
-  add('counter', 51, 9); add('chair', 52, 10);
-  add('quest_board', 45, 1); add('notion_board', 49, 1); add('notice_board', 53, 1); add('calendar', 55, 1);
-  add('window', 58, 1); add('window', 62, 1); add('window', 66, 1);
+  // ===== Recepção
+  add('counter', 50, 8); npc('guide', 'office-recepcionista', 51, 7, { name: 'Lia' });
+  add('quest_board', 44, 1); npc('quests', `${RO}npcs-walking-png-12`, 46, 3, { name: 'Mestra das Quests' });
+  add('notice_board', 47, 1); add('calendar', 48, 1);
+  for (const x of [56, 60, 64]) add('window', x, 1);
   add('plant_big', 43, 1); add('plant_big', 76, 1); add('plant', 43, 15); add('plant', 76, 15);
-  add('sofa', 60, 10); add('sofa', 64, 10); add('table_round', 62, 12); add('armchair', 60, 13); add('armchair', 65, 13);
-  add('statue', 70, 4); add('trophy', 72, 4); add('clock', 74, 4); add('globe', 68, 1);
-  add('water', 75, 9); add('coffee', 74, 9);
-  add('arcade', 44, 12); add('arcade', 45, 12); add('jukebox', 46, 12);
-  add('signpost', 50, 15, { data: { text: 'Bem-vindo! Reivindique uma mesa no escritório (abaixo) e decore do seu jeito.' } });
+  lounge(60, 9); // sofás + poltronas em volta do tapete
+  add('lamp', 59, 8, on); add('lamp', 65, 8, on);
+  add('statue', 70, 3); add('trophy', 72, 3); add('clock', 74, 3); add('globe', 68, 1);
+  add('water', 75, 9); add('coffee', 75, 10);
+  npc('kafra', `${RO}npcs-walking-png-10`, 44, 9, { name: 'Kafra' });
+  npc('merchant', `${RO}npcs-regional-png-7`, 70, 12, { name: 'Bruno, o mercador' });
+  add('crate', 71, 13); add('barrel', 69, 13);
+  add('arcade', 73, 14); add('arcade', 74, 14); add('jukebox', 75, 14);
+  add('signpost', 49, 14, { data: { text: 'Bem-vindo! Fale com a Lia no balcão para achar uma mesa livre. Botão direito em qualquer móvel mostra o que ele faz.' } });
+  rect(51, 11, 55, 13, (x, y) => { fx[`${x},${y}`] = 'n'; }); // pontos de chegada
 
-  // ===== Mesas: cada uma com a sua área
-  const zones = [];
-  const deskTypes = ['desk', 'desk_pc', 'desk', 'desk_pc'];
+  // ===== Escritório: ilhas de mesas alinhadas (2 mesas por ilha, cadeira centrada atrás)
   let k = 0;
-  for (const y of [23, 28]) {
-    for (const x of [24, 30, 36, 42]) {
-      k += 1;
-      add(deskTypes[k % 4], x, y + 1, { data: { slot: k } });
-      add('chair', x, y + 2);
-      zones.push({ id: `z-mesa-${k}`, name: `Mesa ${k}`, kind: 'desk', x: x - 1, y, w: 5, h: 4 });
+  for (const y of [24, 30]) {
+    for (const px of [24, 31, 38]) {
+      for (const dx of [0, 2]) {
+        k += 1;
+        const x = px + dx;
+        add(k % 2 ? 'desk_pc' : 'desk', x, y, { data: { slot: k } });
+        add('chair', x, y + 1, { rot: N, data: { ox: 16 } });
+        zones.push({ id: `z-mesa-${k}`, name: `Mesa ${k}`, kind: 'desk', x, y: y - 1, w: 2, h: 3 });
+      }
     }
   }
-  add('printer', 23, 33); add('water', 25, 33); add('server', 47, 22); add('mailbox', 46, 22);
-  add('plant', 48, 33); add('lamp', 23, 22, on); add('whiteboard', 40, 33); add('chart_board', 43, 33);
+  for (const x of [29, 36]) { add('plant', x, 24); add('plant', x, 30); }
+  add('printer', 23, 33); add('water', 26, 33); add('lamp', 23, 22, on);
+  add('whiteboard', 30, 22); add('chart_board', 33, 22); add('notion_board', 36, 22);
+  npc('notion', `${RO}npcs-regional-png-6`, 39, 22, { name: 'Ada' });
+  add('server', 41, 33); add('mailbox', 42, 33);
+  // cabines de foco (área privada por ID: só quem está dentro se escuta)
+  for (const [y, id] of [[22, 'cabine-1'], [29, 'cabine-2']]) {
+    rect(44, y, 47, y + 4, (x, yy) => { fx[`${x},${yy}`] = `p:${id}`; });
+    add('armchair', 45, y + 2, { rot: E }); add('table_round', 46, y + 2); add('lamp', 47, y, on); add('plant', 44, y);
+  }
 
-  // ===== Sala de reunião A
-  add('meeting_table', 54, 26);
-  for (const x of [54, 55, 56, 57]) { add('chair', x, 25); add('chair', x, 28); }
-  add('phone', 51, 23); add('projector', 58, 23); add('whiteboard', 53, 22); add('chart_board', 60, 31);
+  // ===== Sala de reunião A / B (mesa 3x3, 12 cadeiras viradas para ela)
+  meetingTable(55, 27);
+  add('phone', 51, 23); add('projector', 59, 23); add('whiteboard', 54, 22); add('chart_board', 59, 33);
   add('plant', 50, 33); add('plant', 62, 33); add('lamp', 62, 22, on);
   add('door', 56, 21, { state: { open: true } });
-
-  // ===== Sala de reunião B
-  add('meeting_table', 68, 26);
-  for (const x of [68, 69, 70, 71]) { add('chair', x, 25); add('chair', x, 28); }
-  add('phone', 65, 23); add('tv', 74, 23); add('notion_board', 66, 31); add('plant', 64, 33); add('plant', 76, 33);
+  meetingTable(69, 27);
+  add('phone', 65, 23); add('tv', 73, 23); add('notion_board', 66, 33); add('plant', 64, 33); add('plant', 76, 33);
   add('door', 70, 21, { state: { open: true } });
 
-  // ===== Copa
-  add('fridge', 23, 39); add('coffee', 24, 39); add('water', 25, 39); add('counter', 26, 39); add('cauldron', 28, 39);
-  add('table_long', 25, 43); add('stool', 25, 44); add('stool', 27, 44); add('table_round', 31, 44); add('stool', 30, 44); add('stool', 32, 44);
-  add('barrel', 35, 39); add('crate', 35, 48);
+  // ===== Copa: balcão com barista e mesas para 4
+  add('fridge', 23, 39); add('coffee', 24, 39); add('water', 25, 39); add('cauldron', 26, 39);
+  add('counter', 28, 40); npc('barista', `${RO}animals-anthropomorphic-png-6`, 29, 39, { name: 'Miau' });
+  tableFor4(25, 42); tableFor4(31, 42); tableFor4(25, 46); tableFor4(31, 46);
+  add('barrel', 34, 39); add('plant', 34, 48);
 
   // ===== Cantinho de leitura (cena pronta do pacote Cozy Nook)
-  // monta a cena do pacote (SCENE_PLACEMENT.json) no canto de cima da sala
   const scene = CAT.scenes && CAT.scenes.nook;
   if (scene) {
     for (const o of scene.objects) {
@@ -191,13 +241,14 @@ export function buildDefaultMap() {
       if (tx >= 37 && tx + p.w <= 46 && ty >= 39 && ty + p.h <= 48) add(p.id, tx, ty);
     }
   } else {
-    add('rug_round', 41, 42); add('armchair', 39, 41); add('table_round', 43, 45);
+    lounge(40, 42);
   }
   add('bookshelf', 37, 39); add('lamp', 49, 40, on); add('fireplace', 47, 39, on);
-  add('bed', 48, 46); add('wardrobe', 50, 39); add('piano', 38, 46); add('game_table', 45, 47); add('beanbag', 44, 47); add('beanbag', 46, 47);
+  add('wardrobe', 50, 39); add('piano', 38, 47); add('game_table', 47, 46); add('beanbag', 46, 46); add('beanbag', 48, 46);
 
-  // ===== Auditório
-  add('projector', 62, 39); add('podium', 64, 41);
+  // ===== Auditório: palco com destaque e bancos virados para ele
+  add('projector', 62, 39); add('podium', 64, 40);
+  rect(58, 39, 69, 41, (x, y) => { fx[`${x},${y}`] = 's'; });
   for (const y of [44, 46]) for (const x of [54, 57, 60, 66, 69, 72]) add('bench', x, y);
   add('torch', 53, 39, on); add('torch', 75, 39, on); add('plant_big', 52, 47); add('plant_big', 76, 47);
 
@@ -209,7 +260,9 @@ export function buildDefaultMap() {
     { id: 'z-corredor-arenas', name: 'Corredor das Arenas', kind: 'area', x: 9, y: 1, w: 3, h: 47 },
     { id: 'z-jardim', name: 'Jardim', kind: 'area', x: 23, y: 1, w: 18, h: 16 },
     { id: 'z-salao', name: 'Recepção', kind: 'area', x: 43, y: 1, w: 34, h: 16 },
-    { id: 'z-escritorio', name: 'Escritório', kind: 'area', x: 23, y: 22, w: 26, h: 13 },
+    { id: 'z-escritorio', name: 'Escritório', kind: 'area', x: 23, y: 22, w: 21, h: 13 },
+    { id: 'z-cabine-1', name: 'Cabine de foco 1', kind: 'area', x: 44, y: 22, w: 4, h: 5 },
+    { id: 'z-cabine-2', name: 'Cabine de foco 2', kind: 'area', x: 44, y: 29, w: 4, h: 5 },
     { id: 'z-reuniao-a', name: 'Sala de reunião A', kind: 'private', x: 50, y: 22, w: 13, h: 13, meeting: true },
     { id: 'z-reuniao-b', name: 'Sala de reunião B', kind: 'private', x: 64, y: 22, w: 13, h: 13, meeting: true },
     { id: 'z-copa', name: 'Copa', kind: 'area', x: 23, y: 39, w: 13, h: 10 },
@@ -218,8 +271,8 @@ export function buildDefaultMap() {
     { id: 'z-palco', name: 'Palco', kind: 'spotlight', x: 58, y: 39, w: 12, h: 3 },
   );
 
-  return { map: { width: W, height: H, floor, spawn: { x: 52, y: 12 }, version: 2 }, objects, zones };
+  return { map: { width: W, height: H, floor, fg, fx, spawn: { x: 53, y: 12 }, version: 3 }, objects, zones };
 }
 
-export const MAP_VERSION = 2;
+export const MAP_VERSION = 3;
 export { CAT };

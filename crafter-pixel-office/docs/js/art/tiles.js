@@ -22,6 +22,7 @@ export function buildTiles() {
     FLOORS[f.id] = { name: f.name, color: f.avg || '#777', src: f, pack: f.pack };
   }
   FLOORS.void = { name: 'Vazio', color: '#14101c', solid: true };
+  FLOORS.none = { name: 'Transparente (mostra o fundo importado)', color: 'transparent', clear: true };
   // água: tudo que é dos tilesets de água bloqueia passagem
   for (const f of CAT.floors) if (/water/.test(f.id)) FLOORS[f.id].solid = true;
 
@@ -39,7 +40,7 @@ export function buildTiles() {
   if (hedge) walls.push({ id: `w:hedge`, name: 'Cerca viva', face: { s: hedge.s, f: hedge.f, sc: hedge.sc }, cap: '#2f4a22' });
   for (const w of walls) FLOORS[w.id] = { name: w.name, color: w.cap, wall: true, solid: true, face: w.face, cap: w.cap };
 
-  FLOOR_TYPES = CAT.floors.map((f) => f.id).filter((id) => !FLOORS[id].wall);
+  FLOOR_TYPES = [...CAT.floors.map((f) => f.id).filter((id) => !FLOORS[id].wall), 'none'];
   WALL_TYPES = walls.map((w) => w.id);
 }
 
@@ -48,6 +49,7 @@ export function paintFloor(ctx, type, tx, ty) {
   const F = FLOORS[type] || FLOORS.void;
   const px = tx * TILE;
   const py = ty * TILE;
+  if (F.clear) return true;
   if (!F.src) {
     ctx.fillStyle = F.color;
     ctx.fillRect(px, py, TILE, TILE);

@@ -122,6 +122,36 @@ python3 tools/build_assets.py "C:/Users/Thallyta/Downloads/Pixel office"
 ```
 O script copia todas as imagens para `docs/assets`, limpa as folhas do Ragnarok (fundo, divisórias e rótulos), recorta folhas em quadros/animações e gera `docs/assets/catalog.json`, `usage.json` e `USO.md`. Fontes `.aseprite`, licenças e leia-mes vão para `assets-src/`.
 
+## Atualizar para a v3 (construção, camadas, rotação, NPCs com função)
+
+1. No **SQL Editor** do Supabase, rode `supabase/migrations/20261026000000_pixeloffice_v3.sql` (depois da v2). Ela adiciona as camadas `fg`/`fx`/fundo ao mapa, `rot`/`flip` aos objetos, o inventário no perfil, a tabela `custom_objects` e o bucket público `map-assets`.
+2. Abra o jogo: o mapa v2 é trocado pelo v3 uma vez, para todos. **As mesas reivindicadas e a decoração delas são zeradas** (as mesas mudaram de lugar); cada pessoa reivindica de novo.
+
+### Novidades da v3
+- **Sem NPC decorativo.** Cada NPC tem uma função e abre um diálogo com X: recepcionista (leva você a lugares, acha mesa livre, liga para alguém), Kafra (teletransporte), Mestre da Arena (cura, ficha d20, solta monstros, ranking PvP), Mercador (compra e venda com zeny), Barista (bebidas com bônus), Mestra das Quests e Assistente do Notion. No modo Construir dá para criar NPCs (aba Objetos → NPCs) e trocar função, nome, fala e aparência.
+- **Todo móvel interage.** Cadeiras, sofás e bancos: sentar (o avatar vira para onde o assento aponta). Plantas: regar. Telas: abrir site. Estantes: links. Armários e baús: anotações. Quadros, janelas, luminárias, impressoras, relógios, portas… Botão direito em qualquer móvel abre o painel dele.
+- **Rotação em todos os ângulos.** No painel do objeto: 8 direções, ±15° ou livre (0–359°), espelhar e "Alinhar ½" (desloca meio tile para centralizar cadeiras em mesas de 2 tiles). Móveis com arte direcional (cadeiras de escritório, cadeiras e sofás do café) trocam de sprite; os outros giram. No modo Construir, **R** / **Shift+R** gira o objeto antes de colocar.
+- **Personagens em 8 direções** (setas combinadas andam na diagonal).
+- **Camadas do mapa (grade de 32 px):**
+  - *Pisos/Paredes* (fundo) · *Frente* (telhados, arcos, copas: ficam por cima do avatar e ficam translúcidos quando você passa por baixo) · *Objetos* · *Efeitos*.
+  - *Efeitos de tile*: Intransitável, Passável, Área privada (por ID: só quem está na mesma área se ouve), Destaque (palco), Portal (dois cliques: origem e destino) e Spawn. Ficam invisíveis no jogo; marque "Mostrar efeitos sempre" para vê-los.
+- **Inventário e hotbar.** Teclas 1–9 escolhem o item, **I** abre o inventário. Fora do modo Criativo, colocar consome o item e guardar devolve. Zeny vem da arena; o Mercador vende móveis. Membros constroem dentro da área da própria mesa; editores, em qualquer lugar.
+- **Importar (aba Importar):**
+  - *Objeto próprio*: envie um PNG; ele é ajustado à grade de 32 px (tamanho em tiles, camada, sólido ou não) e vai para "Meus objetos".
+  - *Fundo do mapa*: envie uma imagem feita no Tiled, Icograms ou Aseprite (múltiplos de 32 px). Pode limpar os pisos e depois pintar colisão e áreas privadas por cima na aba Efeitos.
+  - *Frente*: PNG transparente que fica por cima dos avatares.
+
+### Controles
+| Tecla | Ação |
+|---|---|
+| Setas / WASD | andar (8 direções) |
+| X | interagir |
+| Botão direito | painel do objeto (girar, ação própria, guardar) |
+| B | modo Construir |
+| 1–9 | item da hotbar |
+| R / Shift+R | girar o item a colocar |
+| I | inventário |
+
 ## Opcionais
 
 **Notas de reunião com IA**

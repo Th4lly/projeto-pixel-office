@@ -57,7 +57,7 @@ export class LocalBackend {
 
   userFromRow(u) {
     this.uid = u.id;
-    return { id: u.id, email: u.email || '', name: u.name, avatar: u.avatar || null, admin: !!u.admin, xp: u.xp || 0, combat: u.combat || {}, guest: !!u.guest, identities: [] };
+    return { id: u.id, email: u.email || '', name: u.name, avatar: u.avatar || null, admin: !!u.admin, xp: u.xp || 0, combat: u.combat || {}, inventory: u.inventory || {}, guest: !!u.guest, identities: [] };
   }
 
   users() { return read('users', {}); }
@@ -127,6 +127,7 @@ export class LocalBackend {
     if (patch.name) u.name = patch.name;
     if (patch.avatar) u.avatar = patch.avatar;
     if (patch.combat) u.combat = patch.combat;
+    if (patch.inventory) u.inventory = patch.inventory;
     this.saveUsers(users);
     this.changed('profiles');
   }
@@ -162,6 +163,85 @@ export class LocalBackend {
     write('map', { ...def.map, openEdit: !!open });
     write('objects', def.objects);
     write('zones', def.zones);
+  }
+
+  // ------------------------------------------------------------------ camadas, rotação e construção
+  async paintLayer(layer, cells) {
+    this.guard();
+    const map = read('map');
+    const L = map[layer] || (map[layer] = {});
+    for (const [x, y, v] of cells) { const k = `${x},${y}`; if (v === null || v === undefined || v === '') delete L[k]; else L[k] = v; }
+    write('map', map);
+  }
+
+  async setMapImage(which, value) {
+    this.guard();
+    const map = read('map');
+    map[which] = value || null;
+    write('map', map);
+  }
+
+  ownsPlaced(o) { return o && o.data && o.data.placed_by === this.uid; }
+
+  async moveObject(id, op) {
+    const list = read('objects', []);
+    const o = list.find((x) => x.id === id);
+    if (!o) return;
+    if (!this.canEdit() && !this.ownsPlaced(o)) throw new Error('Você não tem permissão para fazer isso.');
+    if (op.x !== undefined) { o.x = op.x; o.y = op.y; }
+    if (op.rot !== undefined) o.rot = op.rot;
+    if (op.flip !== undefined) o.flip = op.flip;
+    write('objects', list);
+  }
+
+  inMyDeskArea(x, y) {
+    const list = read('objects', []);
+    return read('zones', []).some((z) => z.kind === 'desk' && x >= z.x && y >= z.y && x < z.x + z.w && y < z.y + z.h
+      && list.some((d) => d.x >= z.x && d.y >= z.y && d.x < z.x + z.w && d.y < z.y + z.h && d.data && d.data.owner && d.data.owner.uid === this.uid));
+  }
+
+  async placeOwned(o, w = 1, h = 1) {
+    const u = this.users()[this.uid];
+    if (!u || u.guest) throw new Error('Convidados não constroem.');
+    if (!this.canEdit()) {
+      for (let i = 0; i < w; i++) for (let j = 0; j < h; j++) if (!this.inMyDeskArea(o.x + i, o.y + j)) throw new Error('Fora da área da sua mesa.');
+    }
+    const list = read('objects', []);
+    list.push({ ...o, state: o.state || {}, data: { ...(o.data || {}), placed_by: this.uid } });
+    write('objects', list);
+  }
+
+  async pickupObject(id) {
+    const list = read('objects', []);
+    const o = list.find((x) => x.id === id);
+    if (!o) return null;
+    if (!this.canEdit() && !this.ownsPlaced(o)) throw new Error('Você não tem permissão para fazer isso.');
+    write('objects', list.filter((x) => x.id !== id));
+    return o.type;
+  }
+
+  async customObjects() { return read('custom', []); }
+
+  async uploadMapAsset(blob) {
+    if (blob.size > 1.5e6) throw new Error('No modo demonstração as imagens ficam no navegador: até 1,5 MB.');
+    return new Promise((resolve, reject) => {
+      const r = new FileReader();
+      r.onload = () => resolve(r.result);
+      r.onerror = () => reject(new Error('Não consegui ler a imagem.'));
+      r.readAsDataURL(blob);
+    });
+  }
+
+  async addCustomObject(row) {
+    this.guard();
+    const full = { created_at: now(), created_by: this.uid, ...row };
+    write('custom', [...read('custom', []), full]);
+    return full;
+  }
+
+  async removeCustomObject(id) {
+    this.guard();
+    write('custom', read('custom', []).filter((c) => c.id !== id));
   }
 
   async upgradeWorld(def) {

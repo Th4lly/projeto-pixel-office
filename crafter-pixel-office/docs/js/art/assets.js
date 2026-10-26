@@ -164,3 +164,19 @@ export function frameAt(frames, t, fps = 8, loop = true) {
   const i = Math.floor(t * fps);
   return frames[loop ? i % frames.length : Math.min(i, frames.length - 1)];
 }
+
+/** Imagem por URL (uploads: fundo, frente, objetos próprios). null até carregar. */
+const urlImages = new Map();
+export function loadUrl(u) {
+  if (!u) return null;
+  let rec = urlImages.get(u);
+  if (!rec) {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    rec = { img, ok: false };
+    urlImages.set(u, rec);
+    img.onload = () => { rec.ok = true; notify(); };
+    img.src = u;
+  }
+  return rec.ok ? rec.img : null;
+}

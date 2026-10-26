@@ -48,7 +48,7 @@ export class Hud {
 
     app.on('me', () => this.renderMe());
     app.on('media', () => this.renderMedia());
-    app.on('world', () => { $('#btn-build').hidden = !app.canEdit; });
+    app.on('world', () => { $('#btn-build').hidden = !!app.user.guest; });
     app.on('build', () => $('#btn-build').classList.toggle('on', app.build.on));
     app.on('sidebar', () => {
       const open = !$('#sidebar').hidden;
@@ -72,7 +72,7 @@ export class Hud {
     $('#me-xp').style.width = `${Math.round((lv.into / lv.need) * 100)}%`;
     $('#me-xp').parentElement.title = `${lv.into} / ${lv.need} XP para o nível ${lv.level + 1}`;
     $('#status-select').value = me.status;
-    $('#btn-build').hidden = !this.app.canEdit;
+    $('#btn-build').hidden = !!this.app.user.guest;
   }
 
   renderMedia() {
@@ -143,7 +143,11 @@ function showHelp() {
         row(['N'], 'Notas de reunião (transcrição + resumo por IA)'),
         row(['1', '…', '6'], 'Reações'),
         row(['+', '−'], 'Zoom (ou roda do mouse)'),
-        row(['B'], 'Modo construção (editores)'),
+        row(['B'], 'Construir (editores: mapa todo · membros: a área da sua mesa)'),
+        row(['1', '…', '9'], 'Construir: escolher o item da hotbar'),
+        row(['R'], 'Construir: girar 45° (Shift+R: 15°)'),
+        row(['I'], 'Inventário'),
+        row(['🖱️ dir.'], 'Botão direito num móvel: examinar, girar, ação, guardar'),
         row(['Esc'], 'Fechar janelas')),
       h('ul', { class: 'tips' },
         h('li', {}, 'Ative câmera/microfone e chegue perto de alguém: a conversa abre sozinha. O som vem do lado em que a pessoa está.'),
