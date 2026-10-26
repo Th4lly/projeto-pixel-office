@@ -9,7 +9,7 @@ const images = new Map();
 const listeners = new Set();
 export const TILE = 32;
 
-export async function loadCatalog(url = 'assets/catalog.json') {
+export async function loadCatalog(url = 'assets/catalog.json?v=4') {
   const res = await fetch(url, { cache: 'force-cache' });
   if (!res.ok) throw new Error('Não encontrei assets/catalog.json — rode tools/build_assets.py.');
   CAT = await res.json();

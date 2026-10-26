@@ -5,6 +5,7 @@
 // w/h = área no chão (tiles) · solid = bloqueia · sit = dá para sentar · flat = no chão
 // walk = dá para pisar · light = brilha · small = pode ficar em cima de mesas
 import { CAT, IDX, drawFrame, findProp, findIn, frameAt, TILE } from './assets.js';
+import { sizeOf, drawStyled } from './rostyle.js';
 
 export const OBJECTS = {};
 export let OBJECT_CATEGORIES = [];
@@ -116,10 +117,16 @@ const RULES = [
   [/esta[cç][aã]o|anvil|bigorna|workbench|alchemy|alquimia|sawmill|serraria|cooker|grill|butchery/i, 'craft', 'trabalhar na estação'],
 ];
 
+const INTERACT_LABEL = {
+  chart: 'ver planilhas e gráficos', weapons: 'pegar uma arma do rack', helmets: 'experimentar um elmo', armory: 'vestir a armadura',
+  shield: 'pegar um escudo', archery: 'atirar uma flecha', team: 'escolher a equipe', watch: 'assistir do camarote',
+  dummy: 'bater no boneco', loot: 'vasculhar',
+};
+
 export function inferInteract(p) {
   const text = `${p.name} ${p.cat} ${p.id}`;
   if (p.interact === 'projector') return { interact: 'present', label: 'apresentar (compartilhar tela)' };
-  if (p.interact) return { interact: p.interact, label: p.interact === 'chart' ? 'ver planilhas e gráficos' : 'usar' };
+  if (p.interact) return { interact: p.interact, label: INTERACT_LABEL[p.interact] || 'usar' };
   if (p.kind === 'slot') return { interact: 'arcade', label: 'jogar' };
   if (p.sit) return { interact: 'sit', label: 'sentar' };
   if (p.desk) return { interact: 'desk', label: 'abrir a mesa' };
@@ -222,11 +229,18 @@ export function objectHeight(def) {
 }
 
 /** Escala: interativos se ajustam à largura pedida; itens do catálogo não passam da largura da área (alinhamento na grade). */
-export function fitScale(def, f = def.skin && def.skin.f) {
+export function fitScale(def) {
   const s = def.skin;
   if (!s) return 1;
-  const nat = f[2] * s.sc;
+  // a escala sai sempre do quadro principal: todas as direções da mesma arte ficam do mesmo tamanho
+  const base = s.f;
+  const nat = base[2] * s.sc;
+  const natH = base[3] * s.sc;
   const want = def.w * TILE;
+  const hgt = sizeOf(def);
+  // tamanho real em relação ao personagem, sem passar da área no chão
+  // (itens de 1 tile podem passar um pouco da largura, centrados; os maiores ficam dentro da área)
+  if (hgt) return s.sc * Math.min(hgt / natH, (want * (def.w === 1 ? 1.4 : 1)) / nat);
   if (!def.functional) return nat > want * 1.08 ? s.sc * ((want * 1.04) / nat) : s.sc;
   return s.sc * Math.min(1.6, Math.max(0.4, (want * 0.98) / nat));
 }
@@ -260,8 +274,9 @@ export function drawObjectSprite(ctx, o, def, x0, y0, k, t = 0, alpha = 1) {
   if (!art && s.frames && s.frames.length > 1) f = frameAt(s.frames, t + (o.x || 0) * 0.13, 8);
   if (s.alt && o.state && (o.state.on || o.state.open)) sid = s.alt.s;
   if (s.custom) sid = s.s;
-  const sc = fitScale(def, art ? f : s.f) * k;
-  if (!rest) return drawFrame(ctx, sid, f, cx, by, sc, !!o.flip, alpha);
+  const ws = fitScale(def);
+  const sc = ws * k;
+  if (!rest) return drawStyled(ctx, sid, f, cx, by, ws, k, !!o.flip, alpha);
   // gira em volta do centro da área no chão
   const cy = y0 + (dm.h * TILE * k) / 2;
   const fh = f[3] * sc;
@@ -269,7 +284,7 @@ export function drawObjectSprite(ctx, o, def, x0, y0, k, t = 0, alpha = 1) {
   ctx.translate(cx, cy);
   ctx.rotate((rest * Math.PI) / 180);
   // a base do sprite fica no meio da área original (sem girar), centrada
-  const ok = drawFrame(ctx, sid, f, 0, Math.min(fh / 2, (def.h * TILE * k) / 2) , sc, !!o.flip, alpha);
+  const ok = drawStyled(ctx, sid, f, 0, Math.min(fh / 2, (def.h * TILE * k) / 2), ws, k, !!o.flip, alpha);
   ctx.restore();
   return ok;
 }

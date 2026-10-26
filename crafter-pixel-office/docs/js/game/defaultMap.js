@@ -150,11 +150,32 @@ export function buildDefaultMap() {
   add('mob_spawner', 2, 2, { data: { pool: 'arena' } }); add('mob_spawner', 7, 20, { data: { pool: 'arena' } });
   add('mob_spawner', 4, 27, { data: { pool: 'boss' } });
   for (const [x, y] of [[1, 12], [8, 1], [1, 25], [8, 25], [1, 47], [8, 47], [12, 1], [20, 1], [12, 22], [20, 22]]) add('torch', x, y, on);
-  for (const x of [14, 17]) for (const y of [28, 32]) add('dummy', x, y);
-  add('chest', 19, 45); add('crate', 13, 45); add('barrel', 14, 45);
-  for (const [x, y] of [[2, 1], [6, 1], [13, 1], [19, 1], [2, 25], [6, 25]]) add('banner', x, y);
+  for (const [x, y] of [[2, 1], [6, 1], [2, 25], [6, 25]]) add('banner', x, y);
   add('statue', 12, 21); add('statue', 20, 21); add('column', 1, 20); add('column', 8, 20);
-  add('signpost', 13, 26, { data: { text: 'Sala de treino: teste seus golpes nos bonecos. Equipamentos no baú.' } });
+  // objetos da arena (folha de arena): racks, alvos, bonecos, camarote, cercas, sacos e caixotes
+  const A = (id) => `extra-arena-${id}`;
+  const has = (id) => CAT.props.some((p) => p.id === A(id));
+  const ar = (id, x, y, extra) => { if (has(id)) add(A(id), x, y, extra); };
+  // --- Arena PvP: camarote no alto, ringue de areia cercado, bancos para a plateia
+  ar('camarote-real', 15, 1);
+  ar('estandarte-vermelho', 13, 1); ar('estandarte-vermelho', 19, 1, { flip: true });
+  ar('cerca-de-madeira', 13, 3); ar('cerca-de-madeira', 18, 3); ar('cerca-de-madeira', 13, 21); ar('cerca-de-madeira', 18, 21);
+  ar('banco-de-madeira', 19, 7); ar('banco-de-madeira', 19, 15); ar('banco-de-madeira', 12, 15);
+  ar('saco-grande', 20, 20); ar('caixote-claro', 12, 20);
+  // --- Arena dos monstros
+  ar('poste-de-madeira', 1, 6); ar('saco-grande', 7, 8); ar('caixote', 1, 16); ar('pilha-de-caixotes', 6, 21); ar('flamula', 4, 1);
+  // --- Campo de treino: estande de tiro em cima, armas nas paredes, bonecos embaixo
+  ar('flamula', 12, 25); ar('flamula-2', 20, 25);
+  ar('alvo', 14, 26); ar('alvo-2', 16, 26); ar('alvo', 18, 26);
+  ar('tapete-azul-longo', 14, 31);
+  ar('parede-de-armas-longas', 12, 27); ar('rack-de-espadas', 12, 30); ar('rack-de-lancas', 12, 33);
+  ar('rack-de-machados', 18, 29); ar('suporte-de-escudos', 19, 31); ar('suporte-de-escudos-2', 19, 33);
+  ar('pilha-de-elmos', 12, 39); ar('pilha-de-caixotes', 19, 39);
+  ar('boneco-de-treino', 14, 41); ar('boneco-de-treino-2', 16, 41); ar('boneco-de-treino-3', 18, 41);
+  ar('boneco-de-treino-2', 15, 43); ar('boneco-de-treino', 17, 43);
+  ar('monte-de-equipamentos', 12, 45); ar('saco-de-graos', 17, 46); ar('saco-grande', 18, 46); ar('caixote-grande', 19, 46); ar('caixote', 20, 45);
+  add('signpost', 13, 38, { data: { text: 'Campo de treino: pegue uma arma no rack, um escudo ou um elmo (valem +CA/+acerto por 10 min), atire nos alvos (série de 3 flechas dá zeny) e teste golpes nos bonecos.' } });
+  if (!has('alvo')) for (const x of [14, 17]) for (const y of [28, 32]) add('dummy', x, y);
   npc('arena', `${RO}npcs-walking-png-2`, 10, 6, { name: 'Mestre Garrick' });
   // portal da ala ↔ jardim (efeito de tile + o vórtice para enxergar)
   add('portal', 10, 3); fx['10,3'] = 'o:39,4';
@@ -256,7 +277,7 @@ export function buildDefaultMap() {
     { id: 'z-arena', name: 'Arena dos Monstros', kind: 'arena', x: 1, y: 1, w: 8, h: 22 },
     { id: 'z-pvp', name: 'Arena PvP', kind: 'pvp', x: 12, y: 1, w: 9, h: 22 },
     { id: 'z-covil', name: 'Covil do Chefe (MvP)', kind: 'arena', x: 1, y: 25, w: 8, h: 23 },
-    { id: 'z-treino', name: 'Sala de Treino', kind: 'area', x: 12, y: 25, w: 9, h: 23 },
+    { id: 'z-treino', name: 'Campo de Treino', kind: 'area', x: 12, y: 25, w: 9, h: 23 },
     { id: 'z-corredor-arenas', name: 'Corredor das Arenas', kind: 'area', x: 9, y: 1, w: 3, h: 47 },
     { id: 'z-jardim', name: 'Jardim', kind: 'area', x: 23, y: 1, w: 18, h: 16 },
     { id: 'z-salao', name: 'Recepção', kind: 'area', x: 43, y: 1, w: 34, h: 16 },
@@ -271,8 +292,8 @@ export function buildDefaultMap() {
     { id: 'z-palco', name: 'Palco', kind: 'spotlight', x: 58, y: 39, w: 12, h: 3 },
   );
 
-  return { map: { width: W, height: H, floor, fg, fx, spawn: { x: 53, y: 12 }, version: 3 }, objects, zones };
+  return { map: { width: W, height: H, floor, fg, fx, spawn: { x: 53, y: 12 }, version: 4 }, objects, zones };
 }
 
-export const MAP_VERSION = 3;
+export const MAP_VERSION = 4;
 export { CAT };

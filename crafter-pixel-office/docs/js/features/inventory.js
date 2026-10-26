@@ -6,7 +6,7 @@
 // Membros constroem na área da própria mesa com o que têm no inventário.
 import { h, fill, toast, uid } from '../ui/dom.js';
 import { openModal } from '../ui/modal.js';
-import { CAT } from '../art/assets.js';
+import { CAT, frameCanvas } from '../art/assets.js';
 import { OBJECTS, objectThumb, dims } from '../art/objects.js';
 import { blip } from '../audio.js';
 
@@ -22,6 +22,7 @@ export class Inventory {
     if (app.user.guest) { try { local = JSON.parse(localStorage.getItem('po.inventory') || '{}'); } catch { /* ok */ } }
     this.s = { ...START, ...saved, ...local };
     this.s.items = { ...(this.s.items || {}) };
+    this.s.loot = { ...(this.s.loot || {}) };
     this.s.hot = Array.from({ length: HOT }, (_, i) => (this.s.hot || [])[i] || null);
     this.lastCraft = 0;
     this.bar = h('div', { class: 'hotbar win', hidden: true });
@@ -78,6 +79,21 @@ export class Inventory {
     if (i >= 0) { this.s.sel = i; } else this.s.hot[this.s.sel] = type;
     if (this.creative && !this.count(type)) this.s.items[type] = 0;
     this.save();
+  }
+
+  /** Drop de monstro (itens do RO): fica na bolsa e pode ser vendido ao Mercador. */
+  addLoot(id, n = 1) {
+    this.s.loot[id] = (this.s.loot[id] || 0) + n;
+    this.save();
+  }
+
+  lootPrice(id) {
+    const i = (CAT.loot || []).findIndex((l) => l.id === id);
+    return 10 + ((Math.max(0, i) * 7) % 40);
+  }
+
+  lootEntries() {
+    return Object.entries(this.s.loot).filter(([, n]) => n > 0).map(([id, n]) => [(CAT.loot || []).find((l) => l.id === id), n]).filter(([it]) => it);
   }
 
   addZeny(n) {
@@ -199,7 +215,10 @@ export class Inventory {
       fill(body,
         h('p', { class: 'muted small' }, 'Clique num item para pôr no atalho selecionado da hotbar. No modo Construir, use as teclas 1–9, R para girar e clique no mapa para colocar.'),
         entries.length ? h('div', { class: 'palette' }, entries.map(([t, n]) => h('button', { type: 'button', class: 'pal-item', title: OBJECTS[t].name, onclick: () => { this.assign(t); m.close(); } },
-          objectThumb(t, 46), h('span', {}, `${OBJECTS[t].name} ×${n}`)))) : h('p', { class: 'muted' }, 'Inventário vazio. Compre no Mercador, fabrique numa estação de trabalho ou guarde itens que você colocou.'));
+          objectThumb(t, 46), h('span', {}, `${OBJECTS[t].name} ×${n}`)))) : h('p', { class: 'muted' }, 'Inventário vazio. Compre no Mercador, fabrique numa estação de trabalho ou guarde itens que você colocou.'),
+        h('div', { class: 'opt-label' }, 'Bolsa de drops (monstros da arena)'),
+        this.lootEntries().length ? h('div', { class: 'palette' }, this.lootEntries().map(([it, n]) => h('div', { class: 'pal-item', title: it.name }, frameCanvas(it.s, it.f, 40), h('span', {}, `${it.name} ×${n}`))))
+          : h('p', { class: 'muted small' }, 'Derrote monstros na arena e pegue o que cair no chão (clique no item ou passe por cima).'));
     };
     paint();
   }
@@ -238,7 +257,11 @@ export class Inventory {
         h('div', { class: 'opt-label' }, 'Vender (metade do preço)'),
         h('div', { class: 'palette' }, Object.entries(this.s.items).filter(([t, n]) => OBJECTS[t] && n > 0).map(([t, n]) => h('button', {
           type: 'button', class: 'pal-item', title: `Vender ${OBJECTS[t].name}`, onclick: () => { this.take(t); this.addZeny(Math.round(this.price(t) / 2)); paint(); },
-        }, objectThumb(t, 40), h('span', {}, `${OBJECTS[t].name} ×${n}`), h('em', { class: 'price' }, `+${Math.round(this.price(t) / 2)}z`)))));
+        }, objectThumb(t, 40), h('span', {}, `${OBJECTS[t].name} ×${n}`), h('em', { class: 'price' }, `+${Math.round(this.price(t) / 2)}z`)))),
+        this.lootEntries().length ? h('div', { class: 'opt-label' }, 'Vender drops') : null,
+        h('div', { class: 'palette' }, this.lootEntries().map(([it, n]) => h('button', {
+          type: 'button', class: 'pal-item', title: `Vender ${it.name}`, onclick: () => { this.s.loot[it.id] -= 1; this.addZeny(this.lootPrice(it.id)); blip(990, 0.05, 0.05); paint(); },
+        }, frameCanvas(it.s, it.f, 40), h('span', {}, `${it.name} ×${n}`), h('em', { class: 'price' }, `+${this.lootPrice(it.id)}z`)))));
       m.el.querySelector('.win-title h2').textContent = `🛒 ${npcName} — 🪙 ${this.s.zeny}z`;
     };
     paint();

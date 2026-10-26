@@ -15,6 +15,7 @@ import { Chat } from './ui/chat.js';
 import { Sidebar, People, MyQuests } from './ui/people.js';
 import { Hud, EMOTES } from './ui/hud.js';
 import { BuildPanel } from './ui/buildPanel.js';
+import { Minimap } from './ui/minimap.js';
 import { openAvatarEditor } from './ui/avatarEditor.js';
 import { interact } from './features/interactions.js';
 import { Whiteboards } from './features/whiteboard.js';
@@ -115,6 +116,7 @@ export class App {
     this.mini = new MiniMode(this);
     this.integrations = new Integrations(this);
     this.hud = new Hud(this);
+    this.minimap = new Minimap(this);
     this.bindPointer();
     this.bindKeys();
 
@@ -174,6 +176,7 @@ export class App {
       media: m.media, level: m.level, buffs: m.activeBuffs(), music: m.music || '', guest: m.guest, admin: m.admin,
       call: m.call || null, hp: Math.round(m.hp || 0), maxHp: m.maxHp || 0, sp: Math.round(m.sp || 0), maxSp: m.maxSp || 0, dead: !!m.dead,
       cls: m.cls || '', baseLevel: m.baseLevel || 1, statuses: m.statuses || [],
+      team: m.team || '', gear: m.gear && m.gear.until > Date.now() ? { ca: m.gear.ca, hit: m.gear.hit, until: m.gear.until } : null, floorSit: !!m.floorSit,
     };
   }
 
@@ -368,12 +371,40 @@ export class App {
       me.pendingInteract = null;
       if (this.world.objects.includes(o) && this.world.distanceToObject(o, me.x, me.y) <= 1) this.interact(o);
     }
+    // seguir alguém (como no Gather): recalcula o caminho a cada segundo
+    if (this.following) {
+      const p = this.players.get(this.following);
+      if (!p || this.input.direction()) this.follow(null);
+      else if (Date.now() - (this.followAt || 0) > 900 && Math.max(Math.abs(p.x - me.x), Math.abs(p.y - me.y)) > 1 && (!me.path || !me.path.length)) {
+        this.followAt = Date.now();
+        const path = this.world.pathTo(me.x, me.y, (x, y) => Math.max(Math.abs(x - p.x), Math.abs(y - p.y)) <= 1 && !(x === p.x && y === p.y));
+        if (path) me.path = path;
+      }
+    }
     this.hud.update();
     this.renderer.draw(t / 1000);
+    this.minimap.update();
     requestAnimationFrame((tt) => this.loop(tt));
   }
 
+  /** Sentar no chão (Insert/C, como no RO): regeneração em dobro; levantar ao andar. */
+  toggleFloorSit(on = !this.me.floorSit) {
+    const me = this.me;
+    if (on && (me.moving || this.world.seatAt(me.x, me.y) || me.dead)) return;
+    me.floorSit = on;
+    me.path = null;
+    this.trackSoon();
+    if (on) this.renderer.float(me.x, me.y - 1.4, 'Sentou (regeneração ×2)', '#cfd8ff');
+  }
+
+  /** Seguir um colega (clique direito no avatar). */
+  follow(p) {
+    this.following = p ? p.id : null;
+    if (p) toast(`Seguindo ${p.name}. Ande ou aperte Esc para parar.`, 'info', 2500);
+  }
+
   onStep() {
+    if (this.me.floorSit) { this.me.floorSit = false; this.trackSoon(); }
     // efeito de tile: portal com destino
     const fx = this.world.fxAt(this.me.x, this.me.y);
     if (fx && fx.t === 'o' && this.world.inBounds(fx.x, fx.y)) {
@@ -484,6 +515,8 @@ export class App {
       }
     }
     me.pendingInteract = null;
+    if (me.floorSit) { me.floorSit = false; this.trackSoon(); }
+    this.renderer.mark = { x: t.x, y: t.y, t: performance.now() };
     const objs = world.objectsAt(t.x, t.y).filter((o) => OBJECTS[o.type] && OBJECTS[o.type].interact);
     const obj = objs.find((o) => !OBJECTS[o.type].flat && OBJECTS[o.type].interact !== 'sit' && OBJECTS[o.type].interact !== 'portal');
     if (obj) {
@@ -588,6 +621,8 @@ export class App {
       else if (e.button === 0) this.clickTo(t);
       else if (e.button === 2) {
         // botão direito: painel do objeto (examinar, girar, ação…)
+        const who = [...this.players.values()].find((p) => p !== this.me && p.x === t.x && (p.y === t.y || p.y === t.y + 1));
+        if (who) { this.follow(this.following === who.id ? null : who); return; }
         const o = this.buildPanel.objectAt(t.x, t.y);
         if (o) openObjectPanel(this, o);
       }
@@ -677,7 +712,15 @@ export class App {
         case 'KeyI':
           this.inventory.open();
           break;
+        case 'Insert':
+        case 'KeyC':
+          this.toggleFloorSit();
+          break;
+        case 'KeyM':
+          this.minimap.toggle();
+          break;
         case 'Escape':
+          if (this.following) this.follow(null);
           if (this.build.on) this.buildPanel.toggle(false);
           else this.sidebar.close();
           break;

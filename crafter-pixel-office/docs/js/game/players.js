@@ -4,7 +4,7 @@ import { VEC, dirFromVec } from './dirs.js';
 
 export const SPEED = 5.5; // tiles por segundo
 
-const FIELDS = ['name', 'status', 'media', 'guest', 'admin', 'dir', 'uid', 'level', 'buffs', 'music', 'statusText', 'call', 'hp', 'maxHp', 'sp', 'maxSp', 'dead', 'cls', 'baseLevel', 'statuses', 'action', 'actionStart'];
+const FIELDS = ['name', 'status', 'media', 'guest', 'admin', 'dir', 'uid', 'level', 'buffs', 'music', 'statusText', 'call', 'hp', 'maxHp', 'sp', 'maxSp', 'dead', 'cls', 'baseLevel', 'statuses', 'action', 'actionStart', 'team', 'gear', 'floorSit'];
 
 export class Player {
   constructor(data) {

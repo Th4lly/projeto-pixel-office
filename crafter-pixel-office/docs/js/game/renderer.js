@@ -1,5 +1,6 @@
 // Desenha o escritório com os sprites da pasta: camada de piso em cache + objetos,
 // mesas decoradas, monstros e avatares ordenados por profundidade.
+import { TEAMS } from '../features/arena.js';
 import { onAssetLoad, TILE, loadUrl } from '../art/assets.js';
 import { FLOORS, paintFloor, paintWall } from '../art/tiles.js';
 import { OBJECTS, drawObjectSprite, objectHeight, dims, rotOf } from '../art/objects.js';
@@ -56,7 +57,31 @@ export class Renderer {
   }
 
   isSitting(p) {
-    return !p.moving && !!this.app.world.seatAt(p.x, p.y);
+    return !p.moving && (!!p.floorSit || !!this.app.world.seatAt(p.x, p.y));
+  }
+
+  /** Marcador de clique no chão (como o cursor de destino do RO). */
+  drawMark(ox, oy, S, T) {
+    const m = this.mark;
+    if (!m) return;
+    const age = (performance.now() - m.t) / 650;
+    if (age > 1) { this.mark = null; return; }
+    const { ctx } = this;
+    const cx = ox + (m.x + 0.5) * T;
+    const cy = oy + (m.y + 0.62) * T;
+    const r = (1 - age) * 12 * S + 3 * S;
+    ctx.save();
+    ctx.globalAlpha = 1 - age;
+    ctx.strokeStyle = '#9be8ff';
+    ctx.lineWidth = 2 * S;
+    ctx.beginPath();
+    ctx.ellipse(cx, cy, r, r * 0.5, 0, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.fillStyle = '#ffffff';
+    ctx.beginPath();
+    ctx.moveTo(cx, cy - 2 * S); ctx.lineTo(cx + 3 * S, cy); ctx.lineTo(cx, cy + 2 * S); ctx.lineTo(cx - 3 * S, cy);
+    ctx.fill();
+    ctx.restore();
   }
 
   buildLayer() {
@@ -143,6 +168,7 @@ export class Renderer {
     ctx.fillRect(0, 0, cw, ch);
     ctx.drawImage(this.layer, ox, oy, this.layer.width * S, this.layer.height * S);
 
+    this.drawMark(ox, oy, S, T);
     const vx0 = -ox / T - 6, vy0 = -oy / T - 6, vx1 = (cw - ox) / T + 6, vy1 = (ch - oy) / T + 6;
     const items = [];
     for (const o of app.world.objects) {
@@ -235,7 +261,7 @@ export class Renderer {
     }
     drawPet(ctx, p.avatar, dir, time, cx, by, S);
     const t = action === 'walk' ? p.animT : action === 'attack' ? (performance.now() - p.actionStart) / 1000 : time;
-    const top = drawAvatar(ctx, p.avatar, dir, action, t, cx, by + (sit ? -4 * S : 0), S, p.ghost ? 0.5 : 1);
+    const top = drawAvatar(ctx, p.avatar, dir, action, t, cx, by + (seat ? -4 * S : 0), S, p.ghost ? 0.5 : 1);
     if (action === 'attack') drawWeapon(ctx, p.avatar, dir, cx, by, S, Math.min(1, t * 3));
     p._cx = cx;
     p._top = top;
@@ -332,6 +358,7 @@ export class Renderer {
     ctx.fillStyle = isMe ? 'rgba(36, 30, 70, 0.92)' : 'rgba(36, 30, 70, 0.8)';
     ctx.fill();
     if (isMe) { ctx.strokeStyle = 'rgba(255, 216, 77, .8)'; ctx.lineWidth = 1.2 * dpr; ctx.stroke(); }
+    if (p.team && TEAMS[p.team]) { ctx.strokeStyle = TEAMS[p.team].color; ctx.lineWidth = 2 * dpr; ctx.stroke(); }
     // nível
     roundRect(ctx, x + 2 * dpr, y + 2 * dpr, lvW, h - 4 * dpr, (h - 4 * dpr) / 2);
     ctx.fillStyle = '#ffd84d';
@@ -423,9 +450,13 @@ export class Renderer {
     for (const f of this.floaters) {
       const age = (now - f.t) / 1400;
       ctx.globalAlpha = 1 - age * age;
-      ctx.font = `900 ${(f.big ? 22 : 17) * dpr * (1 + Math.max(0, 0.25 - age))}px ${FONT}`;
-      const x = ox + f.x * T;
-      const y = oy + f.y * T - age * 40 * dpr;
+      // números de dano pulam em arco e caem, como no RO; o resto sobe
+      const num = /^[-+]?\d+!*$/.test(f.text);
+      if (num && f.dir === undefined) f.dir = Math.random() < 0.5 ? -1 : 1;
+      const pop = num ? 1 + Math.max(0, 0.6 - age * 3) : 1 + Math.max(0, 0.25 - age);
+      ctx.font = `900 ${(f.big ? 22 : num ? 19 : 17) * dpr * pop}px ${FONT}`;
+      const x = ox + f.x * T + (num ? f.dir * age * 0.9 * T : 0);
+      const y = num ? oy + f.y * T - Math.sin(Math.min(1, age * 1.4) * Math.PI) * 0.9 * T + age * 0.5 * T : oy + f.y * T - age * 40 * dpr;
       ctx.lineWidth = 4 * dpr;
       ctx.strokeStyle = 'rgba(30,10,40,.85)';
       ctx.strokeText(f.text, x, y);

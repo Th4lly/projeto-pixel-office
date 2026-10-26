@@ -151,6 +151,33 @@ O script copia todas as imagens para `docs/assets`, limpa as folhas do Ragnarok 
 | 1–9 | item da hotbar |
 | R / Shift+R | girar o item a colocar |
 | I | inventário |
+| Insert / C | sentar no chão |
+| M | minimapa |
+| Botão direito num colega | seguir |
+
+## v4: arena de treino, estilo Ragnarok e gameplay RO/Gather
+
+Não precisa de migração nova (use a v3). O mapa padrão sobe para a versão 4 e é trocado uma vez para todos; como na v3, **as mesas reivindicadas são zeradas**.
+
+- **Itens no estilo RO.** Todo móvel é redesenhado na mesma densidade de pixel dos personagens (1 pixel da arte = 1 pixel do mundo), com cores suavizadas e contorno escuro de 1 pixel. A rotação continua funcionando. O código fica em `docs/js/art/rostyle.js`.
+- **Escala simétrica.** O tamanho de cada item vem do tamanho real em relação ao personagem (~1,70 m). Por exemplo: cadeira ≈ 1,1 m, mesa com PC ≈ 1,4 m, estante ≈ 2 m e árvore ≈ 3,5 m. A tabela `SIZES` fica em `rostyle.js`. Itens grandes não passam da área no chão, para manter o alinhamento das mesas.
+- **Arena com objetos interativos espalhados** (folha nova em `assets-src/extras/arena-props.png`):
+  - *Campo de Treino*:
+    - alvos de arco e flecha: d20 + DES; uma série de 3 flechas rende zeny;
+    - racks de espadas, lanças e machados: a arma aparece no personagem e dá +1 no acerto por 10 min;
+    - suportes de escudos e o monte de equipamentos: +2 CA;
+    - pilha de elmos: +1 CA;
+    - bonecos, caixotes e sacos.
+  - *Arena PvP*: camarote real no alto (dá para sentar e assistir), ringue cercado, bancos e estandartes de equipe. Na mesma equipe ninguém se ataca, e o nome fica com a cor da equipe.
+- **Gameplay estilo RO/Gather:**
+  - números de dano pulando em arco;
+  - drops que caem no chão (clique no item ou passe por cima; venda os drops ao Mercador);
+  - marcador de clique no chão;
+  - sentar no chão com **Insert** ou **C** (regeneração em dobro);
+  - **minimapa** no canto superior direito (clique para andar; **M** esconde);
+  - botão direito num colega para **seguir** (Esc para parar).
+- **Plantas novas no vaso** (`assets-src/extras/plantas-tailside.png`).
+- `tools/extra_assets.py` recorta essas folhas e limpa do catálogo as "armas" que eram só letras dos rótulos das folhas do RO. Ele também roda no fim de `tools/build_assets.py`.
 
 ## Opcionais
 

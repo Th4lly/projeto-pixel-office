@@ -1138,6 +1138,13 @@ class Builder:
         if missing:
             lines += ['', '## Sem uso', ''] + [f'- `{m}`' for m in missing]
         (OUT / 'USO.md').write_text('\n'.join(lines))
+        # folhas extras (assets-src/extras/): arena e plantas
+        try:
+            sys.path.insert(0, str(Path(__file__).resolve().parent))
+            import extra_assets
+            extra_assets.run()
+        except Exception as e:  # noqa: BLE001
+            print('extras não processados:', e)
         size = sum(f.stat().st_size for f in OUT.rglob('*') if f.is_file())
         print(f'sheets={len(cat["sheets"])} props={len(cat["props"])} bodies={len(cat["bodies"])} heads={len(cat["heads"])} '
               f'headgears={len(cat["headgears"])} weapons={len(cat["weapons"])} mobs={len(cat["mobs"])} npcs={len(cat["npcs"])} '

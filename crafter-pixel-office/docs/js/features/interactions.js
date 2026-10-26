@@ -5,6 +5,7 @@ import { blip, playNote } from '../audio.js';
 import { openPiano } from './piano.js';
 import { runCustomAction, openObjectPanel } from './objectMenu.js';
 import { paper } from '../art/assets.js';
+import { arenaInteract } from './arena.js';
 
 export const BUFFS = {
   coffee: ['☕', 'Cafeinado: +energia', 10, 'Café quentinho!'],
@@ -44,6 +45,8 @@ export function interact(app, o, def, useDefault = false) {
     toast(`${msg} (${label} por ${min} min)`, 'ok', 2500);
     return;
   }
+
+  if (arenaInteract(app, o, def)) return;
 
   switch (k) {
     case 'sit':
