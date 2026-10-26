@@ -1,222 +1,118 @@
-// Pisos e paredes 24x24 em estilo pintado.
-import { makeCanvas, brush, shade, mix, rng, light, shadow } from './pixel.js';
+// Pisos e paredes a partir dos tilesets da pasta de sprites.
+// Piso = um bloco repetível do catálogo. Parede = "w:<id do piso>": a textura vira a
+// face da parede (quando há chão embaixo) e o topo é a cor média escurecida.
+import { CAT, IDX, image, TILE } from './assets.js';
 
-export const FLOORS = {
-  wood: { name: 'Tábuas', color: '#b9824e' },
-  wood_dark: { name: 'Tábuas escuras', color: '#7d4f30' },
-  stone: { name: 'Lajotas', color: '#c9bfae' },
-  cobble: { name: 'Pedras', color: '#a49c94' },
-  marble: { name: 'Mármore', color: '#efe8dc' },
-  carpet_red: { name: 'Tapete real', color: '#a8343f' },
-  carpet_blue: { name: 'Tapete azul', color: '#3f5aa8' },
-  carpet_green: { name: 'Tapete verde', color: '#3f8a5c' },
-  carpet_purple: { name: 'Tapete roxo', color: '#6e4aa0' },
-  grass: { name: 'Grama', color: '#79b84f' },
-  dirt: { name: 'Terra', color: '#b48a5c' },
-  sand: { name: 'Areia', color: '#e6d3a1' },
-  water: { name: 'Água', color: '#4aa3d8', solid: true },
-  wall_stone: { name: 'Parede de pedra', color: '#9a93a6', wall: true, solid: true },
-  wall_wood: { name: 'Parede de madeira', color: '#8a5a36', wall: true, solid: true },
-  wall_plaster: { name: 'Parede enxaimel', color: '#efe3c9', wall: true, solid: true },
-  hedge: { name: 'Cerca viva', color: '#3f7d3a', wall: true, solid: true },
-  glass: { name: 'Vitral', color: '#9fd3ee', wall: true, solid: true },
-  void: { name: 'Vazio', color: '#191426', solid: true },
+export const FLOORS = {};
+export let FLOOR_TYPES = [];
+export let WALL_TYPES = [];
+
+const shade = (hex, f) => {
+  const n = parseInt(hex.slice(1), 16);
+  const c = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map((v) => Math.max(0, Math.min(255, Math.round(v * f))));
+  return `#${c.map((v) => v.toString(16).padStart(2, '0')).join('')}`;
 };
 
-export const FLOOR_TYPES = Object.keys(FLOORS).filter((k) => !FLOORS[k].wall && k !== 'void');
-export const WALL_TYPES = Object.keys(FLOORS).filter((k) => FLOORS[k].wall);
+// Tilesets que servem de parede (texturas verticais)
+const WALL_SOURCES = ['office-parede-creme', 'wall-variations', 'interior-walls', 'structures-buildings-walls', 'wall-tiles', 'dungeon-tiles', 'retro-wall'];
 
-const cache = new Map();
+export function buildTiles() {
+  for (const k of Object.keys(FLOORS)) delete FLOORS[k];
+  for (const f of CAT.floors) {
+    FLOORS[f.id] = { name: f.name, color: f.avg || '#777', src: f, pack: f.pack };
+  }
+  FLOORS.void = { name: 'Vazio', color: '#14101c', solid: true };
+  // água: tudo que é dos tilesets de água bloqueia passagem
+  for (const f of CAT.floors) if (/water/.test(f.id)) FLOORS[f.id].solid = true;
 
-function variantOf(type, x, y) {
-  if (type.startsWith('wood')) return ((y % 2) * 3 + (((x % 3) + 3) % 3));
-  return (((x * 73856093) ^ (y * 19349663)) >>> 0) % 4;
+  const walls = [];
+  for (const w of CAT.walls || []) {
+    if (!w.face) continue;
+    walls.push({ id: `w:${w.id}`, name: w.name, face: { s: w.s, f: w.face, sc: w.sc }, cap: w.cap || '#3a2a20' });
+  }
+  for (const f of CAT.floors) {
+    if (!f.wallish && !WALL_SOURCES.some((s) => f.id.includes(s))) continue;
+    walls.push({ id: `w:${f.id}`, name: `Parede — ${f.name}`, face: { s: f.s, f: f.f, sc: f.sc }, cap: shade(f.avg || '#666', 0.45) });
+  }
+  // cerca viva com a textura de arbustos do pacote de floresta
+  const hedge = CAT.floors.find((f) => /seasonal/.test(f.id));
+  if (hedge) walls.push({ id: `w:hedge`, name: 'Cerca viva', face: { s: hedge.s, f: hedge.f, sc: hedge.sc }, cap: '#2f4a22' });
+  for (const w of walls) FLOORS[w.id] = { name: w.name, color: w.cap, wall: true, solid: true, face: w.face, cap: w.cap };
+
+  FLOOR_TYPES = CAT.floors.map((f) => f.id).filter((id) => !FLOORS[id].wall);
+  WALL_TYPES = walls.map((w) => w.id);
 }
 
-export function floorTile(type, x, y) {
-  const t = FLOORS[type] ? type : 'void';
-  const v = variantOf(t, x, y);
-  const key = `${t}|${v}`;
-  let c = cache.get(key);
-  if (!c) {
-    c = makeCanvas(24, 24);
-    drawFloor(brush(c.getContext('2d')), t, v);
-    cache.set(key, c);
+/** Desenha um tile de piso em (x, y) (pixels de mundo, 32 por tile) num contexto já escalado. */
+export function paintFloor(ctx, type, tx, ty) {
+  const F = FLOORS[type] || FLOORS.void;
+  const px = tx * TILE;
+  const py = ty * TILE;
+  if (!F.src) {
+    ctx.fillStyle = F.color;
+    ctx.fillRect(px, py, TILE, TILE);
+    return true;
   }
-  return c;
+  return blitRepeat(ctx, F.src, px, py, tx, ty);
 }
 
-export function wallTile(type, front) {
-  const key = `w|${type}|${front ? 1 : 0}`;
-  let c = cache.get(key);
-  if (!c) {
-    c = makeCanvas(24, 24);
-    drawWall(brush(c.getContext('2d')), type, front);
-    cache.set(key, c);
+function blitRepeat(ctx, src, px, py, tx, ty) {
+  const img = image(src.s);
+  if (!img) {
+    ctx.fillStyle = src.avg || '#555';
+    ctx.fillRect(px, py, TILE, TILE);
+    return false;
   }
-  return c;
+  const [fx, fy, fw, fh] = src.f;
+  // quantos pixels do bloco cabem num tile
+  const span = TILE / src.sc;
+  const ox = ((tx * span) % fw + fw) % fw;
+  const oy = ((ty * span) % fh + fh) % fh;
+  // até 4 pedaços (o bloco dá a volta)
+  const sw1 = Math.min(span, fw - ox);
+  const sh1 = Math.min(span, fh - oy);
+  const parts = [[ox, oy, sw1, sh1, 0, 0]];
+  if (sw1 < span) parts.push([0, oy, span - sw1, sh1, sw1, 0]);
+  if (sh1 < span) parts.push([ox, 0, sw1, span - sh1, 0, sh1]);
+  if (sw1 < span && sh1 < span) parts.push([0, 0, span - sw1, span - sh1, sw1, sh1]);
+  for (const [sx, sy, sw, sh, dx, dy] of parts) {
+    ctx.drawImage(img, fx + sx, fy + sy, sw, sh, px + dx * src.sc, py + dy * src.sc, sw * src.sc, sh * src.sc);
+  }
+  return true;
 }
 
-function speckle(g, r, base, n, amt = 0.07) {
-  for (let i = 0; i < n; i++) g.px((r() * 24) | 0, (r() * 24) | 0, r() < 0.5 ? shade(base, -amt) : shade(base, amt));
+/** Parede: face com textura quando há chão embaixo; senão, só o topo. */
+export function paintWall(ctx, type, tx, ty, front) {
+  const W = FLOORS[type];
+  const px = tx * TILE;
+  const py = ty * TILE;
+  ctx.fillStyle = (W && W.cap) || '#2a2030';
+  ctx.fillRect(px, py, TILE, TILE);
+  if (!W || !front || !W.face) {
+    ctx.fillStyle = 'rgba(255,255,255,.06)';
+    ctx.fillRect(px, py, TILE, 2);
+    return true;
+  }
+  const img = image(W.face.s);
+  if (!img) return false;
+  const [fx, fy, fw, fh] = W.face.f;
+  // face ocupa os 3/4 de baixo do tile; a faixa de cima continua sendo o topo
+  const top = 8;
+  if (fh > fw * 2) {
+    // textura alta (parede creme): pega a parte de baixo, com o rodapé
+    const sh = Math.min(fh, fw * ((TILE - top) / TILE));
+    ctx.drawImage(img, fx, fy + fh - sh, fw, sh, px, py + top, TILE, TILE - top);
+  } else {
+    const span = TILE / W.face.sc;
+    const sw = Math.min(span, fw);
+    const sh = Math.min(span * ((TILE - top) / TILE), fh);
+    ctx.drawImage(img, fx + ((tx * span) % fw + fw) % Math.max(1, fw - sw + 1), fy, sw, sh, px, py + top, TILE, TILE - top);
+  }
+  ctx.fillStyle = 'rgba(0,0,0,.18)';
+  ctx.fillRect(px, py + TILE - 3, TILE, 3);
+  return true;
 }
 
-function drawFloor(g, type, v) {
-  const base = FLOORS[type].color;
-  const r = rng(v * 991 + type.length * 37 + 11);
-  switch (type) {
-    case 'wood':
-    case 'wood_dark': {
-      const d = shadow(base, 0.3);
-      const l = light(base, 0.16);
-      g.r(0, 0, 24, 24, base);
-      for (let row = 0; row < 4; row++) {
-        const y = row * 6;
-        const tint = shade(base, ((row * 7 + v) % 3 - 1) * 0.04);
-        g.r(0, y, 24, 5, tint);
-        g.r(0, y, 24, 1, l);
-        g.r(0, y + 5, 24, 1, d);
-        // juntas desencontradas, contínuas entre tiles
-        const seam = (v * 24 + row * 13) % 36;
-        if (seam < 24) { g.r(seam, y, 1, 5, d); g.px(seam + 1, y + 1, l); }
-        // veios
-        g.r(((row * 9 + v * 5) % 18) + 2, y + 2, 4, 1, shade(tint, -0.08));
-        g.px(((row * 5 + v * 11) % 20) + 2, y + 3, shade(tint, -0.12));
-      }
-      break;
-    }
-    case 'stone': {
-      g.r(0, 0, 24, 24, shade(base, -0.18));
-      const tint = shade(base, (v - 1.5) * 0.03);
-      g.box(1, 1, 22, 22, tint, { l: 0.25, d: 0.22 });
-      speckle(g, r, tint, 16, 0.06);
-      if (v === 2) { g.line(5, 6, 9, 10, shade(tint, -0.2)); g.line(9, 10, 8, 14, shade(tint, -0.2)); }
-      break;
-    }
-    case 'cobble': {
-      g.r(0, 0, 24, 24, shade(base, -0.35));
-      const stones = [[5, 5, 5, 4], [16, 4, 6, 4], [4, 14, 5, 4], [13, 13, 5, 4], [21, 13, 3, 4], [9, 21, 6, 3], [20, 21, 4, 3], [0, 21, 3, 3]];
-      stones.forEach(([cx, cy, rx, ry], i) => {
-        const c = shade(base, ((i + v) % 4 - 1.5) * 0.06);
-        g.el(cx, cy, rx, ry, c);
-        g.el(cx - 1, cy - 1, rx - 2, ry - 2, light(c, 0.15));
-      });
-      break;
-    }
-    case 'marble': {
-      const a = base;
-      const b = '#d8cfc0';
-      g.r(0, 0, 12, 12, a); g.r(12, 12, 12, 12, a);
-      g.r(12, 0, 12, 12, b); g.r(0, 12, 12, 12, b);
-      g.r(0, 0, 24, 1, '#fffaf0'); g.r(0, 11, 24, 1, shade(b, -0.08)); g.r(0, 23, 24, 1, shade(b, -0.08));
-      if (v === 1) g.line(3, 4, 8, 8, shade(a, -0.05));
-      if (v === 3) g.line(14, 3, 19, 6, shade(b, -0.05));
-      break;
-    }
-    case 'carpet_red':
-    case 'carpet_blue':
-    case 'carpet_green':
-    case 'carpet_purple': {
-      const l = light(base, 0.18);
-      const d = shadow(base, 0.18);
-      g.r(0, 0, 24, 24, base);
-      for (let i = 0; i < 6; i++) {
-        g.r(12 - i, 6 + i, 1 + i * 2, 1, d);
-        g.r(12 - i, 17 - i, 1 + i * 2, 1, d);
-      }
-      g.r(11, 10, 3, 3, mix(base, '#f2c14e', 0.55));
-      g.px(0, 0, l); g.px(23, 0, l); g.px(0, 23, l); g.px(23, 23, l);
-      speckle(g, r, base, 10, 0.05);
-      break;
-    }
-    case 'grass': {
-      g.r(0, 0, 24, 24, base);
-      speckle(g, r, base, 30, 0.08);
-      for (let i = 0; i < 7; i++) {
-        const x = (r() * 22) | 0;
-        const y = (r() * 21) | 0;
-        g.r(x, y, 1, 2, shade(base, -0.22));
-        g.px(x + 1, y, shade(base, 0.18));
-      }
-      if (v === 3) { g.px(5, 6, '#fff'); g.px(4, 6, '#ffe36e'); g.px(17, 16, '#ff9ec2'); g.px(18, 16, '#fff'); }
-      if (v === 1) { g.px(14, 4, '#c8a2ff'); g.px(15, 5, '#fff'); }
-      break;
-    }
-    case 'dirt':
-    case 'sand': {
-      g.r(0, 0, 24, 24, base);
-      speckle(g, r, base, 26, 0.09);
-      for (let i = 0; i < 3; i++) {
-        const x = (r() * 20) | 0;
-        const y = (r() * 20) | 0;
-        g.r(x, y, 2, 1, shade(base, -0.2)); g.px(x, y - 1, shade(base, 0.2));
-      }
-      break;
-    }
-    case 'water': {
-      g.r(0, 0, 24, 24, base);
-      g.r(3 + v * 3, 8, 6, 1, light(base, 0.4)); g.r(14 - v, 16, 5, 1, light(base, 0.35)); g.r(6, 20, 3, 1, light(base, 0.3));
-      break;
-    }
-    default:
-      g.r(0, 0, 24, 24, base);
-  }
-}
-
-const WALLS = {
-  wall_stone: { top: '#5d5470', face: '#9a93a6', base: '#4b4459' },
-  wall_wood: { top: '#4f301c', face: '#8a5a36', base: '#3f2716' },
-  wall_plaster: { top: '#6b4a2e', face: '#efe3c9', base: '#6b4a2e' },
-  hedge: { top: '#2f6a2c', face: '#3f8a3a', base: '#2a4f22' },
-};
-
-function drawWall(g, type, front) {
-  if (type === 'glass') {
-    if (front) {
-      g.r(0, 0, 24, 5, '#6a5a7e');
-      g.r(0, 5, 24, 15, '#9fd3ee');
-      g.r(0, 5, 12, 15, '#b9a2e8');
-      g.r(12, 5, 12, 7, '#f4d47a');
-      g.r(11, 5, 2, 15, '#4c3f5c'); g.r(0, 12, 24, 1, '#4c3f5c');
-      g.r(3, 7, 1, 4, '#ffffff'); g.r(15, 14, 1, 4, 'rgba(255,255,255,.8)');
-      g.r(0, 20, 24, 4, '#6a5a7e');
-    } else {
-      g.r(0, 0, 24, 24, '#6a5a7e'); g.r(0, 0, 24, 1, '#8a7a9e'); g.r(11, 0, 2, 24, '#5a4a6e');
-    }
-    return;
-  }
-  const pal = WALLS[type] || WALLS.wall_stone;
-  if (!front) {
-    g.r(0, 0, 24, 24, pal.top);
-    g.r(0, 0, 24, 1, light(pal.top, 0.15));
-    if (type === 'hedge') for (let i = 0; i < 6; i++) g.el(4 + i * 4, 12 + ((i % 2) * 4 - 2), 3, 3, light(pal.top, 0.08));
-    return;
-  }
-  g.r(0, 0, 24, 5, pal.top);
-  g.r(0, 4, 24, 1, light(pal.top, 0.2));
-  g.r(0, 5, 24, 16, pal.face);
-  if (type === 'wall_stone') {
-    for (let row = 0; row < 4; row++) {
-      const y = 5 + row * 4;
-      g.r(0, y + 3, 24, 1, shadow(pal.face, 0.2));
-      const off = row % 2 ? 6 : 0;
-      for (let x = off; x < 24; x += 12) { g.r(x, y, 1, 3, shadow(pal.face, 0.2)); g.r(x + 1, y, 10, 1, light(pal.face, 0.12)); }
-    }
-  } else if (type === 'wall_wood') {
-    for (let row = 0; row < 4; row++) {
-      const y = 5 + row * 4;
-      g.r(0, y, 24, 1, light(pal.face, 0.15));
-      g.r(0, y + 3, 24, 1, shadow(pal.face, 0.25));
-    }
-  } else if (type === 'wall_plaster') {
-    g.r(0, 5, 24, 2, '#7a5434');
-    g.r(10, 5, 3, 16, '#7a5434');
-    g.line(0, 20, 10, 8, '#7a5434'); g.line(1, 20, 11, 8, '#7a5434');
-    g.px(18, 11, shade(pal.face, -0.06)); g.px(5, 15, shade(pal.face, -0.06));
-  } else if (type === 'hedge') {
-    for (let i = 0; i < 8; i++) g.el((i * 7) % 24, 7 + ((i * 5) % 12), 3, 3, i % 2 ? light(pal.face, 0.12) : shadow(pal.face, 0.08));
-    g.px(6, 9, '#ff9ec2'); g.px(17, 15, '#fff2a8');
-  }
-  g.r(0, 21, 24, 3, pal.base);
-  g.r(0, 21, 24, 1, light(pal.base, 0.2));
+export function floorColor(type) {
+  return (FLOORS[type] && FLOORS[type].color) || '#333';
 }

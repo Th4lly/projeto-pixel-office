@@ -1,96 +1,131 @@
-// Personalização do avatar com prévia animada nas 4 direções.
+// Personalização: avatar do Ragnarok (classe, cabelo, acessório, arma, mascote) e a aba
+// "Minha mesa" para decorar a própria mesa. Prévia animada nas 4 direções.
 import { h, fill } from './dom.js';
 import { ICONS } from './icons.js';
 import { openModal } from './modal.js';
-import { OPTIONS, PALETTES, PRESETS, avatarSprite, fromPreset, normalizeAvatar, randomAvatar } from '../art/avatar.js';
+import { CAT, IDX, frameCanvas } from '../art/assets.js';
+import { drawAvatar, normalizeAvatar, randomAvatar, bodiesFor, headsFor } from '../art/avatar.js';
+import { classOf, CLASSES } from '../features/d20.js';
 
-const robe = (c) => ['robe', 'priest', 'dress'].includes(c.outfit);
-
-const SECTIONS = [
-  { tab: 'Corpo', label: 'Tom de pele', key: 'skin', colors: PALETTES.skin },
-  { tab: 'Corpo', label: 'Cor dos olhos', key: 'eyes', colors: PALETTES.eyes },
-  { tab: 'Corpo', label: 'Óculos', key: 'glasses', options: OPTIONS.glasses },
-  { tab: 'Cabelo', label: 'Penteado', key: 'hair', options: OPTIONS.hair },
-  { tab: 'Cabelo', label: 'Cor do cabelo', key: 'hairColor', colors: PALETTES.hair, show: (c) => c.hair !== 'bald' },
-  { tab: 'Roupa', label: 'Classe / roupa', key: 'outfit', options: OPTIONS.outfit },
-  { tab: 'Roupa', label: 'Cor principal', key: 'outfitColor', colors: PALETTES.cloth },
-  { tab: 'Roupa', label: 'Cor dos detalhes', key: 'trimColor', colors: PALETTES.cloth },
-  { tab: 'Roupa', label: 'Parte de baixo', key: 'bottom', options: OPTIONS.bottom, show: (c) => !robe(c) },
-  { tab: 'Roupa', label: 'Cor da parte de baixo', key: 'bottomColor', colors: PALETTES.cloth, show: (c) => !robe(c) },
-  { tab: 'Roupa', label: 'Calçado', key: 'shoes', colors: PALETTES.shoes },
-  { tab: 'Acessórios', label: 'Capa', key: 'cape', options: OPTIONS.cape },
-  { tab: 'Acessórios', label: 'Cor da capa', key: 'capeColor', colors: PALETTES.cloth, show: (c) => c.cape !== 'none' },
-  { tab: 'Acessórios', label: 'Enfeite de cabeça', key: 'headgear', options: OPTIONS.headgear },
-  { tab: 'Acessórios', label: 'Cor do enfeite', key: 'gearColor', colors: PALETTES.gear, show: (c) => !['none', 'halo', 'star', 'crown', 'sprout', 'wings'].includes(c.headgear) },
-];
-const TABS = ['Modelos', 'Corpo', 'Cabelo', 'Roupa', 'Acessórios'];
+const TABS = ['Classe', 'Cabelo', 'Acessório', 'Arma', 'Mascote', 'Minha mesa'];
 const DIRS = ['down', 'left', 'up', 'right'];
-const SC = 4;
+const PAGE = 60;
 
-export function openAvatarEditor(app, { welcome = false } = {}) {
+function portrait(cfg, w = 60, hgt = 76) {
+  const c = h('canvas', { width: w, height: hgt });
+  const paint = () => {
+    const ctx = c.getContext('2d');
+    ctx.imageSmoothingEnabled = false;
+    ctx.clearRect(0, 0, w, hgt);
+    drawAvatar(ctx, cfg, 'down', 'stand', 0, w / 2, hgt - 3, hgt / 78);
+  };
+  paint();
+  import('../art/assets.js').then(({ onAssetLoad }) => { const off = onAssetLoad(paint); setTimeout(off, 6000); });
+  return c;
+}
+
+export function openAvatarEditor(app, { welcome = false, tab: startTab } = {}) {
   let cfg = normalizeAvatar(app.me.avatar);
-  let tab = welcome ? 'Modelos' : 'Roupa';
+  let tab = startTab || 'Classe';
   let raf = 0;
+  let page = 0;
+  let hairColor = (IDX.heads.get(cfg.head) || {}).colorKey || 'black';
+  let group = '';
 
-  const preview = h('canvas', { class: 'avatar-preview', width: 4 * 26 * SC + 3 * 14, height: 42 * SC + 8 });
+  const preview = h('canvas', { class: 'avatar-preview', width: 440, height: 150 });
   const nameInput = h('input', { type: 'text', maxlength: 24, value: app.me.name, placeholder: 'Seu nome', 'aria-label': 'Nome de exibição' });
   const tabsEl = h('div', { class: 'seg seg-wide' });
   const optionsBox = h('div', { class: 'avatar-options' });
+  const info = h('p', { class: 'muted small class-info' });
 
   function drawPreview(t) {
     const ctx = preview.getContext('2d');
     ctx.clearRect(0, 0, preview.width, preview.height);
     ctx.imageSmoothingEnabled = false;
-    const walking = Math.floor(t / 1800) % 2 === 1;
-    const frame = walking ? Math.floor(t / 130) % 4 : 0;
+    const phase = Math.floor(t / 2200) % 3;
+    const action = phase === 1 ? 'walk' : phase === 2 ? 'attack' : 'stand';
     DIRS.forEach((dir, i) => {
-      const x = i * (26 * SC + 14);
+      const cx = 55 + i * 110;
       ctx.fillStyle = 'rgba(20,10,40,0.22)';
       ctx.beginPath();
-      ctx.ellipse(x + 13 * SC, 40 * SC, 8 * SC, 2.4 * SC, 0, 0, Math.PI * 2);
+      ctx.ellipse(cx, 140, 22, 6, 0, 0, Math.PI * 2);
       ctx.fill();
-      ctx.drawImage(avatarSprite(cfg, dir, frame), x, 0, 26 * SC, 42 * SC);
+      drawAvatar(ctx, cfg, dir, action, action === 'attack' ? ((t % 2200) / 1000) % 0.6 : t / 1000, cx, 142, 1.6);
     });
     raf = requestAnimationFrame(drawPreview);
   }
 
-  const set = (k, v) => { cfg = { ...cfg, [k]: v }; render(); };
+  const set = (patch) => { cfg = normalizeAvatar({ ...cfg, ...patch }); render(); };
+
+  function pager(total) {
+    const pages = Math.ceil(total / PAGE);
+    if (pages <= 1) return null;
+    return h('div', { class: 'pager' },
+      h('button', { type: 'button', class: 'chip', disabled: page === 0, onclick: () => { page -= 1; render(); } }, '‹'),
+      h('span', { class: 'muted small' }, `${page + 1} / ${pages}`),
+      h('button', { type: 'button', class: 'chip', disabled: page >= pages - 1, onclick: () => { page += 1; render(); } }, '›'));
+  }
+
+  function grid(items, isOn, onPick, thumb) {
+    return h('div', { class: 'preset-grid' }, items.slice(page * PAGE, page * PAGE + PAGE).map((it) =>
+      h('button', { type: 'button', class: `preset ${isOn(it) ? 'on' : ''}`, title: it.name, onclick: () => onPick(it) }, thumb(it), h('span', {}, it.name))));
+  }
 
   function render() {
-    fill(tabsEl, ...TABS.map((t) => h('button', { type: 'button', class: t === tab ? 'on' : '', onclick: () => { tab = t; render(); } }, t)));
-    if (tab === 'Modelos') {
-      fill(optionsBox, h('div', { class: 'preset-grid' }, PRESETS.map((p) => {
-        const c = fromPreset(p);
-        const cv = h('canvas', { width: 52, height: 84 });
-        const x = cv.getContext('2d');
-        x.imageSmoothingEnabled = false;
-        x.drawImage(avatarSprite(c, 'down', 0), 0, 0, 52, 84);
-        return h('button', { type: 'button', class: 'preset', title: p.name, onclick: () => { cfg = c; tab = 'Roupa'; render(); } }, cv, h('span', {}, p.name));
-      })));
-      return;
+    fill(tabsEl, ...TABS.map((t) => h('button', { type: 'button', class: t === tab ? 'on' : '', onclick: () => { tab = t; page = 0; group = ''; render(); } }, t)));
+    const C = CLASSES[classOf(`${cfg.body} ${(IDX.bodies.get(cfg.body) || {}).name}`)];
+    info.textContent = `Combate d20: ${C.name} — dado de vida d${C.die}, foco ${C.focus.map((f) => f.toUpperCase()).join('/')}. Habilidade: ${C.skill.name}.`;
+    const gender = h('div', { class: 'chips' },
+      h('button', { type: 'button', class: `chip ${cfg.gender === 'm' ? 'on' : ''}`, onclick: () => set({ gender: 'm', body: '', head: '' }) }, 'Masculino'),
+      h('button', { type: 'button', class: `chip ${cfg.gender === 'f' ? 'on' : ''}`, onclick: () => set({ gender: 'f', body: '', head: '' }) }, 'Feminino'));
+    if (tab === 'Classe') {
+      const list = bodiesFor(cfg.gender);
+      fill(optionsBox, gender, grid(list, (b) => b.id === cfg.body, (b) => set({ body: b.id }), (b) => portrait({ ...cfg, body: b.id })), pager(list.length));
+    } else if (tab === 'Cabelo') {
+      const all = headsFor(cfg.gender);
+      const colors = [...new Map(all.map((x) => [x.colorKey, x.color])).entries()];
+      const list = all.filter((x) => x.colorKey === hairColor);
+      fill(optionsBox, gender,
+        h('div', { class: 'chips' }, colors.map(([k, label]) => h('button', { type: 'button', class: `chip ${hairColor === k ? 'on' : ''}`, onclick: () => { hairColor = k; page = 0; render(); } }, label))),
+        grid(list, (x) => x.id === cfg.head, (x) => set({ head: x.id }), (x) => portrait({ ...cfg, head: x.id }, 56, 70)), pager(list.length));
+    } else if (tab === 'Acessório') {
+      const groups = [...new Set(CAT.headgears.map((x) => x.group))];
+      const list = CAT.headgears.filter((x) => !group || x.group === group);
+      fill(optionsBox,
+        h('div', { class: 'chips' }, h('button', { type: 'button', class: `chip ${cfg.headgear === 'none' ? 'on' : ''}`, onclick: () => set({ headgear: 'none' }) }, 'Nenhum'),
+          groups.map((g) => h('button', { type: 'button', class: `chip ${group === g ? 'on' : ''}`, onclick: () => { group = g; page = 0; render(); } }, g))),
+        grid(list, (x) => x.id === cfg.headgear, (x) => set({ headgear: x.id }), (x) => frameCanvas(x.s, x.dirs[0], 48)), pager(list.length));
+    } else if (tab === 'Arma') {
+      const groups = [...new Set(CAT.weapons.map((x) => x.group))];
+      const list = CAT.weapons.filter((x) => !group || x.group === group);
+      fill(optionsBox,
+        h('p', { class: 'muted small' }, 'A arma aparece nos ataques da arena. O dano segue a sua classe no sistema d20.'),
+        h('div', { class: 'chips' }, h('button', { type: 'button', class: `chip ${cfg.weapon === 'none' ? 'on' : ''}`, onclick: () => set({ weapon: 'none' }) }, 'Mãos vazias'),
+          groups.map((g) => h('button', { type: 'button', class: `chip ${group === g ? 'on' : ''}`, onclick: () => { group = g; page = 0; render(); } }, g))),
+        grid(list, (x) => x.id === cfg.weapon, (x) => set({ weapon: x.id }), (x) => frameCanvas(x.s, x.icon, 48)), pager(list.length));
+    } else if (tab === 'Mascote') {
+      fill(optionsBox,
+        h('div', { class: 'chips' }, h('button', { type: 'button', class: `chip ${cfg.pet === 'none' ? 'on' : ''}`, onclick: () => set({ pet: 'none' }) }, 'Sem mascote')),
+        grid(CAT.pets, (x) => x.id === cfg.pet, (x) => set({ pet: x.id }), (x) => frameCanvas(x.s, (x.idle && x.idle[0]) || x.frames[0], 48)));
+    } else {
+      fill(optionsBox, h('div', { class: 'desk-tab' },
+        h('p', {}, 'Cada pessoa tem a sua mesa com uma área em volta. Lá você coloca objetos em cima e ao redor, escolhe as cores e troca a cadeira.'),
+        h('button', { type: 'button', class: 'btn-primary', onclick: () => { modal.close(); app.desks.openDecorator(); } }, 'Decorar minha mesa'),
+        app.world.deskOf(app.user.id) ? null : h('p', { class: 'muted small' }, 'Você ainda não tem mesa: vá até uma mesa livre no Escritório e escolha "Reivindicar".')));
     }
-    fill(optionsBox, ...SECTIONS.filter((s) => s.tab === tab && (!s.show || s.show(cfg))).map((s) =>
-      h('div', { class: 'opt-section' },
-        h('div', { class: 'opt-label' }, s.label),
-        s.options
-          ? h('div', { class: 'chips' }, s.options.map(([v, label]) => h('button', { type: 'button', class: `chip ${cfg[s.key] === v ? 'on' : ''}`, onclick: () => set(s.key, v) }, label)))
-          : h('div', { class: 'swatches' },
-            s.colors.map((col) => h('button', {
-              type: 'button', class: `swatch ${cfg[s.key].toLowerCase() === col.toLowerCase() ? 'on' : ''}`, style: `background:${col}`, title: col, 'aria-label': `Cor ${col}`, onclick: () => set(s.key, col),
-            })),
-            h('label', { class: 'swatch custom', title: 'Cor personalizada' },
-              h('input', { type: 'color', value: cfg[s.key], oninput: (e) => { cfg = { ...cfg, [s.key]: e.target.value }; }, onchange: () => render() }), '+')))));
   }
 
   const content = h('div', { class: 'avatar-editor' },
-    welcome ? h('p', { class: 'welcome' }, 'Bem-vindo à guilda! Escolha um modelo ou monte seu personagem. Dá para mudar quando quiser clicando no seu avatar (ou no guarda-roupa da sala de descanso).') : null,
+    welcome ? h('p', { class: 'welcome' }, 'Bem-vindo! Monte seu personagem no estilo Ragnarok. Dá para mudar quando quiser clicando no seu avatar.') : null,
     h('div', { class: 'avatar-stage' }, preview),
+    info,
     h('div', { class: 'name-row' }, h('label', {}, 'Nome', nameInput)),
     tabsEl,
     optionsBox);
 
+  let saved = false;
   const modal = openModal({
-    title: 'Personalizar avatar',
+    title: 'Personalizar',
     content,
     className: 'modal-wide',
     footer: [
@@ -107,7 +142,6 @@ export function openAvatarEditor(app, { welcome = false } = {}) {
       if (welcome && !saved) app.setAvatar(cfg);
     },
   });
-  let saved = false;
   render();
   raf = requestAnimationFrame(drawPreview);
   return modal;

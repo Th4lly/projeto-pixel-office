@@ -151,7 +151,34 @@ export function interact(app, o, def) {
       app.games.openTicTacToe(o);
       break;
     case 'desk':
-      app.docs.openDesk(o);
+      app.desks.open(o);
+      break;
+    case 'meeting': {
+      const z = app.world.zonesAt(o.x, o.y).find((zz) => zz.kind === 'private' || zz.meeting);
+      app.meetings.open(z ? z.id : o.id, z ? z.name : 'Mesa de reunião');
+      break;
+    }
+    case 'phone': {
+      const z = app.world.zonesAt(o.x, o.y).find((zz) => zz.kind === 'private' || zz.meeting);
+      app.calls.openDialer({ place: z ? z.name : 'telefone' });
+      break;
+    }
+    case 'chart': {
+      const z = app.world.zonesAt(o.x, o.y).find((zz) => zz.kind === 'private' || zz.meeting);
+      app.meetings.open(z ? z.id : o.id, z ? z.name : def.name);
+      break;
+    }
+    case 'notion':
+      app.notion.open();
+      break;
+    case 'spawner':
+      app.combat.summon(o);
+      break;
+    case 'arena':
+      app.combat.openSheet();
+      break;
+    case 'slot':
+      app.games.openArcade ? app.games.openArcade(o) : inspect(app, o, def);
       break;
     case 'feed':
       app.docs.openFeed(o);

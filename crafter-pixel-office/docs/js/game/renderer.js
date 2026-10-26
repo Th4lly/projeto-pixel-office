@@ -1,21 +1,24 @@
-// Desenha o escritório: camada de piso em cache + objetos e avatares ordenados por profundidade.
-import { makeCanvas } from '../art/pixel.js';
-import { FLOORS, floorTile, wallTile } from '../art/tiles.js';
-import { OBJECTS, objectSprite } from '../art/objects.js';
-import { avatarSprite } from '../art/avatar.js';
+// Desenha o escritório com os sprites da pasta: camada de piso em cache + objetos,
+// mesas decoradas, monstros e avatares ordenados por profundidade.
+import { onAssetLoad, TILE } from '../art/assets.js';
+import { FLOORS, paintFloor, paintWall } from '../art/tiles.js';
+import { OBJECTS, drawObjectSprite, objectHeight } from '../art/objects.js';
+import { drawAvatar, drawPet, drawWeapon } from '../art/avatar.js';
 import { onStage } from './world.js';
+import { drawDecorItem } from '../features/desks.js';
+import { IDX, image, drawFrame, frameAt } from '../art/assets.js';
 
-const ZOOMS = [1, 1.5, 2, 2.5, 3, 4];
+const ZOOMS = [0.5, 0.75, 1, 1.25, 1.5, 2, 2.5];
 const STATUS_COLORS = { online: '#3ddc84', busy: '#ff5d5d', away: '#ffc93c' };
 const FONT = 'Nunito, Inter, system-ui, -apple-system, Segoe UI, sans-serif';
-const ZONE_COLORS = { private: 'rgba(255, 201, 60, .9)', spotlight: 'rgba(255, 120, 200, .9)', area: 'rgba(255,255,255,.55)' };
+const ZONE_COLORS = { private: 'rgba(255, 201, 60, .9)', spotlight: 'rgba(255, 120, 200, .9)', area: 'rgba(255,255,255,.55)', arena: 'rgba(255, 80, 80, .9)', pvp: 'rgba(255, 40, 40, 1)' };
 
 export class Renderer {
   constructor(canvas, app) {
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d');
     this.app = app;
-    this.zoomIdx = window.innerWidth > 1700 ? 3 : 2;
+    this.zoomIdx = window.innerWidth > 1700 ? 4 : 3;
     this.layer = null;
     this.dirty = true;
     this.ox = 0;
@@ -23,11 +26,13 @@ export class Renderer {
     this.floaters = [];
     this.resize();
     window.addEventListener('resize', () => this.resize());
+    onAssetLoad(() => { this.dirty = true; });
   }
 
   get dpr() { return window.devicePixelRatio || 1; }
-  get S() { return Math.max(1, Math.round(ZOOMS[this.zoomIdx] * this.dpr)); }
-  get T() { return 24 * this.S; }
+  /** pixels de tela por pixel de mundo */
+  get S() { return ZOOMS[this.zoomIdx] * this.dpr; }
+  get T() { return TILE * this.S; }
 
   zoomBy(d) { this.zoomIdx = Math.max(0, Math.min(ZOOMS.length - 1, this.zoomIdx + d)); }
 
@@ -54,36 +59,39 @@ export class Renderer {
 
   buildLayer() {
     const w = this.app.world;
-    const W = w.width * 24;
-    const H = w.height * 24;
-    if (!this.layer || this.layer.width !== W || this.layer.height !== H) this.layer = makeCanvas(W, H);
+    const W = w.width * TILE;
+    const H = w.height * TILE;
+    if (!this.layer || this.layer.width !== W || this.layer.height !== H) {
+      this.layer = document.createElement('canvas');
+      this.layer.width = W;
+      this.layer.height = H;
+    }
     const ctx = this.layer.getContext('2d');
+    ctx.imageSmoothingEnabled = false;
     ctx.clearRect(0, 0, W, H);
+    let complete = true;
     for (let y = 0; y < w.height; y++) {
       for (let x = 0; x < w.width; x++) {
         const t = w.floorAt(x, y);
         const f = FLOORS[t] || FLOORS.void;
-        ctx.drawImage(f.wall ? wallTile(t, !w.isWall(x, y + 1)) : floorTile(t, x, y), x * 24, y * 24);
-        // sombra projetada pela parede de cima
-        if (!f.wall && w.isWall(x, y - 1) && t !== 'void') {
-          const g = ctx.createLinearGradient(0, y * 24, 0, y * 24 + 9);
-          g.addColorStop(0, 'rgba(30,18,50,.38)');
-          g.addColorStop(1, 'rgba(30,18,50,0)');
+        const ok = f.wall ? paintWall(ctx, t, x, y, !w.isWall(x, y + 1)) : paintFloor(ctx, t, x, y);
+        if (!ok) complete = false;
+        if (!f.wall && t !== 'void' && w.isWall(x, y - 1)) {
+          const g = ctx.createLinearGradient(0, y * TILE, 0, y * TILE + 10);
+          g.addColorStop(0, 'rgba(20,12,30,.42)');
+          g.addColorStop(1, 'rgba(20,12,30,0)');
           ctx.fillStyle = g;
-          ctx.fillRect(x * 24, y * 24, 24, 9);
-        }
-        if (!f.wall && w.isWall(x - 1, y) && t !== 'void') {
-          ctx.fillStyle = 'rgba(30,18,50,.16)';
-          ctx.fillRect(x * 24, y * 24, 4, 24);
+          ctx.fillRect(x * TILE, y * TILE, TILE, 10);
         }
       }
     }
     for (const o of w.objects) {
       const def = OBJECTS[o.type];
       if (!def || !def.flat) continue;
-      ctx.drawImage(objectSprite(o, def), o.x * 24 - 1, (o.y + def.h) * 24 - def.ah - 1);
+      if (!drawObjectSprite(ctx, o, def, o.x * TILE, o.y * TILE, 1, 0)) complete = false;
     }
     this.dirty = false;
+    this.complete = complete;
   }
 
   draw(time) {
@@ -93,7 +101,6 @@ export class Renderer {
     const cw = this.canvas.width;
     const ch = this.canvas.height;
     if (this.dirty) this.buildLayer();
-    const frame = Math.floor(time * 6) % 4;
 
     const me = app.me;
     const mapW = app.world.width * T;
@@ -108,19 +115,30 @@ export class Renderer {
     ctx.fillRect(0, 0, cw, ch);
     ctx.drawImage(this.layer, ox, oy, this.layer.width * S, this.layer.height * S);
 
-    const vx0 = -ox / T - 4, vy0 = -oy / T - 4, vx1 = (cw - ox) / T + 4, vy1 = (ch - oy) / T + 4;
+    const vx0 = -ox / T - 6, vy0 = -oy / T - 6, vx1 = (cw - ox) / T + 6, vy1 = (ch - oy) / T + 6;
     const items = [];
     for (const o of app.world.objects) {
       const def = OBJECTS[o.type];
       if (!def || def.flat) continue;
       if (o.x + def.w < vx0 || o.x > vx1 || o.y + def.h < vy0 || o.y > vy1) continue;
-      items.push({ z: o.y + def.h - (def.walk ? 0.9 : 0), o, def });
+      const z = def.wall ? o.y - 0.5 : def.small ? o.y + def.h + 0.05 : o.y + def.h - (def.walk ? 0.9 : 0);
+      items.push({ z, o, def });
+      if (def.desk && o.data && Array.isArray(o.data.decor) && o.data.decor.length && app.desks) {
+        const zone = app.desks.zoneOf(o);
+        for (const d of o.data.decor) {
+          const dz = d.layer === 'top' ? z + 0.01 : zone.y + d.dy / TILE;
+          items.push({ z: dz, draw: (c, ox2, oy2, S2) => drawDecorItem(c, d, ox2 + (zone.x * TILE + d.dx) * S2, oy2 + (zone.y * TILE + d.dy) * S2, S2, time) });
+        }
+      }
     }
     for (const p of app.players.values()) items.push({ z: p.ry + 1.001 + (this.isSitting(p) ? 0.002 : 0), p });
+    if (app.combat) app.combat.collect(items, vx0, vy0, vx1, vy1);
+    if (app.npcs) app.npcs.collect(items);
     items.sort((a, b) => a.z - b.z);
     for (const it of items) {
-      if (it.o) this.drawObject(it.o, it.def, ox, oy, S, T, it.o === app.target, frame);
-      else this.drawPlayer(it.p, ox, oy, S, T);
+      if (it.o) this.drawObject(it.o, it.def, ox, oy, S, T, it.o === app.target, time);
+      else if (it.p) this.drawPlayer(it.p, ox, oy, S, T, time);
+      else if (it.draw) it.draw(ctx, ox, oy, S, T, time);
     }
 
     this.drawGlows(ox, oy, S, T, time);
@@ -128,52 +146,63 @@ export class Renderer {
     this.drawBadges(ox, oy, S, T);
     this.drawPrivateDim(ox, oy, T, cw, ch);
     if (app.build.on) this.drawBuild(ox, oy, S, T);
+    if (app.combat) app.combat.drawOverlay(ctx, ox, oy, S, T, time);
     for (const p of app.players.values()) this.drawOverhead(p, S);
     this.drawFloaters(ox, oy, T);
   }
 
-  drawObject(o, def, ox, oy, S, T, highlight, frame = 0) {
-    const spr = objectSprite(o, def, frame);
-    const x = ox + o.x * T - S;
-    const y = oy + (o.y + def.h) * T - (def.ah + 1) * S;
+  drawObject(o, def, ox, oy, S, T, highlight, time = 0) {
     const { ctx } = this;
+    const x0 = ox + o.x * T;
+    const y0 = oy + o.y * T;
+    const sk = this.app.desks && this.app.desks.skinFor(o);
+    let oo = o;
+    let dd = def;
+    if (sk) {
+      oo = { ...o, type: sk.type, color: sk.color || o.color, rot: sk.rot || o.rot };
+      const alt = OBJECTS[sk.type];
+      // mantém a área do original: a mesa/cadeira trocada é desenhada no mesmo lugar
+      dd = { ...alt, w: def.w, h: def.h };
+    }
     if (highlight) {
       ctx.save();
       ctx.shadowColor = 'rgba(255, 216, 77, 1)';
-      ctx.shadowBlur = 16 * this.dpr;
-      ctx.drawImage(spr, x, y, spr.width * S, spr.height * S);
+      ctx.shadowBlur = 14 * this.dpr;
+      drawObjectSprite(ctx, oo, dd, x0, y0, S, time);
       ctx.restore();
     } else {
-      ctx.drawImage(spr, x, y, spr.width * S, spr.height * S);
+      drawObjectSprite(ctx, oo, dd, x0, y0, S, time);
     }
   }
 
-  drawPlayer(p, ox, oy, S, T) {
+  drawPlayer(p, ox, oy, S, T, time = 0) {
     const { ctx } = this;
     const sit = this.isSitting(p);
     const cx = ox + (p.rx + 0.5) * T;
-    const by = oy + (p.ry + 1) * T;
+    const by = oy + (p.ry + 1) * T - 3 * S;
+    const action = p.action && p.actionUntil > performance.now() ? p.action : p.dead ? 'dead' : sit ? 'sit' : p.moving ? 'walk' : 'stand';
     if (!sit) {
-      ctx.fillStyle = 'rgba(20,10,40,0.25)';
+      ctx.fillStyle = 'rgba(20,10,40,0.28)';
       ctx.beginPath();
-      ctx.ellipse(cx, by - 4 * S, 7 * S, 2.5 * S, 0, 0, Math.PI * 2);
+      ctx.ellipse(cx, by - 1 * S, 9 * S, 3.2 * S, 0, 0, Math.PI * 2);
       ctx.fill();
     }
     if (onStage(this.app.world, p)) {
       ctx.save();
       ctx.globalCompositeOperation = 'lighter';
-      const g = ctx.createRadialGradient(cx, by - 20 * S, 0, cx, by - 20 * S, 26 * S);
+      const g = ctx.createRadialGradient(cx, by - 26 * S, 0, cx, by - 26 * S, 34 * S);
       g.addColorStop(0, 'rgba(255,190,240,.35)');
       g.addColorStop(1, 'rgba(0,0,0,0)');
       ctx.fillStyle = g;
-      ctx.fillRect(cx - 26 * S, by - 46 * S, 52 * S, 52 * S);
+      ctx.fillRect(cx - 34 * S, by - 60 * S, 68 * S, 68 * S);
       ctx.restore();
     }
-    const spr = avatarSprite(p.avatar, p.dir, p.frame(), sit);
-    const dy = by - 43 * S - (sit ? 4 * S : 0);
-    ctx.drawImage(spr, Math.round(cx - 13 * S), Math.round(dy), 26 * S, 42 * S);
+    drawPet(ctx, p.avatar, p.dir, time, cx, by, S);
+    const t = action === 'walk' ? p.animT : action === 'attack' ? (performance.now() - p.actionStart) / 1000 : time;
+    const top = drawAvatar(ctx, p.avatar, p.dir, action, t, cx, by + (sit ? -4 * S : 0), S, p.ghost ? 0.5 : 1);
+    if (action === 'attack') drawWeapon(ctx, p.avatar, p.dir, cx, by, S, Math.min(1, t * 3));
     p._cx = cx;
-    p._top = dy + 2 * S;
+    p._top = top;
   }
 
   drawOverhead(p, S) {
@@ -263,9 +292,19 @@ export class Renderer {
       else {
         ctx.save();
         ctx.globalAlpha = Math.min(1, (2.6 - age) * 2);
-        ctx.font = `${24 * dpr}px ${FONT}`;
-        ctx.textAlign = 'center';
-        ctx.fillText(p.emote.e, p._cx, y - 14 * dpr - age * 14 * dpr + Math.sin(age * 8) * 2 * dpr);
+        const ey = y - 14 * dpr - age * 14 * dpr + Math.sin(age * 8) * 2 * dpr;
+        if (String(p.emote.e).startsWith('img:')) {
+          const em = IDX.emotes.get(p.emote.e.slice(4));
+          if (em && em.files) {
+            const sid = em.files[Math.floor(age * 8) % em.files.length];
+            const img = image(sid);
+            if (img) ctx.drawImage(img, p._cx - 16 * S, ey - 30 * S, 32 * S, 32 * S);
+          } else if (em) drawFrame(ctx, em.s, frameAt(em.frames, age, 8), p._cx, ey + 6 * dpr, S * 0.9);
+        } else {
+          ctx.font = `${24 * dpr}px ${FONT}`;
+          ctx.textAlign = 'center';
+          ctx.fillText(p.emote.e, p._cx, ey);
+        }
         ctx.restore();
       }
     }
@@ -300,7 +339,7 @@ export class Renderer {
     ctx.textBaseline = 'middle';
     for (const z of this.app.world.zones) {
       if (!z.name) continue;
-      const icon = z.kind === 'private' ? '🔒 ' : z.kind === 'spotlight' ? '📢 ' : '';
+      const icon = z.kind === 'private' ? '🔒 ' : z.kind === 'spotlight' ? '📢 ' : z.kind === 'pvp' ? '⚔️ ' : z.kind === 'arena' ? '🐉 ' : z.kind === 'desk' ? '🪑 ' : '';
       const text = icon + z.name;
       const w = ctx.measureText(text).width + 20 * dpr;
       const h = 22 * dpr;
@@ -323,7 +362,7 @@ export class Renderer {
       if (!def || !def.light) continue;
       if (!def.light.always && !(o.state && o.state.on)) continue;
       const cx = ox + (o.x + def.w / 2) * T;
-      const cy = oy + (o.y + def.h) * T - def.ah * S * 0.75;
+      const cy = oy + (o.y + def.h - objectHeight(def) * 0.75) * T;
       const r = def.light.r * T * (1 + Math.sin(time * 3 + o.x) * 0.03);
       const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
       g.addColorStop(0, def.light.color);
@@ -347,7 +386,7 @@ export class Renderer {
       if (!o || !n) continue;
       const def = OBJECTS[o.type];
       const x = ox + (o.x + def.w) * T - 4 * dpr;
-      const y = oy + (o.y + def.h) * T - def.ah * S - 2 * dpr;
+      const y = oy + (o.y + def.h - objectHeight(def)) * T - 2 * dpr;
       ctx.fillStyle = '#ff4d6d';
       ctx.beginPath();
       ctx.arc(x, y, 9 * dpr, 0, Math.PI * 2);
@@ -411,7 +450,7 @@ export class Renderer {
         const def = OBJECTS[b.item];
         const ok = app.buildPanel.canPlace(b.item, h.x, h.y);
         ctx.globalAlpha = 0.65;
-        this.drawObject({ id: 'ghost', type: b.item, x: h.x, y: h.y, color: b.color, state: { on: true } }, def, ox, oy, S, T, false);
+        this.drawObject({ id: 'ghost', type: b.item, x: h.x, y: h.y, color: b.color, rot: b.rot, state: { on: true } }, def, ox, oy, S, T, false);
         ctx.globalAlpha = 1;
         ctx.strokeStyle = ok ? '#3ddc84' : '#ff5d5d';
         ctx.lineWidth = 2 * dpr;

@@ -1,8 +1,32 @@
 # Crafter Pixel Office — escritório virtual estilo RPG
 
-Escritório virtual multiplayer inspirado no Gather, com visual de RPG anime em pixel art (arte **original**, desenhada em código). O site roda no **GitHub Pages** (grátis, sem servidor) e o **Supabase** cuida de login, banco, tempo real e funções.
+Escritório virtual multiplayer inspirado no Gather, com visual de RPG em pixel art no estilo **Ragnarok Online**. Todo o gráfico vem da pasta de sprites `Pixel office` (personagens, monstros e efeitos do Ragnarok, tilesets e móveis de vários pacotes, interface "Paper UI", ícones de apps). O site roda no **GitHub Pages** e o **Supabase** cuida de login, banco, tempo real e funções.
+
+> **Uso pessoal e de estudo.** Os sprites do Ragnarok são da Gravity e vários pacotes da pasta têm licença própria (veja `docs/assets/licenses`). Mantenha o repositório/site privado e não use comercialmente.
 
 ## O que tem
+
+**Visual novo (v2)**
+- Avatares do Ragnarok: 49 classes (masc./fem.), 900+ cabelos em 9 cores, 600+ acessórios de cabeça, 600+ armas e mascotes que seguem você.
+- Pisos, paredes e mais de 1.800 objetos recortados da pasta (escritório pixel, móveis modernos, nobres em 8 cores, café, cantinho de leitura, masmorra, natureza…).
+- Botões e molduras com o Paper UI, cursor do Ragnarok e **relógio com o horário local** (canto inferior direito) com o ciclo de dia e noite.
+- `docs/assets/USO.md` lista cada arquivo da pasta e onde ele é usado.
+
+**Telefone e chamadas**
+- Botão de **telefone** na barra: escolha com quem quer se conectar (uma ou várias pessoas), de qualquer lugar do mapa. A pessoa recebe a chamada e atende ou recusa.
+- Ligue **da sua mesa** ou do **telefone das salas de reunião**: quem atende entra na reunião com todos que estão na sala, sem precisar ir até lá.
+- Na reunião: **anexos** (arrastar e soltar, até 25 MB), **planilhas conectadas** (Google Sheets, Excel Online, Airtable — aparecem ao vivo) e **gráficos** (barras, linhas ou pizza) feitos de uma planilha ou de dados colados.
+
+**Mesa própria**
+- Cada mesa tem a sua área. Reivindique uma e decore livremente: objetos **em cima** e **em volta**, adesivos de apps, cor (matiz, saturação, brilho), tamanho e espelho de cada item, **modelo/cor da mesa** e **cadeira**. Aba "Minha mesa" na personalização (ou botão da mesa na barra).
+
+**Arenas (combate d20 do guia "Ragnarok d20")**
+- Ao lado do jardim fica a **Ala das Arenas**: Arena dos Monstros, Covil do Chefe (MvP Bafomé), Sala de Treino e a **Arena PvP** — o único lugar onde jogadores podem lutar entre si.
+- Atributos FOR/AGI/VIT/INT/DES/SOR, CA = 10 + AGI + Hard DEF, ataque d20 + DES + BAB, Soft DEF, crítico por SOR, esquiva perfeita, ASPD, elementos, status (Atordoamento, Congelamento, Petrificação, Maldição, Silêncio, Envenenamento) com testes de resistência, níveis de base e de classe.
+- A classe vem do avatar (Cavaleiro, Bruxo, Algoz, Sacerdote + Arqueiro, Mercador, Aprendiz). Habilidades: Impacto de Tyr, Nevasca, Lâminas Destruidoras, Magnificat, Curar… Teclas **F** (atacar), **R**/**T** (habilidades), **G** (Amplificação Mística).
+
+**Notion**
+- Botão do Notion na barra: board **da empresa** (o administrador conecta) e boards **individuais**, com a opção "só os meus cards". Arraste cards entre colunas e crie cards novos.
 
 **Comunicação por proximidade**
 - Câmera e microfone conectam sozinhos quando você chega perto de alguém que também ligou os dele, e desconectam quando você se afasta.
@@ -85,6 +109,19 @@ Abra o link e **cadastre-se primeiro**: a primeira conta vira **administradora**
 
 ---
 
+## Atualizar para a v2 (visual com sprites, arenas, mesas, Notion)
+
+1. No **SQL Editor** do Supabase, rode `supabase/migrations/20261024000000_pixeloffice_v2.sql` (depois da migração original). Ela cria as mesas próprias, o progresso de combate, os anexos de reunião (bucket `meeting-files`) e as tabelas do Notion.
+2. Abra o jogo: o escritório antigo é trocado automaticamente pelo novo (uma vez, para todos).
+3. **Notion (opcional):** publique a função `notion` (`supabase functions deploy notion`) e, em **Edge Functions → Secrets**, crie `NOTION_TOKEN` com o token de uma integração interna (notion.so/my-integrations). No Notion, compartilhe a base com a integração (••• → Conexões).
+
+### Regerar os gráficos a partir da pasta de sprites
+```bash
+pip install pillow numpy scipy
+python3 tools/build_assets.py "C:/Users/Thallyta/Downloads/Pixel office"
+```
+O script copia todas as imagens para `docs/assets`, limpa as folhas do Ragnarok (fundo, divisórias e rótulos), recorta folhas em quadros/animações e gera `docs/assets/catalog.json`, `usage.json` e `USO.md`. Fontes `.aseprite`, licenças e leia-mes vão para `assets-src/`.
+
 ## Opcionais
 
 **Notas de reunião com IA**
@@ -116,6 +153,7 @@ Para usar outro projeto Supabase localmente, copie `.env.example` para `.env` e 
 npm start        # http://localhost:8080 (não precisa instalar nada)
 npm run check    # verifica a sintaxe de todo o código
 ```
+No modo demonstração, anexos de reunião ficam no navegador (até 2,5 MB) e o Notion não funciona (precisa da função do Supabase).
 
 `docs/dev/sprites.html` mostra a folha com todos os avatares, móveis e pisos.
 

@@ -2,19 +2,25 @@
 import { $, h, uid, toast, fill } from './dom.js';
 import { ICONS } from './icons.js';
 import { openModal, confirmBox, promptBox } from './modal.js';
-import { FLOORS, FLOOR_TYPES, WALL_TYPES, floorTile, wallTile } from '../art/tiles.js';
-import { OBJECTS, OBJECT_CATEGORIES, objectSprite } from '../art/objects.js';
+import { FLOORS, FLOOR_TYPES, WALL_TYPES, paintFloor, paintWall } from '../art/tiles.js';
+import { OBJECTS, OBJECT_CATEGORIES, objectThumb } from '../art/objects.js';
+import { onAssetLoad, TILE } from '../art/assets.js';
 import { normRect } from '../game/renderer.js';
 
 const TABS = [['floors', 'Pisos'], ['walls', 'Paredes'], ['objects', 'Objetos'], ['zones', 'Áreas']];
-const KIND_LABEL = { area: 'Área comum', private: '🔒 Privada', spotlight: '📢 Destaque (palco)' };
+const KIND_LABEL = { area: 'Área comum', private: '🔒 Privada (reunião)', spotlight: '📢 Destaque (palco)', desk: '🪑 Área de mesa', arena: '🐉 Arena de monstros', pvp: '⚔️ Arena PvP' };
+const ROTS = [['s', '↓'], ['w', '←'], ['n', '↑'], ['e', '→']];
+const PAGE = 90;
 
-function thumb(img, size = 46) {
+function tileThumb(type, size = 46) {
   const c = h('canvas', { width: size, height: size });
   const ctx = c.getContext('2d');
   ctx.imageSmoothingEnabled = false;
-  const scale = Math.min(size / img.width, size / img.height);
-  ctx.drawImage(img, (size - img.width * scale) / 2, (size - img.height * scale) / 2, img.width * scale, img.height * scale);
+  const paint = () => {
+    ctx.setTransform(size / TILE, 0, 0, size / TILE, 0, 0);
+    return FLOORS[type].wall ? paintWall(ctx, type, 0, 0, true) : paintFloor(ctx, type, 0, 0);
+  };
+  if (!paint()) { const off = onAssetLoad(() => { if (paint()) off(); }); }
   return c;
 }
 
@@ -40,9 +46,9 @@ export class BuildPanel {
   setTab(tab) {
     const s = this.state;
     s.tab = tab;
-    if (tab === 'floors') { s.item = FLOOR_TYPES.includes(s.item) ? s.item : 'wood'; s.tool = s.tool === 'rect' ? 'rect' : 'brush'; }
-    if (tab === 'walls') { s.item = WALL_TYPES.includes(s.item) ? s.item : 'wall_stone'; s.tool = s.tool === 'rect' ? 'rect' : 'brush'; }
-    if (tab === 'objects') { s.item = OBJECTS[s.item] ? s.item : 'plant'; s.tool = 'place'; s.color = OBJECTS[s.item].color || null; }
+    if (tab === 'floors') { s.item = FLOOR_TYPES.includes(s.item) ? s.item : FLOOR_TYPES[0]; s.tool = s.tool === 'rect' ? 'rect' : 'brush'; }
+    if (tab === 'walls') { s.item = WALL_TYPES.includes(s.item) ? s.item : WALL_TYPES[0]; s.tool = s.tool === 'rect' ? 'rect' : 'brush'; }
+    if (tab === 'objects') { s.item = OBJECTS[s.item] ? s.item : 'plant'; s.tool = 'place'; s.color = null; s.rot = null; }
     if (tab === 'zones') s.tool = 'zone';
     this.render();
   }
@@ -55,8 +61,8 @@ export class BuildPanel {
       const types = s.tab === 'floors' ? FLOOR_TYPES : WALL_TYPES;
       body = [
         h('div', { class: 'tools' }, tool('brush', 'brush', 'Pincel'), tool('rect', 'rect', 'Retângulo')),
-        h('div', { class: 'palette' }, types.map((t) => h('button', { type: 'button', class: `pal-item ${s.item === t ? 'on' : ''}`, title: FLOORS[t].name, onclick: () => { s.item = t; this.render(); } },
-          thumb(FLOORS[t].wall ? wallTile(t, true) : floorTile(t, 0, 0)), h('span', {}, FLOORS[t].name)))),
+        h('div', { class: 'palette' }, types.map((t) => h('button', { type: 'button', class: `pal-item ${s.item === t ? 'on' : ''}`, title: `${FLOORS[t].name}${FLOORS[t].pack ? ` — ${FLOORS[t].pack}` : ''}`, onclick: () => { s.item = t; this.render(); } },
+          tileThumb(t), h('span', {}, FLOORS[t].name)))),
         h('p', { class: 'muted small' }, s.tab === 'walls' ? 'Paredes bloqueiam a passagem. Abra um vão e coloque uma Porta (aba Objetos → Mágico).' : 'Clique e arraste no mapa para pintar.'),
       ];
     } else if (s.tab === 'objects') {
@@ -66,8 +72,11 @@ export class BuildPanel {
       const listBox = h('div', {});
       body = [
         h('div', { class: 'tools' }, tool('place', 'cursor', 'Colocar'), tool('edit', 'brush', 'Editar texto'), tool('erase', 'eraser', 'Remover')),
-        def && def.colorable && s.tool === 'place'
-          ? h('label', { class: 'color-row' }, 'Cor do objeto', h('input', { type: 'color', value: s.color || def.color, oninput: (e) => { s.color = e.target.value; } }))
+        def && def.variants && s.tool === 'place'
+          ? h('label', { class: 'color-row' }, 'Cor', h('select', { onchange: (e) => { s.color = e.target.value; } }, Object.keys(def.variants).map((c) => h('option', { value: c, selected: s.color === c }, c))))
+          : null,
+        def && def.rot && s.tool === 'place'
+          ? h('div', { class: 'color-row' }, 'Direção', ...ROTS.filter(([r]) => def.rot[r]).map(([r, l]) => h('button', { type: 'button', class: `chip ${s.rot === r ? 'on' : ''}`, onclick: () => { s.rot = r; this.render(); } }, l)))
           : null,
         s.tool === 'edit' ? h('p', { class: 'muted small' }, 'Clique numa placa, estandarte, quadro, TV ou portal para editar o texto ou link.') : null,
         search,
@@ -100,16 +109,24 @@ export class BuildPanel {
 
   renderList(box, q = this.state.filter.toLowerCase()) {
     const s = this.state;
-    fill(box, ...OBJECT_CATEGORIES.map((cat) => {
-      const items = Object.entries(OBJECTS).filter(([, d]) => d.cat === cat && (!q || d.name.toLowerCase().includes(q)));
-      if (!items.length) return null;
-      return h('div', {},
-        h('div', { class: 'opt-label' }, cat),
-        h('div', { class: 'palette' }, items.map(([type, d]) => h('button', {
-          type: 'button', class: `pal-item ${s.item === type && s.tool === 'place' ? 'on' : ''}`, title: `${d.name} — ${d.desc || ''}`,
-          onclick: () => { s.item = type; s.tool = 'place'; s.color = d.color || null; this.render(); },
-        }, thumb(objectSprite({ type, color: d.color, state: { on: true } }, d)), h('span', {}, d.name)))));
-    }).filter(Boolean));
+    s.cat = s.cat || 'Interativos';
+    const catSel = h('select', { class: 'search', onchange: (e) => { s.cat = e.target.value; s.page = 0; this.renderList(box); } },
+      h('option', { value: '*' }, `Todas as categorias (${Object.keys(OBJECTS).length})`),
+      OBJECT_CATEGORIES.map((c) => h('option', { value: c, selected: s.cat === c }, `${c} (${Object.values(OBJECTS).filter((d) => d.cat === c).length})`)));
+    const items = Object.entries(OBJECTS).filter(([, d]) => (s.cat === '*' || q || d.cat === s.cat) && (!q || d.name.toLowerCase().includes(q) || d.cat.toLowerCase().includes(q)));
+    const page = s.page || 0;
+    const slice = items.slice(page * PAGE, page * PAGE + PAGE);
+    const pages = Math.ceil(items.length / PAGE);
+    fill(box,
+      catSel,
+      h('div', { class: 'palette' }, slice.map(([type, d]) => h('button', {
+        type: 'button', class: `pal-item ${s.item === type && s.tool === 'place' ? 'on' : ''}`, title: `${d.name} — ${d.cat}${d.desc ? ` — ${d.desc}` : ''}`,
+        onclick: () => { s.item = type; s.tool = 'place'; s.color = d.variants ? Object.keys(d.variants)[0] : null; s.rot = d.rot ? 's' : null; this.render(); },
+      }, objectThumb(type, 46), h('span', {}, d.name)))),
+      pages > 1 ? h('div', { class: 'pager' },
+        h('button', { type: 'button', class: 'chip', disabled: page === 0, onclick: () => { s.page = page - 1; this.renderList(box); } }, '‹'),
+        h('span', { class: 'muted small' }, `${page + 1} / ${pages}`),
+        h('button', { type: 'button', class: 'chip', disabled: page >= pages - 1, onclick: () => { s.page = page + 1; this.renderList(box); } }, '›')) : null);
   }
 
   objectAt(x, y) {
@@ -123,8 +140,9 @@ export class BuildPanel {
     for (let yy = y; yy < y + def.h; yy++) {
       for (let xx = x; xx < x + def.w; xx++) {
         if (!w.inBounds(xx, yy) || w.floorAt(xx, yy) === 'void') return false;
-        if (w.isWall(xx, yy) && !def.door) return false;
-        if (!def.flat && w.objectsAt(xx, yy).some((o) => !OBJECTS[o.type].flat)) return false;
+        if (w.isWall(xx, yy) && !def.door && !def.wall) return false;
+        if (def.wall) continue;
+        if (!def.flat && !def.small && w.objectsAt(xx, yy).some((o) => !OBJECTS[o.type].flat && !OBJECTS[o.type].small && !OBJECTS[o.type].wall)) return false;
       }
     }
     return true;
@@ -146,7 +164,8 @@ export class BuildPanel {
         const def = OBJECTS[s.item];
         const obj = { id: uid('o'), type: s.item, x: t.x, y: t.y, state: def.light && !def.light.always ? { on: true } : {}, data: {} };
         if (def.door) obj.state = { open: true };
-        if (def.colorable) obj.color = s.color || def.color;
+        if (def.variants && s.color) obj.color = s.color;
+        if (def.rot && s.rot) obj.rot = s.rot;
         this.app.edit([{ t: 'add', obj }]);
       } else if (s.tool === 'edit') {
         const o = this.objectAt(t.x, t.y);
@@ -214,7 +233,7 @@ export class BuildPanel {
     const modal = openModal({
       title: isNew ? 'Nova área' : 'Editar área',
       content: h('div', { class: 'form-stack' }, h('label', {}, 'Nome da área', name), h('label', {}, 'Tipo', kind),
-        h('p', { class: 'muted small' }, 'Privada: chat "perto" e vídeo só entre quem está dentro. Destaque: microfone de quem está dentro chega a todo o escritório.')),
+        h('p', { class: 'muted small' }, 'Privada: chat "perto" e vídeo só entre quem está dentro (salas de reunião). Destaque: microfone chega a todo o escritório. Área de mesa: espaço que o dono da mesa decora. Arena: monstros. Arena PvP: único lugar onde jogadores podem lutar entre si.')),
       footer: [h('button', { type: 'button', class: 'btn-secondary', onclick: () => modal.close() }, 'Cancelar'), h('button', { type: 'button', class: 'btn-primary', onclick: save }, 'Salvar')],
     });
     name.addEventListener('keydown', (e) => { if (e.key === 'Enter') save(); });

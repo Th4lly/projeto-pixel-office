@@ -79,10 +79,37 @@ export class World {
     return this.zones.filter((z) => x >= z.x && x < z.x + z.w && y >= z.y && y < z.y + z.h);
   }
 
-  /** Área mais relevante: privada > destaque > comum. */
+  /** Área mais relevante: privada > destaque > arenas > mesa > comum. */
   zoneAt(x, y) {
     const list = this.zonesAt(x, y);
-    return list.find((z) => z.kind === 'private') || list.find((z) => z.kind === 'spotlight') || list[0] || null;
+    return list.find((z) => z.kind === 'private') || list.find((z) => z.kind === 'spotlight') || list.find((z) => z.kind === 'pvp')
+      || list.find((z) => z.kind === 'arena') || list.find((z) => z.kind === 'desk') || list[0] || null;
+  }
+
+  pvpAt(x, y) {
+    return this.zonesAt(x, y).find((z) => z.kind === 'pvp') || null;
+  }
+
+  arenaAt(x, y) {
+    return this.zonesAt(x, y).find((z) => z.kind === 'arena' || z.kind === 'pvp') || null;
+  }
+
+  /** Mesa dentro de uma área de mesa. */
+  deskOfZone(z) {
+    if (!z) return null;
+    return this.objects.find((o) => {
+      const d = OBJECTS[o.type];
+      return d && d.desk && o.x >= z.x && o.y >= z.y && o.x < z.x + z.w && o.y < z.y + z.h;
+    }) || null;
+  }
+
+  deskZoneOf(desk) {
+    return this.zones.find((z) => z.kind === 'desk' && desk.x >= z.x && desk.y >= z.y && desk.x < z.x + z.w && desk.y < z.y + z.h) || null;
+  }
+
+  /** A mesa da pessoa (reivindicada por uid). */
+  deskOf(uid) {
+    return this.objects.find((o) => OBJECTS[o.type] && OBJECTS[o.type].desk && o.data && o.data.owner && o.data.owner.uid === uid) || null;
   }
 
   privateZoneAt(x, y) {
@@ -108,6 +135,7 @@ export class World {
     for (const o of this.objects) {
       const d = OBJECTS[o.type];
       if (!d || !d.interact || d.interact === 'sit' || d.flat) continue;
+      if (!d.functional && d.interact === 'inspect') continue;
       const dist = this.distanceToObject(o, x, y);
       if (dist > 1) continue;
       const score = Math.abs(o.x + d.w / 2 - 0.5 - x) + Math.abs(o.y + d.h / 2 - 0.5 - y);

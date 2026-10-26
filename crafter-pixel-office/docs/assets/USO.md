@@ -1,0 +1,3018 @@
+# Onde cada arquivo da pasta "Pixel office" é usado
+
+Arquivos: **3014** usados, **0** sem uso.
+
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Detail_2x/ASSET_INDEX.json` — índice de tamanhos 2x (gerador)
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Detail_2x/SCENE_PLACEMENT.json` — conferência da cena em 2x (gerador)
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Detail_2x/armchair_olive.png` — versão HD (miniatura do catálogo) de "Poltrona oliva"
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Detail_2x/books_stack.png` — versão HD (miniatura do catálogo) de "Livros pilha"
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Detail_2x/botanical_picture.png` — versão HD (miniatura do catálogo) de "Botânico quadro"
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Detail_2x/curtains_terracotta.png` — versão HD (miniatura do catálogo) de "Cortinas terracota"
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Detail_2x/floor_walnut.png` — versão HD do piso "Taco de nogueira" (zoom alto)
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Detail_2x/lamp_cream.png` — versão HD (miniatura do catálogo) de "Luminária creme"
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Detail_2x/plant_potted.png` — versão HD (miniatura do catálogo) de "Planta em vaso"
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Detail_2x/rug_round_autumn.png` — versão HD (miniatura do catálogo) de "Tapete redondo outono"
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Detail_2x/table_round_walnut.png` — versão HD (miniatura do catálogo) de "Mesa redondo nogueira"
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Detail_2x/wall_cream_walnut.png` — versão HD (miniatura do catálogo) de "Parede creme nogueira"
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Detail_2x/wall_shelf.png` — versão HD (miniatura do catálogo) de "Parede prateleira"
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Detail_2x/window_autumn.png` — versão HD (miniatura do catálogo) de "Janela outono"
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Examples/Reading_Nook_1x.png` — quadro "Exemplo — Cantinho de leitura (Reading_Nook_1x)" na galeria do lobby e créditos
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Examples/Reading_Nook_2x.png` — quadro "Exemplo — Cantinho de leitura (Reading_Nook_2x)" na galeria do lobby e créditos
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Game_Ready/ASSET_INDEX.json` — índice de tamanhos (gerador)
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Game_Ready/SCENE_PLACEMENT.json` — monta o "Cantinho de leitura" pronto no mapa
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Game_Ready/armchair_olive.png` — objeto "Poltrona oliva" (Cantinho de leitura)
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Game_Ready/books_stack.png` — objeto "Livros pilha" (Cantinho de leitura)
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Game_Ready/botanical_picture.png` — objeto "Botânico quadro" (Cantinho de leitura)
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Game_Ready/curtains_terracotta.png` — objeto "Cortinas terracota" (Cantinho de leitura)
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Game_Ready/floor_walnut.png` — piso "Taco de nogueira"
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Game_Ready/lamp_cream.png` — objeto "Luminária creme" (Cantinho de leitura)
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Game_Ready/plant_potted.png` — objeto "Planta em vaso" (Cantinho de leitura)
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Game_Ready/rug_round_autumn.png` — objeto "Tapete redondo outono" (Cantinho de leitura)
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Game_Ready/table_round_walnut.png` — objeto "Mesa redondo nogueira" (Cantinho de leitura)
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Game_Ready/wall_cream_walnut.png` — objeto "Parede creme nogueira" (Cantinho de leitura)
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Game_Ready/wall_shelf.png` — objeto "Parede prateleira" (Cantinho de leitura)
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/Game_Ready/window_autumn.png` — objeto "Janela outono" (Cantinho de leitura)
+- `Cozy_Reading_Nook_Free_Sample/Cozy_Reading_Nook_Free_Sample/README.txt` — licença/leia-me — listado em Créditos
+- `Demo (1)/Demo/Furniture (1000).png` — objeto "Móvel 1000" (Móveis)
+- `Demo (1)/Demo/Furniture (1034).png` — objeto "Móvel 1034" (Móveis)
+- `Demo (1)/Demo/Furniture (1038).png` — objeto "Móvel 1038" (Móveis)
+- `Demo (1)/Demo/Furniture (1047).png` — objeto "Móvel 1047" (Móveis)
+- `Demo (1)/Demo/Furniture (106).png` — objeto "Móvel 106" (Móveis)
+- `Demo (1)/Demo/Furniture (12).png` — objeto "Móvel 12" (Móveis)
+- `Demo (1)/Demo/Furniture (145).png` — objeto "Móvel 145" (Móveis)
+- `Demo (1)/Demo/Furniture (155).png` — objeto "Móvel 155" (Móveis)
+- `Demo (1)/Demo/Furniture (173).png` — objeto "Móvel 173" (Móveis)
+- `Demo (1)/Demo/Furniture (208).png` — objeto "Móvel 208" (Móveis)
+- `Demo (1)/Demo/Furniture (241).png` — objeto "Móvel 241" (Móveis)
+- `Demo (1)/Demo/Furniture (292).png` — objeto "Móvel 292" (Móveis)
+- `Demo (1)/Demo/Furniture (331).png` — objeto "Móvel 331" (Móveis)
+- `Demo (1)/Demo/Furniture (35).png` — objeto "Móvel 35" (Móveis)
+- `Demo (1)/Demo/Furniture (368).png` — objeto "Móvel 368" (Móveis)
+- `Demo (1)/Demo/Furniture (40).png` — objeto "Móvel 40" (Móveis)
+- `Demo (1)/Demo/Furniture (422).png` — objeto "Móvel 422" (Móveis)
+- `Demo (1)/Demo/Furniture (433).png` — objeto "Móvel 433" (Móveis)
+- `Demo (1)/Demo/Furniture (438).png` — objeto "Móvel 438" (Móveis)
+- `Demo (1)/Demo/Furniture (475).png` — objeto "Móvel 475" (Móveis)
+- `Demo (1)/Demo/Furniture (482).png` — objeto "Móvel 482" (Móveis)
+- `Demo (1)/Demo/Furniture (512).png` — objeto "Móvel 512" (Móveis)
+- `Demo (1)/Demo/Furniture (514).png` — objeto "Móvel 514" (Móveis)
+- `Demo (1)/Demo/Furniture (523).png` — objeto "Móvel 523" (Móveis)
+- `Demo (1)/Demo/Furniture (591).png` — objeto "Móvel 591" (Móveis)
+- `Demo (1)/Demo/Furniture (639).png` — objeto "Móvel 639" (Móveis)
+- `Demo (1)/Demo/Furniture (640).png` — objeto "Móvel 640" (Móveis)
+- `Demo (1)/Demo/Furniture (658).png` — objeto "Móvel 658" (Móveis)
+- `Demo (1)/Demo/Furniture (744).png` — objeto "Móvel 744" (Móveis)
+- `Demo (1)/Demo/Furniture (746).png` — objeto "Móvel 746" (Móveis)
+- `Demo (1)/Demo/Furniture (802).png` — objeto "Móvel 802" (Móveis)
+- `Demo (1)/Demo/Furniture (87).png` — objeto "Móvel 87" (Móveis)
+- `Demo (1)/Demo/Furniture (88).png` — objeto "Móvel 88" (Móveis)
+- `Demo (1)/Demo/Furniture (892).png` — objeto "Móvel 892" (Móveis)
+- `Demo (1)/Demo/Furniture (895).png` — objeto "Móvel 895" (Móveis)
+- `Demo (1)/Demo/Furniture (925).png` — objeto "Móvel 925" (Móveis)
+- `Demo (1)/Demo/Furniture (993).png` — objeto "Móvel 993" (Móveis)
+- `Demo (1)/Demo/Furniture (994).png` — objeto "Móvel 994" (Móveis)
+- `Demo (2)/Demo/Painting (146).png` — objeto "Quadro 146" (Quadros)
+- `Demo (2)/Demo/Painting (203).png` — objeto "Quadro 203" (Quadros)
+- `Demo (2)/Demo/Painting (228).png` — objeto "Quadro 228" (Quadros)
+- `Demo (2)/Demo/Painting (268).png` — objeto "Quadro 268" (Quadros)
+- `Demo (2)/Demo/Painting (284).png` — objeto "Quadro 284" (Quadros)
+- `Demo (2)/Demo/Painting (310).png` — objeto "Quadro 310" (Quadros)
+- `Demo (2)/Demo/Painting (318).png` — objeto "Quadro 318" (Quadros)
+- `Demo (2)/Demo/Painting (333).png` — objeto "Quadro 333" (Quadros)
+- `Demo (2)/Demo/Painting (387).png` — objeto "Quadro 387" (Quadros)
+- `Demo (2)/Demo/Painting (410).png` — objeto "Quadro 410" (Quadros)
+- `Demo (2)/Demo/Painting (437).png` — objeto "Quadro 437" (Quadros)
+- `Demo (2)/Demo/Painting (452).png` — objeto "Quadro 452" (Quadros)
+- `Demo (2)/Demo/Painting (487).png` — objeto "Quadro 487" (Quadros)
+- `Demo (2)/Demo/Painting (526).png` — objeto "Quadro 526" (Quadros)
+- `Demo (2)/Demo/Painting (537).png` — objeto "Quadro 537" (Quadros)
+- `Demo/Demo/Loot(16).png` — item que cai dos monstros (Item 16) e decoração
+- `Demo/Demo/Loot(173).png` — item que cai dos monstros (Item 173) e decoração
+- `Demo/Demo/Loot(175).png` — item que cai dos monstros (Item 175) e decoração
+- `Demo/Demo/Loot(178).png` — item que cai dos monstros (Item 178) e decoração
+- `Demo/Demo/Loot(182).png` — item que cai dos monstros (Item 182) e decoração
+- `Demo/Demo/Loot(255).png` — item que cai dos monstros (Item 255) e decoração
+- `Demo/Demo/Loot(264).png` — item que cai dos monstros (Item 264) e decoração
+- `Demo/Demo/Loot(3).png` — item que cai dos monstros (Item 3) e decoração
+- `Demo/Demo/Loot(312).png` — item que cai dos monstros (Item 312) e decoração
+- `Demo/Demo/Loot(317).png` — item que cai dos monstros (Item 317) e decoração
+- `Demo/Demo/Loot(321).png` — item que cai dos monstros (Item 321) e decoração
+- `Demo/Demo/Loot(379).png` — item que cai dos monstros (Item 379) e decoração
+- `Demo/Demo/Loot(382).png` — item que cai dos monstros (Item 382) e decoração
+- `Demo/Demo/Loot(389).png` — item que cai dos monstros (Item 389) e decoração
+- `Demo/Demo/Loot(446).png` — item que cai dos monstros (Item 446) e decoração
+- `Demo/Demo/Loot(450).png` — item que cai dos monstros (Item 450) e decoração
+- `Demo/Demo/Loot(455).png` — item que cai dos monstros (Item 455) e decoração
+- `Demo/Demo/Loot(458).png` — item que cai dos monstros (Item 458) e decoração
+- `Demo/Demo/Loot(48).png` — item que cai dos monstros (Item 48) e decoração
+- `Demo/Demo/Loot(500).png` — item que cai dos monstros (Item 500) e decoração
+- `Demo/Demo/Loot(502).png` — item que cai dos monstros (Item 502) e decoração
+- `Demo/Demo/Loot(51).png` — item que cai dos monstros (Item 51) e decoração
+- `Demo/Demo/Loot(52).png` — item que cai dos monstros (Item 52) e decoração
+- `Demo/Demo/Loot(523).png` — item que cai dos monstros (Item 523) e decoração
+- `Demo/Demo/Loot(56).png` — item que cai dos monstros (Item 56) e decoração
+- `Demo/Demo/Loot(597).png` — item que cai dos monstros (Item 597) e decoração
+- `Demo/Demo/Loot(6).png` — item que cai dos monstros (Item 6) e decoração
+- `Demo/Demo/Loot(8).png` — item que cai dos monstros (Item 8) e decoração
+- `Demon_v1.1/Demon_v1.1/demon_01.png` — chefe MvP "Bafomé (Forma 01)" da arena
+- `Demon_v1.1/Demon_v1.1/demon_01_broken.png` — chefe MvP "Bafomé (Forma 01 broken)" da arena
+- `Demon_v1.1/Demon_v1.1/demon_01_broken_notail.png` — chefe MvP "Bafomé (Forma 01 broken notail)" da arena
+- `Demon_v1.1/Demon_v1.1/demon_01_no_tail.png` — chefe MvP "Bafomé (Forma 01 no tail)" da arena
+- `Demon_v1.1/Demon_v1.1/demon_02.png` — chefe MvP "Bafomé (Forma 02)" da arena
+- `Demon_v1.1/Demon_v1.1/demon_02_broken.png` — chefe MvP "Bafomé (Forma 02 broken)" da arena
+- `Demon_v1.1/Demon_v1.1/demon_02_broken_notail.png` — chefe MvP "Bafomé (Forma 02 broken notail)" da arena
+- `Demon_v1.1/Demon_v1.1/demon_02_no_tail.png` — chefe MvP "Bafomé (Forma 02 no tail)" da arena
+- `Demon_v1.1/Demon_v1.1/demon_palette_01.png` — paleta de 8 cores no seletor de cores da mesa
+- `Demon_v1.1/Demon_v1.1/demon_palette_02.png` — paleta de 8 cores no seletor de cores da mesa
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Aseprite/Animated/Folding & Cutout Paper UI.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Aseprite/Animated/Items Holder Day & Night Cycle.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Aseprite/Animated/Plain Paper UI.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Aseprite/Folding & Cutout Paper UI SpriteSheet.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Aseprite/Plain Paper UI SpriteSheet.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/License.pdf` — licença/leia-me — listado em Créditos
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/SpriteSheet/Folding & Cutout Paper UI SpriteSheet.png` — quadro "Folha completa — Paper UI (Folding & Cutout Paper UI SpriteSheet)" na galeria do lobby e créditos
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/SpriteSheet/Plain Paper UI SpriteSheet.png` — quadro "Folha completa — Paper UI (Plain Paper UI SpriteSheet)" na galeria do lobby e créditos
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Book Desk/1.png` — interface: livro do quadro de quests
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Book Desk/2.png` — interface: livro do quadro de quests
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Book Desk/3.png` — interface: livro do quadro de quests
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Book Desk/4.png` — interface: livro do quadro de quests
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Book Desk/5.png` — interface: livro do quadro de quests
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Book Desk/6.png` — interface: livro do quadro de quests
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Book Desk/7.png` — interface: livro do quadro de quests
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/24.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/25.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/26.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/27.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/28.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/29.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/30.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/31.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/32.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/33.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/34.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/35.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/1/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/24.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/25.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/26.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/27.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/28.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/2/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/24.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/25.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/26.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/27.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/28.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/3/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/24.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/25.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/26.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/27.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/28.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/1 Headers/4/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/24.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/25.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/26.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/27.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/28.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/29.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/30.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/31.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/32.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/33.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/34.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/35.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/36.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/37.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/38.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/39.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/40.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/2 item Holder/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/24.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/25.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/26.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/27.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/28.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/29.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/30.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/31.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/32.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/1/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/24.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/25.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/26.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/27.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/28.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/29.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/30.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/31.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/32.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/33.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/34.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/3 Rewards/2/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/1/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/24.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/4 Notification/2/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/5 Mini Map/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/5 Mini Map/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/5 Mini Map/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/5 Mini Map/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/5 Mini Map/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/5 Mini Map/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/5 Mini Map/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/5 Mini Map/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/5 Mini Map/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/5 Mini Map/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/5 Mini Map/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/5 Mini Map/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/5 Mini Map/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/5 Mini Map/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/5 Mini Map/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/5 Mini Map/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/5 Mini Map/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/5 Mini Map/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/5 Mini Map/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/5 Mini Map/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/6 Player HUD/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/24.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/25.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/26.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/27.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/28.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/29.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/30.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/31.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/32.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/33.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/34.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/35.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/36.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/37.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/38.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/39.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/40.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/41.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/42.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/43.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/44.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/7 Dialogue Box/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/24.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/25.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/26.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/27.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/28.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/29.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/30.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/31.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/32.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/33.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/34.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/35.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/36.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/8 Shop/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/24.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/25.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/26.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/27.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/28.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/29.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/30.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/31.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/32.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/33.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/34.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/35.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/36.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/37.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/38.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/39.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/40.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/41.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/42.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/43.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/44.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/45.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/46.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/47.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/48.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/49.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Folding & Cutout/9 Calender/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/24.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/25.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/26.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/27.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/28.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/29.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/30.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/31.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/32.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/33.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/34.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/35.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/1/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/24.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/25.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/26.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/27.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/28.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/2/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/24.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/25.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/26.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/27.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/28.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/3/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/24.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/25.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/26.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/27.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/28.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/1 Headers/4/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/24.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/25.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/26.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/27.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/28.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/29.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/30.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/31.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/32.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/33.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/34.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/35.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/36.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/37.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/38.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/39.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/40.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/2 item Holder/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/24.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/25.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/26.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/27.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/28.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/29.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/30.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/31.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/32.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/1/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/24.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/25.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/26.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/27.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/28.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/29.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/30.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/31.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/32.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/33.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/34.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/3 Rewards/2/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/1/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/4 Notification/2/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/5 Mini Map/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/5 Mini Map/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/5 Mini Map/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/5 Mini Map/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/5 Mini Map/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/5 Mini Map/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/5 Mini Map/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/5 Mini Map/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/5 Mini Map/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/5 Mini Map/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/5 Mini Map/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/5 Mini Map/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/5 Mini Map/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/5 Mini Map/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/5 Mini Map/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/5 Mini Map/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/5 Mini Map/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/5 Mini Map/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/5 Mini Map/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/5 Mini Map/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/6 Player HUD/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/24.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/25.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/26.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/27.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/28.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/29.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/30.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/31.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/32.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/33.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/34.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/35.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/36.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/37.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/38.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/39.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/40.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/41.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/42.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/43.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/44.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/7 Dialogue Box/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/24.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/25.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/26.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/27.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/28.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/29.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/30.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/31.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/32.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/33.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/34.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/35.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/36.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/8 Shop/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/1.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/10.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/11.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/12.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/13.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/14.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/15.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/16.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/17.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/18.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/19.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/2.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/20.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/21.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/22.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/23.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/24.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/25.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/26.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/27.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/28.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/29.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/3.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/30.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/31.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/32.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/33.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/34.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/35.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/36.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/37.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/38.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/39.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/4.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/40.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/41.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/42.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/43.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/44.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/45.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/46.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/47.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/48.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/49.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/5.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/6.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/7.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/8.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content Appear Animation/Plain/9 Calender/9.png` — interface: animação de abrir janelas (papel se desdobrando)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/1.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/10.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/11.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/12.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/13.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/14.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/15.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/16.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/17.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/18.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/19.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/2.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/20.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/21.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/22.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/23.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/24.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/25.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/26.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/27.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/3.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/4.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/5.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/6.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/7.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/8.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/1 Items/9.png` — interface: itens do inventário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Cutout/1.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Cutout/10.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Cutout/11.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Cutout/12.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Cutout/13.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Cutout/14.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Cutout/15.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Cutout/16.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Cutout/17.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Cutout/18.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Cutout/19.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Cutout/2.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Cutout/20.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Cutout/3.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Cutout/4.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Cutout/5.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Cutout/6.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Cutout/7.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Cutout/8.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Cutout/9.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Plain/1.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Plain/10.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Plain/11.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Plain/12.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Plain/13.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Plain/14.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Plain/15.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Plain/16.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Plain/17.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Plain/18.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Plain/19.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Plain/2.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Plain/20.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Plain/3.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Plain/4.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Plain/5.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Plain/6.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Plain/7.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Plain/8.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/10 Banners & Headers/Plain/9.png` — interface: faixas de título das áreas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/1.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/10.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/11.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/12.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/13.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/14.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/15.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/16.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/17.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/18.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/19.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/2.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/20.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/21.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/22.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/23.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/24.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/25.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/26.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/3.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/4.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/5.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/6.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/7.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/8.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/2 Icons/9.png` — interface: ícones das ações
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/3 Progress Bars/1.png` — interface: barras de HP/SP e XP
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/3 Progress Bars/10.png` — interface: barras de HP/SP e XP
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/3 Progress Bars/11.png` — interface: barras de HP/SP e XP
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/3 Progress Bars/12.png` — interface: barras de HP/SP e XP
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/3 Progress Bars/13.png` — interface: barras de HP/SP e XP
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/3 Progress Bars/14.png` — interface: barras de HP/SP e XP
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/3 Progress Bars/15.png` — interface: barras de HP/SP e XP
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/3 Progress Bars/2.png` — interface: barras de HP/SP e XP
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/3 Progress Bars/3.png` — interface: barras de HP/SP e XP
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/3 Progress Bars/4.png` — interface: barras de HP/SP e XP
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/3 Progress Bars/5.png` — interface: barras de HP/SP e XP
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/3 Progress Bars/6.png` — interface: barras de HP/SP e XP
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/3 Progress Bars/7.png` — interface: barras de HP/SP e XP
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/3 Progress Bars/8.png` — interface: barras de HP/SP e XP
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/3 Progress Bars/9.png` — interface: barras de HP/SP e XP
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/0.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/1.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/2.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/3.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/4.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/5.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/6.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/7.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/8.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/9.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/1.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/10.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/11.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/12.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/13.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/14.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/15.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/16.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/17.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/18.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/19.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/2.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/20.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/21.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/22.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/23.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/24.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/25.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/26.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/27.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/28.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/29.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/3.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/30.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/31.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/32.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/33.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/4.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/5.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/6.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/7.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/8.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/4 Buttons/Sliced/9.png` — interface: botões estilizados
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/1.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/10.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/11.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/12.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/13.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/14.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/15.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/16.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/17.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/18.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/19.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/2.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/20.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/21.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/22.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/23.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/24.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/25.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/3.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/4.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/5.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/6.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/7.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/8.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/5 Holders/9.png` — interface: molduras (relógio, avatar, slots)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/6 Highlighter/1.png` — interface: destaque de seleção
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/6 Highlighter/2.png` — interface: destaque de seleção
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/6 Highlighter/3.png` — interface: destaque de seleção
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/6 Highlighter/4.png` — interface: destaque de seleção
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/6 Highlighter/5.png` — interface: destaque de seleção
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/6 Highlighter/6.png` — interface: destaque de seleção
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/6 Highlighter/7.png` — interface: destaque de seleção
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/6 Highlighter/8.png` — interface: destaque de seleção
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/7 Day & Night Cycle/1.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/7 Day & Night Cycle/10.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/7 Day & Night Cycle/11.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/7 Day & Night Cycle/12.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/7 Day & Night Cycle/13.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/7 Day & Night Cycle/14.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/7 Day & Night Cycle/15.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/7 Day & Night Cycle/16.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/7 Day & Night Cycle/2.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/7 Day & Night Cycle/3.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/7 Day & Night Cycle/4.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/7 Day & Night Cycle/5.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/7 Day & Night Cycle/6.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/7 Day & Night Cycle/7.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/7 Day & Night Cycle/8.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/7 Day & Night Cycle/9.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/8 Equipment/1.png` — interface: slots de equipamento (combate)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/8 Equipment/10.png` — interface: slots de equipamento (combate)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/8 Equipment/11.png` — interface: slots de equipamento (combate)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/8 Equipment/12.png` — interface: slots de equipamento (combate)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/8 Equipment/13.png` — interface: slots de equipamento (combate)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/8 Equipment/14.png` — interface: slots de equipamento (combate)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/8 Equipment/15.png` — interface: slots de equipamento (combate)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/8 Equipment/16.png` — interface: slots de equipamento (combate)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/8 Equipment/17.png` — interface: slots de equipamento (combate)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/8 Equipment/18.png` — interface: slots de equipamento (combate)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/8 Equipment/2.png` — interface: slots de equipamento (combate)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/8 Equipment/3.png` — interface: slots de equipamento (combate)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/8 Equipment/4.png` — interface: slots de equipamento (combate)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/8 Equipment/5.png` — interface: slots de equipamento (combate)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/8 Equipment/6.png` — interface: slots de equipamento (combate)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/8 Equipment/7.png` — interface: slots de equipamento (combate)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/8 Equipment/8.png` — interface: slots de equipamento (combate)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/8 Equipment/9.png` — interface: slots de equipamento (combate)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp Mark/1.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp/Stamped/1.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp/Stamped/10.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp/Stamped/11.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp/Stamped/12.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp/Stamped/13.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp/Stamped/14.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp/Stamped/15.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp/Stamped/16.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp/Stamped/17.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp/Stamped/18.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp/Stamped/19.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp/Stamped/2.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp/Stamped/20.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp/Stamped/3.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp/Stamped/4.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp/Stamped/5.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp/Stamped/6.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp/Stamped/7.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp/Stamped/8.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp/Stamped/9.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Content/9 Stamp/Stamp/idle/1.png` — interface: carimbo de quest concluída
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/1 Dawn/1.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/1 Dawn/10.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/1 Dawn/2.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/1 Dawn/3.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/1 Dawn/4.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/1 Dawn/5.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/1 Dawn/6.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/1 Dawn/7.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/1 Dawn/8.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/1 Dawn/9.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/2 Day/1.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/2 Day/10.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/2 Day/2.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/2 Day/3.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/2 Day/4.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/2 Day/5.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/2 Day/6.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/2 Day/7.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/2 Day/8.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/2 Day/9.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/3 Noon/1.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/3 Noon/10.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/3 Noon/2.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/3 Noon/3.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/3 Noon/4.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/3 Noon/5.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/3 Noon/6.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/3 Noon/7.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/3 Noon/8.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/3 Noon/9.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/4 Night/1.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/4 Night/10.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/4 Night/2.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/4 Night/3.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/4 Night/4.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/4 Night/5.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/4 Night/6.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/4 Night/7.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/4 Night/8.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/4 Night/9.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/5 Lightning 1/1.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/5 Lightning 1/10.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/5 Lightning 1/2.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/5 Lightning 1/3.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/5 Lightning 1/4.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/5 Lightning 1/5.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/5 Lightning 1/6.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/5 Lightning 1/7.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/5 Lightning 1/8.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/5 Lightning 1/9.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/6 Lightning 2/1.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/6 Lightning 2/10.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/6 Lightning 2/2.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/6 Lightning 2/3.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/6 Lightning 2/4.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/6 Lightning 2/5.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/6 Lightning 2/6.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/6 Lightning 2/7.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/6 Lightning 2/8.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/6 Lightning 2/9.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/7 Raining/1.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/7 Raining/10.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/7 Raining/2.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/7 Raining/3.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/7 Raining/4.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/7 Raining/5.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/7 Raining/6.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/7 Raining/7.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/7 Raining/8.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Full/7 Raining/9.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/1 Dawn/1.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/1 Dawn/10.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/1 Dawn/2.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/1 Dawn/3.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/1 Dawn/4.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/1 Dawn/5.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/1 Dawn/6.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/1 Dawn/7.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/1 Dawn/8.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/1 Dawn/9.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/2 Day/1.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/2 Day/10.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/2 Day/2.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/2 Day/3.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/2 Day/4.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/2 Day/5.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/2 Day/6.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/2 Day/7.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/2 Day/8.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/2 Day/9.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/3 Noon/1.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/3 Noon/10.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/3 Noon/2.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/3 Noon/3.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/3 Noon/4.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/3 Noon/5.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/3 Noon/6.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/3 Noon/7.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/3 Noon/8.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/3 Noon/9.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/4 Night/1.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/4 Night/10.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/4 Night/2.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/4 Night/3.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/4 Night/4.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/4 Night/5.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/4 Night/6.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/4 Night/7.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/4 Night/8.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/4 Night/9.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/5 Lightning 1/1.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/5 Lightning 1/10.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/5 Lightning 1/2.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/5 Lightning 1/3.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/5 Lightning 1/4.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/5 Lightning 1/5.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/5 Lightning 1/6.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/5 Lightning 1/7.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/5 Lightning 1/8.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/5 Lightning 1/9.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/6 Lightning 2/1.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/6 Lightning 2/10.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/6 Lightning 2/2.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/6 Lightning 2/3.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/6 Lightning 2/4.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/6 Lightning 2/5.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/6 Lightning 2/6.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/6 Lightning 2/7.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/6 Lightning 2/8.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/6 Lightning 2/9.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/7 Raining/1.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/7 Raining/10.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/7 Raining/2.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/7 Raining/3.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/7 Raining/4.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/7 Raining/5.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/7 Raining/6.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/7 Raining/7.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/7 Raining/8.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Day & Night Cycle/Half/7 Raining/9.png` — interface: relógio com ciclo de dia e noite
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/1.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/10.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/11.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/12.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/13.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/14.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/15.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/16.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/17.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/18.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/19.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/2.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/20.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/21.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/22.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/23.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/24.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/25.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/26.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/27.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/28.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/29.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/3.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/30.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/31.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/32.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/33.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/34.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/35.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/36.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/37.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/38.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/39.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/4.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/40.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/41.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/42.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/43.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/44.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/45.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/46.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/47.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/48.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/49.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/5.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/50.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/51.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/52.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/53.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/54.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/55.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/56.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/6.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/7.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/8.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/1 Paper/9.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/10 Calander/1.png` — interface: calendário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/2 Headers/1.png` — interface: cabeçalhos das janelas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/2 Headers/2.png` — interface: cabeçalhos das janelas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/2 Headers/3.png` — interface: cabeçalhos das janelas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/2 Headers/4.png` — interface: cabeçalhos das janelas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/3 Item Holder/1.png` — interface: slots de itens
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/4 Notification/1.png` — interface: notificações (toasts)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/4 Notification/2.png` — interface: notificações (toasts)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/5 Mini Map/1.png` — interface: moldura do minimapa
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/6 Player HUD/1.png` — interface: HUD do jogador (HP/SP)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/7 Dialogue Box/1.png` — interface: caixa de diálogo
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/8 Shop/1.png` — interface: janela de recompensas da arena
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/9 Rewards/1.png` — interface: janela de recompensas da arena
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Folding & Cutout/9 Rewards/2.png` — interface: janela de recompensas da arena
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/1.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/10.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/11.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/12.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/13.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/14.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/15.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/16.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/17.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/18.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/19.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/2.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/20.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/21.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/22.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/23.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/24.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/25.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/26.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/27.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/28.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/29.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/3.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/30.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/31.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/32.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/33.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/34.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/35.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/36.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/37.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/38.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/39.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/4.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/40.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/41.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/42.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/43.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/44.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/45.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/46.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/47.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/48.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/49.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/5.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/50.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/51.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/52.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/53.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/6.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/7.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/8.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/1 Paper/9.png` — interface: papel das janelas (bordas em 9 partes)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/10 Calander/1.png` — interface: calendário
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/2 Headers/1.png` — interface: cabeçalhos das janelas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/2 Headers/2.png` — interface: cabeçalhos das janelas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/2 Headers/3.png` — interface: cabeçalhos das janelas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/2 Headers/4.png` — interface: cabeçalhos das janelas
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/3 Item Holder/1.png` — interface: slots de itens
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/4 Notification/1.png` — interface: notificações (toasts)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/4 Notification/2.png` — interface: notificações (toasts)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/5 Mini Map/1.png` — interface: moldura do minimapa
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/6 Player HUD/1.png` — interface: HUD do jogador (HP/SP)
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/7 Dialogue Box/1.png` — interface: caixa de diálogo
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/8 Shop/1.png` — interface: janela de recompensas da arena
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/9 Rewards/1.png` — interface: janela de recompensas da arena
+- `Humble Gift - Paper UI System/Humble Gift - Paper UI System v1.1/Sprites/Paper UI Pack/Plain/9 Rewards/2.png` — interface: janela de recompensas da arena
+- `Mana Seed Farmer Sprite Free Sample/Farmer Sprite System readme.txt` — licença/leia-me — listado em Créditos
+- `Mana Seed Farmer Sprite Free Sample/Mana Seed readme.txt` — licença/leia-me — listado em Créditos
+- `Mana Seed Farmer Sprite Free Sample/THIS IS A FREE SAMPLE.txt` — licença/leia-me — listado em Créditos
+- `Mana Seed Farmer Sprite Free Sample/_supporting files/Mana Seed color ramps.png` — quadro "Guia Mana Seed — Mana seed color ramps" na galeria do lobby e créditos
+- `Mana Seed Farmer Sprite Free Sample/_supporting files/farmer base animation guide.png` — quadro "Guia Mana Seed — Farmer base animation guide" na galeria do lobby e créditos
+- `Mana Seed Farmer Sprite Free Sample/_supporting files/farmer base cell reference.png` — quadro "Guia Mana Seed — Farmer base cell reference" na galeria do lobby e créditos
+- `Mana Seed Farmer Sprite Free Sample/_supporting files/palettes/base ramps/2x 3-color base ramps (00c).png` — paleta de 7 cores no seletor de cores da mesa
+- `Mana Seed Farmer Sprite Free Sample/_supporting files/palettes/base ramps/3-color base ramp (00a).png` — paleta de 4 cores no seletor de cores da mesa
+- `Mana Seed Farmer Sprite Free Sample/_supporting files/palettes/base ramps/4-color + 3-color base ramps (00d).png` — paleta de 8 cores no seletor de cores da mesa
+- `Mana Seed Farmer Sprite Free Sample/_supporting files/palettes/base ramps/4-color base ramp (00b).png` — paleta de 5 cores no seletor de cores da mesa
+- `Mana Seed Farmer Sprite Free Sample/_supporting files/palettes/base ramps/hair color base ramp.png` — paleta de 6 cores no seletor de cores da mesa
+- `Mana Seed Farmer Sprite Free Sample/_supporting files/palettes/base ramps/instrument color base ramp.png` — paleta de 5 cores no seletor de cores da mesa
+- `Mana Seed Farmer Sprite Free Sample/_supporting files/palettes/base ramps/skin color base ramp.png` — paleta de 5 cores no seletor de cores da mesa
+- `Mana Seed Farmer Sprite Free Sample/_supporting files/palettes/base ramps/weapon and tool color base ramps.png` — paleta de 12 cores no seletor de cores da mesa
+- `Mana Seed Farmer Sprite Free Sample/_supporting files/palettes/mana seed 3-color ramps, common.png` — paleta de 70 cores no seletor de cores da mesa
+- `Mana Seed Farmer Sprite Free Sample/_supporting files/palettes/mana seed 3-color ramps, rare.png` — paleta de 67 cores no seletor de cores da mesa
+- `Mana Seed Farmer Sprite Free Sample/_supporting files/palettes/mana seed 4-color ramps, common.png` — paleta de 53 cores no seletor de cores da mesa
+- `Mana Seed Farmer Sprite Free Sample/_supporting files/palettes/mana seed 4-color ramps, rare.png` — paleta de 73 cores no seletor de cores da mesa
+- `Mana Seed Farmer Sprite Free Sample/_supporting files/palettes/mana seed hair ramps.png` — paleta de 92 cores no seletor de cores da mesa
+- `Mana Seed Farmer Sprite Free Sample/_supporting files/palettes/mana seed skin ramps.png` — paleta de 56 cores no seletor de cores da mesa
+- `Mana Seed Farmer Sprite Free Sample/_supporting files/palettes/mana seed tool ramps.png` — paleta de 60 cores no seletor de cores da mesa
+- `Mana Seed Farmer Sprite Free Sample/create and sell your own compatible content.txt` — licença/leia-me — listado em Créditos
+- `Mana Seed Farmer Sprite Free Sample/farmer base sheets/01body/fbas_1body_human_00.png` — camada do jardineiro (Mana Seed) — combinada em 8 jardineiros do jardim
+- `Mana Seed Farmer Sprite Free Sample/farmer base sheets/03fot1/fbas_03fot1_shoes_00a.png` — camada do jardineiro (Mana Seed) — combinada em 8 jardineiros do jardim
+- `Mana Seed Farmer Sprite Free Sample/farmer base sheets/04lwr1/fbas_04lwr1_longpants_00a.png` — camada do jardineiro (Mana Seed) — combinada em 8 jardineiros do jardim
+- `Mana Seed Farmer Sprite Free Sample/farmer base sheets/05shrt/fbas_05shrt_shortshirt_00a.png` — camada do jardineiro (Mana Seed) — combinada em 8 jardineiros do jardim
+- `Mana Seed Farmer Sprite Free Sample/farmer base sheets/05shrt/fbas_05shrt_shortshirtboobs_00a.png` — camada do jardineiro (Mana Seed) — combinada em 8 jardineiros do jardim
+- `Mana Seed Farmer Sprite Free Sample/farmer base sheets/13hair/fbas_13hair_bob1_00a.png` — camada do jardineiro (Mana Seed) — combinada em 8 jardineiros do jardim
+- `Mana Seed Farmer Sprite Free Sample/farmer base sheets/13hair/fbas_13hair_dapper_00a.png` — camada do jardineiro (Mana Seed) — combinada em 8 jardineiros do jardim
+- `Mana Seed Farmer Sprite Free Sample/farmer base sheets/14head/fbas_14head_cowboyhat_00d.png` — camada do jardineiro (Mana Seed) — combinada em 8 jardineiros do jardim
+- `Mana Seed Farmer Sprite Free Sample/farmer base sheets/fbas_blank_sheet.png` — quadro "Folha em branco (Mana Seed)" na galeria do lobby e créditos
+- `MegaPackFree/MegaPackFree/CatMegaFree/CatRoomFree/Furnitures.png` — objeto "Furnitures 1" (Cantinho dos gatos); objeto "Furnitures 2" (Cantinho dos gatos); objeto "Furnitures 3" (Cantinho dos gatos); objeto "Furnitures 4" (Cantinho dos gatos); objeto "Furnitures 5" (Cantinho dos gatos); objeto "Furnitures 6" (Cantinho dos gatos); objeto "Furnitures 7" (Cantinho dos gatos); objeto "Furnitures 8" (Cantinho dos gatos); objeto "Furnitures 9" (Cantinho dos gatos); objeto "Furnitures 10" (Cantinho dos gatos); objeto "Furnitures 11" (Cantinho dos gatos); objeto "Furnitures 12" (Cantinho dos gatos); objeto "Furnitures 13" (Cantinho dos gatos); objeto "Furnitures 14" (Cantinho dos gatos); objeto "Furnitures 15" (Cantinho dos gatos); objeto "Furnitures 16" (Cantinho dos gatos); objeto "Furnitures 17" (Cantinho dos gatos); objeto "Furnitures 18" (Cantinho dos gatos); objeto "Furnitures 19" (Cantinho dos gatos); objeto "Furnitures 20" (Cantinho dos gatos); objeto "Furnitures 21" (Cantinho dos gatos); objeto "Furnitures 22" (Cantinho dos gatos); objeto "Furnitures 23" (Cantinho dos gatos); objeto "Furnitures 24" (Cantinho dos gatos); objeto "Furnitures 25" (Cantinho dos gatos); objeto "Furnitures 26" (Cantinho dos gatos); objeto "Furnitures 27" (Cantinho dos gatos); objeto "Furnitures 28" (Cantinho dos gatos); objeto "Furnitures 29" (Cantinho dos gatos); objeto "Furnitures 30" (Cantinho dos gatos); objeto "Furnitures 31" (Cantinho dos gatos); objeto "Furnitures 32" (Cantinho dos gatos); objeto "Furnitures 33" (Cantinho dos gatos); objeto "Furnitures 34" (Cantinho dos gatos); objeto "Furnitures 35" (Cantinho dos gatos); objeto "Furnitures 36" (Cantinho dos gatos); objeto "Furnitures 37" (Cantinho dos gatos); objeto "Furnitures 38" (Cantinho dos gatos); objeto "Furnitures 39" (Cantinho dos gatos); objeto "Furnitures 40" (Cantinho dos gatos)
+- `MegaPackFree/MegaPackFree/CatMegaFree/CatUIFree/free.png` — peças de interface (79) — tema "catUi" das janelas
+- `MegaPackFree/MegaPackFree/CatMegaFree/MochiFree/Box3.png` — gato animado "Box3"
+- `MegaPackFree/MegaPackFree/CatMegaFree/MochiFree/Idle.png` — gato animado "Idle"
+- `MegaPackFree/MegaPackFree/CatMegaFree/PochiFree/FreeSprites.png` — mascotes "Pochi" (animações)
+- `MegaPackFree/MegaPackFree/CatMegaFree/SleepingCatFree/sleepingcat1.png` — gato animado "Sleepingcat1"
+- `MegaPackFree/MegaPackFree/CatMegaFree/SleepingCatFree/sleepingcat2.png` — gato animado "Sleepingcat2"
+- `MegaPackFree/MegaPackFree/CatMegaFree/SleepingCatFree/sleepingcat3.png` — gato animado "Sleepingcat3"
+- `MegaPackFree/MegaPackFree/CatMegaFree/SleepingCatFree/sleepingcat4.png` — gato animado "Sleepingcat4"
+- `MegaPackFree/MegaPackFree/CatMegaFree/SleepingCatFree/sleepingcat5.png` — gato animado "Sleepingcat5"
+- `MegaPackFree/MegaPackFree/FreeAnimalPack/AnimalStuffs/DogBalls.png` — objeto "Dogballs" (Pets)
+- `MegaPackFree/MegaPackFree/FreeAnimalPack/AnimalStuffs/DogMeat.png` — objeto "Dogmeat" (Pets)
+- `MegaPackFree/MegaPackFree/FreeAnimalPack/AnimalStuffs/DogToys2.png` — objeto "Dogtoys2" (Pets)
+- `MegaPackFree/MegaPackFree/FreeAnimalPack/AnimalStuffs/DogVitamins.png` — objeto "Dogvitamins" (Pets)
+- `MegaPackFree/MegaPackFree/FreeAnimalPack/BirdFly.png` — mascote animado "Passarinho"
+- `MegaPackFree/MegaPackFree/FreeAnimalPack/FrogIdle.png` — mascote animado "Sapo"
+- `MegaPackFree/MegaPackFree/FreeAnimalPack/GoldenBarking.png` — mascote animado "Golden latindo"
+- `MegaPackFree/MegaPackFree/FreeAnimalPack/JumpCattt.png` — mascote animado "Gato pulando"
+- `MegaPackFree/MegaPackFree/FreeAnimalPack/Jumping.png` — mascote animado "Gatinho pulando"
+- `MegaPackFree/MegaPackFree/FreeAnimalPack/PigIdle.png` — mascote animado "Porquinho"
+- `MegaPackFree/MegaPackFree/FreeAnimalPack/SleepDog.png` — mascote animado "Cão dormindo"
+- `MegaPackFree/MegaPackFree/FreeEnvironment/FreePack.png` — objeto "Freepack 1" (Plantas); objeto "Freepack 2" (Plantas); objeto "Freepack 3" (Plantas); objeto "Freepack 4" (Plantas); objeto "Freepack 5" (Plantas); objeto "Freepack 6" (Plantas); objeto "Freepack 7" (Plantas); objeto "Freepack 8" (Plantas); objeto "Freepack 9" (Plantas); objeto "Freepack 10" (Plantas); objeto "Freepack 11" (Plantas); objeto "Freepack 12" (Plantas); objeto "Freepack 13" (Plantas); objeto "Freepack 14" (Plantas); objeto "Freepack 15" (Plantas); objeto "Freepack 16" (Plantas); objeto "Freepack 17" (Plantas); objeto "Freepack 18" (Plantas); objeto "Freepack 19" (Plantas); objeto "Freepack 20" (Plantas); objeto "Freepack 21" (Plantas)
+- `MegaPackFree/MegaPackFree/UIBundleFree/FreeDemo.png` — peças de interface (110) — tema "bundle-freedemo" das janelas
+- `MegaPackFree/MegaPackFree/UIBundleFree/FreeHorrorUi.png` — peças de interface (90) — tema "bundle-freehorrorui" das janelas
+- `MegaPackFree/MegaPackFree/UIBundleFree/FreeUI.png` — peças de interface (161) — tema "bundle-freeui" das janelas
+- `MegaPackFree/MegaPackFree/UIBundleFree/MediavelFree.png` — peças de interface (92) — tema "bundle-mediavelfree" das janelas
+- `MegaPackFree/MegaPackFree/UIBundleFree/PastelUIFree.png` — peças de interface (107) — tema "bundle-pasteluifree" das janelas
+- `MegaPackFree/MegaPackFree/UIBundleFree/UiCozyFree.png` — peças de interface (103) — tema "bundle-uicozyfree" das janelas
+- `MegaPackFree/MegaPackFree/UIBundleFree/freefantasy.png` — peças de interface (48) — tema "bundle-freefantasy" das janelas
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Documentation/ASSET_LIST.json` — tamanhos e âncoras dos móveis modernos (gerador)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Documentation/LICENSE.txt` — licença/leia-me — listado em Créditos
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Documentation/README.md` — licença/leia-me — listado em Créditos
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Preview/Preview.png` — quadro "Prévia — Modern Office Props" na galeria do lobby e créditos
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/TileMap/modern_office_props_tilesheet.json` — mapa da folha (referência do gerador)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/TileMap/modern_office_props_tilesheet.png` — quadro "Folha completa — Modern Office Props" na galeria do lobby e créditos
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/TileMap/modern_office_props_tilesheet_packed.json` — mapa da folha (referência do gerador)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/TileMap/modern_office_props_tilesheet_packed.png` — quadro "Folha completa — Modern Office Props" na galeria do lobby e créditos
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Decor/office_decor_artwork_abstract_01.png` — objeto "Arte abstrata" (Decoração)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Decor/office_decor_bin_recycling_01.png` — objeto "Lixeira reciclagem" (Decoração)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Decor/office_decor_bin_waste_01.png` — objeto "Lixeira lixo" (Decoração)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Decor/office_decor_partition_fabric_01.png` — objeto "Divisória tecido" (Decoração)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Decor/office_decor_plant_broadleaf_01.png` — objeto "Planta folhagem" (Decoração)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Decor/office_decor_plant_palm_01.png` — objeto "Planta palmeira" (Decoração)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Decor/office_decor_plant_snake_01.png` — objeto "Planta espada-de-são-jorge" (Decoração)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Decor/office_decor_refrigerator_compact_01.png` — objeto "Geladeira compacta" (Decoração)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Decor/office_decor_stand_umbrella_01.png` — objeto "Suporte guarda-chuva" (Decoração)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Decor/office_decor_tree_indoor_01.png` — objeto "Árvore interna" (Decoração)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Electronics/office_electronics_camera_security_01.png` — objeto "Câmera segurança" (Eletrônicos)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Electronics/office_electronics_clock_wall_01.png` — objeto "Relógio parede" (Eletrônicos)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Electronics/office_electronics_computer_tower_01.png` — objeto "Computador gabinete" (Eletrônicos)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Electronics/office_electronics_control_panel_01.png` — objeto "Painel de controle" (Eletrônicos)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Electronics/office_electronics_copier_multifunction_01.png` — objeto "Copiadora multifuncional" (Eletrônicos)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Electronics/office_electronics_lamp_desk_01.png` — objeto "Luminária mesa" (Eletrônicos)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Electronics/office_electronics_lamp_floor_01.png` — objeto "Luminária piso" (Eletrônicos)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Electronics/office_electronics_laptop_closed_01.png` — objeto "Notebook fechado" (Eletrônicos)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Electronics/office_electronics_laptop_open_off_01.png` — objeto "Notebook aberto desligado" (Eletrônicos)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Electronics/office_electronics_monitor_single_off_01.png` — objeto "Monitor solteiro desligado" (Eletrônicos)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Electronics/office_electronics_printer_small_01.png` — objeto "Impressora pequeno" (Eletrônicos)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Electronics/office_electronics_projector_01.png` — objeto "Projetor" (Eletrônicos)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Electronics/office_electronics_shredder_01.png` — objeto "Fragmentadora" (Eletrônicos)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Electronics/office_electronics_ups_01.png` — objeto "Nobreak" (Eletrônicos)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Furniture/office_furniture_cabinet_filing_tall_01.png` — objeto "Armário arquivo alto" (Escritório)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Furniture/office_furniture_chair_meeting_01.png` — objeto "Cadeira reunião" (Escritório)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Furniture/office_furniture_chair_task_01.png` — objeto "Cadeira giratória" (Escritório)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Furniture/office_furniture_chair_visitor_01.png` — objeto "Cadeira visitante" (Escritório)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Furniture/office_furniture_counter_reception_curved_01.png` — objeto "Balcão recepção curvo" (Escritório)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Furniture/office_furniture_credenza_low_01.png` — objeto "Aparador baixo" (Escritório)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Furniture/office_furniture_desk_corner_l_01.png` — objeto "Mesa de canto l" (Escritório)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Furniture/office_furniture_desk_modesty_panel_01.png` — objeto "Mesa painel frontal" (Escritório)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Furniture/office_furniture_desk_standing_01.png` — objeto "Mesa em pé" (Escritório)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Furniture/office_furniture_desk_straight_01.png` — objeto "Mesa reta" (Escritório)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Furniture/office_furniture_pedestal_mobile_01.png` — objeto "Gaveteiro móvel" (Escritório)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Furniture/office_furniture_stool_high_01.png` — objeto "Banqueta high" (Escritório)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Props/office_props_archive_box_01.png` — objeto "Caixa de arquivo" (Itens de mesa)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Props/office_props_calculator_01.png` — objeto "Calculadora" (Itens de mesa)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Props/office_props_clipboard_blank_01.png` — objeto "Prancheta em branco" (Itens de mesa)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Props/office_props_folder_closed_01.png` — objeto "Pasta fechado" (Itens de mesa)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Props/office_props_frame_photo_blank_01.png` — objeto "Moldura foto em branco" (Itens de mesa)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Props/office_props_headphones_01.png` — objeto "Fones" (Itens de mesa)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Props/office_props_keys_set_01.png` — objeto "Chaves conjunto" (Itens de mesa)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Props/office_props_mug_01.png` — objeto "Caneca" (Itens de mesa)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Props/office_props_notebook_closed_01.png` — objeto "Caderno fechado" (Itens de mesa)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Props/office_props_organizer_desk_01.png` — objeto "Organizador mesa" (Itens de mesa)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Props/office_props_papers_stack_01.png` — objeto "Papéis pilha" (Itens de mesa)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Props/office_props_pen_cup_01.png` — objeto "Porta-canetas" (Itens de mesa)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Props/office_props_stapler_01.png` — objeto "Grampeador" (Itens de mesa)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Props/office_props_succulent_small_01.png` — objeto "Suculenta pequeno" (Itens de mesa)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Props/office_props_tape_dispenser_01.png` — objeto "Fita adesiva" (Itens de mesa)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Props/office_props_usb_drive_01.png` — objeto "Pendrive" (Itens de mesa)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Props/office_props_wastebasket_small_01.png` — objeto "Lixeira pequeno" (Itens de mesa)
+- `ModernOffice2DProps_v1.0/ModernOffice2DProps_v1.0/Tiles/Props/office_props_water_bottle_01.png` — objeto "Garrafa d'água" (Itens de mesa)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Alchemist.png` — classe de avatar "Alquimista" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Arch Bishop.png` — classe de avatar "Arcebispo" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Assassin Cross.png` — classe de avatar "Algoz" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Assassin.png` — classe de avatar "Mercenário" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Crusader.png` — classe de avatar "Templário" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Dancer (Adopted).png` — classe de avatar "Odalisca" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Game Master.png` — classe de avatar "Game Master" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Genetic.png` — classe de avatar "Bioquímico" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Gypsy.png` — classe de avatar "Cigana" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Hanbok.png` — 7 NPCs/figuras (Hanbok) — decoração viva e arena
+- `PC _ Computer - Ragnarok Online - Classes (Female) - High Wizard.png` — classe de avatar "Arquimago" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Hunter.png` — classe de avatar "Caçador" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Knight.png` — classe de avatar "Cavaleiro" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Lord Knight.png` — classe de avatar "Lorde" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Mage.png` — classe de avatar "Mago" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Monk.png` — classe de avatar "Monge" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Ninja.png` — classe de avatar "Ninja" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Priest.png` — classe de avatar "Sacerdote" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Rune Knight (Alternate).png` — classe de avatar "Cavaleira Rúnica (alt.)" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Santa.png` — 8 NPCs/figuras (Papai Noel) — decoração viva e arena
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Scholar.png` — classe de avatar "Professor" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Sorcerer.png` — classe de avatar "Sorcerer" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Wanderer.png` — classe de avatar "Musa" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Warlock.png` — classe de avatar "Feiticeiro" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Wedding.png` — 8 NPCs/figuras (Casamento) — decoração viva e arena
+- `PC _ Computer - Ragnarok Online - Classes (Female) - Wizard.png` — classe de avatar "Bruxo" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Acolyte.png` — classe de avatar "Noviço" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Alchemist.png` — classe de avatar "Alquimista" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Arch Bishop.png` — classe de avatar "Arcebispo" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Archer.png` — classe de avatar "Arqueiro" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Assassin Cross.png` — classe de avatar "Algoz" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Assassin.png` — classe de avatar "Mercenário" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Bard.png` — classe de avatar "Bardo" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Champion.png` — 9 NPCs/figuras (Mestre) — decoração viva e arena
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Game Master.png` — classe de avatar "Game Master" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Gunslinger.png` — classe de avatar "Justiceiro" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Hanbok.png` — classe de avatar "Hanbok" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - High Wizard.png` — classe de avatar "Arquimago" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Hunter.png` — classe de avatar "Caçador" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Maestro.png` — classe de avatar "Maestro" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Mage.png` — classe de avatar "Mago" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Merchant.png` — classe de avatar "Mercador" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Minstrel.png` — classe de avatar "Menestrel" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Ninja.png` — classe de avatar "Ninja" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Novice.png` — classe de avatar "Aprendiz" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Rune Knight.png` — classe de avatar "Cavaleiro Rúnico" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Santa.png` — 5 NPCs/figuras (Papai Noel) — decoração viva e arena
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Soul Linker.png` — 11 NPCs/figuras (Espiritualista) — decoração viva e arena
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Taekwon.png` — classe de avatar "Taekwon" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Warlock.png` — classe de avatar "Feiticeiro" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Male) - Wedding.png` — classe de avatar "Casamento" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Other) - Falcon.png` — mascote "Falcão" (segue o avatar)
+- `PC _ Computer - Ragnarok Online - Classes (Other) - Game Master Robot.png` — classe de avatar "Robô GM" (outro)
+- `PC _ Computer - Ragnarok Online - Classes (Other) - Genetic Costume (Female).png` — classe de avatar "Bioquímica (traje)" (fem.)
+- `PC _ Computer - Ragnarok Online - Classes (Other) - Guillotine Cross Costume (Male).png` — classe de avatar "Sicário (traje)" (masc.)
+- `PC _ Computer - Ragnarok Online - Classes (Other) - Mercenary Amazon.png` — classe de avatar "Amazona" (outro)
+- `PC _ Computer - Ragnarok Online - Classes (Other) - Merchant Carts (01 _ 02).png` — mascote "Carrinho 1" (segue o avatar)
+- `PC _ Computer - Ragnarok Online - Classes (Other) - Merchant Carts (02 _ 02).png` — mascote "Carrinho 2" (segue o avatar)
+- `PC _ Computer - Ragnarok Online - Effects - Amistr Skills.png` — 4 efeitos animados (Amistr Skills) — habilidades, status e objetos
+- `PC _ Computer - Ragnarok Online - Effects - Angels.png` — 6 efeitos animados (Angels) — habilidades, status e objetos
+- `PC _ Computer - Ragnarok Online - Effects - Blessing.png` — 10 efeitos animados (Blessing) — habilidades, status e objetos
+- `PC _ Computer - Ragnarok Online - Effects - Effect 1.png` — 14 efeitos animados (Effect 1) — habilidades, status e objetos
+- `PC _ Computer - Ragnarok Online - Effects - Effect 2.png` — 3 efeitos animados (Effect 2) — habilidades, status e objetos
+- `PC _ Computer - Ragnarok Online - Effects - Effect 3.png` — 2 efeitos animados (Effect 3) — habilidades, status e objetos
+- `PC _ Computer - Ragnarok Online - Effects - Effect 4.png` — 5 efeitos animados (Effect 4) — habilidades, status e objetos
+- `PC _ Computer - Ragnarok Online - Effects - Gunslinger Skills.png` — 3 efeitos animados (Gunslinger Skills) — habilidades, status e objetos
+- `PC _ Computer - Ragnarok Online - Effects - Miscellaneous Effects.png` — 37 efeitos animados (Miscellaneous Effects) — habilidades, status e objetos
+- `PC _ Computer - Ragnarok Online - Effects - Particles.png` — 2 efeitos animados (Particles) — habilidades, status e objetos
+- `PC _ Computer - Ragnarok Online - Effects - Portal.png` — 5 efeitos animados (Portal) — habilidades, status e objetos
+- `PC _ Computer - Ragnarok Online - Effects - Seasonal Effects.png` — 4 efeitos animados (Seasonal Effects) — habilidades, status e objetos
+- `PC _ Computer - Ragnarok Online - Effects - Shadow Slash.png` — 1 efeitos animados (Shadow Slash) — habilidades, status e objetos
+- `PC _ Computer - Ragnarok Online - Effects - Status Effects.png` — 6 efeitos animados (Status Effects) — habilidades, status e objetos
+- `PC _ Computer - Ragnarok Online - Effects - Taekwon Effects.png` — 1 efeitos animados (Taekwon Effects) — habilidades, status e objetos
+- `PC _ Computer - Ragnarok Online - Effects - Torch.png` — 1 efeitos animados (Torch) — habilidades, status e objetos
+- `PC _ Computer - Ragnarok Online - Effects - Various Effects.png` — 17 efeitos animados (Various Effects) — habilidades, status e objetos
+- `PC _ Computer - Ragnarok Online - Effects - Warg Effects.png` — 3 efeitos animados (Warg Effects) — habilidades, status e objetos
+- `PC _ Computer - Ragnarok Online - Enemies - Abysmal Knight.png` — monstro "Abysmal Knight" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Alarm.png` — monstro "Alarm" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Aliot.png` — monstro "Aliot" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Am Mut.png` — monstro "Am Mut" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Amelit.png` — monstro "Amelit" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Anacondaq.png` — monstro "Anacondaq" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Ancient Tree.png` — monstro "Ancient Tree" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Angra Mantis.png` — monstro "Angra Mantis" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Antique Book.png` — monstro "Antique Book" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Antler Scaraba Egg.png` — monstro "Antler Scaraba Egg" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Antonio.png` — monstro "Antonio" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Bacsojin.png` — monstro "Bacsojin" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Bakonawa.png` — monstro "Bakonawa" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Bandit.png` — monstro "Bandit" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Banshee.png` — monstro "Banshee" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Beholder Master.png` — monstro "Beholder Master" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Boiled Rice.png` — monstro "Boiled Rice" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Cenere.png` — monstro "Cenere" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Coco.png` — monstro "Coco" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Comodo.png` — monstro "Comodo" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Cookie.png` — monstro "Cookie" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - DR815.png` — monstro "DR815" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Dark Frame.png` — monstro "Dark Frame" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Dark Lord.png` — monstro "Dark Lord" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Deviruchi.png` — monstro "Deviruchi" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Diabolic.png` — monstro "Diabolic" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Evil Shadow 1.png` — monstro "Evil Shadow 1" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - False Angel.png` — monstro "False Angel" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Flora.png` — monstro "Flora" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Freezer.png` — monstro "Freezer" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Gloom Under Night.png` — monstro "Gloom Under Night" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Goblin (Mace).png` — monstro "Goblin (Mace)" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Goblin Leader.png` — monstro "Goblin Leader" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Grizzly.png` — monstro "Grizzly" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Incarnation of Morroc (Human).png` — monstro "Incarnation of Morroc (Human)" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Injustice.png` — monstro "Injustice" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Karakasa.png` — monstro "Karakasa" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Mimic.png` — monstro "Mimic" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Myst Case (1).png` — monstro "Myst Case (1)" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Myst Case.png` — monstro "Myst Case" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Orc Baby.png` — monstro "Orc Baby" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Orc Lady.png` — monstro "Orc Lady" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Orc Warrior.png` — monstro "Orc Warrior" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Quve.png` — monstro "Quve" na arena
+- `PC _ Computer - Ragnarok Online - Enemies - Skeleton (Sailor).png` — monstro "Skeleton (Sailor)" na arena
+- `PC _ Computer - Ragnarok Online - Headgear - Afros.png` — 15 acessórios de cabeça (Black power)
+- `PC _ Computer - Ragnarok Online - Headgear - Angel Wings.png` — 2 acessórios de cabeça (Asas de anjo)
+- `PC _ Computer - Ragnarok Online - Headgear - Animal Hats.png` — 82 acessórios de cabeça (Chapéu de bicho)
+- `PC _ Computer - Ragnarok Online - Headgear - Boxes & Bags.png` — 15 acessórios de cabeça (Caixas e sacolas)
+- `PC _ Computer - Ragnarok Online - Headgear - Brunhild's Crown.png` — 5 acessórios de cabeça (Coroa de Brunhild)
+- `PC _ Computer - Ragnarok Online - Headgear - Claw Helmet.png` — 5 acessórios de cabeça (Elmo de garras)
+- `PC _ Computer - Ragnarok Online - Headgear - Crowns.png` — 3 acessórios de cabeça (Coroa)
+- `PC _ Computer - Ragnarok Online - Headgear - Dark Flame.png` — 25 acessórios de cabeça (Chama sombria)
+- `PC _ Computer - Ragnarok Online - Headgear - Deviruchi.png` — 4 acessórios de cabeça (Chapéu Deviruchi)
+- `PC _ Computer - Ragnarok Online - Headgear - Halloween Hat.png` — 7 acessórios de cabeça (Chapéu de Halloween)
+- `PC _ Computer - Ragnarok Online - Headgear - Hats (01 _ 03).png` — 133 acessórios de cabeça (Chapéu)
+- `PC _ Computer - Ragnarok Online - Headgear - Hats (Animated, 01 _ 03).png` — 120 acessórios de cabeça (Chapéu animado)
+- `PC _ Computer - Ragnarok Online - Headgear - Headdresses.png` — 17 acessórios de cabeça (Arranjo)
+- `PC _ Computer - Ragnarok Online - Headgear - Headgear (Middle, Animated).png` — 30 acessórios de cabeça (Acessório animado)
+- `PC _ Computer - Ragnarok Online - Headgear - Hoods.png` — 32 acessórios de cabeça (Capuz)
+- `PC _ Computer - Ragnarok Online - Headgear - Imp Hat.png` — 25 acessórios de cabeça (Chapéu de diabrete)
+- `PC _ Computer - Ragnarok Online - Headgear - Orc Face.png` — 3 acessórios de cabeça (Máscara de orc)
+- `PC _ Computer - Ragnarok Online - Headgear - Rainbow Star.png` — 5 acessórios de cabeça (Estrela arco-íris)
+- `PC _ Computer - Ragnarok Online - Headgear - Ribbons.png` — 46 acessórios de cabeça (Laço)
+- `PC _ Computer - Ragnarok Online - Headgear - Wizard Hats.png` — 6 acessórios de cabeça (Chapéu de mago)
+- `PC _ Computer - Ragnarok Online - Headgear - Zodiac Hats.png` — 67 acessórios de cabeça (Chapéu do zodíaco)
+- `PC _ Computer - Ragnarok Online - Heads (Female _ Original) - Black.png` — 57 penteados de cabelo (Preto, fem.)
+- `PC _ Computer - Ragnarok Online - Heads (Female _ Original) - Blue.png` — 57 penteados de cabelo (Azul, fem.)
+- `PC _ Computer - Ragnarok Online - Heads (Female _ Original) - Brown.png` — 57 penteados de cabelo (Castanho, fem.)
+- `PC _ Computer - Ragnarok Online - Heads (Female) - Black.png` — 30 penteados de cabelo (Preto, fem.)
+- `PC _ Computer - Ragnarok Online - Heads (Female) - Blue.png` — 30 penteados de cabelo (Azul, fem.)
+- `PC _ Computer - Ragnarok Online - Heads (Female) - Brown.png` — 30 penteados de cabelo (Castanho, fem.)
+- `PC _ Computer - Ragnarok Online - Heads (Female) - Doram.png` — 18 penteados de cabelo (Doram, fem.)
+- `PC _ Computer - Ragnarok Online - Heads (Female) - Green.png` — 30 penteados de cabelo (Verde, fem.)
+- `PC _ Computer - Ragnarok Online - Heads (Female) - Purple.png` — 30 penteados de cabelo (Roxo, fem.)
+- `PC _ Computer - Ragnarok Online - Heads (Female) - Red.png` — 30 penteados de cabelo (Ruivo, fem.)
+- `PC _ Computer - Ragnarok Online - Heads (Female) - White.png` — 30 penteados de cabelo (Branco, fem.)
+- `PC _ Computer - Ragnarok Online - Heads (Female) - Yellow.png` — 30 penteados de cabelo (Loiro, fem.)
+- `PC _ Computer - Ragnarok Online - Heads (Male _ Original) - Black.png` — 56 penteados de cabelo (Preto, masc.)
+- `PC _ Computer - Ragnarok Online - Heads (Male _ Original) - Blue.png` — 56 penteados de cabelo (Azul, masc.)
+- `PC _ Computer - Ragnarok Online - Heads (Male _ Original) - Brown.png` — 56 penteados de cabelo (Castanho, masc.)
+- `PC _ Computer - Ragnarok Online - Heads (Male _ Original) - Green.png` — 56 penteados de cabelo (Verde, masc.)
+- `PC _ Computer - Ragnarok Online - Heads (Male _ Original) - Purple.png` — 56 penteados de cabelo (Roxo, masc.)
+- `PC _ Computer - Ragnarok Online - Heads (Male _ Original) - Red.png` — 56 penteados de cabelo (Ruivo, masc.)
+- `PC _ Computer - Ragnarok Online - Heads (Male _ Original) - White.png` — 56 penteados de cabelo (Branco, masc.)
+- `PC _ Computer - Ragnarok Online - Heads (Male _ Original) - Yellow.png` — 56 penteados de cabelo (Loiro, masc.)
+- `PC _ Computer - Ragnarok Online - Heads (Male) - Yellow.png` — 33 penteados de cabelo (Loiro, masc.)
+- `PC _ Computer - Ragnarok Online - Miscellaneous - Book Icons.png` — ícones do quadro de quests
+- `PC _ Computer - Ragnarok Online - Miscellaneous - Cursors.png` — cursores do mouse no jogo
+- `PC _ Computer - Ragnarok Online - Miscellaneous - Emotes.png` — 38 emotes animados (barra de emotes)
+- `PC _ Computer - Ragnarok Online - Miscellaneous - Slot Machine.png` — objeto "Caça-níquel" (Lazer)
+- `PC _ Computer - Ragnarok Online - Non-Playable Characters - Animals (Anthropomorphic).png` — 22 NPCs/figuras (Bicho falante) — decoração viva e arena
+- `PC _ Computer - Ragnarok Online - Non-Playable Characters - Animals.png` — 12 NPCs/figuras (Animal) — decoração viva e arena
+- `PC _ Computer - Ragnarok Online - Non-Playable Characters - Fairies.png` — 7 NPCs/figuras (Fada) — decoração viva e arena
+- `PC _ Computer - Ragnarok Online - Non-Playable Characters - NPCs (Holiday).png` — 7 NPCs/figuras (NPC festivo) — decoração viva e arena
+- `PC _ Computer - Ragnarok Online - Non-Playable Characters - NPCs (Regional).png` — 8 NPCs/figuras (NPC regional) — decoração viva e arena
+- `PC _ Computer - Ragnarok Online - Non-Playable Characters - NPCs (Walking).png` — 14 NPCs/figuras (NPC andarilho) — decoração viva e arena
+- `PC _ Computer - Ragnarok Online - Non-Playable Characters - Rafflesias.png` — 3 NPCs/figuras (Rafflesia) — decoração viva e arena
+- `PC _ Computer - Ragnarok Online - Non-Playable Characters - Treasure Chest.png` — 3 NPCs/figuras (Baú do tesouro) — decoração viva e arena
+- `PC _ Computer - Ragnarok Online - Weapons - Acolyte Rods.png` — 49 armas equipáveis no combate (Maça)
+- `PC _ Computer - Ragnarok Online - Weapons - Alchemist Axes.png` — 30 armas equipáveis no combate (Machado)
+- `PC _ Computer - Ragnarok Online - Weapons - Alchemist Daggers.png` — 20 armas equipáveis no combate (Adaga)
+- `PC _ Computer - Ragnarok Online - Weapons - Archer Bows.png` — 23 armas equipáveis no combate (Arco)
+- `PC _ Computer - Ragnarok Online - Weapons - Assassin Dual Weapons (Female).png` — 43 armas equipáveis no combate (Katar)
+- `PC _ Computer - Ragnarok Online - Weapons - Assassin Swords.png` — 44 armas equipáveis no combate (Espada curta)
+- `PC _ Computer - Ragnarok Online - Weapons - Bard Daggers.png` — 11 armas equipáveis no combate (Adaga de bardo)
+- `PC _ Computer - Ragnarok Online - Weapons - Bard Instrument.png` — 5 armas equipáveis no combate (Instrumento)
+- `PC _ Computer - Ragnarok Online - Weapons - Crusader Axes (Peco Peco).png` — 16 armas equipáveis no combate (Machado de montaria)
+- `PC _ Computer - Ragnarok Online - Weapons - Crusader Spears (Female).png` — 24 armas equipáveis no combate (Lança)
+- `PC _ Computer - Ragnarok Online - Weapons - Crusader Spears (Male).png` — 46 armas equipáveis no combate (Lança)
+- `PC _ Computer - Ragnarok Online - Weapons - Crusader Spears (Peco Peco, Baby).png` — 30 armas equipáveis no combate (Lança de montaria)
+- `PC _ Computer - Ragnarok Online - Weapons - Gunslinger Guns.png` — 40 armas equipáveis no combate (Arma de fogo)
+- `PC _ Computer - Ragnarok Online - Weapons - Kagerou Shurikens.png` — 3 armas equipáveis no combate (Shuriken)
+- `PC _ Computer - Ragnarok Online - Weapons - Mercenary Bowman Weapons.png` — 6 armas equipáveis no combate (Arco de mercenário)
+- `PC _ Computer - Ragnarok Online - Weapons - Mercenary Spearman Weapons.png` — 18 armas equipáveis no combate (Lança de mercenário)
+- `PC _ Computer - Ragnarok Online - Weapons - Rogue Bows.png` — 28 armas equipáveis no combate (Arco de arruaceiro)
+- `PC _ Computer - Ragnarok Online - Weapons - Swordman Spears (Male).png` — 49 armas equipáveis no combate (Lança de espadachim)
+- `PC _ Computer - Ragnarok Online - Weapons - Swordman Swords.png` — 68 armas equipáveis no combate (Espada)
+- `PC _ Computer - Ragnarok Online - Weapons - Wizard Rods.png` — 36 armas equipáveis no combate (Cajado)
+- `PenzillaDesign_StandardLicense.pdf` — licença/leia-me — listado em Créditos
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes000.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes001.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes002.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes003.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes004.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes005.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes006.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes007.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes008.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes009.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes010.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes011.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes012.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes013.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes014.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes015.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes016.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes017.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes018.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes019.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes020.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes021.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes022.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes023.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes024.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes025.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes026.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes027.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes028.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes029.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes030.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes031.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes032.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes033.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes034.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes035.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes036.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes037.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes038.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes039.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes040.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes041.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes042.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes043.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes044.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes045.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes046.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes047.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes048.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes049.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes050.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes051.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes052.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes053.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes054.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes055.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes056.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes057.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes058.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes059.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes060.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes061.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes062.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes063.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes064.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes065.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes066.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes067.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes068.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes069.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes070.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes071.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes072.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes073.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes074.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes075.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes076.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes077.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes078.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes079.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes080.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes081.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes082.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes083.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes084.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes085.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes086.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes087.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes088.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes089.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes090.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes091.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes092.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes093.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes094.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes095.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes096.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes097.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes098.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes099.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes100.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes101.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes102.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes103.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes104.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes105.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes106.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes107.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes108.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes109.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes110.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes111.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes112.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes113.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes114.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes115.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes116.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes117.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes118.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes119.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes120.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes121.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes122.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes123.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes124.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes125.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes126.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes127.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes128.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes129.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes130.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes131.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes132.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes133.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes134.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes135.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes136.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes137.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes138.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes139.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes140.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes141.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes142.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes143.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes144.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes145.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes146.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes147.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes148.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes149.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes150.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes151.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes152.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes153.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes154.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes155.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes156.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes157.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes158.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes159.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes160.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes161.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes162.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes163.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes164.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes165.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes166.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes167.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes168.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes169.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes170.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes171.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes172.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes173.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes174.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes175.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes176.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes177.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes Split images/pipo-popupemotes178.png` — quadro do balão animado "pipo-popupemotes"
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes.png` — quadro "Folha de balões (Pipoya)" na galeria do lobby e créditos
+- `Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes_sampleanimation.gif` — animação de exemplo no seletor de emotes
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Carry_Idle/Carry_Idle_Down-Sheet.png` — animação "carry_idle_down" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Carry_Idle/Carry_Idle_Down.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Carry_Idle/Carry_Idle_Side-Sheet.png` — animação "carry_idle_side" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Carry_Idle/Carry_Idle_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Carry_Idle/Carry_Idle_Up-Sheet.png` — animação "carry_idle_up" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Carry_Idle/Carry_Idle_Up.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Carry_Run/Carry_Run_Down-Sheet.png` — animação "carry_run_down" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Carry_Run/Carry_Run_Down.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Carry_Run/Carry_Run_Side-Sheet.png` — animação "carry_run_side" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Carry_Run/Carry_Run_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Carry_Run/Carry_Run_Up-Sheet.png` — animação "carry_run_up" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Carry_Run/Carry_Run_Up.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Carry_Walk/Carry_Walk_Down-Sheet.png` — animação "carry_walk_down" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Carry_Walk/Carry_Walk_Down.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Carry_Walk/Carry_Walk_Side-Sheet.png` — animação "carry_walk_side" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Carry_Walk/Carry_Walk_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Carry_Walk/Carry_Walk_Up-Sheet.png` — animação "carry_walk_up" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Carry_Walk/Carry_Walk_Up.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Collect_Base/Collect_Down-Sheet.png` — animação "collect_down" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Collect_Base/Collect_Down.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Collect_Base/Collect_Side-Sheet.png` — animação "collect_side" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Collect_Base/Collect_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Collect_Base/Collect_Up-Sheet.png` — animação "collect_up" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Collect_Base/Collect_Up.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Crush_Base/Crush_Down-Sheet.png` — animação "crush_down" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Crush_Base/Crush_Down.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Crush_Base/Crush_Side-Sheet.png` — animação "crush_side" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Crush_Base/Crush_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Crush_Base/Crush_Up-Sheet.png` — animação "crush_up" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Crush_Base/Crush_Up.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Death_Base/Death_Down-Sheet.png` — animação "death_down" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Death_Base/Death_Down.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Death_Base/Death_Side-Sheet.png` — animação "death_side" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Death_Base/Death_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Death_Base/Death_Up-Sheet.png` — animação "death_up" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Death_Base/Death_Up.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Fishing_Base/Fishing_Down-Sheet.png` — animação "fishing_down" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Fishing_Base/Fishing_Down.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Fishing_Base/Fishing_Side-Sheet.png` — animação "fishing_side" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Fishing_Base/Fishing_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Fishing_Base/Fishing_Up-Sheet.png` — animação "fishing_up" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Fishing_Base/Fishing_Up.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Hit_Base/Hit_Down-Sheet.png` — animação "hit_down" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Hit_Base/Hit_Down.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Hit_Base/Hit_Side-Sheet.png` — animação "hit_side" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Hit_Base/Hit_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Hit_Base/Hit_Up-Sheet.png` — animação "hit_up" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Hit_Base/Hit_Up.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Idle_Base/Idle_Down-Sheet.png` — animação "idle_down" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Idle_Base/Idle_Down.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Idle_Base/Idle_Side-Sheet.png` — animação "idle_side" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Idle_Base/Idle_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Idle_Base/Idle_Up-Sheet.png` — animação "idle_up" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Idle_Base/Idle_Up.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Pierce_Base/Pierce_Down-Sheet.png` — animação "pierce_down" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Pierce_Base/Pierce_Down.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Pierce_Base/Pierce_Side-Sheet.png` — animação "pierce_side" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Pierce_Base/Pierce_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Pierce_Base/Pierce_Top-Sheet.png` — animação "pierce_top" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Pierce_Base/Pierce_Top.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Run_Base/Run_Down-Sheet.png` — animação "run_down" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Run_Base/Run_Down.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Run_Base/Run_Side-Sheet.png` — animação "run_side" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Run_Base/Run_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Run_Base/Run_Up-Sheet.png` — animação "run_up" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Run_Base/Run_Up.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Slice_Base/Slice_Down-Sheet.png` — animação "slice_down" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Slice_Base/Slice_Down.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Slice_Base/Slice_Side-Sheet.png` — animação "slice_side" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Slice_Base/Slice_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Slice_Base/Slice_Up-Sheet.png` — animação "slice_up" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Slice_Base/Slice_Up.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Walk_Base/Walk_Down-Sheet.png` — animação "walk_down" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Walk_Base/Walk_Down.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Walk_Base/Walk_Side-Sheet.png` — animação "walk_side" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Walk_Base/Walk_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Walk_Base/Walk_Up-Sheet.png` — animação "walk_up" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Walk_Base/Walk_Up.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Watering_Base/Watering_Down-Sheet.png` — animação "watering_down" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Watering_Base/Watering_Down.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Watering_Base/Watering_Side-Sheet.png` — animação "watering_side" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Watering_Base/Watering_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Watering_Base/Watering_Up-Sheet.png` — animação "watering_up" do NPC aventureiro (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Watering_Base/Watering_Up.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/New_Version/Idle/Idle_Down.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/New_Version/Idle/Idle_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/New_Version/Idle/Idle_Up.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/New_Version/Walk/Down.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/New_Version/Walk/Up.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Characters/New_Version/Walk/Walk_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Rogue/Death/Death-Sheet.png` — animação "death" de Orc - Rogue
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Rogue/Death/Death.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Rogue/Idle/Idle-Sheet.png` — animação "idle" de Orc - Rogue
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Rogue/Idle/Idle.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Rogue/Run/Run-Sheet.png` — animação "run" de Orc - Rogue
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Rogue/Run/Run.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Shaman/Death/Death-Sheet.png` — animação "death" de Orc - Shaman
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Shaman/Death/Death.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Shaman/Idle/Idle-Sheet.png` — animação "idle" de Orc - Shaman
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Shaman/Idle/Idle.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Shaman/Run/Run-Sheet.png` — animação "run" de Orc - Shaman
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Shaman/Run/Run.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Warrior/Death/Death-Sheet.png` — animação "death" de Orc - Warrior
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Warrior/Death/Death.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Warrior/Idle/Idle-Sheet.png` — animação "idle" de Orc - Warrior
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Warrior/Idle/Idle.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Warrior/Run/Run-Sheet.png` — animação "run" de Orc - Warrior
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Warrior/Run/Run.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc/Death/Death-Sheet.png` — animação "death" de Orc
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc/Death/Death.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc/Idle/Idle-Sheet.png` — animação "idle" de Orc
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc/Idle/Idle.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc/Run/Run-Sheet.png` — animação "run" de Orc
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc/Run/Run.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Base/Death/Death-Sheet.png` — animação "death" de Skeleton - Base
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Base/Death/Death.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Base/Idle/Idle-Sheet.png` — animação "idle" de Skeleton - Base
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Base/Idle/Idle.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Base/Run/Run-Sheet.png` — animação "run" de Skeleton - Base
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Base/Run/Run.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Mage/Death/Death-Sheet.png` — animação "death" de Skeleton - Mage
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Mage/Death/Death.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Mage/Idle/Idle-Sheet.png` — animação "idle" de Skeleton - Mage
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Mage/Idle/Idle.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Mage/Run/Run-Sheet.png` — animação "run" de Skeleton - Mage
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Mage/Run/Run.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Rogue/Death/Death-Sheet.png` — animação "death" de Skeleton - Rogue
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Rogue/Death/Death.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Rogue/Idle/Idle-Sheet.png` — animação "idle" de Skeleton - Rogue
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Rogue/Idle/Idle.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Rogue/Run/Run-Sheet.png` — animação "run" de Skeleton - Rogue
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Rogue/Run/Run.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Warrior/Death/Death-Sheet.png` — animação "death" de Skeleton - Warrior
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Warrior/Death/Death.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Warrior/Idle/Idle-Sheet.png` — animação "idle" de Skeleton - Warrior
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Warrior/Idle/Idle.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Warrior/Run/Run-Sheet.png` — animação "run" de Skeleton - Warrior
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Mobs/Skeleton Crew/Skeleton - Warrior/Run/Run.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Citizen_A/Idle.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Citizen_A/Walk.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Peasant_A/Idle/Idle-Sheet.png` — animação "idle" de Peasant_A
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Peasant_A/Idle/Idle.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Peasant_A/Walk/Walk-Sheet.png` — animação "walk" de Peasant_A
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Peasant_A/Walk/Walk.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Tavern_A/Idle/Idle_Side-Sheet.png` — animação "idle" de Tavern_A
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Tavern_A/Idle/Idle_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Tavern_A/Idle_Hold/Idle_Side-Sheet.png` — animação "idle_hold" de Tavern_A
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Tavern_A/Idle_Hold/Idle_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Tavern_A/Walk/Walk_Side-Sheet.png` — animação "walk" de Tavern_A
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Tavern_A/Walk/Walk_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Tavern_A/Walk_Hold/Walk_Side-Sheet.png` — animação "walk_hold" de Tavern_A
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Tavern_A/Walk_Hold/Walk_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Tavern_B/Idle/Idle_Side-Sheet.png` — animação "idle" de Tavern_B
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Tavern_B/Idle/Idle_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Tavern_B/Idle_Hold/Idle_Side-Sheet.png` — animação "idle_hold" de Tavern_B
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Tavern_B/Idle_Hold/Idle_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Tavern_B/Walk/Walk_Side-Sheet.png` — animação "walk" de Tavern_B
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Tavern_B/Walk/Walk_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Tavern_B/Walk_Hold/Walk_Side-Sheet.png` — animação "walk_hold" de Tavern_B
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Citizen_F/Tavern_B/Walk_Hold/Walk_Side.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Knight/Death/Death-Sheet.png` — animação "death" de Knight
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Knight/Death/Death.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Knight/Idle/Idle-Sheet.png` — animação "idle" de Knight
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Knight/Idle/Idle.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Knight/Run/Run-Sheet.png` — animação "run" de Knight
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Knight/Run/Run.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Rogue/Death/Death-Sheet.png` — animação "death" de Rogue
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Rogue/Death/Death.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Rogue/Idle/Idle-Sheet.png` — animação "idle" de Rogue
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Rogue/Idle/Idle.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Rogue/Run/Run-Sheet.png` — animação "run" de Rogue
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Rogue/Run/Run.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Wizzard/Death/Death-Sheet.png` — animação "death" de Wizzard
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Wizzard/Death/Death.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Wizzard/Idle/Idle-Sheet.png` — animação "idle" de Wizzard
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Wizzard/Idle/Idle.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Wizzard/Run/Run-Sheet.png` — animação "run" de Wizzard
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Entities/Npc's/Wizzard/Run/Run.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Animated/Pan_01-Sheet.png` — objeto "Pan" (Cozinha)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Animated/Pan_01.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Animated/Pan_02-Sheet.png` — objeto "Pan 02" (Cozinha)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Animated/Pan_02.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Animated/Pan_03-Sheet.png` — objeto "Pan 03" (Cozinha)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Animated/Pan_03.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Animated/Pan_04-Sheet.png` — objeto "Pan 04" (Cozinha)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Animated/Pan_04.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Animated/Pan_05-Sheet.png` — objeto "Pan 05" (Cozinha)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Animated/Pan_05.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Dungeon_Props.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Dungeon_Props.png` — objeto "Dungeon props 1" (Masmorra); objeto "Dungeon props 2" (Masmorra); objeto "Dungeon props 3" (Masmorra); objeto "Dungeon props 4" (Masmorra); objeto "Dungeon props 5" (Masmorra); objeto "Dungeon props 6" (Masmorra); objeto "Dungeon props 7" (Masmorra); objeto "Dungeon props 8" (Masmorra); objeto "Dungeon props 9" (Masmorra); objeto "Dungeon props 10" (Masmorra); objeto "Dungeon props 11" (Masmorra); objeto "Dungeon props 12" (Masmorra); objeto "Dungeon props 13" (Masmorra); objeto "Dungeon props 14" (Masmorra); objeto "Dungeon props 15" (Masmorra); objeto "Dungeon props 16" (Masmorra); objeto "Dungeon props 17" (Masmorra)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Esoteric.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Esoteric.png` — objeto "Esoteric 1" (Mágico); objeto "Esoteric 2" (Mágico); objeto "Esoteric 3" (Mágico); objeto "Esoteric 4" (Mágico); objeto "Esoteric 5" (Mágico); objeto "Esoteric 6" (Mágico); objeto "Esoteric 7" (Mágico); objeto "Esoteric 8" (Mágico); objeto "Esoteric 9" (Mágico); objeto "Esoteric 10" (Mágico); objeto "Esoteric 11" (Mágico); objeto "Esoteric 12" (Mágico); objeto "Esoteric 13" (Mágico); objeto "Esoteric 14" (Mágico); objeto "Esoteric 15" (Mágico); objeto "Esoteric 16" (Mágico); objeto "Esoteric 17" (Mágico); objeto "Esoteric 18" (Mágico); objeto "Esoteric 19" (Mágico); objeto "Esoteric 20" (Mágico); objeto "Esoteric 21" (Mágico); objeto "Esoteric 22" (Mágico); objeto "Esoteric 23" (Mágico); objeto "Esoteric 24" (Mágico); objeto "Esoteric 25" (Mágico); objeto "Esoteric 26" (Mágico); objeto "Esoteric 27" (Mágico); objeto "Esoteric 28" (Mágico); objeto "Esoteric 29" (Mágico); objeto "Esoteric 30" (Mágico); objeto "Esoteric 31" (Mágico); objeto "Esoteric 32" (Mágico); objeto "Esoteric 33" (Mágico)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Farm.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Farm.png` — objeto "Farm 1" (Fazenda); objeto "Farm 2" (Fazenda); objeto "Farm 3" (Fazenda); objeto "Farm 4" (Fazenda); objeto "Farm 5" (Fazenda); objeto "Farm 6" (Fazenda); objeto "Farm 7" (Fazenda); objeto "Farm 8" (Fazenda); objeto "Farm 9" (Fazenda); objeto "Farm 10" (Fazenda); objeto "Farm 11" (Fazenda); objeto "Farm 12" (Fazenda); objeto "Farm 13" (Fazenda); objeto "Farm 14" (Fazenda); objeto "Farm 15" (Fazenda); objeto "Farm 16" (Fazenda); objeto "Farm 17" (Fazenda); objeto "Farm 18" (Fazenda); objeto "Farm 19" (Fazenda); objeto "Farm 20" (Fazenda); objeto "Farm 21" (Fazenda); objeto "Farm 22" (Fazenda); objeto "Farm 23" (Fazenda); objeto "Farm 24" (Fazenda); objeto "Farm 25" (Fazenda); objeto "Farm 26" (Fazenda); objeto "Farm 27" (Fazenda); objeto "Farm 28" (Fazenda); objeto "Farm 29" (Fazenda); objeto "Farm 30" (Fazenda); objeto "Farm 31" (Fazenda); objeto "Farm 32" (Fazenda); objeto "Farm 33" (Fazenda); objeto "Farm 34" (Fazenda); objeto "Farm 35" (Fazenda); objeto "Farm 36" (Fazenda); objeto "Farm 37" (Fazenda); objeto "Farm 38" (Fazenda); objeto "Farm 39" (Fazenda); objeto "Farm 40" (Fazenda); objeto "Farm 41" (Fazenda); objeto "Farm 42" (Fazenda); objeto "Farm 43" (Fazenda); objeto "Farm 44" (Fazenda); objeto "Farm 45" (Fazenda); objeto "Farm 46" (Fazenda); objeto "Farm 47" (Fazenda); objeto "Farm 48" (Fazenda); objeto "Farm 49" (Fazenda); objeto "Farm 50" (Fazenda); objeto "Farm 51" (Fazenda); objeto "Farm 52" (Fazenda); objeto "Farm 53" (Fazenda); objeto "Farm 54" (Fazenda); objeto "Farm 55" (Fazenda); objeto "Farm 56" (Fazenda); objeto "Farm 57" (Fazenda); objeto "Farm 58" (Fazenda); objeto "Farm 59" (Fazenda); objeto "Farm 60" (Fazenda); objeto "Farm 61" (Fazenda); objeto "Farm 62" (Fazenda); objeto "Farm 63" (Fazenda); objeto "Farm 64" (Fazenda); objeto "Farm 65" (Fazenda); objeto "Farm 66" (Fazenda); objeto "Farm 67" (Fazenda)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Furniture.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Furniture.png` — objeto "Móvel 1" (Móveis); objeto "Móvel 2" (Móveis); objeto "Móvel 3" (Móveis); objeto "Móvel 4" (Móveis); objeto "Móvel 5" (Móveis); objeto "Móvel 6" (Móveis); objeto "Móvel 7" (Móveis); objeto "Móvel 8" (Móveis); objeto "Móvel 9" (Móveis); objeto "Móvel 10" (Móveis); objeto "Móvel 11" (Móveis); objeto "Móvel 12" (Móveis); objeto "Móvel 13" (Móveis); objeto "Móvel 14" (Móveis); objeto "Móvel 15" (Móveis); objeto "Móvel 16" (Móveis); objeto "Móvel 17" (Móveis); objeto "Móvel 18" (Móveis); objeto "Móvel 19" (Móveis); objeto "Móvel 20" (Móveis); objeto "Móvel 21" (Móveis); objeto "Móvel 22" (Móveis); objeto "Móvel 23" (Móveis); objeto "Móvel 24" (Móveis); objeto "Móvel 25" (Móveis); objeto "Móvel 26" (Móveis); objeto "Móvel 27" (Móveis); objeto "Móvel 28" (Móveis); objeto "Móvel 29" (Móveis); objeto "Móvel 30" (Móveis); objeto "Móvel 31" (Móveis); objeto "Móvel 32" (Móveis); objeto "Móvel 33" (Móveis); objeto "Móvel 34" (Móveis); objeto "Móvel 35" (Móveis); objeto "Móvel 36" (Móveis); objeto "Móvel 37" (Móveis); objeto "Móvel 38" (Móveis); objeto "Móvel 39" (Móveis); objeto "Móvel 40" (Móveis); objeto "Móvel 41" (Móveis); objeto "Móvel 42" (Móveis); objeto "Móvel 43" (Móveis); objeto "Móvel 44" (Móveis)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Meat.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Meat.png` — objeto "Meat 1" (Cozinha); objeto "Meat 2" (Cozinha); objeto "Meat 3" (Cozinha); objeto "Meat 4" (Cozinha); objeto "Meat 5" (Cozinha); objeto "Meat 6" (Cozinha); objeto "Meat 7" (Cozinha); objeto "Meat 8" (Cozinha); objeto "Meat 9" (Cozinha); objeto "Meat 10" (Cozinha); objeto "Meat 11" (Cozinha); objeto "Meat 12" (Cozinha); objeto "Meat 13" (Cozinha); objeto "Meat 14" (Cozinha); objeto "Meat 15" (Cozinha); objeto "Meat 16" (Cozinha); objeto "Meat 17" (Cozinha); objeto "Meat 18" (Cozinha); objeto "Meat 19" (Cozinha); objeto "Meat 20" (Cozinha); objeto "Meat 21" (Cozinha); objeto "Meat 22" (Cozinha); objeto "Meat 23" (Cozinha); objeto "Meat 24" (Cozinha); objeto "Meat 25" (Cozinha); objeto "Meat 26" (Cozinha); objeto "Meat 27" (Cozinha); objeto "Meat 28" (Cozinha); objeto "Meat 29" (Cozinha); objeto "Meat 30" (Cozinha); objeto "Meat 31" (Cozinha)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Pan.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Pan.png` — objeto "Pan 1" (Cozinha); objeto "Pan 2" (Cozinha); objeto "Pan 3" (Cozinha); objeto "Pan 4" (Cozinha); objeto "Pan 5" (Cozinha); objeto "Pan 6" (Cozinha); objeto "Pan 7" (Cozinha); objeto "Pan 8" (Cozinha); objeto "Pan 9" (Cozinha); objeto "Pan 10" (Cozinha); objeto "Pan 11" (Cozinha); objeto "Pan 12" (Cozinha); objeto "Pan 13" (Cozinha); objeto "Pan 14" (Cozinha); objeto "Pan 15" (Cozinha); objeto "Pan 16" (Cozinha); objeto "Pan 17" (Cozinha); objeto "Pan 18" (Cozinha); objeto "Pan 19" (Cozinha); objeto "Pan 20" (Cozinha); objeto "Pan 21" (Cozinha); objeto "Pan 22" (Cozinha); objeto "Pan 23" (Cozinha); objeto "Pan 24" (Cozinha); objeto "Pan 25" (Cozinha); objeto "Pan 26" (Cozinha); objeto "Pan 27" (Cozinha); objeto "Pan 28" (Cozinha); objeto "Pan 29" (Cozinha); objeto "Pan 30" (Cozinha); objeto "Pan 31" (Cozinha); objeto "Pan 32" (Cozinha); objeto "Pan 33" (Cozinha); objeto "Pan 34" (Cozinha); objeto "Pan 35" (Cozinha); objeto "Pan 36" (Cozinha); objeto "Pan 37" (Cozinha); objeto "Pan 38" (Cozinha); objeto "Pan 39" (Cozinha); objeto "Pan 40" (Cozinha); objeto "Pan 41" (Cozinha); objeto "Pan 42" (Cozinha); objeto "Pan 43" (Cozinha); objeto "Pan 44" (Cozinha); objeto "Pan 45" (Cozinha); objeto "Pan 46" (Cozinha); objeto "Pan 47" (Cozinha); objeto "Pan 48" (Cozinha); objeto "Pan 49" (Cozinha); objeto "Pan 50" (Cozinha); objeto "Pan 51" (Cozinha); objeto "Pan 52" (Cozinha); objeto "Pan 53" (Cozinha)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png` — objeto "Resources 1" (Recursos); objeto "Resources 2" (Recursos); objeto "Resources 3" (Recursos); objeto "Resources 4" (Recursos); objeto "Resources 5" (Recursos); objeto "Resources 6" (Recursos); objeto "Resources 7" (Recursos); objeto "Resources 8" (Recursos); objeto "Resources 9" (Recursos); objeto "Resources 10" (Recursos); objeto "Resources 11" (Recursos); objeto "Resources 12" (Recursos); objeto "Resources 13" (Recursos); objeto "Resources 14" (Recursos); objeto "Resources 15" (Recursos); objeto "Resources 16" (Recursos); objeto "Resources 17" (Recursos); objeto "Resources 18" (Recursos); objeto "Resources 19" (Recursos)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Rocks.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Rocks.png` — objeto "Rocks 1" (Natureza); objeto "Rocks 2" (Natureza); objeto "Rocks 3" (Natureza); objeto "Rocks 4" (Natureza); objeto "Rocks 5" (Natureza); objeto "Rocks 6" (Natureza); objeto "Rocks 7" (Natureza); objeto "Rocks 8" (Natureza); objeto "Rocks 9" (Natureza); objeto "Rocks 10" (Natureza); objeto "Rocks 11" (Natureza); objeto "Rocks 12" (Natureza); objeto "Rocks 13" (Natureza); objeto "Rocks 14" (Natureza); objeto "Rocks 15" (Natureza); objeto "Rocks 16" (Natureza); objeto "Rocks 17" (Natureza); objeto "Rocks 18" (Natureza); objeto "Rocks 19" (Natureza); objeto "Rocks 20" (Natureza); objeto "Rocks 21" (Natureza); objeto "Rocks 22" (Natureza); objeto "Rocks 23" (Natureza); objeto "Rocks 24" (Natureza); objeto "Rocks 25" (Natureza); objeto "Rocks 26" (Natureza); objeto "Rocks 27" (Natureza); objeto "Rocks 28" (Natureza); objeto "Rocks 29" (Natureza); objeto "Rocks 30" (Natureza); objeto "Rocks 31" (Natureza); objeto "Rocks 32" (Natureza); objeto "Rocks 33" (Natureza); objeto "Rocks 34" (Natureza); objeto "Rocks 35" (Natureza); objeto "Rocks 36" (Natureza); objeto "Rocks 37" (Natureza); objeto "Rocks 38" (Natureza); objeto "Rocks 39" (Natureza); objeto "Rocks 40" (Natureza); objeto "Rocks 41" (Natureza); objeto "Rocks 42" (Natureza); objeto "Rocks 43" (Natureza); objeto "Rocks 44" (Natureza); objeto "Rocks 45" (Natureza); objeto "Rocks 46" (Natureza); objeto "Rocks 47" (Natureza); objeto "Rocks 48" (Natureza); objeto "Rocks 49" (Natureza); objeto "Rocks 50" (Natureza); objeto "Rocks 51" (Natureza); objeto "Rocks 52" (Natureza); objeto "Rocks 53" (Natureza)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Shadows.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Shadows.png` — objeto "Shadows 1" (Sombras); objeto "Shadows 2" (Sombras); objeto "Shadows 3" (Sombras); objeto "Shadows 4" (Sombras); objeto "Shadows 5" (Sombras); objeto "Shadows 6" (Sombras)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Tools.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Tools.png` — objeto "Tools 1" (Ferramentas); objeto "Tools 2" (Ferramentas); objeto "Tools 3" (Ferramentas); objeto "Tools 4" (Ferramentas); objeto "Tools 5" (Ferramentas); objeto "Tools 6" (Ferramentas); objeto "Tools 7" (Ferramentas); objeto "Tools 8" (Ferramentas); objeto "Tools 9" (Ferramentas); objeto "Tools 10" (Ferramentas); objeto "Tools 11" (Ferramentas); objeto "Tools 12" (Ferramentas); objeto "Tools 13" (Ferramentas); objeto "Tools 14" (Ferramentas); objeto "Tools 15" (Ferramentas); objeto "Tools 16" (Ferramentas); objeto "Tools 17" (Ferramentas); objeto "Tools 18" (Ferramentas); objeto "Tools 19" (Ferramentas); objeto "Tools 20" (Ferramentas); objeto "Tools 21" (Ferramentas); objeto "Tools 22" (Ferramentas); objeto "Tools 23" (Ferramentas); objeto "Tools 24" (Ferramentas); objeto "Tools 25" (Ferramentas); objeto "Tools 26" (Ferramentas); objeto "Tools 27" (Ferramentas); objeto "Tools 28" (Ferramentas); objeto "Tools 29" (Ferramentas); objeto "Tools 30" (Ferramentas); objeto "Tools 31" (Ferramentas); objeto "Tools 32" (Ferramentas); objeto "Tools 33" (Ferramentas); objeto "Tools 34" (Ferramentas); objeto "Tools 35" (Ferramentas); objeto "Tools 36" (Ferramentas); objeto "Tools 37" (Ferramentas); objeto "Tools 38" (Ferramentas); objeto "Tools 39" (Ferramentas); objeto "Tools 40" (Ferramentas); objeto "Tools 41" (Ferramentas); objeto "Tools 42" (Ferramentas); objeto "Tools 43" (Ferramentas); objeto "Tools 44" (Ferramentas); objeto "Tools 45" (Ferramentas); objeto "Tools 46" (Ferramentas); objeto "Tools 47" (Ferramentas); objeto "Tools 48" (Ferramentas); objeto "Tools 49" (Ferramentas); objeto "Tools 50" (Ferramentas); objeto "Tools 51" (Ferramentas); objeto "Tools 52" (Ferramentas); objeto "Tools 53" (Ferramentas); objeto "Tools 54" (Ferramentas); objeto "Tools 55" (Ferramentas); objeto "Tools 56" (Ferramentas); objeto "Tools 57" (Ferramentas); objeto "Tools 58" (Ferramentas); objeto "Tools 59" (Ferramentas); objeto "Tools 60" (Ferramentas); objeto "Tools 61" (Ferramentas); objeto "Tools 62" (Ferramentas); objeto "Tools 63" (Ferramentas); objeto "Tools 64" (Ferramentas); objeto "Tools 65" (Ferramentas); objeto "Tools 66" (Ferramentas); objeto "Tools 67" (Ferramentas); objeto "Tools 68" (Ferramentas); objeto "Tools 69" (Ferramentas); objeto "Tools 70" (Ferramentas); objeto "Tools 71" (Ferramentas); objeto "Tools 72" (Ferramentas); objeto "Tools 73" (Ferramentas); objeto "Tools 74" (Ferramentas); objeto "Tools 75" (Ferramentas); objeto "Tools 76" (Ferramentas); objeto "Tools 77" (Ferramentas); objeto "Tools 78" (Ferramentas); objeto "Tools 79" (Ferramentas); objeto "Tools 80" (Ferramentas); objeto "Tools 81" (Ferramentas); objeto "Tools 82" (Ferramentas); objeto "Tools 83" (Ferramentas); objeto "Tools 84" (Ferramentas); objeto "Tools 85" (Ferramentas); objeto "Tools 86" (Ferramentas)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_01/Size_02.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_01/Size_02.png` — objeto "Árvore 1" (Plantas); objeto "Árvore 2" (Plantas); objeto "Árvore 3" (Plantas); objeto "Árvore 4" (Plantas); objeto "Árvore 5" (Plantas); objeto "Árvore 6" (Plantas); objeto "Árvore 7" (Plantas); objeto "Árvore 8" (Plantas)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_01/Size_03.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_01/Size_03.png` — objeto "Árvore 1" (Plantas); objeto "Árvore 2" (Plantas)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_01/Size_04.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_01/Size_04.png` — objeto "Árvore 1" (Plantas); objeto "Árvore 2" (Plantas); objeto "Árvore 3" (Plantas); objeto "Árvore 4" (Plantas); objeto "Árvore 5" (Plantas); objeto "Árvore 6" (Plantas)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_01/Size_05.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_01/Size_05.png` — objeto "Árvore 1" (Plantas); objeto "Árvore 2" (Plantas); objeto "Árvore 3" (Plantas); objeto "Árvore 4" (Plantas); objeto "Árvore 5" (Plantas); objeto "Árvore 6" (Plantas); objeto "Árvore 7" (Plantas); objeto "Árvore 8" (Plantas)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_02/Size_02.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_02/Size_02.png` — objeto "Árvore 1" (Plantas); objeto "Árvore 2" (Plantas)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_02/Size_03.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_02/Size_03.png` — objeto "Árvore 1" (Plantas); objeto "Árvore 2" (Plantas); objeto "Árvore 3" (Plantas); objeto "Árvore 4" (Plantas); objeto "Árvore 5" (Plantas)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_02/Size_04.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_02/Size_04.png` — objeto "Árvore 1" (Plantas); objeto "Árvore 2" (Plantas); objeto "Árvore 3" (Plantas); objeto "Árvore 4" (Plantas); objeto "Árvore 5" (Plantas)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_02/Size_05.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_02/Size_05.png` — objeto "Árvore 1" (Plantas); objeto "Árvore 2" (Plantas); objeto "Árvore 3" (Plantas); objeto "Árvore 4" (Plantas); objeto "Árvore 5" (Plantas)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_03/Size_02.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_03/Size_02.png` — objeto "Árvore 1" (Plantas); objeto "Árvore 2" (Plantas); objeto "Árvore 3" (Plantas); objeto "Árvore 4" (Plantas)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_03/Size_03-export.png` — objeto "Árvore 1" (Plantas); objeto "Árvore 2" (Plantas); objeto "Árvore 3" (Plantas)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_03/Size_03.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_03/Size_03.png` — objeto "Árvore 1" (Plantas); objeto "Árvore 2" (Plantas); objeto "Árvore 3" (Plantas)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_03/Size_04-export-export.png` — objeto "Árvore 1" (Plantas); objeto "Árvore 2" (Plantas)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_03/Size_04-export.png` — objeto "Árvore 1" (Plantas); objeto "Árvore 2" (Plantas)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_03/Size_04.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_03/Size_04.png` — objeto "Árvore 1" (Plantas); objeto "Árvore 2" (Plantas)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_03/Size_05.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_03/Size_05.png` — objeto "Árvore 1" (Plantas); objeto "Árvore 2" (Plantas)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Vegetation.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Props/Static/Vegetation.png` — objeto "Vegetation 1" (Plantas); objeto "Vegetation 2" (Plantas); objeto "Vegetation 3" (Plantas); objeto "Vegetation 4" (Plantas); objeto "Vegetation 5" (Plantas); objeto "Vegetation 6" (Plantas); objeto "Vegetation 7" (Plantas); objeto "Vegetation 8" (Plantas); objeto "Vegetation 9" (Plantas); objeto "Vegetation 10" (Plantas); objeto "Vegetation 11" (Plantas); objeto "Vegetation 12" (Plantas); objeto "Vegetation 13" (Plantas); objeto "Vegetation 14" (Plantas); objeto "Vegetation 15" (Plantas); objeto "Vegetation 16" (Plantas); objeto "Vegetation 17" (Plantas); objeto "Vegetation 18" (Plantas); objeto "Vegetation 19" (Plantas); objeto "Vegetation 20" (Plantas); objeto "Vegetation 21" (Plantas); objeto "Vegetation 22" (Plantas); objeto "Vegetation 23" (Plantas); objeto "Vegetation 24" (Plantas); objeto "Vegetation 25" (Plantas); objeto "Vegetation 26" (Plantas); objeto "Vegetation 27" (Plantas); objeto "Vegetation 28" (Plantas); objeto "Vegetation 29" (Plantas); objeto "Vegetation 30" (Plantas); objeto "Vegetation 31" (Plantas); objeto "Vegetation 32" (Plantas); objeto "Vegetation 33" (Plantas); objeto "Vegetation 34" (Plantas); objeto "Vegetation 35" (Plantas); objeto "Vegetation 36" (Plantas); objeto "Vegetation 37" (Plantas); objeto "Vegetation 38" (Plantas); objeto "Vegetation 39" (Plantas); objeto "Vegetation 40" (Plantas); objeto "Vegetation 41" (Plantas); objeto "Vegetation 42" (Plantas); objeto "Vegetation 43" (Plantas); objeto "Vegetation 44" (Plantas); objeto "Vegetation 45" (Plantas); objeto "Vegetation 46" (Plantas); objeto "Vegetation 47" (Plantas); objeto "Vegetation 48" (Plantas); objeto "Vegetation 49" (Plantas); objeto "Vegetation 50" (Plantas); objeto "Vegetation 51" (Plantas); objeto "Vegetation 52" (Plantas); objeto "Vegetation 53" (Plantas); objeto "Vegetation 54" (Plantas); objeto "Vegetation 55" (Plantas); objeto "Vegetation 56" (Plantas); objeto "Vegetation 57" (Plantas); objeto "Vegetation 58" (Plantas); objeto "Vegetation 59" (Plantas); objeto "Vegetation 60" (Plantas); objeto "Vegetation 61" (Plantas); objeto "Vegetation 62" (Plantas); objeto "Vegetation 63" (Plantas); objeto "Vegetation 64" (Plantas); objeto "Vegetation 65" (Plantas); objeto "Vegetation 66" (Plantas); objeto "Vegetation 67" (Plantas); objeto "Vegetation 68" (Plantas); objeto "Vegetation 69" (Plantas); objeto "Vegetation 70" (Plantas); objeto "Vegetation 71" (Plantas); objeto "Vegetation 72" (Plantas); objeto "Vegetation 73" (Plantas); objeto "Vegetation 74" (Plantas); objeto "Vegetation 75" (Plantas); objeto "Vegetation 76" (Plantas); objeto "Vegetation 77" (Plantas); objeto "Vegetation 78" (Plantas); objeto "Vegetation 79" (Plantas); objeto "Vegetation 80" (Plantas); objeto "Vegetation 81" (Plantas); objeto "Vegetation 82" (Plantas); objeto "Vegetation 83" (Plantas); objeto "Vegetation 84" (Plantas); objeto "Vegetation 85" (Plantas); objeto "Vegetation 86" (Plantas); objeto "Vegetation 87" (Plantas); objeto "Vegetation 88" (Plantas); objeto "Vegetation 89" (Plantas); objeto "Vegetation 90" (Plantas); objeto "Vegetation 91" (Plantas); objeto "Vegetation 92" (Plantas); objeto "Vegetation 93" (Plantas); objeto "Vegetation 94" (Plantas); objeto "Vegetation 95" (Plantas); objeto "Vegetation 96" (Plantas); objeto "Vegetation 97" (Plantas); objeto "Vegetation 98" (Plantas); objeto "Vegetation 99" (Plantas); objeto "Vegetation 100" (Plantas); objeto "Vegetation 101" (Plantas); objeto "Vegetation 102" (Plantas); objeto "Vegetation 103" (Plantas); objeto "Vegetation 104" (Plantas); objeto "Vegetation 105" (Plantas); objeto "Vegetation 106" (Plantas); objeto "Vegetation 107" (Plantas); objeto "Vegetation 108" (Plantas)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Buildings/Interior/Interior_Props_01.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Buildings/Interior/Interior_Props_01.png` — objeto "Interior props 1" (Construção); objeto "Interior props 2" (Construção); objeto "Interior props 3" (Construção); objeto "Interior props 4" (Construção); objeto "Interior props 5" (Construção); objeto "Interior props 6" (Construção); objeto "Interior props 7" (Construção); objeto "Interior props 8" (Construção); objeto "Interior props 9" (Construção); objeto "Interior props 10" (Construção); objeto "Interior props 11" (Construção); objeto "Interior props 12" (Construção); objeto "Interior props 13" (Construção); objeto "Interior props 14" (Construção); objeto "Interior props 15" (Construção); objeto "Interior props 16" (Construção); objeto "Interior props 17" (Construção); objeto "Interior props 18" (Construção); objeto "Interior props 19" (Construção); objeto "Interior props 20" (Construção); objeto "Interior props 21" (Construção); objeto "Interior props 22" (Construção)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Buildings/Interior/Interior_Walls_01.png` — 48 pisos/texturas repetíveis + paleta de tiles (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Buildings/Interior/Walls.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Buildings/Props.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Buildings/Props.png` — objeto "Props 1" (Construção); objeto "Props 2" (Construção); objeto "Props 3" (Construção)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Buildings/Roofs.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Buildings/Roofs.png` — 9 pisos/texturas repetíveis + paleta de tiles (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Buildings/Shadows.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Buildings/Shadows.png` — objeto "Shadows 1" (Sombras); objeto "Shadows 2" (Sombras)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Buildings/Walls.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Buildings/Walls.png` — 18 pisos/texturas repetíveis + paleta de tiles (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Alchemy/Alchemy.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Alchemy/Alchemy_Table_01-Sheet.png` — objeto "Alchemy mesa" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Alchemy/Alchemy_Table_01.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Alchemy/Alchemy_Table_02-Sheet.png` — objeto "Alchemy mesa 02" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Alchemy/Alchemy_Table_02.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Alchemy/Alchemy_Table_03-Sheet.png` — objeto "Alchemy mesa 03" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Alchemy/Alchemy_Table_03.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Anvil/Anvil.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Anvil/Anvil.png` — objeto "Anvil 1" (Estações); objeto "Anvil 2" (Estações); objeto "Anvil 3" (Estações); objeto "Anvil 4" (Estações); objeto "Anvil 5" (Estações); objeto "Anvil 6" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Anvil/Anvil_01-Sheet.png` — objeto "Anvil" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Anvil/Anvil_01.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Anvil/Anvil_02-Sheet.png` — objeto "Anvil 02" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Anvil/Anvil_02.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Anvil/Anvil_03-Sheet.png` — objeto "Anvil 03" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Anvil/Anvil_03.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire.png` — objeto "Bonfire 1" (Estações); objeto "Bonfire 2" (Estações); objeto "Bonfire 3" (Estações); objeto "Bonfire 4" (Estações); objeto "Bonfire 5" (Estações); objeto "Bonfire 6" (Estações); objeto "Bonfire 7" (Estações); objeto "Bonfire 8" (Estações); objeto "Bonfire 9" (Estações); objeto "Bonfire 10" (Estações); objeto "Bonfire 11" (Estações); objeto "Bonfire 12" (Estações); objeto "Bonfire 13" (Estações); objeto "Bonfire 14" (Estações); objeto "Bonfire 15" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire_01-Sheet.png` — objeto "Bonfire" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire_01.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire_02-Sheet.png` — objeto "Bonfire 02" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire_02.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire_03-Sheet.png` — objeto "Bonfire 03" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire_03.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire_04-Sheet.png` — objeto "Bonfire 04" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire_04.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire_05-Sheet.png` — objeto "Bonfire 05" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire_05.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire_06-Sheet.png` — objeto "Bonfire 06" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire_06.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire_07-Sheet.png` — objeto "Bonfire 07" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire_07.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire_08-Sheet.png` — objeto "Bonfire 08" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire_08.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire_09-Sheet.png` — objeto "Bonfire 09" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire_09.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire_10-Sheet.png` — objeto "Bonfire 10" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire_10.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Fire_01-Sheet.png` — objeto "Fire" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Fire_01.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Fire_02-Sheet.png` — objeto "Fire 02" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Fire_02.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Smoke-Sheet.png` — objeto "Smoke" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Smoke.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Butchery/Butchery_01-Sheet.png` — objeto "Butchery" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Butchery/Butchery_01.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Butchery/Butchery_02.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Butchery/Butchery_02.png` — objeto "Butchery 02 1" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Butchery/Butchery_03.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Butchery/Butchery_03.png` — objeto "Butchery 03 1" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Butchery/Butchery_04.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Butchery/Butchery_04.png` — objeto "Butchery 04 1" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Cooker/Cooker_01.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Cooker/Cooker_01.png` — objeto "Cooker 1" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Cooker/Cooker_02.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Cooker/Cooker_02.png` — objeto "Cooker 02 1" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Cooker/Cooker_03-Sheet.png` — objeto "Cooker 03" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Cooker/Cooker_03.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Cooker/Cooker_04-Sheet.png` — objeto "Cooker 04" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Cooker/Cooker_04.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Cooking Station.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Cooking Station.png` — objeto "Cooking station 1" (Estações); objeto "Cooking station 2" (Estações); objeto "Cooking station 3" (Estações); objeto "Cooking station 4" (Estações); objeto "Cooking station 5" (Estações); objeto "Cooking station 6" (Estações); objeto "Cooking station 7" (Estações); objeto "Cooking station 8" (Estações); objeto "Cooking station 9" (Estações); objeto "Cooking station 10" (Estações); objeto "Cooking station 11" (Estações); objeto "Cooking station 12" (Estações); objeto "Cooking station 13" (Estações); objeto "Cooking station 14" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Estructure.png` — objeto "Estructure 1" (Estações); objeto "Estructure 2" (Estações); objeto "Estructure 3" (Estações); objeto "Estructure 4" (Estações); objeto "Estructure 5" (Estações); objeto "Estructure 6" (Estações); objeto "Estructure 7" (Estações); objeto "Estructure 8" (Estações); objeto "Estructure 9" (Estações); objeto "Estructure 10" (Estações); objeto "Estructure 11" (Estações); objeto "Estructure 12" (Estações); objeto "Estructure 13" (Estações); objeto "Estructure 14" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Grill/Grill_01-Sheet.png` — objeto "Grill" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Grill/Grill_01.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Grill/Grill_02-Sheet.png` — objeto "Grill 02" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Grill/Grill_02.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Grill/Grill_03-Sheet.png` — objeto "Grill 03" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Grill/Grill_03.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Grill/Grill_04-Sheet.png` — objeto "Grill 04" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Grill/Grill_04.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Furnace/Bricks_01-Sheet.png` — objeto "Bricks" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Furnace/Bricks_01.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Furnace/Bricks_02-Sheet.png` — objeto "Bricks 02" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Furnace/Bricks_02.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Furnace/Bricks_03-Sheet.png` — objeto "Bricks 03" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Furnace/Bricks_03.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Furnace/Furnace.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Furnace/Furnace.png` — objeto "Furnace 1" (Estações); objeto "Furnace 2" (Estações); objeto "Furnace 3" (Estações); objeto "Furnace 4" (Estações); objeto "Furnace 5" (Estações); objeto "Furnace 6" (Estações); objeto "Furnace 7" (Estações); objeto "Furnace 8" (Estações); objeto "Furnace 9" (Estações); objeto "Furnace 10" (Estações); objeto "Furnace 11" (Estações); objeto "Furnace 12" (Estações); objeto "Furnace 13" (Estações); objeto "Furnace 14" (Estações); objeto "Furnace 15" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Furnace/Iron_01-Sheet.png` — objeto "Iron" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Furnace/Iron_01.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Furnace/Iron_02-Sheet.png` — objeto "Iron 02" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Furnace/Iron_02.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Furnace/Iron_03-Sheet.png` — objeto "Iron 03" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Furnace/Iron_03.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Furnace/Stone_01-Sheet.png` — objeto "Stone" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Furnace/Stone_01.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Furnace/Stone_02-Sheet.png` — objeto "Stone 02" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Furnace/Stone_02.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Furnace/Stone_03-Sheet.png` — objeto "Stone 03" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Furnace/Stone_03.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Sawmill/Base.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Sawmill/Base.png` — objeto "Base 1" (Estações); objeto "Base 2" (Estações); objeto "Base 3" (Estações); objeto "Base 4" (Estações); objeto "Base 5" (Estações); objeto "Base 6" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Sawmill/Level_1.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Sawmill/Level_1.png` — objeto "Level 1" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Sawmill/Level_2-Sheet.png` — objeto "Level 2" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Sawmill/Level_2.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Sawmill/Level_3-Sheet.png` — objeto "Level 3" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Sawmill/Level_3.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Workbench/Workbench.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Structures/Stations/Workbench/Workbench.png` — objeto "Workbench 1" (Estações); objeto "Workbench 2" (Estações); objeto "Workbench 3" (Estações); objeto "Workbench 4" (Estações); objeto "Workbench 5" (Estações); objeto "Workbench 6" (Estações); objeto "Workbench 7" (Estações); objeto "Workbench 8" (Estações); objeto "Workbench 9" (Estações); objeto "Workbench 10" (Estações); objeto "Workbench 11" (Estações); objeto "Workbench 12" (Estações); objeto "Workbench 13" (Estações); objeto "Workbench 14" (Estações); objeto "Workbench 15" (Estações); objeto "Workbench 16" (Estações); objeto "Workbench 17" (Estações); objeto "Workbench 18" (Estações)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Tilesets/Dungeon_Tiles.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Tilesets/Dungeon_Tiles.png` — 35 pisos/texturas repetíveis + paleta de tiles (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Tilesets/Floors_Tiles.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Tilesets/Floors_Tiles.png` — 14 pisos/texturas repetíveis + paleta de tiles (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Tilesets/New_Tiles(WIP).aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Tilesets/Wall_Tiles.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Tilesets/Wall_Tiles.png` — 33 pisos/texturas repetíveis + paleta de tiles (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Tilesets/Wall_Variations.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Tilesets/Wall_Variations.png` — 57 pisos/texturas repetíveis + paleta de tiles (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Tilesets/Water.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Tilesets/Water_tiles.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Environment/Tilesets/Water_tiles.png` — 22 pisos/texturas repetíveis + paleta de tiles (Pixel Crawler)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Icons/Resources.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/MockUps/Castle_Entrance.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/MockUps/Tavern.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/MockUps/Tavern.png` — quadro "Taverna (mockup Pixel Crawler)" na galeria do lobby e créditos
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Terms.txt` — licença/leia-me — listado em Créditos
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Weapons/Bone/Bone.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Weapons/Bone/Bone.png` — armas do arsenal (combate)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Weapons/Hands/Hands.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Weapons/Hands/Hands.png` — armas do arsenal (combate)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Weapons/Wood/Wood.aseprite` — fonte editável no Aseprite (assets-src/)
+- `Pixel Crawler - Free Pack 2.11/Pixel Crawler - Free Pack/Weapons/Wood/Wood.png` — armas do arsenal (combate)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/ARZone.png` — ícone grande "ARZone" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Air Europa.png` — ícone grande "Air Europa" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/AirBnB.png` — ícone grande "AirBnB" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Amazon Prime.png` — ícone grande "Amazon Prime" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Amazon Shopping.png` — ícone grande "Amazon Shopping" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Amazon.png` — ícone grande "Amazon" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/ArtStation.png` — ícone grande "ArtStation" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Authy.png` — ícone grande "Authy" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Battle.png` — ícone grande "Battle" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Booking.png` — ícone grande "Booking" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/CityMapper.png` — ícone grande "CityMapper" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Cuenta DNI.png` — ícone grande "Cuenta DNI" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Deliveroo.png` — ícone grande "Deliveroo" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Deviantart.png` — ícone grande "Deviantart" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Discord.png` — ícone grande "Discord" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Duolingo.png` — ícone grande "Duolingo" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Evernote.png` — ícone grande "Evernote" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Express VPN.png` — ícone grande "Express VPN" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Facebook Messenger.png` — ícone grande "Facebook Messenger" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Facebook.png` — ícone grande "Facebook" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Firefox.png` — ícone grande "Firefox" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/FitBod.png` — ícone grande "FitBod" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Galaxy Store.png` — ícone grande "Galaxy Store" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Glovo.png` — ícone grande "Glovo" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Gmail.png` — ícone grande "Gmail" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Authentificator Old.png` — ícone grande "Google Authentificator Old" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Authentificator.png` — ícone grande "Google Authentificator" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Calendar.png` — ícone grande "Google Calendar" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Chrome.png` — ícone grande "Google Chrome" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Currents.png` — ícone grande "Google Currents" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Docs.png` — ícone grande "Google Docs" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Drive.png` — ícone grande "Google Drive" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Files.png` — ícone grande "Google Files" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Fit.png` — ícone grande "Google Fit" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Forms.png` — ícone grande "Google Forms" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Hangouts.png` — ícone grande "Google Hangouts" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Keep.png` — ícone grande "Google Keep" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Launcher.png` — ícone grande "Google Launcher" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Maps Old.png` — ícone grande "Google Maps Old" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Maps.png` — ícone grande "Google Maps" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Photos.png` — ícone grande "Google Photos" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Playstore.png` — ícone grande "Google Playstore" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Podcasts.png` — ícone grande "Google Podcasts" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Sheets.png` — ícone grande "Google Sheets" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Slides.png` — ícone grande "Google Slides" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google TV.png` — ícone grande "Google TV" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google TalkBack.png` — ícone grande "Google TalkBack" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Text to Speech.png` — ícone grande "Google Text to Speech" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Translate.png` — ícone grande "Google Translate" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google Wallet.png` — ícone grande "Google Wallet" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Google.png` — ícone grande "Google" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Idealista.png` — ícone grande "Idealista" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Instagram Old.png` — ícone grande "Instagram Old" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Instagram.png` — ícone grande "Instagram" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Itch io.png` — ícone grande "Itch io" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Ko Fi.png` — ícone grande "Ko Fi" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Letterboxd.png` — ícone grande "Letterboxd" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/LinkedIn.png` — ícone grande "LinkedIn" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Lloyds Bank.png` — ícone grande "Lloyds Bank" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/London Guide.png` — ícone grande "London Guide" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/London Offline Map.png` — ícone grande "London Offline Map" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/London Tube Map.png` — ícone grande "London Tube Map" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Mercadolibre.png` — ícone grande "Mercadolibre" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Mercadopago.png` — ícone grande "Mercadopago" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Mi Argentina.png` — ícone grande "Mi Argentina" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Microsoft Access.png` — ícone grande "Microsoft Access" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Microsoft Authentificator.png` — ícone grande "Microsoft Authentificator" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Microsoft Edge.png` — ícone grande "Microsoft Edge" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Microsoft Excel.png` — ícone grande "Microsoft Excel" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Microsoft Launcher.png` — ícone grande "Microsoft Launcher" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Microsoft Link to Windows.png` — ícone grande "Microsoft Link to Windows" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Microsoft Office.png` — ícone grande "Microsoft Office" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Microsoft OneDrive.png` — ícone grande "Microsoft OneDrive" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Microsoft OneNote.png` — ícone grande "Microsoft OneNote" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Microsoft PowerPoint.png` — ícone grande "Microsoft PowerPoint" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Microsoft Publisher.png` — ícone grande "Microsoft Publisher" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Microsoft To Do.png` — ícone grande "Microsoft To Do" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Microsoft Word.png` — ícone grande "Microsoft Word" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Miro.png` — ícone grande "Miro" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Moj.png` — ícone grande "Moj" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/My Fitness Pal.png` — ícone grande "My Fitness Pal" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Netflix v2.png` — ícone grande "Netflix v2" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Netflix.png` — ícone grande "Netflix" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Notion.png` — ícone grande "Notion" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Nova Launcher.png` — ícone grande "Nova Launcher" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Nuffield Health.png` — ícone grande "Nuffield Health" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Opera.png` — ícone grande "Opera" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Outlook.png` — ícone grande "Outlook" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Patreon.png` — ícone grande "Patreon" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/PayPal.png` — ícone grande "PayPal" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/PedidosYa.png` — ícone grande "PedidosYa" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Pikmin.png` — ícone grande "Pikmin" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Pinterest.png` — ícone grande "Pinterest" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Reddit.png` — ícone grande "Reddit" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Rubiks Cube.png` — ícone grande "Rubiks Cube" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Safari.png` — ícone grande "Safari" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Samsung Free.png` — ícone grande "Samsung Free" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Santander.png` — ícone grande "Santander" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Skype.png` — ícone grande "Skype" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Slack v2.png` — ícone grande "Slack v2" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Slack.png` — ícone grande "Slack" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Snapchat.png` — ícone grande "Snapchat" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/SocioPlus.png` — ícone grande "SocioPlus" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/SoundCloud.png` — ícone grande "SoundCloud" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Spareroom.png` — ícone grande "Spareroom" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Spotify.png` — ícone grande "Spotify" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Steam.png` — ícone grande "Steam" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Tarjeta Transporte Madrid.png` — ícone grande "Tarjeta Transporte Madrid" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Telegram.png` — ícone grande "Telegram" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Terraria.png` — ícone grande "Terraria" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Tfl Go.png` — ícone grande "Tfl Go" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Tfl Oyster.png` — ícone grande "Tfl Oyster" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/TickTick.png` — ícone grande "TickTick" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/TikTok.png` — ícone grande "TikTok" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Tinder.png` — ícone grande "Tinder" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Todoist.png` — ícone grande "Todoist" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Toggl Blue Icon.png` — ícone grande "Toggl Blue Icon" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Toggl Hire.png` — ícone grande "Toggl Hire" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Toggl Plan.png` — ícone grande "Toggl Plan" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Toggl Track.png` — ícone grande "Toggl Track" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Toggl.png` — ícone grande "Toggl" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Trello v2.png` — ícone grande "Trello v2" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Trello.png` — ícone grande "Trello" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Tumblr.png` — ícone grande "Tumblr" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Twitch.png` — ícone grande "Twitch" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Twitter.png` — ícone grande "Twitter" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Uber Eats.png` — ícone grande "Uber Eats" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Uber.png` — ícone grande "Uber" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Vitality GP.png` — ícone grande "Vitality GP" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Vitality.png` — ícone grande "Vitality" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Vivaldi.png` — ícone grande "Vivaldi" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Vodafone.png` — ícone grande "Vodafone" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Whatsapp.png` — ícone grande "Whatsapp" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Wikipedia.png` — ícone grande "Wikipedia" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/WinRAR.png` — ícone grande "WinRAR" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Youtube.png` — ícone grande "Youtube" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Big (120x120) PNG/Zoom.png` — ícone grande "Zoom" (adesivo para decorar a mesa e painéis)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/README.txt` — licença/leia-me — listado em Créditos
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/ARZone.png` — ícone pequeno "ARZone" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Air Europa.png` — ícone pequeno "Air Europa" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/AirBnB.png` — ícone pequeno "AirBnB" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Amazon Prime.png` — ícone pequeno "Amazon Prime" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Amazon Shopping.png` — ícone pequeno "Amazon Shopping" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Amazon.png` — ícone pequeno "Amazon" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/ArtStation.png` — ícone pequeno "ArtStation" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Authy.png` — ícone pequeno "Authy" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Battle.png` — ícone pequeno "Battle" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Booking.png` — ícone pequeno "Booking" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/CityMapper.png` — ícone pequeno "CityMapper" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Cuenta DNI.png` — ícone pequeno "Cuenta DNI" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Deliveroo.png` — ícone pequeno "Deliveroo" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Deviantart.png` — ícone pequeno "Deviantart" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Discord.png` — ícone pequeno "Discord" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Duolingo.png` — ícone pequeno "Duolingo" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Evernote.png` — ícone pequeno "Evernote" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Express VPN.png` — ícone pequeno "Express VPN" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Facebook Messenger.png` — ícone pequeno "Facebook Messenger" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Facebook.png` — ícone pequeno "Facebook" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Firefox.png` — ícone pequeno "Firefox" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/FitBod.png` — ícone pequeno "FitBod" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Galaxy Store.png` — ícone pequeno "Galaxy Store" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Glovo.png` — ícone pequeno "Glovo" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Gmail.png` — ícone pequeno "Gmail" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Authentificator Old.png` — ícone pequeno "Google Authentificator Old" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Authentificator.png` — ícone pequeno "Google Authentificator" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Calendar.png` — ícone pequeno "Google Calendar" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Chrome.png` — ícone pequeno "Google Chrome" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Currents.png` — ícone pequeno "Google Currents" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Docs.png` — ícone pequeno "Google Docs" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Drive.png` — ícone pequeno "Google Drive" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Files.png` — ícone pequeno "Google Files" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Fit.png` — ícone pequeno "Google Fit" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Forms.png` — ícone pequeno "Google Forms" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Hangouts.png` — ícone pequeno "Google Hangouts" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Keep.png` — ícone pequeno "Google Keep" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Launcher.png` — ícone pequeno "Google Launcher" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Maps Old.png` — ícone pequeno "Google Maps Old" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Maps.png` — ícone pequeno "Google Maps" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Photos.png` — ícone pequeno "Google Photos" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Playstore.png` — ícone pequeno "Google Playstore" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Podcasts.png` — ícone pequeno "Google Podcasts" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Sheets.png` — ícone pequeno "Google Sheets" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Slides.png` — ícone pequeno "Google Slides" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google TV.png` — ícone pequeno "Google TV" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google TalkBack.png` — ícone pequeno "Google TalkBack" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Text to Speech.png` — ícone pequeno "Google Text to Speech" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Translate.png` — ícone pequeno "Google Translate" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google Wallet.png` — ícone pequeno "Google Wallet" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Google.png` — ícone pequeno "Google" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Idealista.png` — ícone pequeno "Idealista" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Instagram Old.png` — ícone pequeno "Instagram Old" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Instagram.png` — ícone pequeno "Instagram" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Itch io.png` — ícone pequeno "Itch io" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Ko Fi.png` — ícone pequeno "Ko Fi" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Letterboxd.png` — ícone pequeno "Letterboxd" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/LinkedIn.png` — ícone pequeno "LinkedIn" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Lloyds Bank.png` — ícone pequeno "Lloyds Bank" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/London Guide.png` — ícone pequeno "London Guide" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/London Offline Map.png` — ícone pequeno "London Offline Map" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/London Tube Map.png` — ícone pequeno "London Tube Map" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Mercadolibre.png` — ícone pequeno "Mercadolibre" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Mercadopago.png` — ícone pequeno "Mercadopago" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Mi Argentina.png` — ícone pequeno "Mi Argentina" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Microsoft Access.png` — ícone pequeno "Microsoft Access" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Microsoft Authentificator.png` — ícone pequeno "Microsoft Authentificator" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Microsoft Edge.png` — ícone pequeno "Microsoft Edge" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Microsoft Excel.png` — ícone pequeno "Microsoft Excel" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Microsoft Launcher.png` — ícone pequeno "Microsoft Launcher" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Microsoft Link to Windows.png` — ícone pequeno "Microsoft Link to Windows" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Microsoft Office.png` — ícone pequeno "Microsoft Office" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Microsoft OneDrive.png` — ícone pequeno "Microsoft OneDrive" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Microsoft OneNote.png` — ícone pequeno "Microsoft OneNote" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Microsoft PowerPoint.png` — ícone pequeno "Microsoft PowerPoint" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Microsoft Publisher.png` — ícone pequeno "Microsoft Publisher" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Microsoft To Do.png` — ícone pequeno "Microsoft To Do" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Microsoft Word.png` — ícone pequeno "Microsoft Word" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Miro.png` — ícone pequeno "Miro" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Moj.png` — ícone pequeno "Moj" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/My Fitness Pal.png` — ícone pequeno "My Fitness Pal" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Netflix v2.png` — ícone pequeno "Netflix v2" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Netflix.png` — ícone pequeno "Netflix" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Notion.png` — ícone pequeno "Notion" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Nova Launcher.png` — ícone pequeno "Nova Launcher" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Nuffield Health.png` — ícone pequeno "Nuffield Health" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Opera.png` — ícone pequeno "Opera" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Outlook.png` — ícone pequeno "Outlook" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Patreon.png` — ícone pequeno "Patreon" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/PayPal.png` — ícone pequeno "PayPal" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/PedidosYa.png` — ícone pequeno "PedidosYa" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Pikmin.png` — ícone pequeno "Pikmin" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Pinterest.png` — ícone pequeno "Pinterest" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Reddit.png` — ícone pequeno "Reddit" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Rubiks Cube.png` — ícone pequeno "Rubiks Cube" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Safari.png` — ícone pequeno "Safari" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Samsung Free.png` — ícone pequeno "Samsung Free" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Santander.png` — ícone pequeno "Santander" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Skype.png` — ícone pequeno "Skype" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Slack v2.png` — ícone pequeno "Slack v2" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Slack.png` — ícone pequeno "Slack" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Snapchat.png` — ícone pequeno "Snapchat" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/SocioPlus.png` — ícone pequeno "SocioPlus" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/SoundCloud.png` — ícone pequeno "SoundCloud" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Spareroom.png` — ícone pequeno "Spareroom" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Spotify.png` — ícone pequeno "Spotify" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Steam.png` — ícone pequeno "Steam" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Tarjeta Transporte Madrid.png` — ícone pequeno "Tarjeta Transporte Madrid" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Telegram.png` — ícone pequeno "Telegram" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Terraria.png` — ícone pequeno "Terraria" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Tfl Go.png` — ícone pequeno "Tfl Go" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Tfl Oyster.png` — ícone pequeno "Tfl Oyster" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/TickTick.png` — ícone pequeno "TickTick" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/TikTok.png` — ícone pequeno "TikTok" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Tinder.png` — ícone pequeno "Tinder" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Todoist.png` — ícone pequeno "Todoist" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Toggl Blue Icon.png` — ícone pequeno "Toggl Blue Icon" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Toggl Hire.png` — ícone pequeno "Toggl Hire" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Toggl Plan.png` — ícone pequeno "Toggl Plan" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Toggl Track.png` — ícone pequeno "Toggl Track" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Toggl.png` — ícone pequeno "Toggl" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Trello v2.png` — ícone pequeno "Trello v2" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Trello.png` — ícone pequeno "Trello" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Tumblr.png` — ícone pequeno "Tumblr" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Twitch.png` — ícone pequeno "Twitch" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Twitter.png` — ícone pequeno "Twitter" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Uber Eats.png` — ícone pequeno "Uber Eats" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Uber.png` — ícone pequeno "Uber" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Vitality GP.png` — ícone pequeno "Vitality GP" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Vitality.png` — ícone pequeno "Vitality" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Vivaldi.png` — ícone pequeno "Vivaldi" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Vodafone.png` — ícone pequeno "Vodafone" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Whatsapp.png` — ícone pequeno "Whatsapp" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Wikipedia.png` — ícone pequeno "Wikipedia" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/WinRAR.png` — ícone pequeno "WinRAR" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Youtube.png` — ícone pequeno "Youtube" (botões, anexos e integrações)
+- `Pixelart_App_Icons_v5_by_ReffPixels/Pixelart_App_Icons_v5_by_ReffPixels/Small (24x24) PNG/Zoom.png` — ícone pequeno "Zoom" (botões, anexos e integrações)
+- `Pxiel Art UI borders/Pxiel Art UI borders.png` — peças de interface (19) — tema "borders" das janelas
+- `Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png` — objeto "Topdownhouse doorsandwindows 1" (Portas e janelas); objeto "Topdownhouse doorsandwindows 2" (Portas e janelas); objeto "Topdownhouse doorsandwindows 3" (Portas e janelas); objeto "Topdownhouse doorsandwindows 4" (Portas e janelas); objeto "Topdownhouse doorsandwindows 5" (Portas e janelas); objeto "Topdownhouse doorsandwindows 6" (Portas e janelas); objeto "Topdownhouse doorsandwindows 7" (Portas e janelas); objeto "Topdownhouse doorsandwindows 8" (Portas e janelas); objeto "Topdownhouse doorsandwindows 9" (Portas e janelas); objeto "Topdownhouse doorsandwindows 10" (Portas e janelas); objeto "Topdownhouse doorsandwindows 11" (Portas e janelas); objeto "Topdownhouse doorsandwindows 12" (Portas e janelas); objeto "Topdownhouse doorsandwindows 13" (Portas e janelas); objeto "Topdownhouse doorsandwindows 14" (Portas e janelas); objeto "Topdownhouse doorsandwindows 15" (Portas e janelas); objeto "Topdownhouse doorsandwindows 16" (Portas e janelas); objeto "Topdownhouse doorsandwindows 17" (Portas e janelas); objeto "Topdownhouse doorsandwindows 18" (Portas e janelas); objeto "Topdownhouse doorsandwindows 19" (Portas e janelas); objeto "Topdownhouse doorsandwindows 20" (Portas e janelas); objeto "Topdownhouse doorsandwindows 21" (Portas e janelas); objeto "Topdownhouse doorsandwindows 22" (Portas e janelas); objeto "Topdownhouse doorsandwindows 23" (Portas e janelas); objeto "Topdownhouse doorsandwindows 24" (Portas e janelas); objeto "Topdownhouse doorsandwindows 25" (Portas e janelas); objeto "Topdownhouse doorsandwindows 26" (Portas e janelas)
+- `Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png` — 15 pisos/texturas repetíveis + paleta de tiles (Retro Interior)
+- `Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls_OpenDoors.png` — objeto "Topdownhouse floorsandwalls opendoors 1" (Portas e janelas)
+- `Top-Down_Retro_Interior/TopDownHouse_FurnitureState1.png` — objeto "Topdownhouse furniturestate1 1" (Móveis); objeto "Topdownhouse furniturestate1 2" (Móveis); objeto "Topdownhouse furniturestate1 3" (Móveis); objeto "Topdownhouse furniturestate1 4" (Móveis); objeto "Topdownhouse furniturestate1 5" (Móveis); objeto "Topdownhouse furniturestate1 6" (Móveis); objeto "Topdownhouse furniturestate1 7" (Móveis); objeto "Topdownhouse furniturestate1 8" (Móveis); objeto "Topdownhouse furniturestate1 9" (Móveis); objeto "Topdownhouse furniturestate1 10" (Móveis); objeto "Topdownhouse furniturestate1 11" (Móveis); objeto "Topdownhouse furniturestate1 12" (Móveis); objeto "Topdownhouse furniturestate1 13" (Móveis); objeto "Topdownhouse furniturestate1 14" (Móveis); objeto "Topdownhouse furniturestate1 15" (Móveis); objeto "Topdownhouse furniturestate1 16" (Móveis); objeto "Topdownhouse furniturestate1 17" (Móveis); objeto "Topdownhouse furniturestate1 18" (Móveis); objeto "Topdownhouse furniturestate1 19" (Móveis); objeto "Topdownhouse furniturestate1 20" (Móveis); objeto "Topdownhouse furniturestate1 21" (Móveis); objeto "Topdownhouse furniturestate1 22" (Móveis); objeto "Topdownhouse furniturestate1 23" (Móveis); objeto "Topdownhouse furniturestate1 24" (Móveis); objeto "Topdownhouse furniturestate1 25" (Móveis); objeto "Topdownhouse furniturestate1 26" (Móveis); objeto "Topdownhouse furniturestate1 27" (Móveis); objeto "Topdownhouse furniturestate1 28" (Móveis); objeto "Topdownhouse furniturestate1 29" (Móveis); objeto "Topdownhouse furniturestate1 30" (Móveis); objeto "Topdownhouse furniturestate1 31" (Móveis); objeto "Topdownhouse furniturestate1 32" (Móveis); objeto "Topdownhouse furniturestate1 33" (Móveis); objeto "Topdownhouse furniturestate1 34" (Móveis)
+- `Top-Down_Retro_Interior/TopDownHouse_FurnitureState2.png` — estado alternativo (ligado/aberto) de 34 móveis retrô
+- `Top-Down_Retro_Interior/TopDownHouse_SmallItems.png` — objeto "Topdownhouse smallitems 1" (Itens pequenos); objeto "Topdownhouse smallitems 2" (Itens pequenos); objeto "Topdownhouse smallitems 3" (Itens pequenos); objeto "Topdownhouse smallitems 4" (Itens pequenos); objeto "Topdownhouse smallitems 5" (Itens pequenos); objeto "Topdownhouse smallitems 6" (Itens pequenos); objeto "Topdownhouse smallitems 7" (Itens pequenos); objeto "Topdownhouse smallitems 8" (Itens pequenos); objeto "Topdownhouse smallitems 9" (Itens pequenos); objeto "Topdownhouse smallitems 10" (Itens pequenos); objeto "Topdownhouse smallitems 11" (Itens pequenos); objeto "Topdownhouse smallitems 12" (Itens pequenos); objeto "Topdownhouse smallitems 13" (Itens pequenos); objeto "Topdownhouse smallitems 14" (Itens pequenos); objeto "Topdownhouse smallitems 15" (Itens pequenos); objeto "Topdownhouse smallitems 16" (Itens pequenos); objeto "Topdownhouse smallitems 17" (Itens pequenos); objeto "Topdownhouse smallitems 18" (Itens pequenos); objeto "Topdownhouse smallitems 19" (Itens pequenos); objeto "Topdownhouse smallitems 20" (Itens pequenos); objeto "Topdownhouse smallitems 21" (Itens pequenos); objeto "Topdownhouse smallitems 22" (Itens pequenos); objeto "Topdownhouse smallitems 23" (Itens pequenos); objeto "Topdownhouse smallitems 24" (Itens pequenos); objeto "Topdownhouse smallitems 25" (Itens pequenos); objeto "Topdownhouse smallitems 26" (Itens pequenos); objeto "Topdownhouse smallitems 27" (Itens pequenos); objeto "Topdownhouse smallitems 28" (Itens pequenos); objeto "Topdownhouse smallitems 29" (Itens pequenos); objeto "Topdownhouse smallitems 30" (Itens pequenos); objeto "Topdownhouse smallitems 31" (Itens pequenos); objeto "Topdownhouse smallitems 32" (Itens pequenos); objeto "Topdownhouse smallitems 33" (Itens pequenos); objeto "Topdownhouse smallitems 34" (Itens pequenos); objeto "Topdownhouse smallitems 35" (Itens pequenos); objeto "Topdownhouse smallitems 36" (Itens pequenos); objeto "Topdownhouse smallitems 37" (Itens pequenos); objeto "Topdownhouse smallitems 38" (Itens pequenos); objeto "Topdownhouse smallitems 39" (Itens pequenos); objeto "Topdownhouse smallitems 40" (Itens pequenos); objeto "Topdownhouse smallitems 41" (Itens pequenos); objeto "Topdownhouse smallitems 42" (Itens pequenos); objeto "Topdownhouse smallitems 43" (Itens pequenos); objeto "Topdownhouse smallitems 44" (Itens pequenos); objeto "Topdownhouse smallitems 45" (Itens pequenos); objeto "Topdownhouse smallitems 46" (Itens pequenos); objeto "Topdownhouse smallitems 47" (Itens pequenos); objeto "Topdownhouse smallitems 48" (Itens pequenos); objeto "Topdownhouse smallitems 49" (Itens pequenos); objeto "Topdownhouse smallitems 50" (Itens pequenos); objeto "Topdownhouse smallitems 51" (Itens pequenos); objeto "Topdownhouse smallitems 52" (Itens pequenos); objeto "Topdownhouse smallitems 53" (Itens pequenos); objeto "Topdownhouse smallitems 54" (Itens pequenos); objeto "Topdownhouse smallitems 55" (Itens pequenos); objeto "Topdownhouse smallitems 56" (Itens pequenos); objeto "Topdownhouse smallitems 57" (Itens pequenos)
+- `_cosy office chair v0.1/_cosy office chair/blue chair/single/blue chair back.png` — direção da cadeira de escritório blue chair
+- `_cosy office chair v0.1/_cosy office chair/blue chair/single/blue chair front.png` — direção da cadeira de escritório blue chair
+- `_cosy office chair v0.1/_cosy office chair/blue chair/single/blue chair side left.png` — direção da cadeira de escritório blue chair
+- `_cosy office chair v0.1/_cosy office chair/blue chair/single/blue chair side right.png` — direção da cadeira de escritório blue chair
+- `_cosy office chair v0.1/_cosy office chair/blue chair/spritesheet/blue chair.png` — animação de giro da cadeira blue chair (seletor de cadeira)
+- `_cosy office chair v0.1/_cosy office chair/orange chair/single/orange chair back.png` — direção da cadeira de escritório orange chair
+- `_cosy office chair v0.1/_cosy office chair/orange chair/single/orange chair front.png` — direção da cadeira de escritório orange chair
+- `_cosy office chair v0.1/_cosy office chair/orange chair/single/orange chair side left.png` — direção da cadeira de escritório orange chair
+- `_cosy office chair v0.1/_cosy office chair/orange chair/single/orange chair side right.png` — direção da cadeira de escritório orange chair
+- `_cosy office chair v0.1/_cosy office chair/orange chair/spritesheet/orange chair.png` — animação de giro da cadeira orange chair (seletor de cadeira)
+- `_cosy office chair v0.1/_cosy office chair/pink chair/single/pink chair back.png` — direção da cadeira de escritório pink chair
+- `_cosy office chair v0.1/_cosy office chair/pink chair/single/pink chair front.png` — direção da cadeira de escritório pink chair
+- `_cosy office chair v0.1/_cosy office chair/pink chair/single/pink chair side left.png` — direção da cadeira de escritório pink chair
+- `_cosy office chair v0.1/_cosy office chair/pink chair/single/pink chair side right.png` — direção da cadeira de escritório pink chair
+- `_cosy office chair v0.1/_cosy office chair/pink chair/spritesheet/pink chair.png` — animação de giro da cadeira pink chair (seletor de cadeira)
+- `_cosy office chair v0.1/_cosy office chair/readme.TXT` — licença/leia-me — listado em Créditos
+- `_cosy office chair v0.1/_cosy office chair/red chair/single/red chair back.png` — direção da cadeira de escritório red chair
+- `_cosy office chair v0.1/_cosy office chair/red chair/single/red chair front.png` — direção da cadeira de escritório red chair
+- `_cosy office chair v0.1/_cosy office chair/red chair/single/red chair side left.png` — direção da cadeira de escritório red chair
+- `_cosy office chair v0.1/_cosy office chair/red chair/single/red chair side right.png` — direção da cadeira de escritório red chair
+- `_cosy office chair v0.1/_cosy office chair/red chair/spritesheet/red chair.png` — animação de giro da cadeira red chair (seletor de cadeira)
+- `coins-chests-etc-2-0-noborders.png` — objeto "Coins chests etc 2 0 noborders 1" (Tesouros); objeto "Coins chests etc 2 0 noborders 2" (Tesouros); objeto "Coins chests etc 2 0 noborders 3" (Tesouros); objeto "Coins chests etc 2 0 noborders 4" (Tesouros); objeto "Coins chests etc 2 0 noborders 5" (Tesouros); objeto "Coins chests etc 2 0 noborders 6" (Tesouros); objeto "Coins chests etc 2 0 noborders 7" (Tesouros); objeto "Coins chests etc 2 0 noborders 8" (Tesouros); objeto "Coins chests etc 2 0 noborders 9" (Tesouros); objeto "Coins chests etc 2 0 noborders 10" (Tesouros); objeto "Coins chests etc 2 0 noborders 11" (Tesouros); objeto "Coins chests etc 2 0 noborders 12" (Tesouros); objeto "Coins chests etc 2 0 noborders 13" (Tesouros); objeto "Coins chests etc 2 0 noborders 14" (Tesouros); objeto "Coins chests etc 2 0 noborders 15" (Tesouros); objeto "Coins chests etc 2 0 noborders 16" (Tesouros); objeto "Coins chests etc 2 0 noborders 17" (Tesouros); objeto "Coins chests etc 2 0 noborders 18" (Tesouros); objeto "Coins chests etc 2 0 noborders 19" (Tesouros); objeto "Coins chests etc 2 0 noborders 20" (Tesouros); objeto "Coins chests etc 2 0 noborders 21" (Tesouros); objeto "Coins chests etc 2 0 noborders 22" (Tesouros); objeto "Coins chests etc 2 0 noborders 23" (Tesouros); objeto "Coins chests etc 2 0 noborders 24" (Tesouros); objeto "Coins chests etc 2 0 noborders 25" (Tesouros); objeto "Coins chests etc 2 0 noborders 26" (Tesouros); objeto "Coins chests etc 2 0 noborders 27" (Tesouros); objeto "Coins chests etc 2 0 noborders 28" (Tesouros); objeto "Coins chests etc 2 0 noborders 29" (Tesouros); objeto "Coins chests etc 2 0 noborders 30" (Tesouros); objeto "Coins chests etc 2 0 noborders 31" (Tesouros); objeto "Coins chests etc 2 0 noborders 32" (Tesouros); objeto "Coins chests etc 2 0 noborders 33" (Tesouros); objeto "Coins chests etc 2 0 noborders 34" (Tesouros); objeto "Coins chests etc 2 0 noborders 35" (Tesouros); objeto "Coins chests etc 2 0 noborders 36" (Tesouros); objeto "Coins chests etc 2 0 noborders 37" (Tesouros); objeto "Coins chests etc 2 0 noborders 38" (Tesouros); objeto "Coins chests etc 2 0 noborders 39" (Tesouros); objeto "Coins chests etc 2 0 noborders 40" (Tesouros); objeto "Coins chests etc 2 0 noborders 41" (Tesouros); objeto "Coins chests etc 2 0 noborders 42" (Tesouros); objeto "Coins chests etc 2 0 noborders 43" (Tesouros); objeto "Coins chests etc 2 0 noborders 44" (Tesouros); objeto "Coins chests etc 2 0 noborders 45" (Tesouros); objeto "Coins chests etc 2 0 noborders 46" (Tesouros); objeto "Coins chests etc 2 0 noborders 47" (Tesouros); objeto "Coins chests etc 2 0 noborders 48" (Tesouros); objeto "Coins chests etc 2 0 noborders 49" (Tesouros); objeto "Coins chests etc 2 0 noborders 50" (Tesouros); objeto "Coins chests etc 2 0 noborders 51" (Tesouros); objeto "Coins chests etc 2 0 noborders 52" (Tesouros); objeto "Coins chests etc 2 0 noborders 53" (Tesouros); objeto "Coins chests etc 2 0 noborders 54" (Tesouros); objeto "Coins chests etc 2 0 noborders 55" (Tesouros); objeto "Coins chests etc 2 0 noborders 56" (Tesouros); objeto "Coins chests etc 2 0 noborders 57" (Tesouros); objeto "Coins chests etc 2 0 noborders 58" (Tesouros); objeto "Coins chests etc 2 0 noborders 59" (Tesouros); objeto "Coins chests etc 2 0 noborders 60" (Tesouros); objeto "Coins chests etc 2 0 noborders 61" (Tesouros); objeto "Coins chests etc 2 0 noborders 62" (Tesouros); objeto "Coins chests etc 2 0 noborders 63" (Tesouros); objeto "Coins chests etc 2 0 noborders 64" (Tesouros); objeto "Coins chests etc 2 0 noborders 65" (Tesouros); objeto "Coins chests etc 2 0 noborders 66" (Tesouros); objeto "Coins chests etc 2 0 noborders 67" (Tesouros); objeto "Coins chests etc 2 0 noborders 68" (Tesouros); objeto "Coins chests etc 2 0 noborders 69" (Tesouros); objeto "Coins chests etc 2 0 noborders 70" (Tesouros); objeto "Coins chests etc 2 0 noborders 71" (Tesouros); objeto "Coins chests etc 2 0 noborders 72" (Tesouros); objeto "Coins chests etc 2 0 noborders 73" (Tesouros); objeto "Coins chests etc 2 0 noborders 74" (Tesouros); objeto "Coins chests etc 2 0 noborders 75" (Tesouros); objeto "Coins chests etc 2 0 noborders 76" (Tesouros); objeto "Coins chests etc 2 0 noborders 77" (Tesouros); objeto "Coins chests etc 2 0 noborders 78" (Tesouros); objeto "Coins chests etc 2 0 noborders 79" (Tesouros); objeto "Coins chests etc 2 0 noborders 80" (Tesouros); objeto "Coins chests etc 2 0 noborders 81" (Tesouros); objeto "Coins chests etc 2 0 noborders 82" (Tesouros); objeto "Coins chests etc 2 0 noborders 83" (Tesouros); objeto "Coins chests etc 2 0 noborders 84" (Tesouros); objeto "Coins chests etc 2 0 noborders 85" (Tesouros); objeto "Coins chests etc 2 0 noborders 86" (Tesouros); objeto "Coins chests etc 2 0 noborders 87" (Tesouros); objeto "Coins chests etc 2 0 noborders 88" (Tesouros); objeto "Coins chests etc 2 0 noborders 89" (Tesouros); objeto "Coins chests etc 2 0 noborders 90" (Tesouros); objeto "Coins chests etc 2 0 noborders 91" (Tesouros); objeto "Coins chests etc 2 0 noborders 92" (Tesouros); objeto "Coins chests etc 2 0 noborders 93" (Tesouros); objeto "Coins chests etc 2 0 noborders 94" (Tesouros); objeto "Coins chests etc 2 0 noborders 95" (Tesouros); objeto "Coins chests etc 2 0 noborders 96" (Tesouros); objeto "Coins chests etc 2 0 noborders 97" (Tesouros); objeto "Coins chests etc 2 0 noborders 98" (Tesouros); objeto "Coins chests etc 2 0 noborders 99" (Tesouros); objeto "Coins chests etc 2 0 noborders 100" (Tesouros); objeto "Coins chests etc 2 0 noborders 101" (Tesouros); objeto "Coins chests etc 2 0 noborders 102" (Tesouros); objeto "Coins chests etc 2 0 noborders 103" (Tesouros); objeto "Coins chests etc 2 0 noborders 104" (Tesouros); objeto "Coins chests etc 2 0 noborders 105" (Tesouros); objeto "Coins chests etc 2 0 noborders 106" (Tesouros); objeto "Coins chests etc 2 0 noborders 107" (Tesouros); objeto "Coins chests etc 2 0 noborders 108" (Tesouros); objeto "Coins chests etc 2 0 noborders 109" (Tesouros); objeto "Coins chests etc 2 0 noborders 110" (Tesouros); objeto "Coins chests etc 2 0 noborders 111" (Tesouros); objeto "Coins chests etc 2 0 noborders 112" (Tesouros); objeto "Coins chests etc 2 0 noborders 113" (Tesouros); objeto "Coins chests etc 2 0 noborders 114" (Tesouros); objeto "Coins chests etc 2 0 noborders 115" (Tesouros); objeto "Coins chests etc 2 0 noborders 116" (Tesouros); objeto "Coins chests etc 2 0 noborders 117" (Tesouros); objeto "Coins chests etc 2 0 noborders 118" (Tesouros); objeto "Coins chests etc 2 0 noborders 119" (Tesouros); objeto "Coins chests etc 2 0 noborders 120" (Tesouros); objeto "Coins chests etc 2 0 noborders 121" (Tesouros); objeto "Coins chests etc 2 0 noborders 122" (Tesouros); objeto "Coins chests etc 2 0 noborders 123" (Tesouros); objeto "Coins chests etc 2 0 noborders 124" (Tesouros); objeto "Coins chests etc 2 0 noborders 125" (Tesouros); objeto "Coins chests etc 2 0 noborders 126" (Tesouros); objeto "Coins chests etc 2 0 noborders 127" (Tesouros); objeto "Coins chests etc 2 0 noborders 128" (Tesouros); objeto "Coins chests etc 2 0 noborders 129" (Tesouros); objeto "Coins chests etc 2 0 noborders 130" (Tesouros); objeto "Coins chests etc 2 0 noborders 131" (Tesouros); objeto "Coins chests etc 2 0 noborders 132" (Tesouros); objeto "Coins chests etc 2 0 noborders 133" (Tesouros); objeto "Coins chests etc 2 0 noborders 134" (Tesouros); objeto "Coins chests etc 2 0 noborders 135" (Tesouros); objeto "Coins chests etc 2 0 noborders 136" (Tesouros); objeto "Coins chests etc 2 0 noborders 137" (Tesouros); objeto "Coins chests etc 2 0 noborders 138" (Tesouros); objeto "Coins chests etc 2 0 noborders 139" (Tesouros); objeto "Coins chests etc 2 0 noborders 140" (Tesouros); objeto "Coins chests etc 2 0 noborders 141" (Tesouros); objeto "Coins chests etc 2 0 noborders 142" (Tesouros); objeto "Coins chests etc 2 0 noborders 143" (Tesouros); objeto "Coins chests etc 2 0 noborders 144" (Tesouros); objeto "Coins chests etc 2 0 noborders 145" (Tesouros); objeto "Coins chests etc 2 0 noborders 146" (Tesouros); objeto "Coins chests etc 2 0 noborders 147" (Tesouros); objeto "Coins chests etc 2 0 noborders 148" (Tesouros); objeto "Coins chests etc 2 0 noborders 149" (Tesouros); objeto "Coins chests etc 2 0 noborders 150" (Tesouros); objeto "Coins chests etc 2 0 noborders 151" (Tesouros); objeto "Coins chests etc 2 0 noborders 152" (Tesouros); objeto "Coins chests etc 2 0 noborders 153" (Tesouros); objeto "Coins chests etc 2 0 noborders 154" (Tesouros); objeto "Coins chests etc 2 0 noborders 155" (Tesouros); objeto "Coins chests etc 2 0 noborders 156" (Tesouros); objeto "Coins chests etc 2 0 noborders 157" (Tesouros); objeto "Coins chests etc 2 0 noborders 158" (Tesouros); objeto "Coins chests etc 2 0 noborders 159" (Tesouros); objeto "Coins chests etc 2 0 noborders 160" (Tesouros); objeto "Coins chests etc 2 0 noborders 161" (Tesouros); objeto "Coins chests etc 2 0 noborders 162" (Tesouros); objeto "Coins chests etc 2 0 noborders 163" (Tesouros); objeto "Coins chests etc 2 0 noborders 164" (Tesouros); objeto "Coins chests etc 2 0 noborders 165" (Tesouros); objeto "Coins chests etc 2 0 noborders 166" (Tesouros); objeto "Coins chests etc 2 0 noborders 167" (Tesouros); objeto "Coins chests etc 2 0 noborders 168" (Tesouros); objeto "Coins chests etc 2 0 noborders 169" (Tesouros); objeto "Coins chests etc 2 0 noborders 170" (Tesouros); objeto "Coins chests etc 2 0 noborders 171" (Tesouros); objeto "Coins chests etc 2 0 noborders 172" (Tesouros); objeto "Coins chests etc 2 0 noborders 173" (Tesouros); objeto "Coins chests etc 2 0 noborders 174" (Tesouros); objeto "Coins chests etc 2 0 noborders 175" (Tesouros); objeto "Coins chests etc 2 0 noborders 176" (Tesouros); objeto "Coins chests etc 2 0 noborders 177" (Tesouros); objeto "Coins chests etc 2 0 noborders 178" (Tesouros); objeto "Coins chests etc 2 0 noborders 179" (Tesouros); objeto "Coins chests etc 2 0 noborders 180" (Tesouros); objeto "Coins chests etc 2 0 noborders 181" (Tesouros); objeto "Coins chests etc 2 0 noborders 182" (Tesouros); objeto "Coins chests etc 2 0 noborders 183" (Tesouros); objeto "Coins chests etc 2 0 noborders 184" (Tesouros); objeto "Coins chests etc 2 0 noborders 185" (Tesouros); objeto "Coins chests etc 2 0 noborders 186" (Tesouros); objeto "Coins chests etc 2 0 noborders 187" (Tesouros); objeto "Coins chests etc 2 0 noborders 188" (Tesouros); objeto "Coins chests etc 2 0 noborders 189" (Tesouros); objeto "Coins chests etc 2 0 noborders 190" (Tesouros); objeto "Coins chests etc 2 0 noborders 191" (Tesouros); objeto "Coins chests etc 2 0 noborders 192" (Tesouros); objeto "Coins chests etc 2 0 noborders 193" (Tesouros); objeto "Coins chests etc 2 0 noborders 194" (Tesouros); objeto "Coins chests etc 2 0 noborders 195" (Tesouros); objeto "Coins chests etc 2 0 noborders 196" (Tesouros); objeto "Coins chests etc 2 0 noborders 197" (Tesouros); objeto "Coins chests etc 2 0 noborders 198" (Tesouros); objeto "Coins chests etc 2 0 noborders 199" (Tesouros); objeto "Coins chests etc 2 0 noborders 200" (Tesouros); objeto "Coins chests etc 2 0 noborders 201" (Tesouros); objeto "Coins chests etc 2 0 noborders 202" (Tesouros); objeto "Coins chests etc 2 0 noborders 203" (Tesouros); objeto "Coins chests etc 2 0 noborders 204" (Tesouros); objeto "Coins chests etc 2 0 noborders 205" (Tesouros); objeto "Coins chests etc 2 0 noborders 206" (Tesouros); objeto "Coins chests etc 2 0 noborders 207" (Tesouros); objeto "Coins chests etc 2 0 noborders 208" (Tesouros); objeto "Coins chests etc 2 0 noborders 209" (Tesouros); objeto "Coins chests etc 2 0 noborders 210" (Tesouros); objeto "Coins chests etc 2 0 noborders 211" (Tesouros); objeto "Coins chests etc 2 0 noborders 212" (Tesouros); objeto "Coins chests etc 2 0 noborders 213" (Tesouros); objeto "Coins chests etc 2 0 noborders 214" (Tesouros); objeto "Coins chests etc 2 0 noborders 215" (Tesouros); objeto "Coins chests etc 2 0 noborders 216" (Tesouros); objeto "Coins chests etc 2 0 noborders 217" (Tesouros); objeto "Coins chests etc 2 0 noborders 218" (Tesouros); objeto "Coins chests etc 2 0 noborders 219" (Tesouros); objeto "Coins chests etc 2 0 noborders 220" (Tesouros); objeto "Coins chests etc 2 0 noborders 221" (Tesouros); objeto "Coins chests etc 2 0 noborders 222" (Tesouros); objeto "Coins chests etc 2 0 noborders 223" (Tesouros); objeto "Coins chests etc 2 0 noborders 224" (Tesouros); objeto "Coins chests etc 2 0 noborders 225" (Tesouros); objeto "Coins chests etc 2 0 noborders 226" (Tesouros); objeto "Coins chests etc 2 0 noborders 227" (Tesouros); objeto "Coins chests etc 2 0 noborders 228" (Tesouros); objeto "Coins chests etc 2 0 noborders 229" (Tesouros); objeto "Coins chests etc 2 0 noborders 230" (Tesouros); objeto "Coins chests etc 2 0 noborders 231" (Tesouros); objeto "Coins chests etc 2 0 noborders 232" (Tesouros); objeto "Coins chests etc 2 0 noborders 233" (Tesouros); objeto "Coins chests etc 2 0 noborders 234" (Tesouros); objeto "Coins chests etc 2 0 noborders 235" (Tesouros); objeto "Coins chests etc 2 0 noborders 236" (Tesouros); objeto "Coins chests etc 2 0 noborders 237" (Tesouros); objeto "Coins chests etc 2 0 noborders 238" (Tesouros); objeto "Coins chests etc 2 0 noborders 239" (Tesouros); objeto "Coins chests etc 2 0 noborders 240" (Tesouros); objeto "Coins chests etc 2 0 noborders 241" (Tesouros); objeto "Coins chests etc 2 0 noborders 242" (Tesouros); objeto "Coins chests etc 2 0 noborders 243" (Tesouros); objeto "Coins chests etc 2 0 noborders 244" (Tesouros); objeto "Coins chests etc 2 0 noborders 245" (Tesouros); objeto "Coins chests etc 2 0 noborders 246" (Tesouros); objeto "Coins chests etc 2 0 noborders 247" (Tesouros); objeto "Coins chests etc 2 0 noborders 248" (Tesouros); objeto "Coins chests etc 2 0 noborders 249" (Tesouros); objeto "Coins chests etc 2 0 noborders 250" (Tesouros); objeto "Coins chests etc 2 0 noborders 251" (Tesouros); objeto "Coins chests etc 2 0 noborders 252" (Tesouros); objeto "Coins chests etc 2 0 noborders 253" (Tesouros); objeto "Coins chests etc 2 0 noborders 254" (Tesouros); objeto "Coins chests etc 2 0 noborders 255" (Tesouros); objeto "Coins chests etc 2 0 noborders 256" (Tesouros); objeto "Coins chests etc 2 0 noborders 257" (Tesouros); objeto "Coins chests etc 2 0 noborders 258" (Tesouros); objeto "Coins chests etc 2 0 noborders 259" (Tesouros); objeto "Coins chests etc 2 0 noborders 260" (Tesouros); objeto "Coins chests etc 2 0 noborders 261" (Tesouros); objeto "Coins chests etc 2 0 noborders 262" (Tesouros); objeto "Coins chests etc 2 0 noborders 263" (Tesouros); objeto "Coins chests etc 2 0 noborders 264" (Tesouros); objeto "Coins chests etc 2 0 noborders 265" (Tesouros); objeto "Coins chests etc 2 0 noborders 266" (Tesouros); objeto "Coins chests etc 2 0 noborders 267" (Tesouros); objeto "Coins chests etc 2 0 noborders 268" (Tesouros); objeto "Coins chests etc 2 0 noborders 269" (Tesouros); objeto "Coins chests etc 2 0 noborders 270" (Tesouros); objeto "Coins chests etc 2 0 noborders 271" (Tesouros); objeto "Coins chests etc 2 0 noborders 272" (Tesouros); objeto "Coins chests etc 2 0 noborders 273" (Tesouros); objeto "Coins chests etc 2 0 noborders 274" (Tesouros); objeto "Coins chests etc 2 0 noborders 275" (Tesouros); objeto "Coins chests etc 2 0 noborders 276" (Tesouros); objeto "Coins chests etc 2 0 noborders 277" (Tesouros); objeto "Coins chests etc 2 0 noborders 278" (Tesouros); objeto "Coins chests etc 2 0 noborders 279" (Tesouros); objeto "Coins chests etc 2 0 noborders 280" (Tesouros); objeto "Coins chests etc 2 0 noborders 281" (Tesouros); objeto "Coins chests etc 2 0 noborders 282" (Tesouros); objeto "Coins chests etc 2 0 noborders 283" (Tesouros); objeto "Coins chests etc 2 0 noborders 284" (Tesouros); objeto "Coins chests etc 2 0 noborders 285" (Tesouros); objeto "Coins chests etc 2 0 noborders 286" (Tesouros); objeto "Coins chests etc 2 0 noborders 287" (Tesouros); objeto "Coins chests etc 2 0 noborders 288" (Tesouros); objeto "Coins chests etc 2 0 noborders 289" (Tesouros); objeto "Coins chests etc 2 0 noborders 290" (Tesouros); objeto "Coins chests etc 2 0 noborders 291" (Tesouros); objeto "Coins chests etc 2 0 noborders 292" (Tesouros); objeto "Coins chests etc 2 0 noborders 293" (Tesouros); objeto "Coins chests etc 2 0 noborders 294" (Tesouros); objeto "Coins chests etc 2 0 noborders 295" (Tesouros); objeto "Coins chests etc 2 0 noborders 296" (Tesouros); objeto "Coins chests etc 2 0 noborders 297" (Tesouros); objeto "Coins chests etc 2 0 noborders 298" (Tesouros); objeto "Coins chests etc 2 0 noborders 299" (Tesouros); objeto "Coins chests etc 2 0 noborders 300" (Tesouros); objeto "Coins chests etc 2 0 noborders 301" (Tesouros); objeto "Coins chests etc 2 0 noborders 302" (Tesouros); objeto "Coins chests etc 2 0 noborders 303" (Tesouros); objeto "Coins chests etc 2 0 noborders 304" (Tesouros); objeto "Coins chests etc 2 0 noborders 305" (Tesouros); objeto "Coins chests etc 2 0 noborders 306" (Tesouros); objeto "Coins chests etc 2 0 noborders 307" (Tesouros); objeto "Coins chests etc 2 0 noborders 308" (Tesouros); objeto "Coins chests etc 2 0 noborders 309" (Tesouros); objeto "Coins chests etc 2 0 noborders 310" (Tesouros); objeto "Coins chests etc 2 0 noborders 311" (Tesouros); objeto "Coins chests etc 2 0 noborders 312" (Tesouros); objeto "Coins chests etc 2 0 noborders 313" (Tesouros); objeto "Coins chests etc 2 0 noborders 314" (Tesouros); objeto "Coins chests etc 2 0 noborders 315" (Tesouros); objeto "Coins chests etc 2 0 noborders 316" (Tesouros); objeto "Coins chests etc 2 0 noborders 317" (Tesouros); objeto "Coins chests etc 2 0 noborders 318" (Tesouros); objeto "Coins chests etc 2 0 noborders 319" (Tesouros); objeto "Coins chests etc 2 0 noborders 320" (Tesouros); objeto "Coins chests etc 2 0 noborders 321" (Tesouros); objeto "Coins chests etc 2 0 noborders 322" (Tesouros); objeto "Coins chests etc 2 0 noborders 323" (Tesouros); objeto "Coins chests etc 2 0 noborders 324" (Tesouros); objeto "Coins chests etc 2 0 noborders 325" (Tesouros); objeto "Coins chests etc 2 0 noborders 326" (Tesouros); objeto "Coins chests etc 2 0 noborders 327" (Tesouros); objeto "Coins chests etc 2 0 noborders 328" (Tesouros); objeto "Coins chests etc 2 0 noborders 329" (Tesouros); objeto "Coins chests etc 2 0 noborders 330" (Tesouros); objeto "Coins chests etc 2 0 noborders 331" (Tesouros); objeto "Coins chests etc 2 0 noborders 332" (Tesouros); objeto "Coins chests etc 2 0 noborders 333" (Tesouros); objeto "Coins chests etc 2 0 noborders 334" (Tesouros); objeto "Coins chests etc 2 0 noborders 335" (Tesouros); objeto "Coins chests etc 2 0 noborders 336" (Tesouros); objeto "Coins chests etc 2 0 noborders 337" (Tesouros); objeto "Coins chests etc 2 0 noborders 338" (Tesouros); objeto "Coins chests etc 2 0 noborders 339" (Tesouros); objeto "Coins chests etc 2 0 noborders 340" (Tesouros); objeto "Coins chests etc 2 0 noborders 341" (Tesouros); objeto "Coins chests etc 2 0 noborders 342" (Tesouros); objeto "Coins chests etc 2 0 noborders 343" (Tesouros); objeto "Coins chests etc 2 0 noborders 344" (Tesouros); objeto "Coins chests etc 2 0 noborders 345" (Tesouros); objeto "Coins chests etc 2 0 noborders 346" (Tesouros); objeto "Coins chests etc 2 0 noborders 347" (Tesouros); objeto "Coins chests etc 2 0 noborders 348" (Tesouros); objeto "Coins chests etc 2 0 noborders 349" (Tesouros); objeto "Coins chests etc 2 0 noborders 350" (Tesouros); objeto "Coins chests etc 2 0 noborders 351" (Tesouros); objeto "Coins chests etc 2 0 noborders 352" (Tesouros); objeto "Coins chests etc 2 0 noborders 353" (Tesouros); objeto "Coins chests etc 2 0 noborders 354" (Tesouros); objeto "Coins chests etc 2 0 noborders 355" (Tesouros); objeto "Coins chests etc 2 0 noborders 356" (Tesouros); objeto "Coins chests etc 2 0 noborders 357" (Tesouros); objeto "Coins chests etc 2 0 noborders 358" (Tesouros); objeto "Coins chests etc 2 0 noborders 359" (Tesouros); objeto "Coins chests etc 2 0 noborders 360" (Tesouros); objeto "Coins chests etc 2 0 noborders 361" (Tesouros); objeto "Coins chests etc 2 0 noborders 362" (Tesouros); objeto "Coins chests etc 2 0 noborders 363" (Tesouros); objeto "Coins chests etc 2 0 noborders 364" (Tesouros); objeto "Coins chests etc 2 0 noborders 365" (Tesouros); objeto "Coins chests etc 2 0 noborders 366" (Tesouros); objeto "Coins chests etc 2 0 noborders 367" (Tesouros); objeto "Coins chests etc 2 0 noborders 368" (Tesouros); objeto "Coins chests etc 2 0 noborders 369" (Tesouros); objeto "Coins chests etc 2 0 noborders 370" (Tesouros); objeto "Coins chests etc 2 0 noborders 371" (Tesouros); objeto "Coins chests etc 2 0 noborders 372" (Tesouros); objeto "Coins chests etc 2 0 noborders 373" (Tesouros); objeto "Coins chests etc 2 0 noborders 374" (Tesouros); objeto "Coins chests etc 2 0 noborders 375" (Tesouros); objeto "Coins chests etc 2 0 noborders 376" (Tesouros); objeto "Coins chests etc 2 0 noborders 377" (Tesouros); objeto "Coins chests etc 2 0 noborders 378" (Tesouros); objeto "Coins chests etc 2 0 noborders 379" (Tesouros); objeto "Coins chests etc 2 0 noborders 380" (Tesouros); objeto "Coins chests etc 2 0 noborders 381" (Tesouros); objeto "Coins chests etc 2 0 noborders 382" (Tesouros); objeto "Coins chests etc 2 0 noborders 383" (Tesouros); objeto "Coins chests etc 2 0 noborders 384" (Tesouros); objeto "Coins chests etc 2 0 noborders 385" (Tesouros); objeto "Coins chests etc 2 0 noborders 386" (Tesouros); objeto "Coins chests etc 2 0 noborders 387" (Tesouros); objeto "Coins chests etc 2 0 noborders 388" (Tesouros); objeto "Coins chests etc 2 0 noborders 389" (Tesouros); objeto "Coins chests etc 2 0 noborders 390" (Tesouros); objeto "Coins chests etc 2 0 noborders 391" (Tesouros); objeto "Coins chests etc 2 0 noborders 392" (Tesouros); objeto "Coins chests etc 2 0 noborders 393" (Tesouros); objeto "Coins chests etc 2 0 noborders 394" (Tesouros); objeto "Coins chests etc 2 0 noborders 395" (Tesouros); objeto "Coins chests etc 2 0 noborders 396" (Tesouros); objeto "Coins chests etc 2 0 noborders 397" (Tesouros); objeto "Coins chests etc 2 0 noborders 398" (Tesouros); objeto "Coins chests etc 2 0 noborders 399" (Tesouros); objeto "Coins chests etc 2 0 noborders 400" (Tesouros); objeto "Coins chests etc 2 0 noborders 401" (Tesouros); objeto "Coins chests etc 2 0 noborders 402" (Tesouros); objeto "Coins chests etc 2 0 noborders 403" (Tesouros); objeto "Coins chests etc 2 0 noborders 404" (Tesouros); objeto "Coins chests etc 2 0 noborders 405" (Tesouros); objeto "Coins chests etc 2 0 noborders 406" (Tesouros); objeto "Coins chests etc 2 0 noborders 407" (Tesouros); objeto "Coins chests etc 2 0 noborders 408" (Tesouros); objeto "Coins chests etc 2 0 noborders 409" (Tesouros); objeto "Coins chests etc 2 0 noborders 410" (Tesouros); objeto "Coins chests etc 2 0 noborders 411" (Tesouros); objeto "Coins chests etc 2 0 noborders 412" (Tesouros); objeto "Coins chests etc 2 0 noborders 413" (Tesouros); objeto "Coins chests etc 2 0 noborders 414" (Tesouros); objeto "Coins chests etc 2 0 noborders 415" (Tesouros); objeto "Coins chests etc 2 0 noborders 416" (Tesouros); objeto "Coins chests etc 2 0 noborders 417" (Tesouros); objeto "Coins chests etc 2 0 noborders 418" (Tesouros); objeto "Coins chests etc 2 0 noborders 419" (Tesouros); objeto "Coins chests etc 2 0 noborders 420" (Tesouros); objeto "Coins chests etc 2 0 noborders 421" (Tesouros); objeto "Coins chests etc 2 0 noborders 422" (Tesouros); objeto "Coins chests etc 2 0 noborders 423" (Tesouros); objeto "Coins chests etc 2 0 noborders 424" (Tesouros); objeto "Coins chests etc 2 0 noborders 425" (Tesouros); objeto "Coins chests etc 2 0 noborders 426" (Tesouros); objeto "Coins chests etc 2 0 noborders 427" (Tesouros); objeto "Coins chests etc 2 0 noborders 428" (Tesouros); objeto "Coins chests etc 2 0 noborders 429" (Tesouros); objeto "Coins chests etc 2 0 noborders 430" (Tesouros); objeto "Coins chests etc 2 0 noborders 431" (Tesouros); objeto "Coins chests etc 2 0 noborders 432" (Tesouros); objeto "Coins chests etc 2 0 noborders 433" (Tesouros); objeto "Coins chests etc 2 0 noborders 434" (Tesouros); objeto "Coins chests etc 2 0 noborders 435" (Tesouros); objeto "Coins chests etc 2 0 noborders 436" (Tesouros); objeto "Coins chests etc 2 0 noborders 437" (Tesouros); objeto "Coins chests etc 2 0 noborders 438" (Tesouros); objeto "Coins chests etc 2 0 noborders 439" (Tesouros); objeto "Coins chests etc 2 0 noborders 440" (Tesouros); objeto "Coins chests etc 2 0 noborders 441" (Tesouros); objeto "Coins chests etc 2 0 noborders 442" (Tesouros); objeto "Coins chests etc 2 0 noborders 443" (Tesouros); objeto "Coins chests etc 2 0 noborders 444" (Tesouros); objeto "Coins chests etc 2 0 noborders 445" (Tesouros); objeto "Coins chests etc 2 0 noborders 446" (Tesouros); objeto "Coins chests etc 2 0 noborders 447" (Tesouros); objeto "Coins chests etc 2 0 noborders 448" (Tesouros); objeto "Coins chests etc 2 0 noborders 449" (Tesouros); objeto "Coins chests etc 2 0 noborders 450" (Tesouros); objeto "Coins chests etc 2 0 noborders 451" (Tesouros); objeto "Coins chests etc 2 0 noborders 452" (Tesouros); objeto "Coins chests etc 2 0 noborders 453" (Tesouros); objeto "Coins chests etc 2 0 noborders 454" (Tesouros); objeto "Coins chests etc 2 0 noborders 455" (Tesouros); objeto "Coins chests etc 2 0 noborders 456" (Tesouros); objeto "Coins chests etc 2 0 noborders 457" (Tesouros); objeto "Coins chests etc 2 0 noborders 458" (Tesouros); objeto "Coins chests etc 2 0 noborders 459" (Tesouros); objeto "Coins chests etc 2 0 noborders 460" (Tesouros); objeto "Coins chests etc 2 0 noborders 461" (Tesouros); objeto "Coins chests etc 2 0 noborders 462" (Tesouros); objeto "Coins chests etc 2 0 noborders 463" (Tesouros); objeto "Coins chests etc 2 0 noborders 464" (Tesouros); objeto "Coins chests etc 2 0 noborders 465" (Tesouros); objeto "Coins chests etc 2 0 noborders 466" (Tesouros); objeto "Coins chests etc 2 0 noborders 467" (Tesouros); objeto "Coins chests etc 2 0 noborders 468" (Tesouros); objeto "Coins chests etc 2 0 noborders 469" (Tesouros); objeto "Coins chests etc 2 0 noborders 470" (Tesouros); objeto "Coins chests etc 2 0 noborders 471" (Tesouros); objeto "Coins chests etc 2 0 noborders 472" (Tesouros); objeto "Coins chests etc 2 0 noborders 473" (Tesouros); objeto "Coins chests etc 2 0 noborders 474" (Tesouros); objeto "Coins chests etc 2 0 noborders 475" (Tesouros); objeto "Coins chests etc 2 0 noborders 476" (Tesouros); objeto "Coins chests etc 2 0 noborders 477" (Tesouros); objeto "Coins chests etc 2 0 noborders 478" (Tesouros); objeto "Coins chests etc 2 0 noborders 479" (Tesouros); objeto "Coins chests etc 2 0 noborders 480" (Tesouros); objeto "Coins chests etc 2 0 noborders 481" (Tesouros); objeto "Coins chests etc 2 0 noborders 482" (Tesouros); objeto "Coins chests etc 2 0 noborders 483" (Tesouros); objeto "Coins chests etc 2 0 noborders 484" (Tesouros); objeto "Coins chests etc 2 0 noborders 485" (Tesouros); objeto "Coins chests etc 2 0 noborders 486" (Tesouros); objeto "Coins chests etc 2 0 noborders 487" (Tesouros); objeto "Coins chests etc 2 0 noborders 488" (Tesouros); objeto "Coins chests etc 2 0 noborders 489" (Tesouros); objeto "Coins chests etc 2 0 noborders 490" (Tesouros); objeto "Coins chests etc 2 0 noborders 491" (Tesouros); objeto "Coins chests etc 2 0 noborders 492" (Tesouros); objeto "Coins chests etc 2 0 noborders 493" (Tesouros); objeto "Coins chests etc 2 0 noborders 494" (Tesouros); objeto "Coins chests etc 2 0 noborders 495" (Tesouros); objeto "Coins chests etc 2 0 noborders 496" (Tesouros); objeto "Coins chests etc 2 0 noborders 497" (Tesouros); objeto "Coins chests etc 2 0 noborders 498" (Tesouros); objeto "Coins chests etc 2 0 noborders 499" (Tesouros); objeto "Coins chests etc 2 0 noborders 500" (Tesouros); objeto "Coins chests etc 2 0 noborders 501" (Tesouros); objeto "Coins chests etc 2 0 noborders 502" (Tesouros); objeto "Coins chests etc 2 0 noborders 503" (Tesouros); objeto "Coins chests etc 2 0 noborders 504" (Tesouros); objeto "Coins chests etc 2 0 noborders 505" (Tesouros); objeto "Coins chests etc 2 0 noborders 506" (Tesouros); objeto "Coins chests etc 2 0 noborders 507" (Tesouros); objeto "Coins chests etc 2 0 noborders 508" (Tesouros); objeto "Coins chests etc 2 0 noborders 509" (Tesouros); objeto "Coins chests etc 2 0 noborders 510" (Tesouros); objeto "Coins chests etc 2 0 noborders 511" (Tesouros); objeto "Coins chests etc 2 0 noborders 512" (Tesouros); objeto "Coins chests etc 2 0 noborders 513" (Tesouros); objeto "Coins chests etc 2 0 noborders 514" (Tesouros); objeto "Coins chests etc 2 0 noborders 515" (Tesouros); objeto "Coins chests etc 2 0 noborders 516" (Tesouros); objeto "Coins chests etc 2 0 noborders 517" (Tesouros); objeto "Coins chests etc 2 0 noborders 518" (Tesouros); objeto "Coins chests etc 2 0 noborders 519" (Tesouros); objeto "Coins chests etc 2 0 noborders 520" (Tesouros); objeto "Coins chests etc 2 0 noborders 521" (Tesouros); objeto "Coins chests etc 2 0 noborders 522" (Tesouros); objeto "Coins chests etc 2 0 noborders 523" (Tesouros); objeto "Coins chests etc 2 0 noborders 524" (Tesouros); objeto "Coins chests etc 2 0 noborders 525" (Tesouros); objeto "Coins chests etc 2 0 noborders 526" (Tesouros); objeto "Coins chests etc 2 0 noborders 527" (Tesouros); objeto "Coins chests etc 2 0 noborders 528" (Tesouros); objeto "Coins chests etc 2 0 noborders 529" (Tesouros); objeto "Coins chests etc 2 0 noborders 530" (Tesouros); objeto "Coins chests etc 2 0 noborders 531" (Tesouros); objeto "Coins chests etc 2 0 noborders 532" (Tesouros); objeto "Coins chests etc 2 0 noborders 533" (Tesouros); objeto "Coins chests etc 2 0 noborders 534" (Tesouros); objeto "Coins chests etc 2 0 noborders 535" (Tesouros); objeto "Coins chests etc 2 0 noborders 536" (Tesouros); objeto "Coins chests etc 2 0 noborders 537" (Tesouros); objeto "Coins chests etc 2 0 noborders 538" (Tesouros); objeto "Coins chests etc 2 0 noborders 539" (Tesouros); objeto "Coins chests etc 2 0 noborders 540" (Tesouros); objeto "Coins chests etc 2 0 noborders 541" (Tesouros); objeto "Coins chests etc 2 0 noborders 542" (Tesouros); objeto "Coins chests etc 2 0 noborders 543" (Tesouros); objeto "Coins chests etc 2 0 noborders 544" (Tesouros); objeto "Coins chests etc 2 0 noborders 545" (Tesouros); objeto "Coins chests etc 2 0 noborders 546" (Tesouros); objeto "Coins chests etc 2 0 noborders 547" (Tesouros); objeto "Coins chests etc 2 0 noborders 548" (Tesouros); objeto "Coins chests etc 2 0 noborders 549" (Tesouros); objeto "Coins chests etc 2 0 noborders 550" (Tesouros); objeto "Coins chests etc 2 0 noborders 551" (Tesouros); objeto "Coins chests etc 2 0 noborders 552" (Tesouros); objeto "Coins chests etc 2 0 noborders 553" (Tesouros); objeto "Coins chests etc 2 0 noborders 554" (Tesouros); objeto "Coins chests etc 2 0 noborders 555" (Tesouros); objeto "Coins chests etc 2 0 noborders 556" (Tesouros); objeto "Coins chests etc 2 0 noborders 557" (Tesouros); objeto "Coins chests etc 2 0 noborders 558" (Tesouros); objeto "Coins chests etc 2 0 noborders 559" (Tesouros); objeto "Coins chests etc 2 0 noborders 560" (Tesouros); objeto "Coins chests etc 2 0 noborders 561" (Tesouros); objeto "Coins chests etc 2 0 noborders 562" (Tesouros); objeto "Coins chests etc 2 0 noborders 563" (Tesouros); objeto "Coins chests etc 2 0 noborders 564" (Tesouros); objeto "Coins chests etc 2 0 noborders 565" (Tesouros); objeto "Coins chests etc 2 0 noborders 566" (Tesouros); objeto "Coins chests etc 2 0 noborders 567" (Tesouros); objeto "Coins chests etc 2 0 noborders 568" (Tesouros); objeto "Coins chests etc 2 0 noborders 569" (Tesouros); objeto "Coins chests etc 2 0 noborders 570" (Tesouros); objeto "Coins chests etc 2 0 noborders 571" (Tesouros); objeto "Coins chests etc 2 0 noborders 572" (Tesouros); objeto "Coins chests etc 2 0 noborders 573" (Tesouros); objeto "Coins chests etc 2 0 noborders 574" (Tesouros); objeto "Coins chests etc 2 0 noborders 575" (Tesouros); objeto "Coins chests etc 2 0 noborders 576" (Tesouros); objeto "Coins chests etc 2 0 noborders 577" (Tesouros); objeto "Coins chests etc 2 0 noborders 578" (Tesouros); objeto "Coins chests etc 2 0 noborders 579" (Tesouros); objeto "Coins chests etc 2 0 noborders 580" (Tesouros); objeto "Coins chests etc 2 0 noborders 581" (Tesouros); objeto "Coins chests etc 2 0 noborders 582" (Tesouros); objeto "Coins chests etc 2 0 noborders 583" (Tesouros); objeto "Coins chests etc 2 0 noborders 584" (Tesouros); objeto "Coins chests etc 2 0 noborders 585" (Tesouros); objeto "Coins chests etc 2 0 noborders 586" (Tesouros); objeto "Coins chests etc 2 0 noborders 587" (Tesouros); objeto "Coins chests etc 2 0 noborders 588" (Tesouros); objeto "Coins chests etc 2 0 noborders 589" (Tesouros); objeto "Coins chests etc 2 0 noborders 590" (Tesouros); objeto "Coins chests etc 2 0 noborders 591" (Tesouros); objeto "Coins chests etc 2 0 noborders 592" (Tesouros); objeto "Coins chests etc 2 0 noborders 593" (Tesouros); objeto "Coins chests etc 2 0 noborders 594" (Tesouros); objeto "Coins chests etc 2 0 noborders 595" (Tesouros); objeto "Coins chests etc 2 0 noborders 596" (Tesouros); objeto "Coins chests etc 2 0 noborders 597" (Tesouros); objeto "Coins chests etc 2 0 noborders 598" (Tesouros); objeto "Coins chests etc 2 0 noborders 599" (Tesouros); objeto "Coins chests etc 2 0 noborders 600" (Tesouros); objeto "Coins chests etc 2 0 noborders 601" (Tesouros); objeto "Coins chests etc 2 0 noborders 602" (Tesouros); objeto "Coins chests etc 2 0 noborders 603" (Tesouros); objeto "Coins chests etc 2 0 noborders 604" (Tesouros); objeto "Coins chests etc 2 0 noborders 605" (Tesouros); objeto "Coins chests etc 2 0 noborders 606" (Tesouros); objeto "Coins chests etc 2 0 noborders 607" (Tesouros); objeto "Coins chests etc 2 0 noborders 608" (Tesouros); objeto "Coins chests etc 2 0 noborders 609" (Tesouros); objeto "Coins chests etc 2 0 noborders 610" (Tesouros); objeto "Coins chests etc 2 0 noborders 611" (Tesouros); objeto "Coins chests etc 2 0 noborders 612" (Tesouros); objeto "Coins chests etc 2 0 noborders 613" (Tesouros); objeto "Coins chests etc 2 0 noborders 614" (Tesouros); objeto "Coins chests etc 2 0 noborders 615" (Tesouros); objeto "Coins chests etc 2 0 noborders 616" (Tesouros); objeto "Coins chests etc 2 0 noborders 617" (Tesouros); objeto "Coins chests etc 2 0 noborders 618" (Tesouros); objeto "Coins chests etc 2 0 noborders 619" (Tesouros); objeto "Coins chests etc 2 0 noborders 620" (Tesouros); objeto "Coins chests etc 2 0 noborders 621" (Tesouros); objeto "Coins chests etc 2 0 noborders 622" (Tesouros); objeto "Coins chests etc 2 0 noborders 623" (Tesouros); objeto "Coins chests etc 2 0 noborders 624" (Tesouros); objeto "Coins chests etc 2 0 noborders 625" (Tesouros); objeto "Coins chests etc 2 0 noborders 626" (Tesouros); objeto "Coins chests etc 2 0 noborders 627" (Tesouros); objeto "Coins chests etc 2 0 noborders 628" (Tesouros); objeto "Coins chests etc 2 0 noborders 629" (Tesouros); objeto "Coins chests etc 2 0 noborders 630" (Tesouros); objeto "Coins chests etc 2 0 noborders 631" (Tesouros); objeto "Coins chests etc 2 0 noborders 632" (Tesouros); objeto "Coins chests etc 2 0 noborders 633" (Tesouros); objeto "Coins chests etc 2 0 noborders 634" (Tesouros); objeto "Coins chests etc 2 0 noborders 635" (Tesouros); objeto "Coins chests etc 2 0 noborders 636" (Tesouros)
+- `coins-chests-etc-2-0.aseprite` — fonte editável no Aseprite (assets-src/)
+- `coins-chests-etc-2-0.png` — quadro "Moedas e baús (com bordas)" na galeria do lobby e créditos
+- `copia office pixel.png` — interface: moldura do HUD de HP/SP; interface: moldura do minimapa; piso "Carpete"; piso "Porcelanato"; parede "Parede creme"; objeto "Mesa com PC 1" (Escritório pixel); objeto "Mesa com PC 2" (Escritório pixel); objeto "Mesa com PC 3" (Escritório pixel); objeto "Mesa com PC 4" (Escritório pixel); objeto "Mesa com PC 5" (Escritório pixel); objeto "Mesa com monitor cinza" (Escritório pixel); objeto "Cadeira preta" (Escritório pixel); objeto "Cadeira vermelha" (Escritório pixel); objeto "Cadeira verde" (Escritório pixel); objeto "Banco de madeira" (Escritório pixel); objeto "Porta aberta" (Escritório pixel); objeto "Cabideiro de chapéus" (Escritório pixel); objeto "Arara de roupas" (Escritório pixel); objeto "Porta de madeira" (Escritório pixel); objeto "Janela 1" (Escritório pixel); objeto "Janela 2" (Escritório pixel); objeto "Elevador" (Escritório pixel); objeto "Copa completa" (Escritório pixel); objeto "Cabideiro com casacos" (Escritório pixel); objeto "Câmera de segurança 1" (Escritório pixel); objeto "Câmera de segurança 2" (Escritório pixel); objeto "Cadeira giratória preta" (Escritório pixel); objeto "Cadeira giratória verde" (Escritório pixel); objeto "Cadeira giratória grafite" (Escritório pixel); objeto "Banqueta vermelha" (Escritório pixel); objeto "Cadeira giratória azul" (Escritório pixel); objeto "Cadeira giratória cinza" (Escritório pixel); objeto "Cadeira giratória marrom" (Escritório pixel); objeto "Cadeira giratória celeste" (Escritório pixel); objeto "Guarda-roupa duplo 1" (Escritório pixel); objeto "Guarda-roupa duplo 2" (Escritório pixel); objeto "Arquivo de aço" (Escritório pixel); objeto "Armário marrom 1" (Escritório pixel); objeto "Armário marrom 2" (Escritório pixel); objeto "Estante de pastas" (Escritório pixel); objeto "Copiadora 1" (Escritório pixel); objeto "Copiadora 2" (Escritório pixel); objeto "Planta no vaso azul" (Escritório pixel); objeto "Planta no vaso de barro" (Escritório pixel); objeto "Geladeira" (Escritório pixel); objeto "Mesa baixa" (Escritório pixel); objeto "Mesa de reunião com notebooks" (Escritório pixel); objeto "Mesa de reunião" (Escritório pixel); objeto "Cadeira de reunião azul" (Escritório pixel); objeto "Cadeira de reunião (lado)" (Escritório pixel); objeto "Cadeira de reunião escura" (Escritório pixel); objeto "Bebedouro 1" (Escritório pixel); objeto "Bebedouro 2" (Escritório pixel); objeto "Mesinha com livros" (Escritório pixel); objeto "Mesinha com pastas" (Escritório pixel); objeto "Planta de folhas" (Escritório pixel); objeto "Luminária de chão" (Escritório pixel); objeto "Palmeira 1" (Escritório pixel); objeto "Palmeira 2" (Escritório pixel); objeto "Mesa de vidro" (Escritório pixel); objeto "Quadro de gráfico" (Escritório pixel); objeto "Quadro de paisagem" (Escritório pixel); objeto "Quadrinho" (Escritório pixel); objeto "Xícara branca" (Escritório pixel); objeto "Xícara marrom" (Escritório pixel); objeto "Copo de café 1" (Escritório pixel); objeto "Copo de café 2" (Escritório pixel); objeto "Café na xícara 1" (Escritório pixel); objeto "Café na xícara 2" (Escritório pixel); objeto "Caneca 1" (Escritório pixel); objeto "Caneca 2" (Escritório pixel); objeto "Caneca 3" (Escritório pixel); objeto "Projetor na mesa" (Escritório pixel); objeto "Tela de projeção" (Escritório pixel); objeto "Vaso de flores" (Escritório pixel); NPC "Recepcionista"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/LICENSE.txt` — licença/leia-me — listado em Créditos
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/README.txt` — licença/leia-me — listado em Créditos
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sheets/armchair_terracotta_directions.png` — prévia das 8 direções de "Poltrona terracota" no catálogo
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sheets/booth_bench_directions.png` — prévia das 8 direções de "Banco de cabine banco" no catálogo
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sheets/chair_wood_directions.png` — prévia das 8 direções de "Cadeira madeira" no catálogo
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sheets/loveseat_cream_directions.png` — prévia das 8 direções de "Namoradeira creme" no catálogo
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/armchair_terracotta/armchair_terracotta_e.png` — direção E do móvel giratório "Poltrona terracota"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/armchair_terracotta/armchair_terracotta_n.png` — direção N do móvel giratório "Poltrona terracota"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/armchair_terracotta/armchair_terracotta_ne.png` — direção NE do móvel giratório "Poltrona terracota"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/armchair_terracotta/armchair_terracotta_nw.png` — direção NW do móvel giratório "Poltrona terracota"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/armchair_terracotta/armchair_terracotta_s.png` — direção S do móvel giratório "Poltrona terracota"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/armchair_terracotta/armchair_terracotta_se.png` — direção SE do móvel giratório "Poltrona terracota"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/armchair_terracotta/armchair_terracotta_sw.png` — direção SW do móvel giratório "Poltrona terracota"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/armchair_terracotta/armchair_terracotta_w.png` — direção W do móvel giratório "Poltrona terracota"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/booth_bench/booth_bench_e.png` — direção E do móvel giratório "Banco de cabine banco"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/booth_bench/booth_bench_n.png` — direção N do móvel giratório "Banco de cabine banco"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/booth_bench/booth_bench_ne.png` — direção NE do móvel giratório "Banco de cabine banco"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/booth_bench/booth_bench_nw.png` — direção NW do móvel giratório "Banco de cabine banco"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/booth_bench/booth_bench_s.png` — direção S do móvel giratório "Banco de cabine banco"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/booth_bench/booth_bench_se.png` — direção SE do móvel giratório "Banco de cabine banco"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/booth_bench/booth_bench_sw.png` — direção SW do móvel giratório "Banco de cabine banco"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/booth_bench/booth_bench_w.png` — direção W do móvel giratório "Banco de cabine banco"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/chair_wood/chair_wood_e.png` — direção E do móvel giratório "Cadeira madeira"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/chair_wood/chair_wood_n.png` — direção N do móvel giratório "Cadeira madeira"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/chair_wood/chair_wood_ne.png` — direção NE do móvel giratório "Cadeira madeira"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/chair_wood/chair_wood_nw.png` — direção NW do móvel giratório "Cadeira madeira"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/chair_wood/chair_wood_s.png` — direção S do móvel giratório "Cadeira madeira"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/chair_wood/chair_wood_se.png` — direção SE do móvel giratório "Cadeira madeira"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/chair_wood/chair_wood_sw.png` — direção SW do móvel giratório "Cadeira madeira"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/chair_wood/chair_wood_w.png` — direção W do móvel giratório "Cadeira madeira"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/loveseat_cream/loveseat_cream_e.png` — direção E do móvel giratório "Namoradeira creme"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/loveseat_cream/loveseat_cream_n.png` — direção N do móvel giratório "Namoradeira creme"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/loveseat_cream/loveseat_cream_ne.png` — direção NE do móvel giratório "Namoradeira creme"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/loveseat_cream/loveseat_cream_nw.png` — direção NW do móvel giratório "Namoradeira creme"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/loveseat_cream/loveseat_cream_s.png` — direção S do móvel giratório "Namoradeira creme"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/loveseat_cream/loveseat_cream_se.png` — direção SE do móvel giratório "Namoradeira creme"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/loveseat_cream/loveseat_cream_sw.png` — direção SW do móvel giratório "Namoradeira creme"
+- `cozy_coffee_shop_free_directional_furniture_add_on/cozy_coffee_shop_free_directional_furniture_add_on/sprites/loveseat_cream/loveseat_cream_w.png` — direção W do móvel giratório "Namoradeira creme"
+- `goblin_v1/goblin.png` — monstro "Goblin" da arena
+- `goblin_v1/goblin_palette.png` — paleta de 5 cores no seletor de cores da mesa
+- `mana seed seasonal forest sample (summer)/Mana Seed readme.txt` — licença/leia-me — listado em Créditos
+- `mana seed seasonal forest sample (summer)/seasonal sample (summer).png` — 16 pisos/texturas repetíveis + paleta de tiles (Floresta de verão); objeto "Seasonal sample (summer) 1" (Floresta) (árvore, arbustos, pedras e cachoeira recortados)
+- `mana seed seasonal forest sample (summer)/seasonal water animations/summer water sparkles B 16x16.png` — objeto "Summer water sparkles b 16x16" (Água)
+- `mana seed seasonal forest sample (summer)/seasonal water animations/summer waterfall B 16x16.png` — objeto "Summer waterfall b 16x16" (Água)
+- `noble_furniture/noble_furniture/colourway_preview.png` — quadro "Cores da linha nobre" na galeria do lobby e créditos
+- `noble_furniture/noble_furniture/sprites/amber/armchair_lounge.png` — cor "Âmbar" do móvel nobre "Poltrona lounge"
+- `noble_furniture/noble_furniture/sprites/amber/armchair_tall.png` — cor "Âmbar" do móvel nobre "Poltrona alto"
+- `noble_furniture/noble_furniture/sprites/amber/armchair_wide.png` — cor "Âmbar" do móvel nobre "Poltrona largo"
+- `noble_furniture/noble_furniture/sprites/amber/bed_canopy.png` — cor "Âmbar" do móvel nobre "Cama dossel"
+- `noble_furniture/noble_furniture/sprites/amber/bed_canopy_wide.png` — cor "Âmbar" do móvel nobre "Cama dossel largo"
+- `noble_furniture/noble_furniture/sprites/amber/bed_double.png` — cor "Âmbar" do móvel nobre "Cama casal"
+- `noble_furniture/noble_furniture/sprites/amber/bed_single.png` — cor "Âmbar" do móvel nobre "Cama solteiro"
+- `noble_furniture/noble_furniture/sprites/amber/bench_padded.png` — cor "Âmbar" do móvel nobre "Banco estofado"
+- `noble_furniture/noble_furniture/sprites/amber/cabinet_tall.png` — cor "Âmbar" do móvel nobre "Armário alto"
+- `noble_furniture/noble_furniture/sprites/amber/cabinet_wide.png` — cor "Âmbar" do móvel nobre "Armário largo"
+- `noble_furniture/noble_furniture/sprites/amber/chair_padded.png` — cor "Âmbar" do móvel nobre "Cadeira estofado"
+- `noble_furniture/noble_furniture/sprites/amber/chair_tall.png` — cor "Âmbar" do móvel nobre "Cadeira alto"
+- `noble_furniture/noble_furniture/sprites/amber/chaise_long.png` — cor "Âmbar" do móvel nobre "Chaise longo"
+- `noble_furniture/noble_furniture/sprites/amber/chaise_short.png` — cor "Âmbar" do móvel nobre "Chaise curto"
+- `noble_furniture/noble_furniture/sprites/amber/clock_tall.png` — cor "Âmbar" do móvel nobre "Relógio alto"
+- `noble_furniture/noble_furniture/sprites/amber/desk_large_chair.png` — cor "Âmbar" do móvel nobre "Mesa grande cadeira"
+- `noble_furniture/noble_furniture/sprites/amber/desk_mirror.png` — cor "Âmbar" do móvel nobre "Mesa mirror"
+- `noble_furniture/noble_furniture/sprites/amber/desk_small.png` — cor "Âmbar" do móvel nobre "Mesa pequeno"
+- `noble_furniture/noble_furniture/sprites/amber/desk_tall_chair.png` — cor "Âmbar" do móvel nobre "Mesa alto cadeira"
+- `noble_furniture/noble_furniture/sprites/amber/dresser.png` — cor "Âmbar" do móvel nobre "Cômoda"
+- `noble_furniture/noble_furniture/sprites/amber/nightstand.png` — cor "Âmbar" do móvel nobre "Nightstand"
+- `noble_furniture/noble_furniture/sprites/amber/ottoman_large.png` — cor "Âmbar" do móvel nobre "Pufe grande"
+- `noble_furniture/noble_furniture/sprites/amber/ottoman_small.png` — cor "Âmbar" do móvel nobre "Pufe pequeno"
+- `noble_furniture/noble_furniture/sprites/amber/shelf_glass.png` — cor "Âmbar" do móvel nobre "Prateleira vidro"
+- `noble_furniture/noble_furniture/sprites/amber/sofa_large.png` — cor "Âmbar" do móvel nobre "Sofá grande"
+- `noble_furniture/noble_furniture/sprites/amber/sofa_small.png` — cor "Âmbar" do móvel nobre "Sofá pequeno"
+- `noble_furniture/noble_furniture/sprites/amber/table_long.png` — cor "Âmbar" do móvel nobre "Mesa longo"
+- `noble_furniture/noble_furniture/sprites/amber/table_side.png` — cor "Âmbar" do móvel nobre "Mesa side"
+- `noble_furniture/noble_furniture/sprites/amber/wardrobe_large.png` — cor "Âmbar" do móvel nobre "Guarda-roupa grande"
+- `noble_furniture/noble_furniture/sprites/amber/wardrobe_small.png` — cor "Âmbar" do móvel nobre "Guarda-roupa pequeno"
+- `noble_furniture/noble_furniture/sprites/blush/armchair_lounge.png` — cor "Rosé" do móvel nobre "Poltrona lounge"
+- `noble_furniture/noble_furniture/sprites/blush/armchair_tall.png` — cor "Rosé" do móvel nobre "Poltrona alto"
+- `noble_furniture/noble_furniture/sprites/blush/armchair_wide.png` — cor "Rosé" do móvel nobre "Poltrona largo"
+- `noble_furniture/noble_furniture/sprites/blush/bed_canopy.png` — cor "Rosé" do móvel nobre "Cama dossel"
+- `noble_furniture/noble_furniture/sprites/blush/bed_canopy_wide.png` — cor "Rosé" do móvel nobre "Cama dossel largo"
+- `noble_furniture/noble_furniture/sprites/blush/bed_double.png` — cor "Rosé" do móvel nobre "Cama casal"
+- `noble_furniture/noble_furniture/sprites/blush/bed_single.png` — cor "Rosé" do móvel nobre "Cama solteiro"
+- `noble_furniture/noble_furniture/sprites/blush/bench_padded.png` — cor "Rosé" do móvel nobre "Banco estofado"
+- `noble_furniture/noble_furniture/sprites/blush/cabinet_tall.png` — cor "Rosé" do móvel nobre "Armário alto"
+- `noble_furniture/noble_furniture/sprites/blush/cabinet_wide.png` — cor "Rosé" do móvel nobre "Armário largo"
+- `noble_furniture/noble_furniture/sprites/blush/chair_padded.png` — cor "Rosé" do móvel nobre "Cadeira estofado"
+- `noble_furniture/noble_furniture/sprites/blush/chair_tall.png` — cor "Rosé" do móvel nobre "Cadeira alto"
+- `noble_furniture/noble_furniture/sprites/blush/chaise_long.png` — cor "Rosé" do móvel nobre "Chaise longo"
+- `noble_furniture/noble_furniture/sprites/blush/chaise_short.png` — cor "Rosé" do móvel nobre "Chaise curto"
+- `noble_furniture/noble_furniture/sprites/blush/clock_tall.png` — cor "Rosé" do móvel nobre "Relógio alto"
+- `noble_furniture/noble_furniture/sprites/blush/desk_large_chair.png` — cor "Rosé" do móvel nobre "Mesa grande cadeira"
+- `noble_furniture/noble_furniture/sprites/blush/desk_mirror.png` — cor "Rosé" do móvel nobre "Mesa mirror"
+- `noble_furniture/noble_furniture/sprites/blush/desk_small.png` — cor "Rosé" do móvel nobre "Mesa pequeno"
+- `noble_furniture/noble_furniture/sprites/blush/desk_tall_chair.png` — cor "Rosé" do móvel nobre "Mesa alto cadeira"
+- `noble_furniture/noble_furniture/sprites/blush/dresser.png` — cor "Rosé" do móvel nobre "Cômoda"
+- `noble_furniture/noble_furniture/sprites/blush/nightstand.png` — cor "Rosé" do móvel nobre "Nightstand"
+- `noble_furniture/noble_furniture/sprites/blush/ottoman_large.png` — cor "Rosé" do móvel nobre "Pufe grande"
+- `noble_furniture/noble_furniture/sprites/blush/ottoman_small.png` — cor "Rosé" do móvel nobre "Pufe pequeno"
+- `noble_furniture/noble_furniture/sprites/blush/shelf_glass.png` — cor "Rosé" do móvel nobre "Prateleira vidro"
+- `noble_furniture/noble_furniture/sprites/blush/sofa_large.png` — cor "Rosé" do móvel nobre "Sofá grande"
+- `noble_furniture/noble_furniture/sprites/blush/sofa_small.png` — cor "Rosé" do móvel nobre "Sofá pequeno"
+- `noble_furniture/noble_furniture/sprites/blush/table_long.png` — cor "Rosé" do móvel nobre "Mesa longo"
+- `noble_furniture/noble_furniture/sprites/blush/table_side.png` — cor "Rosé" do móvel nobre "Mesa side"
+- `noble_furniture/noble_furniture/sprites/blush/wardrobe_large.png` — cor "Rosé" do móvel nobre "Guarda-roupa grande"
+- `noble_furniture/noble_furniture/sprites/blush/wardrobe_small.png` — cor "Rosé" do móvel nobre "Guarda-roupa pequeno"
+- `noble_furniture/noble_furniture/sprites/charcoal/armchair_lounge.png` — cor "Grafite" do móvel nobre "Poltrona lounge"
+- `noble_furniture/noble_furniture/sprites/charcoal/armchair_tall.png` — cor "Grafite" do móvel nobre "Poltrona alto"
+- `noble_furniture/noble_furniture/sprites/charcoal/armchair_wide.png` — cor "Grafite" do móvel nobre "Poltrona largo"
+- `noble_furniture/noble_furniture/sprites/charcoal/bed_canopy.png` — cor "Grafite" do móvel nobre "Cama dossel"
+- `noble_furniture/noble_furniture/sprites/charcoal/bed_canopy_wide.png` — cor "Grafite" do móvel nobre "Cama dossel largo"
+- `noble_furniture/noble_furniture/sprites/charcoal/bed_double.png` — cor "Grafite" do móvel nobre "Cama casal"
+- `noble_furniture/noble_furniture/sprites/charcoal/bed_single.png` — cor "Grafite" do móvel nobre "Cama solteiro"
+- `noble_furniture/noble_furniture/sprites/charcoal/bench_padded.png` — cor "Grafite" do móvel nobre "Banco estofado"
+- `noble_furniture/noble_furniture/sprites/charcoal/cabinet_tall.png` — cor "Grafite" do móvel nobre "Armário alto"
+- `noble_furniture/noble_furniture/sprites/charcoal/cabinet_wide.png` — cor "Grafite" do móvel nobre "Armário largo"
+- `noble_furniture/noble_furniture/sprites/charcoal/chair_padded.png` — cor "Grafite" do móvel nobre "Cadeira estofado"
+- `noble_furniture/noble_furniture/sprites/charcoal/chair_tall.png` — cor "Grafite" do móvel nobre "Cadeira alto"
+- `noble_furniture/noble_furniture/sprites/charcoal/chaise_long.png` — cor "Grafite" do móvel nobre "Chaise longo"
+- `noble_furniture/noble_furniture/sprites/charcoal/chaise_short.png` — cor "Grafite" do móvel nobre "Chaise curto"
+- `noble_furniture/noble_furniture/sprites/charcoal/clock_tall.png` — cor "Grafite" do móvel nobre "Relógio alto"
+- `noble_furniture/noble_furniture/sprites/charcoal/desk_large_chair.png` — cor "Grafite" do móvel nobre "Mesa grande cadeira"
+- `noble_furniture/noble_furniture/sprites/charcoal/desk_mirror.png` — cor "Grafite" do móvel nobre "Mesa mirror"
+- `noble_furniture/noble_furniture/sprites/charcoal/desk_small.png` — cor "Grafite" do móvel nobre "Mesa pequeno"
+- `noble_furniture/noble_furniture/sprites/charcoal/desk_tall_chair.png` — cor "Grafite" do móvel nobre "Mesa alto cadeira"
+- `noble_furniture/noble_furniture/sprites/charcoal/dresser.png` — cor "Grafite" do móvel nobre "Cômoda"
+- `noble_furniture/noble_furniture/sprites/charcoal/nightstand.png` — cor "Grafite" do móvel nobre "Nightstand"
+- `noble_furniture/noble_furniture/sprites/charcoal/ottoman_large.png` — cor "Grafite" do móvel nobre "Pufe grande"
+- `noble_furniture/noble_furniture/sprites/charcoal/ottoman_small.png` — cor "Grafite" do móvel nobre "Pufe pequeno"
+- `noble_furniture/noble_furniture/sprites/charcoal/shelf_glass.png` — cor "Grafite" do móvel nobre "Prateleira vidro"
+- `noble_furniture/noble_furniture/sprites/charcoal/sofa_large.png` — cor "Grafite" do móvel nobre "Sofá grande"
+- `noble_furniture/noble_furniture/sprites/charcoal/sofa_small.png` — cor "Grafite" do móvel nobre "Sofá pequeno"
+- `noble_furniture/noble_furniture/sprites/charcoal/table_long.png` — cor "Grafite" do móvel nobre "Mesa longo"
+- `noble_furniture/noble_furniture/sprites/charcoal/table_side.png` — cor "Grafite" do móvel nobre "Mesa side"
+- `noble_furniture/noble_furniture/sprites/charcoal/wardrobe_large.png` — cor "Grafite" do móvel nobre "Guarda-roupa grande"
+- `noble_furniture/noble_furniture/sprites/charcoal/wardrobe_small.png` — cor "Grafite" do móvel nobre "Guarda-roupa pequeno"
+- `noble_furniture/noble_furniture/sprites/crimson/armchair_lounge.png` — cor "Carmim" do móvel nobre "Poltrona lounge"
+- `noble_furniture/noble_furniture/sprites/crimson/armchair_tall.png` — cor "Carmim" do móvel nobre "Poltrona alto"
+- `noble_furniture/noble_furniture/sprites/crimson/armchair_wide.png` — cor "Carmim" do móvel nobre "Poltrona largo"
+- `noble_furniture/noble_furniture/sprites/crimson/bed_canopy.png` — cor "Carmim" do móvel nobre "Cama dossel"
+- `noble_furniture/noble_furniture/sprites/crimson/bed_canopy_wide.png` — cor "Carmim" do móvel nobre "Cama dossel largo"
+- `noble_furniture/noble_furniture/sprites/crimson/bed_double.png` — cor "Carmim" do móvel nobre "Cama casal"
+- `noble_furniture/noble_furniture/sprites/crimson/bed_single.png` — cor "Carmim" do móvel nobre "Cama solteiro"
+- `noble_furniture/noble_furniture/sprites/crimson/bench_padded.png` — cor "Carmim" do móvel nobre "Banco estofado"
+- `noble_furniture/noble_furniture/sprites/crimson/cabinet_tall.png` — cor "Carmim" do móvel nobre "Armário alto"
+- `noble_furniture/noble_furniture/sprites/crimson/cabinet_wide.png` — cor "Carmim" do móvel nobre "Armário largo"
+- `noble_furniture/noble_furniture/sprites/crimson/chair_padded.png` — cor "Carmim" do móvel nobre "Cadeira estofado"
+- `noble_furniture/noble_furniture/sprites/crimson/chair_tall.png` — cor "Carmim" do móvel nobre "Cadeira alto"
+- `noble_furniture/noble_furniture/sprites/crimson/chaise_long.png` — cor "Carmim" do móvel nobre "Chaise longo"
+- `noble_furniture/noble_furniture/sprites/crimson/chaise_short.png` — cor "Carmim" do móvel nobre "Chaise curto"
+- `noble_furniture/noble_furniture/sprites/crimson/clock_tall.png` — cor "Carmim" do móvel nobre "Relógio alto"
+- `noble_furniture/noble_furniture/sprites/crimson/desk_large_chair.png` — cor "Carmim" do móvel nobre "Mesa grande cadeira"
+- `noble_furniture/noble_furniture/sprites/crimson/desk_mirror.png` — cor "Carmim" do móvel nobre "Mesa mirror"
+- `noble_furniture/noble_furniture/sprites/crimson/desk_small.png` — cor "Carmim" do móvel nobre "Mesa pequeno"
+- `noble_furniture/noble_furniture/sprites/crimson/desk_tall_chair.png` — cor "Carmim" do móvel nobre "Mesa alto cadeira"
+- `noble_furniture/noble_furniture/sprites/crimson/dresser.png` — cor "Carmim" do móvel nobre "Cômoda"
+- `noble_furniture/noble_furniture/sprites/crimson/nightstand.png` — cor "Carmim" do móvel nobre "Nightstand"
+- `noble_furniture/noble_furniture/sprites/crimson/ottoman_large.png` — cor "Carmim" do móvel nobre "Pufe grande"
+- `noble_furniture/noble_furniture/sprites/crimson/ottoman_small.png` — cor "Carmim" do móvel nobre "Pufe pequeno"
+- `noble_furniture/noble_furniture/sprites/crimson/shelf_glass.png` — cor "Carmim" do móvel nobre "Prateleira vidro"
+- `noble_furniture/noble_furniture/sprites/crimson/sofa_large.png` — cor "Carmim" do móvel nobre "Sofá grande"
+- `noble_furniture/noble_furniture/sprites/crimson/sofa_small.png` — cor "Carmim" do móvel nobre "Sofá pequeno"
+- `noble_furniture/noble_furniture/sprites/crimson/table_long.png` — cor "Carmim" do móvel nobre "Mesa longo"
+- `noble_furniture/noble_furniture/sprites/crimson/table_side.png` — cor "Carmim" do móvel nobre "Mesa side"
+- `noble_furniture/noble_furniture/sprites/crimson/wardrobe_large.png` — cor "Carmim" do móvel nobre "Guarda-roupa grande"
+- `noble_furniture/noble_furniture/sprites/crimson/wardrobe_small.png` — cor "Carmim" do móvel nobre "Guarda-roupa pequeno"
+- `noble_furniture/noble_furniture/sprites/emerald/armchair_lounge.png` — cor "Esmeralda" do móvel nobre "Poltrona lounge"
+- `noble_furniture/noble_furniture/sprites/emerald/armchair_tall.png` — cor "Esmeralda" do móvel nobre "Poltrona alto"
+- `noble_furniture/noble_furniture/sprites/emerald/armchair_wide.png` — cor "Esmeralda" do móvel nobre "Poltrona largo"
+- `noble_furniture/noble_furniture/sprites/emerald/bed_canopy.png` — cor "Esmeralda" do móvel nobre "Cama dossel"
+- `noble_furniture/noble_furniture/sprites/emerald/bed_canopy_wide.png` — cor "Esmeralda" do móvel nobre "Cama dossel largo"
+- `noble_furniture/noble_furniture/sprites/emerald/bed_double.png` — cor "Esmeralda" do móvel nobre "Cama casal"
+- `noble_furniture/noble_furniture/sprites/emerald/bed_single.png` — cor "Esmeralda" do móvel nobre "Cama solteiro"
+- `noble_furniture/noble_furniture/sprites/emerald/bench_padded.png` — cor "Esmeralda" do móvel nobre "Banco estofado"
+- `noble_furniture/noble_furniture/sprites/emerald/cabinet_tall.png` — cor "Esmeralda" do móvel nobre "Armário alto"
+- `noble_furniture/noble_furniture/sprites/emerald/cabinet_wide.png` — cor "Esmeralda" do móvel nobre "Armário largo"
+- `noble_furniture/noble_furniture/sprites/emerald/chair_padded.png` — cor "Esmeralda" do móvel nobre "Cadeira estofado"
+- `noble_furniture/noble_furniture/sprites/emerald/chair_tall.png` — cor "Esmeralda" do móvel nobre "Cadeira alto"
+- `noble_furniture/noble_furniture/sprites/emerald/chaise_long.png` — cor "Esmeralda" do móvel nobre "Chaise longo"
+- `noble_furniture/noble_furniture/sprites/emerald/chaise_short.png` — cor "Esmeralda" do móvel nobre "Chaise curto"
+- `noble_furniture/noble_furniture/sprites/emerald/clock_tall.png` — cor "Esmeralda" do móvel nobre "Relógio alto"
+- `noble_furniture/noble_furniture/sprites/emerald/desk_large_chair.png` — cor "Esmeralda" do móvel nobre "Mesa grande cadeira"
+- `noble_furniture/noble_furniture/sprites/emerald/desk_mirror.png` — cor "Esmeralda" do móvel nobre "Mesa mirror"
+- `noble_furniture/noble_furniture/sprites/emerald/desk_small.png` — cor "Esmeralda" do móvel nobre "Mesa pequeno"
+- `noble_furniture/noble_furniture/sprites/emerald/desk_tall_chair.png` — cor "Esmeralda" do móvel nobre "Mesa alto cadeira"
+- `noble_furniture/noble_furniture/sprites/emerald/dresser.png` — cor "Esmeralda" do móvel nobre "Cômoda"
+- `noble_furniture/noble_furniture/sprites/emerald/nightstand.png` — cor "Esmeralda" do móvel nobre "Nightstand"
+- `noble_furniture/noble_furniture/sprites/emerald/ottoman_large.png` — cor "Esmeralda" do móvel nobre "Pufe grande"
+- `noble_furniture/noble_furniture/sprites/emerald/ottoman_small.png` — cor "Esmeralda" do móvel nobre "Pufe pequeno"
+- `noble_furniture/noble_furniture/sprites/emerald/shelf_glass.png` — cor "Esmeralda" do móvel nobre "Prateleira vidro"
+- `noble_furniture/noble_furniture/sprites/emerald/sofa_large.png` — cor "Esmeralda" do móvel nobre "Sofá grande"
+- `noble_furniture/noble_furniture/sprites/emerald/sofa_small.png` — cor "Esmeralda" do móvel nobre "Sofá pequeno"
+- `noble_furniture/noble_furniture/sprites/emerald/table_long.png` — cor "Esmeralda" do móvel nobre "Mesa longo"
+- `noble_furniture/noble_furniture/sprites/emerald/table_side.png` — cor "Esmeralda" do móvel nobre "Mesa side"
+- `noble_furniture/noble_furniture/sprites/emerald/wardrobe_large.png` — cor "Esmeralda" do móvel nobre "Guarda-roupa grande"
+- `noble_furniture/noble_furniture/sprites/emerald/wardrobe_small.png` — cor "Esmeralda" do móvel nobre "Guarda-roupa pequeno"
+- `noble_furniture/noble_furniture/sprites/midnight/armchair_lounge.png` — cor "Meia-noite" do móvel nobre "Poltrona lounge"
+- `noble_furniture/noble_furniture/sprites/midnight/armchair_tall.png` — cor "Meia-noite" do móvel nobre "Poltrona alto"
+- `noble_furniture/noble_furniture/sprites/midnight/armchair_wide.png` — cor "Meia-noite" do móvel nobre "Poltrona largo"
+- `noble_furniture/noble_furniture/sprites/midnight/bed_canopy.png` — cor "Meia-noite" do móvel nobre "Cama dossel"
+- `noble_furniture/noble_furniture/sprites/midnight/bed_canopy_wide.png` — cor "Meia-noite" do móvel nobre "Cama dossel largo"
+- `noble_furniture/noble_furniture/sprites/midnight/bed_double.png` — cor "Meia-noite" do móvel nobre "Cama casal"
+- `noble_furniture/noble_furniture/sprites/midnight/bed_single.png` — cor "Meia-noite" do móvel nobre "Cama solteiro"
+- `noble_furniture/noble_furniture/sprites/midnight/bench_padded.png` — cor "Meia-noite" do móvel nobre "Banco estofado"
+- `noble_furniture/noble_furniture/sprites/midnight/cabinet_tall.png` — cor "Meia-noite" do móvel nobre "Armário alto"
+- `noble_furniture/noble_furniture/sprites/midnight/cabinet_wide.png` — cor "Meia-noite" do móvel nobre "Armário largo"
+- `noble_furniture/noble_furniture/sprites/midnight/chair_padded.png` — cor "Meia-noite" do móvel nobre "Cadeira estofado"
+- `noble_furniture/noble_furniture/sprites/midnight/chair_tall.png` — cor "Meia-noite" do móvel nobre "Cadeira alto"
+- `noble_furniture/noble_furniture/sprites/midnight/chaise_long.png` — cor "Meia-noite" do móvel nobre "Chaise longo"
+- `noble_furniture/noble_furniture/sprites/midnight/chaise_short.png` — cor "Meia-noite" do móvel nobre "Chaise curto"
+- `noble_furniture/noble_furniture/sprites/midnight/clock_tall.png` — cor "Meia-noite" do móvel nobre "Relógio alto"
+- `noble_furniture/noble_furniture/sprites/midnight/desk_large_chair.png` — cor "Meia-noite" do móvel nobre "Mesa grande cadeira"
+- `noble_furniture/noble_furniture/sprites/midnight/desk_mirror.png` — cor "Meia-noite" do móvel nobre "Mesa mirror"
+- `noble_furniture/noble_furniture/sprites/midnight/desk_small.png` — cor "Meia-noite" do móvel nobre "Mesa pequeno"
+- `noble_furniture/noble_furniture/sprites/midnight/desk_tall_chair.png` — cor "Meia-noite" do móvel nobre "Mesa alto cadeira"
+- `noble_furniture/noble_furniture/sprites/midnight/dresser.png` — cor "Meia-noite" do móvel nobre "Cômoda"
+- `noble_furniture/noble_furniture/sprites/midnight/nightstand.png` — cor "Meia-noite" do móvel nobre "Nightstand"
+- `noble_furniture/noble_furniture/sprites/midnight/ottoman_large.png` — cor "Meia-noite" do móvel nobre "Pufe grande"
+- `noble_furniture/noble_furniture/sprites/midnight/ottoman_small.png` — cor "Meia-noite" do móvel nobre "Pufe pequeno"
+- `noble_furniture/noble_furniture/sprites/midnight/shelf_glass.png` — cor "Meia-noite" do móvel nobre "Prateleira vidro"
+- `noble_furniture/noble_furniture/sprites/midnight/sofa_large.png` — cor "Meia-noite" do móvel nobre "Sofá grande"
+- `noble_furniture/noble_furniture/sprites/midnight/sofa_small.png` — cor "Meia-noite" do móvel nobre "Sofá pequeno"
+- `noble_furniture/noble_furniture/sprites/midnight/table_long.png` — cor "Meia-noite" do móvel nobre "Mesa longo"
+- `noble_furniture/noble_furniture/sprites/midnight/table_side.png` — cor "Meia-noite" do móvel nobre "Mesa side"
+- `noble_furniture/noble_furniture/sprites/midnight/wardrobe_large.png` — cor "Meia-noite" do móvel nobre "Guarda-roupa grande"
+- `noble_furniture/noble_furniture/sprites/midnight/wardrobe_small.png` — cor "Meia-noite" do móvel nobre "Guarda-roupa pequeno"
+- `noble_furniture/noble_furniture/sprites/purple/armchair_lounge.png` — cor "Roxo" do móvel nobre "Poltrona lounge"
+- `noble_furniture/noble_furniture/sprites/purple/armchair_tall.png` — cor "Roxo" do móvel nobre "Poltrona alto"
+- `noble_furniture/noble_furniture/sprites/purple/armchair_wide.png` — cor "Roxo" do móvel nobre "Poltrona largo"
+- `noble_furniture/noble_furniture/sprites/purple/bed_canopy.png` — cor "Roxo" do móvel nobre "Cama dossel"
+- `noble_furniture/noble_furniture/sprites/purple/bed_canopy_wide.png` — cor "Roxo" do móvel nobre "Cama dossel largo"
+- `noble_furniture/noble_furniture/sprites/purple/bed_double.png` — cor "Roxo" do móvel nobre "Cama casal"
+- `noble_furniture/noble_furniture/sprites/purple/bed_single.png` — cor "Roxo" do móvel nobre "Cama solteiro"
+- `noble_furniture/noble_furniture/sprites/purple/bench_padded.png` — cor "Roxo" do móvel nobre "Banco estofado"
+- `noble_furniture/noble_furniture/sprites/purple/cabinet_tall.png` — cor "Roxo" do móvel nobre "Armário alto"
+- `noble_furniture/noble_furniture/sprites/purple/cabinet_wide.png` — cor "Roxo" do móvel nobre "Armário largo"
+- `noble_furniture/noble_furniture/sprites/purple/chair_padded.png` — cor "Roxo" do móvel nobre "Cadeira estofado"
+- `noble_furniture/noble_furniture/sprites/purple/chair_tall.png` — cor "Roxo" do móvel nobre "Cadeira alto"
+- `noble_furniture/noble_furniture/sprites/purple/chaise_long.png` — cor "Roxo" do móvel nobre "Chaise longo"
+- `noble_furniture/noble_furniture/sprites/purple/chaise_short.png` — cor "Roxo" do móvel nobre "Chaise curto"
+- `noble_furniture/noble_furniture/sprites/purple/clock_tall.png` — cor "Roxo" do móvel nobre "Relógio alto"
+- `noble_furniture/noble_furniture/sprites/purple/desk_large_chair.png` — cor "Roxo" do móvel nobre "Mesa grande cadeira"
+- `noble_furniture/noble_furniture/sprites/purple/desk_mirror.png` — cor "Roxo" do móvel nobre "Mesa mirror"
+- `noble_furniture/noble_furniture/sprites/purple/desk_small.png` — cor "Roxo" do móvel nobre "Mesa pequeno"
+- `noble_furniture/noble_furniture/sprites/purple/desk_tall_chair.png` — cor "Roxo" do móvel nobre "Mesa alto cadeira"
+- `noble_furniture/noble_furniture/sprites/purple/dresser.png` — cor "Roxo" do móvel nobre "Cômoda"
+- `noble_furniture/noble_furniture/sprites/purple/nightstand.png` — cor "Roxo" do móvel nobre "Nightstand"
+- `noble_furniture/noble_furniture/sprites/purple/ottoman_large.png` — cor "Roxo" do móvel nobre "Pufe grande"
+- `noble_furniture/noble_furniture/sprites/purple/ottoman_small.png` — cor "Roxo" do móvel nobre "Pufe pequeno"
+- `noble_furniture/noble_furniture/sprites/purple/shelf_glass.png` — cor "Roxo" do móvel nobre "Prateleira vidro"
+- `noble_furniture/noble_furniture/sprites/purple/sofa_large.png` — cor "Roxo" do móvel nobre "Sofá grande"
+- `noble_furniture/noble_furniture/sprites/purple/sofa_small.png` — cor "Roxo" do móvel nobre "Sofá pequeno"
+- `noble_furniture/noble_furniture/sprites/purple/table_long.png` — cor "Roxo" do móvel nobre "Mesa longo"
+- `noble_furniture/noble_furniture/sprites/purple/table_side.png` — cor "Roxo" do móvel nobre "Mesa side"
+- `noble_furniture/noble_furniture/sprites/purple/wardrobe_large.png` — cor "Roxo" do móvel nobre "Guarda-roupa grande"
+- `noble_furniture/noble_furniture/sprites/purple/wardrobe_small.png` — cor "Roxo" do móvel nobre "Guarda-roupa pequeno"
+- `noble_furniture/noble_furniture/sprites/teal/armchair_lounge.png` — cor "Petróleo" do móvel nobre "Poltrona lounge"
+- `noble_furniture/noble_furniture/sprites/teal/armchair_tall.png` — cor "Petróleo" do móvel nobre "Poltrona alto"
+- `noble_furniture/noble_furniture/sprites/teal/armchair_wide.png` — cor "Petróleo" do móvel nobre "Poltrona largo"
+- `noble_furniture/noble_furniture/sprites/teal/bed_canopy.png` — cor "Petróleo" do móvel nobre "Cama dossel"
+- `noble_furniture/noble_furniture/sprites/teal/bed_canopy_wide.png` — cor "Petróleo" do móvel nobre "Cama dossel largo"
+- `noble_furniture/noble_furniture/sprites/teal/bed_double.png` — cor "Petróleo" do móvel nobre "Cama casal"
+- `noble_furniture/noble_furniture/sprites/teal/bed_single.png` — cor "Petróleo" do móvel nobre "Cama solteiro"
+- `noble_furniture/noble_furniture/sprites/teal/bench_padded.png` — cor "Petróleo" do móvel nobre "Banco estofado"
+- `noble_furniture/noble_furniture/sprites/teal/cabinet_tall.png` — cor "Petróleo" do móvel nobre "Armário alto"
+- `noble_furniture/noble_furniture/sprites/teal/cabinet_wide.png` — cor "Petróleo" do móvel nobre "Armário largo"
+- `noble_furniture/noble_furniture/sprites/teal/chair_padded.png` — cor "Petróleo" do móvel nobre "Cadeira estofado"
+- `noble_furniture/noble_furniture/sprites/teal/chair_tall.png` — cor "Petróleo" do móvel nobre "Cadeira alto"
+- `noble_furniture/noble_furniture/sprites/teal/chaise_long.png` — cor "Petróleo" do móvel nobre "Chaise longo"
+- `noble_furniture/noble_furniture/sprites/teal/chaise_short.png` — cor "Petróleo" do móvel nobre "Chaise curto"
+- `noble_furniture/noble_furniture/sprites/teal/clock_tall.png` — cor "Petróleo" do móvel nobre "Relógio alto"
+- `noble_furniture/noble_furniture/sprites/teal/desk_large_chair.png` — cor "Petróleo" do móvel nobre "Mesa grande cadeira"
+- `noble_furniture/noble_furniture/sprites/teal/desk_mirror.png` — cor "Petróleo" do móvel nobre "Mesa mirror"
+- `noble_furniture/noble_furniture/sprites/teal/desk_small.png` — cor "Petróleo" do móvel nobre "Mesa pequeno"
+- `noble_furniture/noble_furniture/sprites/teal/desk_tall_chair.png` — cor "Petróleo" do móvel nobre "Mesa alto cadeira"
+- `noble_furniture/noble_furniture/sprites/teal/dresser.png` — cor "Petróleo" do móvel nobre "Cômoda"
+- `noble_furniture/noble_furniture/sprites/teal/nightstand.png` — cor "Petróleo" do móvel nobre "Nightstand"
+- `noble_furniture/noble_furniture/sprites/teal/ottoman_large.png` — cor "Petróleo" do móvel nobre "Pufe grande"
+- `noble_furniture/noble_furniture/sprites/teal/ottoman_small.png` — cor "Petróleo" do móvel nobre "Pufe pequeno"
+- `noble_furniture/noble_furniture/sprites/teal/shelf_glass.png` — cor "Petróleo" do móvel nobre "Prateleira vidro"
+- `noble_furniture/noble_furniture/sprites/teal/sofa_large.png` — cor "Petróleo" do móvel nobre "Sofá grande"
+- `noble_furniture/noble_furniture/sprites/teal/sofa_small.png` — cor "Petróleo" do móvel nobre "Sofá pequeno"
+- `noble_furniture/noble_furniture/sprites/teal/table_long.png` — cor "Petróleo" do móvel nobre "Mesa longo"
+- `noble_furniture/noble_furniture/sprites/teal/table_side.png` — cor "Petróleo" do móvel nobre "Mesa side"
+- `noble_furniture/noble_furniture/sprites/teal/wardrobe_large.png` — cor "Petróleo" do móvel nobre "Guarda-roupa grande"
+- `noble_furniture/noble_furniture/sprites/teal/wardrobe_small.png` — cor "Petróleo" do móvel nobre "Guarda-roupa pequeno"
+- `noble_furniture/noble_furniture/spritesheets/noble_furniture_amber.png` — amostra da cor "Âmbar" no seletor de cores da mesa
+- `noble_furniture/noble_furniture/spritesheets/noble_furniture_blush.png` — amostra da cor "Rosé" no seletor de cores da mesa
+- `noble_furniture/noble_furniture/spritesheets/noble_furniture_charcoal.png` — amostra da cor "Grafite" no seletor de cores da mesa
+- `noble_furniture/noble_furniture/spritesheets/noble_furniture_crimson.png` — amostra da cor "Carmim" no seletor de cores da mesa
+- `noble_furniture/noble_furniture/spritesheets/noble_furniture_emerald.png` — amostra da cor "Esmeralda" no seletor de cores da mesa
+- `noble_furniture/noble_furniture/spritesheets/noble_furniture_midnight.png` — amostra da cor "Meia-noite" no seletor de cores da mesa
+- `noble_furniture/noble_furniture/spritesheets/noble_furniture_purple.png` — amostra da cor "Roxo" no seletor de cores da mesa
+- `noble_furniture/noble_furniture/spritesheets/noble_furniture_teal.png` — amostra da cor "Petróleo" no seletor de cores da mesa
+- `sample(idle&walk)/idle/idle.aseprite` — fonte editável no Aseprite (assets-src/)
+- `sample(idle&walk)/idle/sprite sheets/idle.png` — NPC visitante animado (idle)
+- `sample(idle&walk)/walk/sprite sheets/from idle.png` — NPC visitante animado (from idle)
+- `sample(idle&walk)/walk/sprite sheets/walk.png` — NPC visitante animado (walk)
+- `sample(idle&walk)/walk/walk.aseprite` — fonte editável no Aseprite (assets-src/)
