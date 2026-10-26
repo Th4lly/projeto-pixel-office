@@ -1,8 +1,11 @@
 // Desenha o escritório com os sprites da pasta: camada de piso em cache + objetos,
 // mesas decoradas, monstros e avatares ordenados por profundidade.
-import { onAssetLoad, TILE } from '../art/assets.js';
+import { TEAMS } from '../features/arena.js';
+import { onAssetLoad, TILE, loadUrl } from '../art/assets.js';
 import { FLOORS, paintFloor, paintWall } from '../art/tiles.js';
-import { OBJECTS, drawObjectSprite, objectHeight } from '../art/objects.js';
+import { OBJECTS, drawObjectSprite, objectHeight, dims, rotOf } from '../art/objects.js';
+import { dirFromAngle } from './dirs.js';
+import { FX, parseFx } from './world.js';
 import { drawAvatar, drawPet, drawWeapon } from '../art/avatar.js';
 import { onStage } from './world.js';
 import { drawDecorItem } from '../features/desks.js';
@@ -54,7 +57,31 @@ export class Renderer {
   }
 
   isSitting(p) {
-    return !p.moving && !!this.app.world.seatAt(p.x, p.y);
+    return !p.moving && (!!p.floorSit || !!this.app.world.seatAt(p.x, p.y));
+  }
+
+  /** Marcador de clique no chão (como o cursor de destino do RO). */
+  drawMark(ox, oy, S, T) {
+    const m = this.mark;
+    if (!m) return;
+    const age = (performance.now() - m.t) / 650;
+    if (age > 1) { this.mark = null; return; }
+    const { ctx } = this;
+    const cx = ox + (m.x + 0.5) * T;
+    const cy = oy + (m.y + 0.62) * T;
+    const r = (1 - age) * 12 * S + 3 * S;
+    ctx.save();
+    ctx.globalAlpha = 1 - age;
+    ctx.strokeStyle = '#9be8ff';
+    ctx.lineWidth = 2 * S;
+    ctx.beginPath();
+    ctx.ellipse(cx, cy, r, r * 0.5, 0, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.fillStyle = '#ffffff';
+    ctx.beginPath();
+    ctx.moveTo(cx, cy - 2 * S); ctx.lineTo(cx + 3 * S, cy); ctx.lineTo(cx, cy + 2 * S); ctx.lineTo(cx - 3 * S, cy);
+    ctx.fill();
+    ctx.restore();
   }
 
   buildLayer() {
@@ -70,25 +97,116 @@ export class Renderer {
     ctx.imageSmoothingEnabled = false;
     ctx.clearRect(0, 0, W, H);
     let complete = true;
+    // fundo importado (imagem inteira, 1 px = 1 px de mundo, grade de 32)
+    if (w.map.bg && w.map.bg.url) {
+      const img = loadUrl(w.map.bg.url);
+      if (img) ctx.drawImage(img, 0, 0, w.map.bg.w || img.naturalWidth, w.map.bg.h || img.naturalHeight); else complete = false;
+    }
+    const isW = (x, y) => !w.inBounds(x, y) || w.isWall(x, y);
     for (let y = 0; y < w.height; y++) {
       for (let x = 0; x < w.width; x++) {
         const t = w.floorAt(x, y);
         const f = FLOORS[t] || FLOORS.void;
-        const ok = f.wall ? paintWall(ctx, t, x, y, !w.isWall(x, y + 1)) : paintFloor(ctx, t, x, y);
+        const ok = f.wall ? paintWall(ctx, t, x, y, !isW(x, y + 1), (dx, dy) => isW(x + dx, y + dy)) : paintFloor(ctx, t, x, y);
         if (!ok) complete = false;
-        if (!f.wall && t !== 'void' && w.isWall(x, y - 1)) {
-          const g = ctx.createLinearGradient(0, y * TILE, 0, y * TILE + 10);
-          g.addColorStop(0, 'rgba(20,12,30,.42)');
+      }
+    }
+    // bordas orgânicas: a grama "morde" a terra/caminho vizinho (como num tileset de bosque)
+    const GRASS = (id) => /seasonal-sample-summer-png-(1|8)$|extra-floor-grama/.test(id || '');
+    const hash = (a, b, c) => { let n = (a * 374761393 + b * 668265263 + c * 2147483647) | 0; n = (n ^ (n >>> 13)) * 1274126177; return ((n ^ (n >>> 16)) >>> 0); };
+    for (let y = 0; y < w.height; y++) {
+      for (let x = 0; x < w.width; x++) {
+        const t = w.floorAt(x, y);
+        const f = FLOORS[t];
+        if (!f || f.wall || GRASS(t) || t === 'void' || f.clear) continue;
+        for (const [dx, dy] of [[0, -1], [0, 1], [-1, 0], [1, 0]]) {
+          const n = w.floorAt(x + dx, y + dy);
+          if (!GRASS(n)) continue;
+          const px = x * TILE;
+          const py = y * TILE;
+          ctx.save();
+          ctx.beginPath();
+          const pts = [];
+          for (let i = 0; i <= TILE; i += 4) {
+            const dpt = 2 + (hash(x * 2 + dx, y * 2 + dy, i) % 7);
+            if (dy === -1) pts.push([px + i, py + dpt]);
+            else if (dy === 1) pts.push([px + i, py + TILE - dpt]);
+            else if (dx === -1) pts.push([px + dpt, py + i]);
+            else pts.push([px + TILE - dpt, py + i]);
+          }
+          if (dy === -1) { ctx.moveTo(px, py); pts.forEach(([a, b]) => ctx.lineTo(a, b)); ctx.lineTo(px + TILE, py); }
+          else if (dy === 1) { ctx.moveTo(px, py + TILE); pts.forEach(([a, b]) => ctx.lineTo(a, b)); ctx.lineTo(px + TILE, py + TILE); }
+          else if (dx === -1) { ctx.moveTo(px, py); pts.forEach(([a, b]) => ctx.lineTo(a, b)); ctx.lineTo(px, py + TILE); }
+          else { ctx.moveTo(px + TILE, py); pts.forEach(([a, b]) => ctx.lineTo(a, b)); ctx.lineTo(px + TILE, py + TILE); }
+          ctx.closePath();
+          ctx.clip();
+          paintFloor(ctx, n, x, y);
+          ctx.restore();
+        }
+      }
+    }
+    // divisas: sombra das paredes no chão e friso entre pisos diferentes
+    for (let y = 0; y < w.height; y++) {
+      for (let x = 0; x < w.width; x++) {
+        const t = w.floorAt(x, y);
+        const f = FLOORS[t] || FLOORS.void;
+        if (f.wall || t === 'void' || f.clear) continue;
+        const px = x * TILE;
+        const py = y * TILE;
+        if (isW(x, y - 1)) {
+          const g = ctx.createLinearGradient(0, py, 0, py + 12);
+          g.addColorStop(0, 'rgba(20,12,30,.5)');
           g.addColorStop(1, 'rgba(20,12,30,0)');
           ctx.fillStyle = g;
-          ctx.fillRect(x * TILE, y * TILE, TILE, 10);
+          ctx.fillRect(px, py, TILE, 12);
         }
+        for (const [dx, x0] of [[-1, px], [1, px + TILE - 6]]) {
+          if (!isW(x + dx, y)) continue;
+          const g = ctx.createLinearGradient(dx < 0 ? px : px + TILE, 0, dx < 0 ? px + 6 : px + TILE - 6, 0);
+          g.addColorStop(0, 'rgba(20,12,30,.38)');
+          g.addColorStop(1, 'rgba(20,12,30,0)');
+          ctx.fillStyle = g;
+          ctx.fillRect(x0, py, 6, TILE);
+        }
+        // porta/passagem: soleira escura entre duas paredes
+        if (isW(x - 1, y) && isW(x + 1, y) && !isW(x, y - 1) && !isW(x, y + 1)) {
+          ctx.fillStyle = 'rgba(20,12,30,.28)';
+          ctx.fillRect(px + 2, py + TILE / 2 - 2, TILE - 4, 4);
+        }
+        // friso entre pisos diferentes (sem parede): linha escura + luz
+        const tr = w.floorAt(x + 1, y);
+        const tb = w.floorAt(x, y + 1);
+        ctx.fillStyle = 'rgba(15,10,22,.45)';
+        const hard = (o) => o !== t && FLOORS[o] && !FLOORS[o].wall && o !== 'void' && !GRASS(o) && !GRASS(t);
+        if (x + 1 < w.width && hard(tr)) ctx.fillRect(px + TILE - 1, py, 2, TILE);
+        if (y + 1 < w.height && hard(tb)) ctx.fillRect(px, py + TILE - 1, TILE, 2);
       }
     }
     for (const o of w.objects) {
       const def = OBJECTS[o.type];
       if (!def || !def.flat) continue;
       if (!drawObjectSprite(ctx, o, def, o.x * TILE, o.y * TILE, 1, 0)) complete = false;
+    }
+    // camada da frente (fica por cima do avatar)
+    if (!this.fgLayer || this.fgLayer.width !== W || this.fgLayer.height !== H) {
+      this.fgLayer = document.createElement('canvas');
+      this.fgLayer.width = W;
+      this.fgLayer.height = H;
+    }
+    const fctx = this.fgLayer.getContext('2d');
+    fctx.imageSmoothingEnabled = false;
+    fctx.clearRect(0, 0, W, H);
+    this.hasFg = false;
+    for (const [k, t] of Object.entries(w.map.fg || {})) {
+      const [x, y] = k.split(',').map(Number);
+      const F = FLOORS[t];
+      if (!F) continue;
+      this.hasFg = true;
+      if (!(F.wall ? paintWall(fctx, t, x, y, true, (dx, dy) => !!(w.map.fg || {})[`${x + dx},${y + dy}`]) : paintFloor(fctx, t, x, y))) complete = false;
+    }
+    if (w.map.fgImg && w.map.fgImg.url) {
+      const img = loadUrl(w.map.fgImg.url);
+      if (img) { fctx.drawImage(img, 0, 0, w.map.fgImg.w || img.naturalWidth, w.map.fgImg.h || img.naturalHeight); this.hasFg = true; } else complete = false;
     }
     this.dirty = false;
     this.complete = complete;
@@ -115,13 +233,18 @@ export class Renderer {
     ctx.fillRect(0, 0, cw, ch);
     ctx.drawImage(this.layer, ox, oy, this.layer.width * S, this.layer.height * S);
 
+    this.drawMark(ox, oy, S, T);
     const vx0 = -ox / T - 6, vy0 = -oy / T - 6, vx1 = (cw - ox) / T + 6, vy1 = (ch - oy) / T + 6;
+    this.drawWater(ox, oy, S, T, time, vx0, vy0, vx1, vy1);
     const items = [];
     for (const o of app.world.objects) {
       const def = OBJECTS[o.type];
       if (!def || def.flat) continue;
-      if (o.x + def.w < vx0 || o.x > vx1 || o.y + def.h < vy0 || o.y > vy1) continue;
-      const z = def.wall ? o.y - 0.5 : def.small ? o.y + def.h + 0.05 : o.y + def.h - (def.walk ? 0.9 : 0);
+      const dm = dims(o, def);
+      if (o.x + dm.w < vx0 || o.x > vx1 || o.y + dm.h < vy0 || o.y > vy1) continue;
+      let z = def.wall ? o.y - 0.5 : def.small ? o.y + dm.h + 0.05 : o.y + dm.h - (def.walk ? 0.9 : 0);
+      // cadeira de costas (virada para cima): o encosto fica na frente de quem senta
+      if (def.sit) { const a = rotOf(o, def); if (a > 100 && a < 260) z = o.y + dm.h + 0.01; }
       items.push({ z, o, def });
       if (def.desk && o.data && Array.isArray(o.data.decor) && o.data.decor.length && app.desks) {
         const zone = app.desks.zoneOf(o);
@@ -133,7 +256,6 @@ export class Renderer {
     }
     for (const p of app.players.values()) items.push({ z: p.ry + 1.001 + (this.isSitting(p) ? 0.002 : 0), p });
     if (app.combat) app.combat.collect(items, vx0, vy0, vx1, vy1);
-    if (app.npcs) app.npcs.collect(items);
     items.sort((a, b) => a.z - b.z);
     for (const it of items) {
       if (it.o) this.drawObject(it.o, it.def, ox, oy, S, T, it.o === app.target, time);
@@ -141,11 +263,13 @@ export class Renderer {
       else if (it.draw) it.draw(ctx, ox, oy, S, T, time);
     }
 
+    this.drawForeground(ox, oy, S, T);
     this.drawGlows(ox, oy, S, T, time);
     this.drawZoneLabels(ox, oy, T);
     this.drawBadges(ox, oy, S, T);
     this.drawPrivateDim(ox, oy, T, cw, ch);
     if (app.build.on) this.drawBuild(ox, oy, S, T);
+    if (app.build.on && (app.build.tab === 'effects' || app.build.showFx)) this.drawEffects(ox, oy, S, T);
     if (app.combat) app.combat.drawOverlay(ctx, ox, oy, S, T, time);
     for (const p of app.players.values()) this.drawOverhead(p, S);
     this.drawFloaters(ox, oy, T);
@@ -173,14 +297,46 @@ export class Renderer {
     } else {
       drawObjectSprite(ctx, oo, dd, x0, y0, S, time);
     }
+    // prato servido na mesa (cafeteria), visível para todos por um minuto
+    const st = o.state;
+    if (st && st.plate && st.plateUntil > Date.now()) {
+      const dm = dims(o, def);
+      ctx.font = `${16 * S}px serif`;
+      ctx.textAlign = 'center';
+      ctx.fillText(st.plate, x0 + (dm.w * T) / 2, y0 + dm.h * T - 12 * S + Math.sin(time * 2) * S);
+      ctx.textAlign = 'left';
+    }
+  }
+
+  /** Brilho animado na água (pacote de floresta). */
+  drawWater(ox, oy, S, T, time, vx0, vy0, vx1, vy1) {
+    const w = this.app.world;
+    const sp = IDX.props && IDX.props.get('mana-seed-seasonal-forest-sample-summer-seasonal-water-animations-summer-water-sparkles-b-16x16-png');
+    if (!sp || !sp.frames) return;
+    const { ctx } = this;
+    for (let y = Math.max(0, Math.floor(vy0)); y < Math.min(w.height, vy1); y++) {
+      for (let x = Math.max(0, Math.floor(vx0)); x < Math.min(w.width, vx1); x++) {
+        const t = w.floorAt(x, y);
+        if (!/water|seasonal-sample-summer-png-2$/.test(t)) continue;
+        const hsh = ((x * 92821) ^ (y * 68917)) >>> 0;
+        if (hsh % 5 > 1) continue;
+        const row = hsh % 3;
+        const fr = sp.frames[row * 4 + (Math.floor(time * 5 + hsh % 7) % 4)];
+        drawFrame(ctx, sp.s, fr, ox + (x + 0.25 + (hsh % 50) / 100) * T, oy + (y + 0.6 + ((hsh >> 3) % 30) / 100) * T, 2 * S);
+      }
+    }
   }
 
   drawPlayer(p, ox, oy, S, T, time = 0) {
     const { ctx } = this;
     const sit = this.isSitting(p);
-    const cx = ox + (p.rx + 0.5) * T;
+    let cx = ox + (p.rx + 0.5) * T;
     const by = oy + (p.ry + 1) * T - 3 * S;
     const action = p.action && p.actionUntil > performance.now() ? p.action : p.dead ? 'dead' : sit ? 'sit' : p.moving ? 'walk' : 'stand';
+    const seat = sit ? this.app.world.seatAt(p.x, p.y) : null;
+    const dir = seat ? dirFromAngle(rotOf(seat)) : p.dir;
+    const sox = seat && seat.data && seat.data.ox ? seat.data.ox * S : 0;
+    cx += sox;
     if (!sit) {
       ctx.fillStyle = 'rgba(20,10,40,0.28)';
       ctx.beginPath();
@@ -197,12 +353,79 @@ export class Renderer {
       ctx.fillRect(cx - 34 * S, by - 60 * S, 68 * S, 68 * S);
       ctx.restore();
     }
-    drawPet(ctx, p.avatar, p.dir, time, cx, by, S);
+    drawPet(ctx, p.avatar, dir, time, cx, by, S);
     const t = action === 'walk' ? p.animT : action === 'attack' ? (performance.now() - p.actionStart) / 1000 : time;
-    const top = drawAvatar(ctx, p.avatar, p.dir, action, t, cx, by + (sit ? -4 * S : 0), S, p.ghost ? 0.5 : 1);
-    if (action === 'attack') drawWeapon(ctx, p.avatar, p.dir, cx, by, S, Math.min(1, t * 3));
+    const top = drawAvatar(ctx, p.avatar, dir, action, t, cx, by + (seat ? -4 * S : 0), S, p.ghost ? 0.5 : 1);
+    if (action === 'attack') drawWeapon(ctx, p.avatar, dir, cx, by, S, Math.min(1, t * 3));
     p._cx = cx;
     p._top = top;
+  }
+
+  /** Frente: por cima de todos. Perto de você fica transparente (dá para ver o avatar embaixo do teto/copa). */
+  drawForeground(ox, oy, S, T) {
+    if (!this.hasFg || !this.fgLayer) return;
+    const { ctx } = this;
+    const me = this.app.me;
+    const W = this.fgLayer.width * S;
+    const H = this.fgLayer.height * S;
+    const under = this.app.world.fgAt(me.x, me.y) || this.app.world.fgAt(me.x, me.y - 1);
+    if (!under) {
+      ctx.drawImage(this.fgLayer, ox, oy, W, H);
+      return;
+    }
+    const cx = ox + (me.rx + 0.5) * T;
+    const cy = oy + (me.ry + 0.2) * T;
+    const r = 2.4 * T;
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(0, 0, this.canvas.width, this.canvas.height);
+    ctx.arc(cx, cy, r, 0, Math.PI * 2, true);
+    ctx.clip('evenodd');
+    ctx.drawImage(this.fgLayer, ox, oy, W, H);
+    ctx.restore();
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    ctx.clip();
+    ctx.globalAlpha = 0.3;
+    ctx.drawImage(this.fgLayer, ox, oy, W, H);
+    ctx.restore();
+  }
+
+  /** Efeitos de tile (só no modo Construir). */
+  drawEffects(ox, oy, S, T) {
+    const { ctx } = this;
+    const dpr = this.dpr;
+    ctx.save();
+    ctx.font = `800 ${10 * dpr}px ${FONT}`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    for (const [k, code] of Object.entries(this.app.world.map.fx || {})) {
+      const [x, y] = k.split(',').map(Number);
+      const fx = parseFx(code);
+      if (!fx || !FX[fx.t]) continue;
+      ctx.fillStyle = FX[fx.t].color;
+      ctx.fillRect(ox + x * T + 1, oy + y * T + 1, T - 2, T - 2);
+      ctx.fillStyle = '#fff';
+      const label = fx.t === 'p' ? fx.id : fx.t === 'o' ? '⇢' : fx.t === 'n' ? '★' : fx.t === 's' ? '📢' : fx.t === 'x' ? '✕' : '✓';
+      ctx.fillText(label, ox + (x + 0.5) * T, oy + (y + 0.5) * T);
+      if (fx.t === 'o') {
+        ctx.strokeStyle = 'rgba(110,200,255,.6)';
+        ctx.setLineDash([4 * dpr, 4 * dpr]);
+        ctx.beginPath();
+        ctx.moveTo(ox + (x + 0.5) * T, oy + (y + 0.5) * T);
+        ctx.lineTo(ox + (fx.x + 0.5) * T, oy + (fx.y + 0.5) * T);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      }
+    }
+    // tiles da frente marcados
+    ctx.strokeStyle = 'rgba(120, 255, 200, .7)';
+    for (const k of Object.keys(this.app.world.map.fg || {})) {
+      const [x, y] = k.split(',').map(Number);
+      ctx.strokeRect(ox + x * T + 3, oy + y * T + 3, T - 6, T - 6);
+    }
+    ctx.restore();
   }
 
   drawOverhead(p, S) {
@@ -229,6 +452,7 @@ export class Renderer {
     ctx.fillStyle = isMe ? 'rgba(36, 30, 70, 0.92)' : 'rgba(36, 30, 70, 0.8)';
     ctx.fill();
     if (isMe) { ctx.strokeStyle = 'rgba(255, 216, 77, .8)'; ctx.lineWidth = 1.2 * dpr; ctx.stroke(); }
+    if (p.team && TEAMS[p.team]) { ctx.strokeStyle = TEAMS[p.team].color; ctx.lineWidth = 2 * dpr; ctx.stroke(); }
     // nível
     roundRect(ctx, x + 2 * dpr, y + 2 * dpr, lvW, h - 4 * dpr, (h - 4 * dpr) / 2);
     ctx.fillStyle = '#ffd84d';
@@ -320,9 +544,13 @@ export class Renderer {
     for (const f of this.floaters) {
       const age = (now - f.t) / 1400;
       ctx.globalAlpha = 1 - age * age;
-      ctx.font = `900 ${(f.big ? 22 : 17) * dpr * (1 + Math.max(0, 0.25 - age))}px ${FONT}`;
-      const x = ox + f.x * T;
-      const y = oy + f.y * T - age * 40 * dpr;
+      // números de dano pulam em arco e caem, como no RO; o resto sobe
+      const num = /^[-+]?\d+!*$/.test(f.text);
+      if (num && f.dir === undefined) f.dir = Math.random() < 0.5 ? -1 : 1;
+      const pop = num ? 1 + Math.max(0, 0.6 - age * 3) : 1 + Math.max(0, 0.25 - age);
+      ctx.font = `900 ${(f.big ? 22 : num ? 19 : 17) * dpr * pop}px ${FONT}`;
+      const x = ox + f.x * T + (num ? f.dir * age * 0.9 * T : 0);
+      const y = num ? oy + f.y * T - Math.sin(Math.min(1, age * 1.4) * Math.PI) * 0.9 * T + age * 0.5 * T : oy + f.y * T - age * 40 * dpr;
       ctx.lineWidth = 4 * dpr;
       ctx.strokeStyle = 'rgba(30,10,40,.85)';
       ctx.strokeText(f.text, x, y);
@@ -361,8 +589,9 @@ export class Renderer {
       const def = OBJECTS[o.type];
       if (!def || !def.light) continue;
       if (!def.light.always && !(o.state && o.state.on)) continue;
-      const cx = ox + (o.x + def.w / 2) * T;
-      const cy = oy + (o.y + def.h - objectHeight(def) * 0.75) * T;
+      const dm = dims(o, def);
+      const cx = ox + (o.x + dm.w / 2) * T;
+      const cy = oy + (o.y + dm.h - objectHeight(def) * 0.75) * T;
       const r = def.light.r * T * (1 + Math.sin(time * 3 + o.x) * 0.03);
       const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
       g.addColorStop(0, def.light.color);
@@ -385,8 +614,9 @@ export class Renderer {
       const o = this.app.world.get(id);
       if (!o || !n) continue;
       const def = OBJECTS[o.type];
-      const x = ox + (o.x + def.w) * T - 4 * dpr;
-      const y = oy + (o.y + def.h - objectHeight(def)) * T - 2 * dpr;
+      const dm = dims(o, def);
+      const x = ox + (o.x + dm.w) * T - 4 * dpr;
+      const y = oy + (o.y + dm.h - objectHeight(def)) * T - 2 * dpr;
       ctx.fillStyle = '#ff4d6d';
       ctx.beginPath();
       ctx.arc(x, y, 9 * dpr, 0, Math.PI * 2);
@@ -454,16 +684,18 @@ export class Renderer {
         ctx.globalAlpha = 1;
         ctx.strokeStyle = ok ? '#3ddc84' : '#ff5d5d';
         ctx.lineWidth = 2 * dpr;
-        ctx.strokeRect(ox + h.x * T, oy + h.y * T, def.w * T, def.h * T);
+        const gd = dims({ type: b.item, rot: b.rot }, def);
+        ctx.strokeRect(ox + h.x * T, oy + h.y * T, gd.w * T, gd.h * T);
       } else if (b.tab === 'objects' && b.tool !== 'place') {
         const o = app.buildPanel.objectAt(h.x, h.y);
         if (o) {
           const def = OBJECTS[o.type];
           ctx.fillStyle = b.tool === 'erase' ? 'rgba(255, 93, 93, 0.25)' : 'rgba(93, 179, 255, 0.25)';
-          ctx.fillRect(ox + o.x * T, oy + o.y * T, def.w * T, def.h * T);
+          const od = dims(o, def);
+          ctx.fillRect(ox + o.x * T, oy + o.y * T, od.w * T, od.h * T);
           ctx.strokeStyle = b.tool === 'erase' ? '#ff5d5d' : '#5db3ff';
           ctx.lineWidth = 2 * dpr;
-          ctx.strokeRect(ox + o.x * T, oy + o.y * T, def.w * T, def.h * T);
+          ctx.strokeRect(ox + o.x * T, oy + o.y * T, od.w * T, od.h * T);
         }
       } else {
         ctx.strokeStyle = '#ffc93c';

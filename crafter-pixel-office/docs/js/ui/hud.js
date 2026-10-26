@@ -48,7 +48,7 @@ export class Hud {
 
     app.on('me', () => this.renderMe());
     app.on('media', () => this.renderMedia());
-    app.on('world', () => { $('#btn-build').hidden = !app.canEdit; });
+    app.on('world', () => { $('#btn-build').hidden = !!app.user.guest; });
     app.on('build', () => $('#btn-build').classList.toggle('on', app.build.on));
     app.on('sidebar', () => {
       const open = !$('#sidebar').hidden;
@@ -72,7 +72,7 @@ export class Hud {
     $('#me-xp').style.width = `${Math.round((lv.into / lv.need) * 100)}%`;
     $('#me-xp').parentElement.title = `${lv.into} / ${lv.need} XP para o nível ${lv.level + 1}`;
     $('#status-select').value = me.status;
-    $('#btn-build').hidden = !this.app.canEdit;
+    $('#btn-build').hidden = !!this.app.user.guest;
   }
 
   renderMedia() {
@@ -143,7 +143,14 @@ function showHelp() {
         row(['N'], 'Notas de reunião (transcrição + resumo por IA)'),
         row(['1', '…', '6'], 'Reações'),
         row(['+', '−'], 'Zoom (ou roda do mouse)'),
-        row(['B'], 'Modo construção (editores)'),
+        row(['B'], 'Construir (editores: mapa todo · membros: a área da sua mesa)'),
+        row(['1', '…', '9'], 'Construir: escolher o item da hotbar'),
+        row(['R'], 'Construir: girar 45° (Shift+R: 15°)'),
+        row(['I'], 'Inventário'),
+        row(['🖱️ dir.'], 'Botão direito num móvel: examinar, girar, ação, guardar'),
+        row(['🖱️ dir.'], 'Botão direito num colega: seguir (Esc para parar)'),
+        row(['Insert', 'C'], 'Sentar no chão (regenera HP/SP em dobro)'),
+        row(['M'], 'Mostrar/esconder o minimapa (clique nele para andar)'),
         row(['Esc'], 'Fechar janelas')),
       h('ul', { class: 'tips' },
         h('li', {}, 'Ative câmera/microfone e chegue perto de alguém: a conversa abre sozinha. O som vem do lado em que a pessoa está.'),
@@ -152,6 +159,8 @@ function showHelp() {
         h('li', {}, 'O botão de telefone liga para qualquer pessoa, onde ela estiver. Nas salas de reunião, use o telefone da sala para trazer alguém para a reunião.'),
         h('li', {}, 'Reivindique uma mesa no Escritório e decore com objetos, adesivos e cores (botão Minha mesa).'),
         h('li', {}, 'Ao lado do jardim fica a Ala das Arenas: monstros à esquerda e a Arena PvP — único lugar onde dá para lutar com outras pessoas.'),
+        h('li', {}, 'No Campo de Treino: racks de armas, escudos e elmos dão +acerto/+CA por 10 min; série de 3 flechas nos alvos rende zeny.'),
+        h('li', {}, 'Monstros derrubam itens no chão: clique no item (ou passe por cima) para pegar. Venda os drops ao Mercador.'),
         h('li', {}, 'Quase todo móvel faz algo: regue plantas, bata no boneco de treino, jogue uma moeda na fonte, use os portais…'))),
   });
 }

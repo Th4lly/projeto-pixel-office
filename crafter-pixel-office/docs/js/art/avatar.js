@@ -4,8 +4,9 @@
 // Direções das folhas: 0 = S (frente), 1 = SO, 2 = O (esquerda), 3 = NO, 4 = N (costas).
 // "right" usa a esquerda espelhada.
 import { CAT, IDX, drawFrame, image, onAssetLoad } from './assets.js';
+import { RO_DIR, isLeftish, isRightish } from '../game/dirs.js';
 
-const DIR = { down: [0, false], left: [2, false], up: [4, false], right: [2, true] };
+const DIR = RO_DIR;
 const NECK = 9; // sobreposição da cabeça sobre o pescoço, em pixels da folha
 
 export const DEFAULT_AVATAR = { v: 2, gender: 'm', body: '', head: '', headgear: 'none', weapon: 'none', pet: 'none' };
@@ -127,7 +128,7 @@ export function drawWeapon(ctx, cfg, dir, cx, by, k, swing = 0) {
   const [, flip] = DIR[dir] || DIR.down;
   const s = w.sc * k * 0.8;
   ctx.save();
-  const side = dir === 'left' ? -1 : dir === 'right' ? 1 : 1;
+  const side = isLeftish(dir) ? -1 : 1;
   ctx.translate(cx + side * 10 * k, by - 22 * k);
   ctx.rotate((side * (swing - 0.5) * Math.PI) / 1.6);
   drawFrame(ctx, w.s, w.icon, 0, 0, s, flip);
@@ -142,8 +143,8 @@ export function drawPet(ctx, cfg, dir, t, cx, by, k) {
   const frames = p.idle && p.idle.length ? p.idle : p.frames;
   if (!frames || !frames.length) return;
   const f = frames[Math.floor(t * 6) % frames.length];
-  const off = dir === 'left' ? 18 : -18;
-  drawFrame(ctx, p.s, f, cx + off * k, by + 2 * k, p.sc * k * (p.sc >= 1 ? 0.75 : 1), dir === 'right');
+  const off = isLeftish(dir) ? 18 : -18;
+  drawFrame(ctx, p.s, f, cx + off * k, by + 2 * k, p.sc * k * (p.sc >= 1 ? 0.75 : 1), isRightish(dir));
 }
 
 /** Miniatura (de frente, parado) num canvas. */

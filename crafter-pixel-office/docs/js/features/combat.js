@@ -9,6 +9,8 @@ import { ICONS } from '../ui/icons.js';
 import { CAT, IDX, TILE, drawFrame, frameAt, findIn, frameCanvas } from '../art/assets.js';
 import { OBJECTS } from '../art/objects.js';
 import { blip } from '../audio.js';
+import { dirFromVec } from '../game/dirs.js';
+import { gearBonus } from './arena.js';
 import {
   CLASSES, STATUS, ATTR_NAMES, classOf, sheet, mobSheet, attack, save, roll, d, ROUND_MS, ACTION_MS, addExp, expToNext,
 } from './d20.js';
@@ -42,6 +44,7 @@ export class Combat {
     this.lastAction = 0;
     this.lastRound = Date.now();
     this.statuses = {}; // meus status: key → { until, src }
+    this.drops = []; // itens no chão (só eu vejo os meus drops)
     this.buffs = {}; // magnificat etc.
     this.lastSnap = 0;
     this.lastAi = 0;
@@ -82,11 +85,18 @@ export class Combat {
 
   /** Ficha de outra pessoa a partir da presença (classe + nível). */
   sheetOf(p) {
-    if (p === this.app.me) return this.withStatus(this.sheet, this.statuses);
+    if (p === this.app.me) return this.withGear(this.withStatus(this.sheet, this.statuses), p);
     const s = sheet(p.cls || classOf(p.avatar && p.avatar.body), p.baseLevel || 1);
     const st = {};
     for (const k of p.statuses || []) st[k] = { until: Infinity };
-    return this.withStatus(s, st);
+    return this.withGear(this.withStatus(s, st), p);
+  }
+
+  /** Equipamento pego na arena (racks, escudos, elmos): +CA e +acerto por 10 min. */
+  withGear(s, p) {
+    const g = gearBonus(p);
+    if (!g.ca && !g.hit) return s;
+    return { ...s, ca: s.ca + g.ca, bab: s.bab + g.hit };
   }
 
   withStatus(s, st) {
@@ -309,6 +319,7 @@ export class Combat {
         }
         break;
       case 'summon':
+        if (!msg.mid) { const z = this.app.world.zones.find((zz) => zz.id === msg.zone); if (z && this.isAuthority(z)) this.spawn(z); break; }
         this.onSummon(msg);
         break;
       case 'pvpkill':
@@ -400,11 +411,16 @@ export class Combat {
   reward(msg) {
     const app = this.app;
     const { state, up } = addExp(this.progress, msg.xp || 10);
+    if (app.inventory) app.inventory.addZeny(Math.max(1, Math.round((msg.xp || 10) / 2)));
     this.progress = { ...state, kills: (this.progress.kills || 0) + 1 };
     app.renderer.float(app.me.x, app.me.y - 1.6, `+${msg.xp} EXP`, '#ffd84d');
     if (msg.loot) {
-      const it = (CAT.loot || []).find((l) => l.id === msg.loot);
-      if (it) toast(h('span', { class: 'loot-toast' }, frameCanvas(it.s, it.f, 28), ` Você pegou: ${it.name}${msg.boss ? ' (drop de MvP!)' : ''}`), 'ok', 3000);
+      // como no RO: o item cai no chão onde o monstro morreu; clique nele (ou passe por cima) para pegar
+      const m = this.mobs.get(msg.id);
+      let x = m ? Math.floor(m.x) : app.me.x;
+      let y = m ? Math.floor(m.y - 0.5) : app.me.y;
+      if (!app.world.walkable(x, y)) { x = app.me.x; y = app.me.y; }
+      this.drops.push({ id: msg.loot, x, y, t: Date.now(), boss: !!msg.boss, ox: (Math.random() - 0.5) * 0.4 });
     }
     if (up) {
       this.refreshSheet(true);
@@ -456,7 +472,7 @@ export class Combat {
     }
     if (this.inPvp(me)) {
       for (const p of this.app.players.values()) {
-        if (p === me || p.dead || !this.inPvp(p)) continue;
+        if (p === me || p.dead || !this.inPvp(p) || (me.team && p.team === me.team)) continue;
         const dd = Math.max(Math.abs(p.x - me.x), Math.abs(p.y - me.y));
         if (dd < bd && dd <= range) { bd = dd; best = { player: p }; }
       }
@@ -468,7 +484,7 @@ export class Combat {
     const me = this.app.me;
     const dx = tx - (me.x + 0.5);
     const dy = ty - (me.y + 0.9);
-    me.dir = Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? 'right' : 'left') : dy > 0 ? 'down' : 'up';
+    me.dir = dirFromVec(dx, dy);
   }
 
   swing() {
@@ -485,13 +501,13 @@ export class Combat {
     if (!target) return toast('Nenhum alvo ao alcance.', 'info', 1200);
     if (!this.canAct()) return;
     this.lastAction = Date.now();
-    const s = this.withStatus(this.sheet, this.statuses);
+    const s = this.sheetOf(this.app.me);
     const swings = this.sheet.extraAttack && CLASSES[this.sheet.cls].dual ? 2 : 1;
     for (let i = 0; i < swings; i++) this.strike(target, { magic: s.magic }, i * 160);
   }
 
   strike(target, opts = {}, delay = 0, fx = 'hit') {
-    const s = this.withStatus(this.sheet, this.statuses);
+    const s = this.sheetOf(this.app.me);
     const me = this.app.me;
     setTimeout(() => {
       if (target.mob) {
@@ -533,7 +549,7 @@ export class Combat {
     const me = this.app.me;
     if (me.sp < sk.sp) return toast(`SP insuficiente (${sk.sp}).`, 'warn', 1500);
     if (!this.canAct()) return;
-    const s = this.withStatus(this.sheet, this.statuses);
+    const s = this.sheetOf(this.app.me);
     const target = this.nearestTarget(sk.id === 'stormgust' ? 7 : sk.id === 'heal' || sk.id === 'magnificat' ? 6 : this.sheet.range);
     const spend = () => { me.sp -= sk.sp; this.lastAction = Date.now(); this.publish(); this.app.floatText(me.x, me.y - 2, sk.name, '#ffe9a8'); };
     switch (sk.id) {
@@ -670,11 +686,30 @@ export class Combat {
     }
   }
 
+  /** Pega os drops do chão quando eu piso no tile (ou depois de 40 s, para não perder). */
+  pickDrops() {
+    const app = this.app;
+    const me = app.me;
+    const now = Date.now();
+    this.drops = this.drops.filter((d) => {
+      if (!(d.x === me.x && d.y === me.y) && now - d.t < 40000) return true;
+      const it = (CAT.loot || []).find((l) => l.id === d.id);
+      if (it && app.inventory) app.inventory.addLoot(d.id);
+      if (it) {
+        toast(h('span', { class: 'loot-toast' }, frameCanvas(it.s, it.f, 28), ` Você pegou: ${it.name}${d.boss ? ' (drop de MvP!)' : ''}`), 'ok', 2500);
+        app.renderer.float(me.x, me.y - 1.4, `+ ${it.name}`, '#9be8ff');
+        blip(1200, 0.05, 0.05);
+      }
+      return false;
+    });
+  }
+
   tick() {
     const app = this.app;
     const me = app.me;
     if (!me || !app.world) return;
     const now = Date.now();
+    if (this.drops.length) this.pickDrops();
     // rodadas: veneno, regeneração
     if (now - this.lastRound >= ROUND_MS) {
       this.lastRound = now;
@@ -688,8 +723,9 @@ export class Combat {
         const inA = this.inArena();
         const regenHp = inA ? Math.max(1, Math.floor(me.maxHp * 0.02)) : Math.ceil(me.maxHp * 0.2);
         const regenSp = (inA ? Math.max(1, Math.floor(me.maxSp * 0.04)) : Math.ceil(me.maxSp * 0.2)) * (this.buffs.magnificat > now ? 2 : 1);
-        me.hp = Math.min(me.maxHp, me.hp + regenHp);
-        me.sp = Math.min(me.maxSp, me.sp + regenSp);
+        const sitK = me.floorSit && !me.moving ? 2 : 1; // sentado no chão: regenera em dobro (como no RO)
+        me.hp = Math.min(me.maxHp, me.hp + regenHp * sitK);
+        me.sp = Math.min(me.maxSp, me.sp + regenSp * sitK);
       }
       // monstros: veneno da autoridade
       for (const m of this.mobs.values()) {
@@ -768,6 +804,22 @@ export class Combat {
       m.rx += (m.x - m.rx) * 0.25;
       m.ry += (m.y - m.ry) * 0.25;
       items.push({ z: m.ry, draw: (ctx, ox, oy, S, T, time) => this.drawMob(ctx, m, ox, oy, S, T, time, now) });
+    }
+    for (const d of this.drops) {
+      const it = (CAT.loot || []).find((l) => l.id === d.id);
+      if (!it) continue;
+      items.push({ z: d.y + 0.5, draw: (ctx, ox, oy, S, T, time) => {
+        const cx = ox + (d.x + 0.5 + d.ox) * T;
+        const age = (Date.now() - d.t) / 1000;
+        // cai quicando e depois flutua de leve
+        const hop = age < 0.5 ? Math.abs(Math.sin(age * Math.PI * 2)) * (1 - age * 2) * 14 : Math.sin(time * 3) * 1.5;
+        const by = oy + (d.y + 0.85) * T - hop * S;
+        ctx.fillStyle = 'rgba(20,10,40,0.3)';
+        ctx.beginPath(); ctx.ellipse(cx, oy + (d.y + 0.85) * T, 6 * S, 2 * S, 0, 0, Math.PI * 2); ctx.fill();
+        const k = (18 / Math.max(it.f[2], it.f[3])) * S;
+        drawFrame(ctx, it.s, it.f, cx, by, k);
+        if (d.boss) { ctx.strokeStyle = 'rgba(255,216,77,.8)'; ctx.lineWidth = S; ctx.strokeRect(cx - 11 * S, by - 21 * S, 22 * S, 22 * S); }
+      } });
     }
   }
 

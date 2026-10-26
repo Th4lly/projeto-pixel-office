@@ -15,6 +15,7 @@ import { Chat } from './ui/chat.js';
 import { Sidebar, People, MyQuests } from './ui/people.js';
 import { Hud, EMOTES } from './ui/hud.js';
 import { BuildPanel } from './ui/buildPanel.js';
+import { Minimap } from './ui/minimap.js';
 import { openAvatarEditor } from './ui/avatarEditor.js';
 import { interact } from './features/interactions.js';
 import { Whiteboards } from './features/whiteboard.js';
@@ -31,7 +32,11 @@ import { Combat } from './features/combat.js';
 import { Meetings } from './features/meetings.js';
 import { NotionBoards } from './features/notion.js';
 import { Clock } from './ui/clock.js';
-import { Npcs } from './features/npcs.js';
+import { NpcRoles } from './features/npcRoles.js';
+import { Inventory } from './features/inventory.js';
+import { registerCustomObjects, addCustomType } from './features/imports.js';
+import { openObjectPanel } from './features/objectMenu.js';
+import { dirFromVec } from './game/dirs.js';
 
 const TAB = Math.random().toString(36).slice(2, 7);
 
@@ -64,6 +69,7 @@ export class App {
 
   // ------------------------------------------------------------------ início
   async start() {
+    try { registerCustomObjects(await this.backend.customObjects()); } catch (e) { console.warn(e); }
     const data = await this.loadWorldV2();
     this.world = new World(data);
     const spawn = this.spawnPoint();
@@ -105,10 +111,12 @@ export class App {
     this.notion = new NotionBoards(this);
     this.combat = new Combat(this);
     this.clock = new Clock(this);
-    this.npcs = new Npcs(this);
+    this.npcRoles = new NpcRoles(this);
+    this.inventory = new Inventory(this);
     this.mini = new MiniMode(this);
     this.integrations = new Integrations(this);
     this.hud = new Hud(this);
+    this.minimap = new Minimap(this);
     this.bindPointer();
     this.bindKeys();
 
@@ -149,6 +157,9 @@ export class App {
   }
 
   spawnPoint() {
+    // tiles de Spawn (efeito) têm prioridade; senão o ponto de entrada do mapa
+    const list = (this.world.spawns || []).filter((p) => this.world.walkable(p.x, p.y));
+    if (list.length) return list[Math.floor(Math.random() * list.length)];
     const s = this.world.map.spawn || { x: 1, y: 1 };
     for (let i = 0; i < 60; i++) {
       const x = s.x + Math.round((Math.random() - 0.5) * 6);
@@ -165,6 +176,7 @@ export class App {
       media: m.media, level: m.level, buffs: m.activeBuffs(), music: m.music || '', guest: m.guest, admin: m.admin,
       call: m.call || null, hp: Math.round(m.hp || 0), maxHp: m.maxHp || 0, sp: Math.round(m.sp || 0), maxSp: m.maxSp || 0, dead: !!m.dead,
       cls: m.cls || '', baseLevel: m.baseLevel || 1, statuses: m.statuses || [],
+      team: m.team || '', gear: m.gear && m.gear.until > Date.now() ? { ca: m.gear.ca, hit: m.gear.hit, until: m.gear.until } : null, floorSit: !!m.floorSit,
     };
   }
 
@@ -250,6 +262,7 @@ export class App {
     r.on('ttt', (d) => this.games.onTicTacToe(d));
     r.on('signal', (d) => this.media.onSignal(d));
     r.on('call', (d) => this.calls.onSignal(d));
+    r.on('custom', (row) => { addCustomType(row); this.renderer.invalidate(); if (this.build.on) this.buildPanel.render(); });
     r.on('cbt', (d) => this.combat.onNet(d));
     r.on('meeting', (d) => {
       const z = this.world.zones.find((zz) => zz.id === d.room);
@@ -350,7 +363,6 @@ export class App {
       if (moved) this.onStep();
     });
     for (const p of this.players.values()) if (p !== me) p.update(dt);
-    if (this.npcs) this.npcs.update(dt);
 
     const still = !me.moving && (!me.path || !me.path.length);
     this.target = still ? this.world.interactableNear(me.x, me.y) : null;
@@ -359,12 +371,52 @@ export class App {
       me.pendingInteract = null;
       if (this.world.objects.includes(o) && this.world.distanceToObject(o, me.x, me.y) <= 1) this.interact(o);
     }
+    // seguir alguém (como no Gather): recalcula o caminho a cada segundo
+    if (this.following) {
+      const p = this.players.get(this.following);
+      if (!p || this.input.direction()) this.follow(null);
+      else if (Date.now() - (this.followAt || 0) > 900 && Math.max(Math.abs(p.x - me.x), Math.abs(p.y - me.y)) > 1 && (!me.path || !me.path.length)) {
+        this.followAt = Date.now();
+        const path = this.world.pathTo(me.x, me.y, (x, y) => Math.max(Math.abs(x - p.x), Math.abs(y - p.y)) <= 1 && !(x === p.x && y === p.y));
+        if (path) me.path = path;
+      }
+    }
     this.hud.update();
     this.renderer.draw(t / 1000);
+    this.minimap.update();
     requestAnimationFrame((tt) => this.loop(tt));
   }
 
+  /** Sentar no chão (Insert/C, como no RO): regeneração em dobro; levantar ao andar. */
+  toggleFloorSit(on = !this.me.floorSit) {
+    const me = this.me;
+    if (on && (me.moving || this.world.seatAt(me.x, me.y) || me.dead)) return;
+    me.floorSit = on;
+    me.path = null;
+    this.trackSoon();
+    if (on) this.renderer.float(me.x, me.y - 1.4, 'Sentou (regeneração ×2)', '#cfd8ff');
+  }
+
+  /** Seguir um colega (clique direito no avatar). */
+  follow(p) {
+    this.following = p ? p.id : null;
+    if (p) toast(`Seguindo ${p.name}. Ande ou aperte Esc para parar.`, 'info', 2500);
+  }
+
   onStep() {
+    if (this.me.floorSit) { this.me.floorSit = false; this.trackSoon(); }
+    // efeito de tile: portal com destino
+    const fx = this.world.fxAt(this.me.x, this.me.y);
+    if (fx && fx.t === 'o' && this.world.inBounds(fx.x, fx.y)) {
+      const exit = this.world.freeAround(fx.x, fx.y);
+      this.me.path = null;
+      setTimeout(() => {
+        this.teleport(exit.x, exit.y);
+        blip(520, 0.25, 0.06);
+        this.renderer.float(exit.x, exit.y, '✨ Portal!', '#9be8ff');
+      }, 150);
+      return;
+    }
     const portal = this.world.portalAt(this.me.x, this.me.y);
     if (portal && !this.me.path?.length) {
       const next = this.world.nextPortal(portal);
@@ -390,20 +442,21 @@ export class App {
   }
 
   // ------------------------------------------------------------------ ações
-  interact(o = this.target) {
+  interact(o = this.target, useDefault = false) {
     if (!o) return;
     const def = OBJECTS[o.type];
     if (!def || !def.interact) return;
     this.face(o);
-    interact(this, o, def);
+    interact(this, o, def, useDefault);
   }
 
   face(o) {
     const def = OBJECTS[o.type];
     const me = this.me;
-    const dx = o.x + (def.w - 1) / 2 - me.x;
-    const dy = o.y + (def.h - 1) / 2 - me.y;
-    const dir = Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? 'right' : 'left') : dy > 0 ? 'down' : 'up';
+    const dm = this.world.dimsOf(o);
+    const dx = o.x + (dm.w - 1) / 2 - me.x;
+    const dy = o.y + (dm.h - 1) / 2 - me.y;
+    const dir = dirFromVec(dx, dy);
     if (dir !== me.dir) {
       me.dir = dir;
       this.room.send('move', { id: me.id, x: me.x, y: me.y, dir });
@@ -462,6 +515,8 @@ export class App {
       }
     }
     me.pendingInteract = null;
+    if (me.floorSit) { me.floorSit = false; this.trackSoon(); }
+    this.renderer.mark = { x: t.x, y: t.y, t: performance.now() };
     const objs = world.objectsAt(t.x, t.y).filter((o) => OBJECTS[o.type] && OBJECTS[o.type].interact);
     const obj = objs.find((o) => !OBJECTS[o.type].flat && OBJECTS[o.type].interact !== 'sit' && OBJECTS[o.type].interact !== 'portal');
     if (obj) {
@@ -515,6 +570,9 @@ export class App {
         else if (op.t === 'spawn') await this.backend.setSettings({ spawn: { x: op.x, y: op.y } });
         else if (op.t === 'settings') await this.backend.setSettings({ openEdit: op.openEdit });
         else if (op.t === 'data') await this.backend.setObjectData(op.id, op.data);
+        else if (op.t === 'layer') await this.backend.paintLayer(op.layer, op.cells);
+        else if (op.t === 'image') await this.backend.setMapImage(op.which, op.value);
+        else if (op.t === 'move') await this.backend.moveObject(op.id, op);
       } catch (e) {
         toast(e.message, 'error');
       }
@@ -561,6 +619,13 @@ export class App {
       canvas.setPointerCapture(e.pointerId);
       if (this.build.on) this.buildPanel.pointerDown(t, e);
       else if (e.button === 0) this.clickTo(t);
+      else if (e.button === 2) {
+        // botão direito: painel do objeto (examinar, girar, ação…)
+        const who = [...this.players.values()].find((p) => p !== this.me && p.x === t.x && (p.y === t.y || p.y === t.y + 1));
+        if (who) { this.follow(this.following === who.id ? null : who); return; }
+        const o = this.buildPanel.objectAt(t.x, t.y);
+        if (o) openObjectPanel(this, o);
+      }
     });
     canvas.addEventListener('pointermove', (e) => {
       const t = this.renderer.tileAt(e.clientX, e.clientY);
@@ -593,6 +658,12 @@ export class App {
         return;
       }
       if (e.ctrlKey || e.metaKey || e.altKey) return;
+      if (this.build.on) {
+        const d9 = /^Digit([1-9])$/.exec(e.code);
+        if (d9) return this.inventory.select(Number(d9[1]) - 1);
+        if (e.code === 'KeyR') { e.preventDefault(); return this.buildPanel.rotateGhost(e.shiftKey ? 15 : 45); }
+        if (e.code === 'KeyI') return this.inventory.open();
+      }
       const digit = /^Digit([1-6])$/.exec(e.code);
       if (digit) return this.emote(EMOTES[Number(digit[1]) - 1]);
       switch (e.code) {
@@ -636,9 +707,20 @@ export class App {
           this.renderer.zoomBy(-1);
           break;
         case 'KeyB':
-          if (this.canEdit) this.buildPanel.toggle();
+          this.buildPanel.toggle();
+          break;
+        case 'KeyI':
+          this.inventory.open();
+          break;
+        case 'Insert':
+        case 'KeyC':
+          this.toggleFloorSit();
+          break;
+        case 'KeyM':
+          this.minimap.toggle();
           break;
         case 'Escape':
+          if (this.following) this.follow(null);
           if (this.build.on) this.buildPanel.toggle(false);
           else this.sidebar.close();
           break;
