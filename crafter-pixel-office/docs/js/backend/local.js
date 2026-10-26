@@ -247,8 +247,24 @@ export class LocalBackend {
   async upgradeWorld(def) {
     const cur = read('map', null);
     if (cur && (cur.version || 1) >= (def.map.version || 2)) return false;
+    // mesas reivindicadas passam para a mesa nova da mesma área (z-mesa-N)
+    const oldZones = read('zones', []).filter((z) => z.kind === 'desk');
+    const inZ = (o, z) => o.x >= z.x && o.x < z.x + z.w && o.y >= z.y && o.y < z.y + z.h;
+    const keep = {};
+    for (const o of read('objects', [])) {
+      if (!o.data || !o.data.owner) continue;
+      const z = oldZones.find((zz) => inZ(o, zz));
+      if (z) keep[z.id] = { owner: o.data.owner, decor: o.data.decor, chair: o.data.chair, deskSkin: o.data.deskSkin, deskColor: o.data.deskColor };
+    }
+    const objects = def.objects.map((o) => {
+      if (!o.data || o.data.slot === undefined) return o;
+      const z = def.zones.find((zz) => zz.kind === 'desk' && inZ(o, zz) && keep[zz.id]);
+      if (!z) return o;
+      const extra = Object.fromEntries(Object.entries(keep[z.id]).filter(([, v]) => v !== undefined));
+      return { ...o, data: { ...o.data, ...extra } };
+    });
     write('map', { ...def.map, openEdit: !!(cur && cur.openEdit) });
-    write('objects', def.objects);
+    write('objects', objects);
     write('zones', def.zones);
     return true;
   }

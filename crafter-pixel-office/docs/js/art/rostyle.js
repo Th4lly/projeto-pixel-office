@@ -97,6 +97,9 @@ export function styledFrame(sid, f, tw, th) {
   const W = out.width;
   const H = out.height;
   for (let i = 0; i < d.length; i += 4) {
+    // semitransparente (sombra pintada na arte) vira sombra suave; o resto fica sólido
+    if (d[i + 3] < 60) { d[i + 3] = 0; continue; }
+    if (d[i + 3] < 215 && !shrink) { d[i] = 22; d[i + 1] = 14; d[i + 2] = 34; d[i + 3] = 80; continue; }
     if (d[i + 3] < 110) { d[i + 3] = 0; continue; }
     d[i + 3] = 255;
     if (!shrink) continue;
@@ -109,11 +112,11 @@ export function styledFrame(sid, f, tw, th) {
   // 3) contorno escuro de 1 texel (só quando a arte foi reduzida: as de pixel já têm contorno)
   if (shrink) {
     const a = new Uint8Array(W * H);
-    for (let p = 0; p < W * H; p++) a[p] = d[p * 4 + 3] ? 1 : 0;
+    for (let p = 0; p < W * H; p++) a[p] = d[p * 4 + 3] === 255 ? 1 : 0;
     for (let y = 0; y < H; y++) {
       for (let x = 0; x < W; x++) {
         const p = y * W + x;
-        if (a[p]) continue;
+        if (a[p] || d[p * 4 + 3]) continue;
         let n = -1;
         if (x > 0 && a[p - 1]) n = p - 1;
         else if (x < W - 1 && a[p + 1]) n = p + 1;

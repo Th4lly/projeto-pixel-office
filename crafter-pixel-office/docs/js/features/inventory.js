@@ -9,6 +9,7 @@ import { openModal } from '../ui/modal.js';
 import { CAT, frameCanvas } from '../art/assets.js';
 import { OBJECTS, objectThumb, dims } from '../art/objects.js';
 import { blip } from '../audio.js';
+import { RECIPES } from './cafe.js';
 
 const HOT = 9;
 const START = { items: {}, hot: Array(HOT).fill(null), sel: 0, zeny: 500, creative: true };
@@ -23,6 +24,7 @@ export class Inventory {
     this.s = { ...START, ...saved, ...local };
     this.s.items = { ...(this.s.items || {}) };
     this.s.loot = { ...(this.s.loot || {}) };
+    this.s.food = { ...(this.s.food || {}) };
     this.s.hot = Array.from({ length: HOT }, (_, i) => (this.s.hot || [])[i] || null);
     this.lastCraft = 0;
     this.bar = h('div', { class: 'hotbar win', hidden: true });
@@ -216,6 +218,10 @@ export class Inventory {
         h('p', { class: 'muted small' }, 'Clique num item para pôr no atalho selecionado da hotbar. No modo Construir, use as teclas 1–9, R para girar e clique no mapa para colocar.'),
         entries.length ? h('div', { class: 'palette' }, entries.map(([t, n]) => h('button', { type: 'button', class: 'pal-item', title: OBJECTS[t].name, onclick: () => { this.assign(t); m.close(); } },
           objectThumb(t, 46), h('span', {}, `${OBJECTS[t].name} ×${n}`)))) : h('p', { class: 'muted' }, 'Inventário vazio. Compre no Mercador, fabrique numa estação de trabalho ou guarde itens que você colocou.'),
+        h('div', { class: 'opt-label' }, 'Bandeja (comidas e bebidas que você preparou)'),
+        Object.entries(this.s.food || {}).filter(([, n]) => n > 0).length
+          ? h('div', { class: 'chips' }, Object.entries(this.s.food || {}).filter(([, n]) => n > 0).map(([k, n]) => h('span', { class: 'chip' }, `${(RECIPES[k.split(':')[0]] || {}).e || '🍽️'} ${(RECIPES[k.split(':')[0]] || {}).name || k} ${'★'.repeat(Number(k.split(':')[1]) || 0)} ×${n}`)))
+          : h('p', { class: 'muted small' }, 'Vazia. Prepare algo no balcão da cafeteria, no forno ou na cozinha.'),
         h('div', { class: 'opt-label' }, 'Bolsa de drops (monstros da arena)'),
         this.lootEntries().length ? h('div', { class: 'palette' }, this.lootEntries().map(([it, n]) => h('div', { class: 'pal-item', title: it.name }, frameCanvas(it.s, it.f, 40), h('span', {}, `${it.name} ×${n}`))))
           : h('p', { class: 'muted small' }, 'Derrote monstros na arena e pegue o que cair no chão (clique no item ou passe por cima).'));

@@ -225,7 +225,7 @@ export class SupabaseBackend {
     try {
       return await run(this.sb.rpc('upgrade_map', { p_map: def.map, p_objects: def.objects, p_zones: def.zones }));
     } catch (e) {
-      if (/upgrade_map|function/i.test(e.message)) throw new Error('Rode as migrações v2 e v3 (supabase/migrations/20261024000000_pixeloffice_v2.sql e 20261026000000_pixeloffice_v3.sql) no SQL Editor do Supabase para usar o escritório novo.');
+      if (/upgrade_map|function/i.test(e.message)) throw new Error('Rode as migrações v2, v3 e v5 (supabase/migrations/20261024000000_pixeloffice_v2.sql, 20261026000000_pixeloffice_v3.sql e 20261027000000_pixeloffice_v5.sql) no SQL Editor do Supabase para usar o escritório novo.');
       throw e;
     }
   }

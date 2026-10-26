@@ -21,7 +21,7 @@ const FUNCTIONAL = [
   ['bench', 'Banco', 'Interativos', 'sit', 'sentar', ['bench-padded', 'office-banco-de-madeira'], { w: 2, h: 1, sit: true }],
   ['sofa', 'Sofá', 'Interativos', 'sit', 'sentar', ['loveseat-cream'], { w: 2, h: 1, sit: true }],
   ['armchair', 'Poltrona', 'Interativos', 'sit', 'sentar', ['armchair-terracotta', 'armchair-olive'], { w: 1, h: 1, sit: true }],
-  ['throne', 'Trono', 'Interativos', 'sit', 'sentar no trono', ['armchair-olive', 'chaise-long'], { w: 1, h: 1, sit: true }],
+  ['throne', 'Trono', 'Interativos', 'sit', 'sentar no trono', ['extra-arena-trono-vermelho', 'armchair-olive'], { w: 1, h: 1, sit: true }],
   ['beanbag', 'Pufe', 'Interativos', 'sit', 'sentar', ['ottoman-small'], { w: 1, h: 1, sit: true }],
   ['table_round', 'Mesinha', 'Interativos', 'tea', 'servir um chá', ['table-round-walnut'], { w: 1, h: 1 }],
   ['table_long', 'Mesa de banquete', 'Interativos', 'feast', 'servir o banquete', ['office-mesa-baixa'], { w: 3, h: 1 }],
@@ -29,8 +29,8 @@ const FUNCTIONAL = [
   ['bed', 'Cama', 'Interativos', 'rest', 'tirar um cochilo', ['bed-double'], { w: 2, h: 2 }],
   ['bookshelf', 'Estante', 'Interativos', 'links', 'abrir a biblioteca de links', ['furniturestate1-png-12', 'office-estante-de-pastas'], { w: 1, h: 1 }],
   ['wardrobe', 'Guarda-roupa', 'Interativos', 'wardrobe', 'trocar de roupa', ['furniturestate1-png-7', 'office-guarda-roupa-duplo-1'], { w: 1, h: 1 }],
-  ['chest', 'Baú', 'Interativos', 'stash', 'abrir o baú (bloco de notas)', ['coins-chests-etc-2-0-noborders-png-60', 'coins-chests'], { w: 1, h: 1 }],
-  ['counter', 'Balcão', 'Interativos', 'drink', 'pedir uma bebida', ['counter-reception-curved'], { w: 2, h: 1 }],
+  ['chest', 'Baú', 'Interativos', 'stash', 'abrir o baú (bloco de notas)', ['extra-int-bau-de-madeira', 'coins-chests-etc-2-0-noborders-png-60'], { w: 1, h: 1 }],
+  ['counter', 'Balcão', 'Interativos', 'drink', 'pedir uma bebida', ['extra-int-balcao-madeira'], { w: 2, h: 1 }],
   ['potion_shelf', 'Prateleira de poções', 'Interativos', 'potion', 'tomar uma poção', ['esoteric-png-56', 'esoteric'], { w: 1, h: 1 }],
   ['cauldron', 'Caldeirão', 'Interativos', 'soup', 'pegar uma sopa', ['pan-png-11', 'pan'], { w: 1, h: 1 }],
   ['plant', 'Vaso de planta', 'Interativos', 'water', 'regar a planta', ['office-planta-no-vaso-de-barro'], { w: 1, h: 1 }],
@@ -120,7 +120,8 @@ const RULES = [
 const INTERACT_LABEL = {
   chart: 'ver planilhas e gráficos', weapons: 'pegar uma arma do rack', helmets: 'experimentar um elmo', armory: 'vestir a armadura',
   shield: 'pegar um escudo', archery: 'atirar uma flecha', team: 'escolher a equipe', watch: 'assistir do camarote',
-  dummy: 'bater no boneco', loot: 'vasculhar',
+  dummy: 'bater no boneco', loot: 'vasculhar', brew: 'preparar uma bebida (minijogo)', cook: 'cozinhar (minijogo)',
+  eat: 'comer à mesa', menu: 'ver o cardápio', cave: 'entrar na caverna', toggle: 'acender/apagar', examine: 'examinar', board: 'abrir o quadro',
 };
 
 export function inferInteract(p) {

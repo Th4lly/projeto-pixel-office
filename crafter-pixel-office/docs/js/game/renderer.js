@@ -102,19 +102,84 @@ export class Renderer {
       const img = loadUrl(w.map.bg.url);
       if (img) ctx.drawImage(img, 0, 0, w.map.bg.w || img.naturalWidth, w.map.bg.h || img.naturalHeight); else complete = false;
     }
+    const isW = (x, y) => !w.inBounds(x, y) || w.isWall(x, y);
     for (let y = 0; y < w.height; y++) {
       for (let x = 0; x < w.width; x++) {
         const t = w.floorAt(x, y);
         const f = FLOORS[t] || FLOORS.void;
-        const ok = f.wall ? paintWall(ctx, t, x, y, !w.isWall(x, y + 1)) : paintFloor(ctx, t, x, y);
+        const ok = f.wall ? paintWall(ctx, t, x, y, !isW(x, y + 1), (dx, dy) => isW(x + dx, y + dy)) : paintFloor(ctx, t, x, y);
         if (!ok) complete = false;
-        if (!f.wall && t !== 'void' && w.isWall(x, y - 1)) {
-          const g = ctx.createLinearGradient(0, y * TILE, 0, y * TILE + 10);
-          g.addColorStop(0, 'rgba(20,12,30,.42)');
+      }
+    }
+    // bordas orgânicas: a grama "morde" a terra/caminho vizinho (como num tileset de bosque)
+    const GRASS = (id) => /seasonal-sample-summer-png-(1|8)$|extra-floor-grama/.test(id || '');
+    const hash = (a, b, c) => { let n = (a * 374761393 + b * 668265263 + c * 2147483647) | 0; n = (n ^ (n >>> 13)) * 1274126177; return ((n ^ (n >>> 16)) >>> 0); };
+    for (let y = 0; y < w.height; y++) {
+      for (let x = 0; x < w.width; x++) {
+        const t = w.floorAt(x, y);
+        const f = FLOORS[t];
+        if (!f || f.wall || GRASS(t) || t === 'void' || f.clear) continue;
+        for (const [dx, dy] of [[0, -1], [0, 1], [-1, 0], [1, 0]]) {
+          const n = w.floorAt(x + dx, y + dy);
+          if (!GRASS(n)) continue;
+          const px = x * TILE;
+          const py = y * TILE;
+          ctx.save();
+          ctx.beginPath();
+          const pts = [];
+          for (let i = 0; i <= TILE; i += 4) {
+            const dpt = 2 + (hash(x * 2 + dx, y * 2 + dy, i) % 7);
+            if (dy === -1) pts.push([px + i, py + dpt]);
+            else if (dy === 1) pts.push([px + i, py + TILE - dpt]);
+            else if (dx === -1) pts.push([px + dpt, py + i]);
+            else pts.push([px + TILE - dpt, py + i]);
+          }
+          if (dy === -1) { ctx.moveTo(px, py); pts.forEach(([a, b]) => ctx.lineTo(a, b)); ctx.lineTo(px + TILE, py); }
+          else if (dy === 1) { ctx.moveTo(px, py + TILE); pts.forEach(([a, b]) => ctx.lineTo(a, b)); ctx.lineTo(px + TILE, py + TILE); }
+          else if (dx === -1) { ctx.moveTo(px, py); pts.forEach(([a, b]) => ctx.lineTo(a, b)); ctx.lineTo(px, py + TILE); }
+          else { ctx.moveTo(px + TILE, py); pts.forEach(([a, b]) => ctx.lineTo(a, b)); ctx.lineTo(px + TILE, py + TILE); }
+          ctx.closePath();
+          ctx.clip();
+          paintFloor(ctx, n, x, y);
+          ctx.restore();
+        }
+      }
+    }
+    // divisas: sombra das paredes no chão e friso entre pisos diferentes
+    for (let y = 0; y < w.height; y++) {
+      for (let x = 0; x < w.width; x++) {
+        const t = w.floorAt(x, y);
+        const f = FLOORS[t] || FLOORS.void;
+        if (f.wall || t === 'void' || f.clear) continue;
+        const px = x * TILE;
+        const py = y * TILE;
+        if (isW(x, y - 1)) {
+          const g = ctx.createLinearGradient(0, py, 0, py + 12);
+          g.addColorStop(0, 'rgba(20,12,30,.5)');
           g.addColorStop(1, 'rgba(20,12,30,0)');
           ctx.fillStyle = g;
-          ctx.fillRect(x * TILE, y * TILE, TILE, 10);
+          ctx.fillRect(px, py, TILE, 12);
         }
+        for (const [dx, x0] of [[-1, px], [1, px + TILE - 6]]) {
+          if (!isW(x + dx, y)) continue;
+          const g = ctx.createLinearGradient(dx < 0 ? px : px + TILE, 0, dx < 0 ? px + 6 : px + TILE - 6, 0);
+          g.addColorStop(0, 'rgba(20,12,30,.38)');
+          g.addColorStop(1, 'rgba(20,12,30,0)');
+          ctx.fillStyle = g;
+          ctx.fillRect(x0, py, 6, TILE);
+        }
+        // porta/passagem: soleira escura entre duas paredes
+        if (isW(x - 1, y) && isW(x + 1, y) && !isW(x, y - 1) && !isW(x, y + 1)) {
+          ctx.fillStyle = 'rgba(20,12,30,.28)';
+          ctx.fillRect(px + 2, py + TILE / 2 - 2, TILE - 4, 4);
+        }
+        // friso entre pisos diferentes (sem parede): linha escura + luz
+        const tr = w.floorAt(x + 1, y);
+        const tb = w.floorAt(x, y + 1);
+        ctx.fillStyle = 'rgba(15,10,22,.45)';
+        const hard = (o) => o !== t && FLOORS[o] && !FLOORS[o].wall && o !== 'void' && !GRASS(o) && !GRASS(t);
+        if (x + 1 < w.width && hard(tr)) ctx.fillRect(px + TILE - 1, py, 2, TILE);
+        if (y + 1 < w.height && hard(tb)) ctx.fillRect(px, py + TILE - 1, TILE, 2);
       }
     }
     for (const o of w.objects) {
@@ -137,7 +202,7 @@ export class Renderer {
       const F = FLOORS[t];
       if (!F) continue;
       this.hasFg = true;
-      if (!(F.wall ? paintWall(fctx, t, x, y, true) : paintFloor(fctx, t, x, y))) complete = false;
+      if (!(F.wall ? paintWall(fctx, t, x, y, true, (dx, dy) => !!(w.map.fg || {})[`${x + dx},${y + dy}`]) : paintFloor(fctx, t, x, y))) complete = false;
     }
     if (w.map.fgImg && w.map.fgImg.url) {
       const img = loadUrl(w.map.fgImg.url);
@@ -170,6 +235,7 @@ export class Renderer {
 
     this.drawMark(ox, oy, S, T);
     const vx0 = -ox / T - 6, vy0 = -oy / T - 6, vx1 = (cw - ox) / T + 6, vy1 = (ch - oy) / T + 6;
+    this.drawWater(ox, oy, S, T, time, vx0, vy0, vx1, vy1);
     const items = [];
     for (const o of app.world.objects) {
       const def = OBJECTS[o.type];
@@ -230,6 +296,34 @@ export class Renderer {
       ctx.restore();
     } else {
       drawObjectSprite(ctx, oo, dd, x0, y0, S, time);
+    }
+    // prato servido na mesa (cafeteria), visível para todos por um minuto
+    const st = o.state;
+    if (st && st.plate && st.plateUntil > Date.now()) {
+      const dm = dims(o, def);
+      ctx.font = `${16 * S}px serif`;
+      ctx.textAlign = 'center';
+      ctx.fillText(st.plate, x0 + (dm.w * T) / 2, y0 + dm.h * T - 12 * S + Math.sin(time * 2) * S);
+      ctx.textAlign = 'left';
+    }
+  }
+
+  /** Brilho animado na água (pacote de floresta). */
+  drawWater(ox, oy, S, T, time, vx0, vy0, vx1, vy1) {
+    const w = this.app.world;
+    const sp = IDX.props && IDX.props.get('mana-seed-seasonal-forest-sample-summer-seasonal-water-animations-summer-water-sparkles-b-16x16-png');
+    if (!sp || !sp.frames) return;
+    const { ctx } = this;
+    for (let y = Math.max(0, Math.floor(vy0)); y < Math.min(w.height, vy1); y++) {
+      for (let x = Math.max(0, Math.floor(vx0)); x < Math.min(w.width, vx1); x++) {
+        const t = w.floorAt(x, y);
+        if (!/water|seasonal-sample-summer-png-2$/.test(t)) continue;
+        const hsh = ((x * 92821) ^ (y * 68917)) >>> 0;
+        if (hsh % 5 > 1) continue;
+        const row = hsh % 3;
+        const fr = sp.frames[row * 4 + (Math.floor(time * 5 + hsh % 7) % 4)];
+        drawFrame(ctx, sp.s, fr, ox + (x + 0.25 + (hsh % 50) / 100) * T, oy + (y + 0.6 + ((hsh >> 3) % 30) / 100) * T, 2 * S);
+      }
     }
   }
 

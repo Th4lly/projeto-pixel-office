@@ -280,3 +280,30 @@ body.sidebar-open .clock { right: 370px; }
 .arena-grid { grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); max-height: 52vh; overflow: auto; }
 .arena-grid canvas { image-rendering: pixelated; }
 .npc-opt.on { border-image: var(--paper-on) 10 fill / 6px stretch; }
+
+/* ---------- cafeteria: minijogo de preparo ---------- */
+.cafe { display: flex; flex-direction: column; gap: 10px; }
+.cafe-recipes { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px; }
+.cafe-recipe {
+  display: grid; grid-template-columns: 40px 1fr; grid-template-rows: auto auto; column-gap: 8px; align-items: center; text-align: left;
+  padding: 8px 10px; cursor: pointer; color: var(--paper-ink); font: inherit;
+  border: 8px solid transparent; border-image: var(--paper) 10 fill / 8px stretch; background: none; image-rendering: pixelated;
+}
+.cafe-recipe:hover { border-image: var(--paper-on) 10 fill / 8px stretch; transform: translateY(-2px); }
+.cafe-recipe .cafe-emoji { grid-row: span 2; font-size: 28px; text-align: center; }
+.cafe-emoji.big { font-size: 46px; }
+.cafe-play, .cafe-done { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 8px 0; text-align: center; }
+.cafe-title { display: flex; align-items: center; gap: 10px; font-size: 18px; }
+.cafe-step { font-size: 15px; }
+.cafe-bar {
+  position: relative; width: min(520px, 100%); height: 34px; border-radius: 6px; overflow: hidden;
+  background: repeating-linear-gradient(90deg, #4a3526 0 8px, #553d2c 8px 16px); border: 3px solid #2a1d14; box-shadow: inset 0 3px 0 rgba(0,0,0,.35);
+}
+.cafe-zone { position: absolute; top: 0; bottom: 0; background: rgba(90, 200, 110, .75); border-left: 2px solid #2e7d3d; border-right: 2px solid #2e7d3d; }
+.cafe-sweet { position: absolute; top: 0; bottom: 0; background: rgba(255, 230, 120, .9); }
+.cafe-needle { position: absolute; top: -4px; bottom: -4px; width: 4px; margin-left: -2px; background: #fff; box-shadow: 0 0 0 2px #1a1222; }
+.cafe-stop { min-width: 200px; font-size: 16px; }
+.cafe-log { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+.cafe-res { padding: 3px 8px; border-radius: 10px; font-size: 12px; font-weight: 700; background: #eee; color: #333; }
+.cafe-res.r3 { background: #ffe58a; } .cafe-res.r2 { background: #b9f0c2; } .cafe-res.r1 { background: #f3d9b1; } .cafe-res.r0 { background: #f5b5b5; }
+.cafe-menu ul { margin: 4px 0 10px; padding-left: 18px; }

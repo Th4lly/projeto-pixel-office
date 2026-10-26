@@ -83,35 +83,111 @@ function blitRepeat(ctx, src, px, py, tx, ty) {
   return true;
 }
 
-/** Parede: face com textura quando há chão embaixo; senão, só o topo. */
-export function paintWall(ctx, type, tx, ty, front) {
+// ---------------------------------------------------------------- paredes em pixel
+// A face da parede é pré-desenhada numa grade de 1 texel = 1 px de mundo (como os itens no
+// estilo RO): textura reduzida por média, cores em degraus, friso claro em cima, rodapé escuro
+// e contorno. O topo ganha um pontilhado leve e contorno onde encosta em chão: a divisa dos
+// ambientes fica nítida.
+const FACE_TOP = 8; // px de topo visível acima da face
+const faceCache = new Map();
+
+function hexRgb(hex) {
+  const n = parseInt((hex || '#555555').slice(1), 16);
+  return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+}
+
+function wallFace(W) {
+  const key = W.face.s + '|' + W.face.f.join(',');
+  if (faceCache.has(key)) return faceCache.get(key);
+  const img = image(W.face.s);
+  if (!img) return null;
+  const [fx, fy, fw, fh] = W.face.f;
+  const H = TILE - FACE_TOP;
+  // 2 tiles de largura para a textura não repetir a cada tile
+  const out = document.createElement('canvas');
+  out.width = TILE * 2;
+  out.height = H;
+  const ctx = out.getContext('2d', { willReadFrequently: true });
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high';
+  if (fh > fw * 2) {
+    // textura alta (parede creme): pega a parte de baixo, com o rodapé
+    const sh = Math.min(fh, fw * (H / TILE));
+    ctx.drawImage(img, fx, fy + fh - sh, fw, sh, 0, 0, TILE, H);
+    ctx.drawImage(img, fx, fy + fh - sh, fw, sh, TILE, 0, TILE, H);
+  } else {
+    const span = TILE / W.face.sc; // px da textura por tile
+    ctx.imageSmoothingEnabled = span > TILE * 1.3;
+    for (let i = 0; i < 2; i++) {
+      const sw = Math.min(span, fw);
+      const sh = Math.min(span * (H / TILE), fh);
+      const sx = (i * sw) % Math.max(1, fw - sw + 1);
+      ctx.drawImage(img, fx + sx, fy, sw, sh, i * TILE, 0, TILE, H);
+    }
+  }
+  const id = ctx.getImageData(0, 0, out.width, H);
+  const d = id.data;
+  const cap = hexRgb(W.cap);
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < out.width; x++) {
+      const i = (y * out.width + x) * 4;
+      if (d[i + 3] < 128) { d[i] = cap[0]; d[i + 1] = cap[1]; d[i + 2] = cap[2]; }
+      d[i + 3] = 255;
+      let k = 1;
+      if (y < 2) k = 1.28; // friso
+      else if (y === 2) k = 0.7;
+      else if (y >= H - 4) k = y === H - 1 ? 0.45 : 0.68; // rodapé
+      else k = 1 - (y / H) * 0.12; // luz de cima
+      for (let c = 0; c < 3; c++) d[i + c] = Math.max(0, Math.min(255, Math.round((d[i + c] * k) / 8) * 8));
+    }
+  }
+  ctx.putImageData(id, 0, 0);
+  faceCache.set(key, out);
+  return out;
+}
+
+/**
+ * Parede: topo com contorno + face com textura em pixel quando há chão embaixo.
+ * nb (opcional) = função (dx, dy) → true se o vizinho também é parede.
+ */
+export function paintWall(ctx, type, tx, ty, front, nb) {
   const W = FLOORS[type];
   const px = tx * TILE;
   const py = ty * TILE;
-  ctx.fillStyle = (W && W.cap) || '#2a2030';
+  const capHex = (W && W.cap) || '#2a2030';
+  const [cr, cg, cb] = hexRgb(capHex);
+  ctx.fillStyle = capHex;
+  const capH = front ? FACE_TOP : TILE;
   ctx.fillRect(px, py, TILE, TILE);
-  if (!W || !front || !W.face) {
-    ctx.fillStyle = 'rgba(255,255,255,.06)';
-    ctx.fillRect(px, py, TILE, 2);
-    return true;
+  // pontilhado do topo (pedra/reboco), determinístico
+  for (let i = 0; i < 10; i++) {
+    const h = (tx * 73856093) ^ (ty * 19349663) ^ (i * 83492791);
+    const x = ((h >>> 3) % TILE + TILE) % TILE;
+    const y = ((h >>> 11) % capH + capH) % capH;
+    ctx.fillStyle = i % 2 ? `rgb(${cr * 0.8 | 0},${cg * 0.8 | 0},${cb * 0.8 | 0})` : `rgb(${Math.min(255, cr * 1.18) | 0},${Math.min(255, cg * 1.18) | 0},${Math.min(255, cb * 1.18) | 0})`;
+    ctx.fillRect(px + x, py + y, 2, 1);
   }
-  const img = image(W.face.s);
-  if (!img) return false;
-  const [fx, fy, fw, fh] = W.face.f;
-  // face ocupa os 3/4 de baixo do tile; a faixa de cima continua sendo o topo
-  const top = 8;
-  if (fh > fw * 2) {
-    // textura alta (parede creme): pega a parte de baixo, com o rodapé
-    const sh = Math.min(fh, fw * ((TILE - top) / TILE));
-    ctx.drawImage(img, fx, fy + fh - sh, fw, sh, px, py + top, TILE, TILE - top);
-  } else {
-    const span = TILE / W.face.sc;
-    const sw = Math.min(span, fw);
-    const sh = Math.min(span * ((TILE - top) / TILE), fh);
-    ctx.drawImage(img, fx + ((tx * span) % fw + fw) % Math.max(1, fw - sw + 1), fy, sw, sh, px, py + top, TILE, TILE - top);
-  }
-  ctx.fillStyle = 'rgba(0,0,0,.18)';
-  ctx.fillRect(px, py + TILE - 3, TILE, 3);
+  const wallAt = nb || (() => true);
+  const dark = 'rgba(12,8,18,.9)';
+  const light = `rgba(${Math.min(255, cr + 60)},${Math.min(255, cg + 60)},${Math.min(255, cb + 60)},.55)`;
+  // contorno onde a parede encosta em chão (divisa dos ambientes)
+  ctx.fillStyle = dark;
+  if (!wallAt(0, -1)) ctx.fillRect(px, py, TILE, 2);
+  if (!wallAt(-1, 0)) ctx.fillRect(px, py, 2, capH);
+  if (!wallAt(1, 0)) ctx.fillRect(px + TILE - 2, py, 2, capH);
+  ctx.fillStyle = light;
+  if (!wallAt(0, -1)) ctx.fillRect(px + (wallAt(-1, 0) ? 0 : 2), py + 2, TILE - (wallAt(-1, 0) ? 0 : 2) - (wallAt(1, 0) ? 0 : 2), 1);
+  if (!wallAt(-1, 0)) ctx.fillRect(px + 2, py + 2, 1, capH - 2);
+  if (!W || !front || !W.face) return true;
+  const face = wallFace(W);
+  if (!face) return false;
+  const sx = (((tx % 2) + 2) % 2) * TILE;
+  ctx.drawImage(face, sx, 0, TILE, TILE - FACE_TOP, px, py + FACE_TOP, TILE, TILE - FACE_TOP);
+  // borda do topo sobre a face + laterais da face
+  ctx.fillStyle = dark;
+  ctx.fillRect(px, py + FACE_TOP - 1, TILE, 1);
+  if (!wallAt(-1, 0)) ctx.fillRect(px, py + FACE_TOP, 2, TILE - FACE_TOP);
+  if (!wallAt(1, 0)) ctx.fillRect(px + TILE - 2, py + FACE_TOP, 2, TILE - FACE_TOP);
   return true;
 }
 

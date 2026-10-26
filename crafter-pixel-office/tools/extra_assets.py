@@ -84,6 +84,63 @@ PLANTS = [
     ((265, 408, 47, 127), 'trepadeira', 'Trepadeira', 1, 1, 42, {}),
     ((331, 468, 50, 67), 'arbustinho', 'Arbustinho', 1, 1, 22, {}),
 ]
+# Folhas que já têm transparência e já estão em docs/assets: os itens apontam direto para elas.
+INTERIOR = [
+    ((368, 7, 64, 41), 'balcao-madeira', 'Balcão de madeira', 2, 1, 30, {'interact': 'brew'}),
+    ((432, 7, 64, 41), 'balcao-pedra', 'Balcão de pedra (cozinha)', 2, 1, 30, {'interact': 'cook', 'station': 'bancada'}),
+    ((384, 47, 48, 97), 'forno-a-lenha', 'Forno a lenha', 2, 1, 84, {'interact': 'cook', 'station': 'forno'}),
+    ((272, 47, 48, 97), 'lareira-grelha', 'Grelha com coifa', 2, 1, 84, {'interact': 'cook', 'station': 'grelha'}),
+    ((320, 47, 64, 97), 'grelha-dupla', 'Grelha dupla com coifa', 2, 1, 84, {'interact': 'cook', 'station': 'grelha'}),
+    ((115, 4, 32, 44), 'fogao', 'Fogão a lenha', 1, 1, 34, {'interact': 'cook', 'station': 'fogao'}),
+    ((176, 0, 48, 62), 'fogao-grande', 'Fogão industrial', 2, 1, 50, {'interact': 'cook', 'station': 'fogao'}),
+    ((434, 115, 28, 23), 'fogareiro', 'Fogareiro', 1, 1, 18, {'interact': 'cook', 'station': 'fogao'}),
+    ((113, 226, 95, 36), 'pia', 'Pia da cozinha', 3, 1, 34, {'interact': 'cook', 'station': 'pia'}),
+    ((80, 6, 34, 34), 'mesa-redonda', 'Mesa redonda de madeira', 1, 1, 26, {'interact': 'eat'}),
+    ((0, 0, 64, 26), 'mesa-comprida', 'Mesa comprida', 2, 1, 22, {'interact': 'eat'}),
+    ((112, 66, 32, 30), 'mesinha', 'Mesinha de madeira', 1, 1, 24, {'interact': 'eat'}),
+    ((65, 226, 45, 28), 'mesa-de-banquete', 'Mesa de banquete', 2, 1, 24, {'interact': 'eat'}),
+    ((97, 62, 14, 22), 'banqueta-vermelha', 'Banqueta vermelha', 1, 1, 20, {'sit': True}),
+    ((81, 62, 15, 12), 'banqueta', 'Banqueta', 1, 1, 14, {'sit': True}),
+    ((0, 204, 48, 15), 'banco-comprido', 'Banco comprido', 2, 1, 14, {'sit': True}),
+    ((176, 144, 48, 32), 'adega', 'Adega (garrafas)', 2, 1, 40, {'interact': 'brew'}),
+    ((224, 122, 16, 22), 'barril', 'Barril de suco', 1, 1, 24, {'interact': 'drink'}),
+    ((226, 260, 28, 24), 'cardapio', 'Cardápio (lousa)', 1, 1, 26, {'interact': 'menu'}),
+    ((194, 260, 28, 24), 'lousa', 'Lousa', 1, 1, 26, {'interact': 'board'}),
+    ((178, 74, 26, 24), 'bau-de-madeira', 'Baú de madeira', 1, 1, 22, {'interact': 'stash'}),
+    ((240, 104, 32, 56), 'candelabro-sombrio', 'Candelabro sombrio', 1, 1, 60, {'interact': 'toggle'}),
+    ((134, 178, 36, 46), 'porta-de-madeira', 'Porta de madeira', 1, 1, 62, {'interact': 'examine'}),
+    ((180, 178, 40, 46), 'porta-de-ferro', 'Porta reforçada', 1, 1, 62, {'interact': 'examine'}),
+    ((229, 178, 38, 46), 'porta-de-pedra', 'Porta de pedra', 1, 1, 62, {'interact': 'examine'}),
+    ((552, 7, 16, 17), 'cabeca-de-lobo', 'Troféu: cabeça de lobo', 1, 1, 18, {'interact': 'examine'}),
+    ((584, 7, 16, 17), 'cabeca-de-urso', 'Troféu: cabeça de urso', 1, 1, 18, {'interact': 'examine'}),
+    ((166, 260, 20, 20), 'tabua', 'Tábua de corte', 1, 1, 10, {'small': True, 'interact': 'cook', 'station': 'bancada'}),
+    ((562, 278, 10, 8), 'caneca', 'Caneca', 1, 1, 7, {'small': True, 'interact': 'drink'}),
+    ((455, 272, 16, 16), 'panela', 'Panela', 1, 1, 10, {'small': True, 'interact': 'cook', 'station': 'fogao'}),
+    ((496, 288, 16, 16), 'cesta', 'Cesta de pães', 1, 1, 10, {'small': True, 'interact': 'snack'}),
+    ((112, 144, 14, 14), 'grade-do-chao', 'Grade no chão', 1, 1, 0, {'flat': True}),
+]
+MANA = [
+    ((176, 0, 80, 97), 'arvore-frondosa', 'Árvore frondosa', 3, 2, 112, {'interact': 'water'}),
+    ((33, 129, 30, 30), 'moita', 'Moita redonda', 1, 1, 26, {'interact': 'water'}),
+    ((16, 129, 16, 31), 'arbusto-alto', 'Arbusto alto', 1, 1, 28, {'interact': 'water'}),
+    ((0, 128, 16, 16), 'samambaia', 'Samambaia', 1, 1, 13, {'interact': 'water'}),
+    ((0, 144, 16, 16), 'samambaia-dourada', 'Samambaia dourada', 1, 1, 13, {'interact': 'water'}),
+    ((64, 96, 16, 16), 'pedrinhas', 'Pedrinhas', 1, 1, 8, {'small': True}),
+    ((64, 112, 16, 16), 'pedra', 'Pedra', 1, 1, 12, {}),
+    ((64, 128, 16, 32), 'pedregulho', 'Pedregulho', 1, 1, 24, {}),
+    ((48, 224, 32, 32), 'rochedo', 'Rochedo', 1, 1, 28, {}),
+    ((176, 112, 80, 64), 'caverna', 'Entrada da caverna', 4, 2, 70, {'interact': 'cave'}),
+]
+ALPHA = [
+    ('assets/raw/pixel-crawler-free-pack-2-11/pixel-crawler-free-pack/environment/structures/buildings/interior/interior-props-01.png', 'int', 'Taverna e cozinha', INTERIOR),
+    ('assets/raw/mana-seed-seasonal-forest-sample-summer/seasonal-sample-summer.png', 'mana', 'Bosque', MANA),
+]
+# Pisos extras (recortes de 16 px repetidos): terra batida e grama lisa do pacote de floresta
+FLOORS_X = [
+    ('assets/raw/mana-seed-seasonal-forest-sample-summer/seasonal-sample-summer.png', 'terra', 'Terra batida', [64, 16, 16, 16]),
+    ('assets/raw/mana-seed-seasonal-forest-sample-summer/seasonal-sample-summer.png', 'grama', 'Grama do bosque', [0, 16, 16, 16]),
+    ('assets/raw/mana-seed-seasonal-forest-sample-summer/seasonal-sample-summer.png', 'grama-florida', 'Grama florida', [0, 112, 16, 16]),
+]
 SHEETS = [('arena-props.png', 'arena', 'Arena', 24, ARENA), ('plantas-tailside.png', 'plantas', 'Plantas no vaso', 40, PLANTS)]
 
 
@@ -163,6 +220,31 @@ def run():
                     e[k] = extra[k]
             cat['props'].append(e)
             total += 1
+    for path, key, catname, items in ALPHA:
+        if path not in cat['sheets'] or not (DOCS / path).exists():
+            continue
+        sid = cat['sheets'].index(path)
+        for (box, iid, name, tw, th, hgt, extra) in items:
+            x, y, w, h = box
+            e = {'id': f'extra-{key}-{iid}', 'name': name, 'cat': catname, 's': sid, 'f': [x, y, w, h],
+                 'sc': round((hgt or th * 32) / h, 3) if not extra.get('flat') else round(tw * 32 / max(w, 1), 3),
+                 'w': tw, 'h': th, 'solid': not extra.get('flat') and not extra.get('small') and not extra.get('sit')}
+            if hgt:
+                e['hgt'] = hgt
+            if extra.get('flat'):
+                e['kind'] = 'flat'
+            for k in ('sit', 'small', 'interact', 'station'):
+                if k in extra:
+                    e[k] = extra[k]
+            cat['props'].append(e)
+            total += 1
+    cat['floors'] = [f for f in cat['floors'] if not f['id'].startswith('extra-floor-')]
+    for path, iid, name, f in FLOORS_X:
+        if path not in cat['sheets']:
+            continue
+        im = np.array(Image.open(DOCS / path).convert('RGB'))[f[1]:f[1] + f[3], f[0]:f[0] + f[2]].reshape(-1, 3).mean(0)
+        cat['floors'].append({'id': f'extra-floor-{iid}', 'name': name, 'pack': 'Mana Seed', 's': cat['sheets'].index(path), 'f': f, 'sc': 2.0,
+                              'avg': '#%02x%02x%02x' % tuple(int(v) for v in im)})
     pruned = prune_letter_weapons(cat)
     cat_path.write_text(json.dumps(cat, ensure_ascii=False, separators=(',', ':')))
     print(f'extras: {total} itens · {pruned} "armas" que eram letras dos rótulos removidas')

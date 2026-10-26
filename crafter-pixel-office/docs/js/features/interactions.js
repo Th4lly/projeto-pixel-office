@@ -6,6 +6,7 @@ import { openPiano } from './piano.js';
 import { runCustomAction, openObjectPanel } from './objectMenu.js';
 import { paper } from '../art/assets.js';
 import { arenaInteract } from './arena.js';
+import { openStation, openTable, openMenu } from './cafe.js';
 
 export const BUFFS = {
   coffee: ['☕', 'Cafeinado: +energia', 10, 'Café quentinho!'],
@@ -47,6 +48,20 @@ export function interact(app, o, def, useDefault = false) {
   }
 
   if (arenaInteract(app, o, def)) return;
+  const skin = def.skin || {};
+  if (k === 'brew') return openStation(app, 'bar', def.name);
+  if (k === 'cook') return openStation(app, skin.station || 'fogao', def.name);
+  if (k === 'eat') return openTable(app, o);
+  if (k === 'menu') return openMenu();
+  if (k === 'cave') {
+    const z = app.world.zones.find((zz) => /calabou/i.test(zz.name || ''));
+    const spot = z ? app.npcRoles.spotIn(z) : null;
+    if (!spot) return toast('A caverna está desmoronada…', 'info');
+    app.teleport(spot.x, spot.y);
+    blip(180, 0.3, 0.07);
+    app.floatText(spot.x, spot.y - 1.2, 'Você desceu ao Calabouço…', '#cfd8ff');
+    return;
+  }
 
   switch (k) {
     case 'sit':
@@ -224,6 +239,7 @@ export function interact(app, o, def, useDefault = false) {
       app.inventory.pickup(o, { quiet: false });
       break;
     case 'table':
+      if (Object.values((app.inventory.s.food) || {}).some((n) => n > 0)) return openTable(app, o);
       app.addBuff('🍵', 'Pausa na mesa', 10);
       say('🍵');
       toast('Você fez uma pausa à mesa. (+ Pausa por 10 min)', 'ok', 2200);

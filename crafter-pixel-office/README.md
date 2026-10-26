@@ -155,6 +155,31 @@ O script copia todas as imagens para `docs/assets`, limpa as folhas do Ragnarok 
 | M | minimapa |
 | Botão direito num colega | seguir |
 
+## v5: cafeteria com minijogo, quartel com arenas anexas, calabouço e bosque
+
+1. No Supabase, rode `supabase/migrations/20261027000000_pixeloffice_v5.sql`. A partir dela, **trocar o mapa não apaga mais as mesas**: o dono, a decoração e a cadeira passam para a mesa nova da mesma área. O modo demonstração (local) faz o mesmo.
+2. Abra o jogo: o mapa é trocado para a versão 5 uma vez, para todos (ele agora tem 78×84 tiles).
+
+- **Cafeteria:** inspirada nas referências, com a cozinha ao fundo em piso frio (forno a lenha, fogão industrial, pia e adega), o balcão de madeira com banquetas vermelhas, cabines estofadas, mesas redondas para 4 e um terraço no bosque.
+  - **Minijogo de preparo:** em cada etapa, pare o ponteiro na faixa verde (Espaço). Cada estação tem as suas receitas: balcão (espresso, cappuccino, latte, chocolate, chá, suco), forno (pizza, pão de queijo), grelha (espetinho, hambúrguer), fogão (panquecas, sopa) e bancada (salada, sanduíche). Na pia você lava a louça por gorjeta em zeny.
+  - **Comer sentado:** o que você prepara vai para a bandeja. Sente-se e aperte X na mesa: o prato aparece na mesa para todos por um minuto, e sentado o bônus dura 50% a mais. A barista também oferece o minijogo e o cardápio.
+- **Quartel:** paredes de pedra separam cada espaço.
+  - Arena dos Monstros, com a Arena dos Filhotes anexa.
+  - Arena PvP, com dois Ringues de Duelo anexos.
+  - Salas de convivência: refeitório, sala de descanso e alojamento.
+  - Campo de Treino e corredor central com escada para o calabouço.
+- **Calabouço:** masmorra no formato da referência. Capela do altar, sala do tesouro, canal em L com pontes, poço central, depósito e salão do MvP com trono. Sai pela caverna do bosque.
+- **Jardim e bosque:**
+  - grama e trilhas de terra do pacote Mana Seed, com bordas orgânicas;
+  - árvores frondosas, moitas, pedras e flores;
+  - o lago tem brilho animado;
+  - trilhas que ligam o jardim ao escritório e o bosque à cafeteria, ao cantinho de leitura e ao auditório.
+- **Paredes e delimitação dos espaços:**
+  - as paredes foram redesenhadas em pixel, com friso, rodapé, contorno nas bordas, topo pontilhado e sombra no chão;
+  - há frisos entre pisos diferentes e uma soleira nas passagens;
+  - as cabines de foco agora têm paredes próprias.
+- **Recepção:** o balcão azul curvo saiu e entrou um balcão de madeira em pixel.
+
 ## v4: arena de treino, estilo Ragnarok e gameplay RO/Gather
 
 Não precisa de migração nova (use a v3). O mapa padrão sobe para a versão 4 e é trocado uma vez para todos; como na v3, **as mesas reivindicadas são zeradas**.

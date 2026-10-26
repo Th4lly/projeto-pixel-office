@@ -2,7 +2,7 @@
 import { createBackend } from './backend/index.js?v=a75cb96';
 import { showLogin } from './ui/login.js';
 import { applyTheme } from './ui/theme.js';
-import { App } from './app.js?v=v4-arena';
+import { App } from './app.js?v=v5-bosque';
 import { $ } from './ui/dom.js';
 import { loadCatalog } from './art/assets.js';
 import { buildTiles } from './art/tiles.js';

@@ -6,6 +6,7 @@ import { CAT, frameCanvas } from '../art/assets.js';
 import { npcFrames, OBJECTS } from '../art/objects.js';
 import { blip } from '../audio.js';
 import { BUFFS } from './interactions.js';
+import { openStation, openMenu } from './cafe.js';
 
 export const ROLES = {
   guide: { name: 'Recepcionista', title: 'Guia do escritório', hello: 'Olá! Posso te mostrar o escritório, te levar a algum lugar ou te ajudar a achar uma mesa.' },
@@ -76,13 +77,13 @@ export class NpcRoles {
         options = [opt('🛒 Comprar e vender', () => { m.close(); app.inventory.openShop(this.nameOf(o)); }), opt('🎒 Meu inventário', () => { m.close(); app.inventory.open(); })];
         break;
       case 'barista':
-        options = DRINKS.map(([k, label]) => opt(`${BUFFS[k][0]} ${label}`, () => {
+        options = [opt('👩‍🍳 Preparar eu mesmo (minijogo)', () => { m.close(); openStation(app, 'bar', 'Balcão do café'); }), opt('📜 Cardápio', () => { m.close(); openMenu(); })].concat(DRINKS.map(([k, label]) => opt(`${BUFFS[k][0]} ${label}`, () => {
           const [e, buff, min, msg] = BUFFS[k];
           app.addBuff(e, buff, min);
           app.emote(e);
           toast(`${msg} (${buff} por ${min} min)`, 'ok', 2200);
           m.close();
-        }));
+        })));
         break;
       case 'quests':
         options = [opt('📜 Quadro de quests', () => { m.close(); app.quests.open(); }), opt('🏆 Ranking de heróis', () => { m.close(); app.quests.openRanking(); }),
