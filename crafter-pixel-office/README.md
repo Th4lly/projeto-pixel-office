@@ -152,8 +152,21 @@ O script copia todas as imagens para `docs/assets`, limpa as folhas do Ragnarok 
 | R / Shift+R | girar o item a colocar |
 | I | inventário |
 | Insert / C | sentar no chão |
-| M | minimapa |
 | Botão direito num colega | seguir |
+
+## v6: mapa novo (desenho do Thally), visual LPC, mesas com 7 espaços e pets
+
+Não precisa rodar migração nova: o computador escolhido e a privacidade da mesa vão junto com a decoração (já gravada pela `set_desk_decor` da v2).
+
+- **Mapa redesenhado** a partir do desenho por cores: quartel à esquerda (arena dos monstros, arena dos filhotes, PvP com ringues, escritório do chefe, sala de descanso, arquivos e refeitório ampliado), jardim interno ligado à recepção, recepção com balcão grande, escritório com 12 mesas, cabines de foco, 2 salas de reunião, cafeteria, biblioteca, auditório, terraço com deck de madeira e escada para o jardim externo, e o calabouço refeito com canal e pontes.
+- **Texturas e móveis LPC** (Liberated Pixel Cup, OGA-BY/CC-BY — créditos em `docs/assets/lpc/CREDITOS.txt`): grama, terra e água com bordas orgânicas (autotile), 12 tipos de árvore, moitas, flores, pedras, cogumelos, bancos de madeira, postes e arandelas (no lugar do fogo), portas que abrem sozinhas quando alguém chega perto.
+- **Sem NPCs genéricos e sem minimapa.** Ficaram só NPCs com função: a secretária atrás do balcão da recepção (achar mesa, me leve até, ligar, loja, quests, agenda, ajuda) e guias de informação nos jardins no lugar da prancheta flutuante.
+- **Portal novo**: pedra com anel que pulsa, faíscas e um clarão ao atravessar.
+- **Cantinhos de convivência** (áreas rosa): sofá, poltronas, mesa de centro, plantas, abajur e vitrola que abre a música (Spotify).
+- **Mesa pessoal**: depois de reivindicar, a área da mesa fica destacada com o nome do dono e vira **área privada** (dá para deixar aberta). O editor tem o **computador** (monitor, dois monitores, ultrawide, all-in-one, notebook, PC gamer RGB, retrô ou nenhum), **7 espaços de decoração** em cima da mesa — cada item é ajustado ao espaço, na escala da mesa —, a **cadeira** e o **modelo da mesa**.
+- **Bichinhos**: gato, cachorro, porquinho, sapo, coelho e gatinho, cada um com 4–5 pelagens. Passeiam, cochilam e respondem a carinho, petisco e brincadeira; dá para adotar como companheiro do avatar.
+- **Personagem**: corrigido o cabelo que aparecia de costas (o rosto "sumia") — cada linha das folhas de cabeça do RO é um penteado só; e os acessórios não descem mais sobre os olhos. O editor mostra um retrato grande e as miniaturas de cabelo/acessório em busto.
+- Para refazer os sprites LPC: `python3 tools/lpc_assets.py <pasta do repositório ElizaWy/LPC>`; para corrigir um catálogo antigo de cabeças: `python3 tools/fix_heads.py`.
 
 ## v5: cafeteria com minijogo, quartel com arenas anexas, calabouço e bosque
 

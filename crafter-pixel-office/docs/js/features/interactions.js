@@ -6,6 +6,7 @@ import { openPiano } from './piano.js';
 import { runCustomAction, openObjectPanel } from './objectMenu.js';
 import { paper } from '../art/assets.js';
 import { arenaInteract } from './arena.js';
+import { openPet } from './pets.js';
 import { openStation, openTable, openMenu } from './cafe.js';
 
 export const BUFFS = {
@@ -126,6 +127,7 @@ export function interact(app, o, def, useDefault = false) {
       const next = app.world.nextPortal(o);
       if (!next) return toast('Coloque outro portal no mapa para criar a ligação.', 'warn');
       const exit = app.world.freeAround(next.x, next.y);
+      if (app.warpFx) app.warpFx();
       app.teleport(exit.x, exit.y);
       app.renderer.float(exit.x, exit.y, '✨ Teletransporte!', '#9be8ff');
       break;
@@ -221,6 +223,9 @@ export function interact(app, o, def, useDefault = false) {
       break;
     case 'calendar':
       app.integrations.openCalendar();
+      break;
+    case 'petpet':
+      openPet(app, o);
       break;
     case 'npc':
       app.npcRoles.open(o);

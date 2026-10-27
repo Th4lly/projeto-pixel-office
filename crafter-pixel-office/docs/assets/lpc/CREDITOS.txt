@@ -1,0 +1,4 @@
+Sprites do LPC Revised — https://github.com/ElizaWy/LPC
+Licença OGA-BY 3.0 / CC-BY 3.0. Artistas: Eliza Wyatt (DeathsDarling), Lanea Zimmerman (Sharm),
+Stephen Challener (Redshrike), Johannes Sjölund (Wulax), BlueCarrot16, BenCreating, Durrani,
+YuriNikolai, Craftpix.net 2D Game Assets.

@@ -1,6 +1,7 @@
 // Personalização: avatar do Ragnarok (classe, cabelo, acessório, arma, mascote) e a aba
 // "Minha mesa" para decorar a própria mesa. Prévia animada nas 4 direções.
 import { h, fill } from './dom.js';
+import { companionList, petThumb } from '../features/pets.js';
 import { ICONS } from './icons.js';
 import { openModal } from './modal.js';
 import { CAT, IDX, frameCanvas } from '../art/assets.js';
@@ -10,6 +11,21 @@ import { classOf, CLASSES } from '../features/d20.js';
 const TABS = ['Classe', 'Cabelo', 'Acessório', 'Arma', 'Mascote', 'Minha mesa'];
 const DIRS = ['down', 'downleft', 'left', 'upleft', 'up', 'upright', 'right', 'downright'];
 const PAGE = 60;
+
+/** Busto (cabeça e ombros) grande, para ver o rosto e o cabelo de perto. */
+function bust(cfg, size = 64, zoom = 34) {
+  const c = h('canvas', { width: size, height: size, class: 'bust' });
+  const paint = () => {
+    const ctx = c.getContext('2d');
+    ctx.imageSmoothingEnabled = false;
+    ctx.clearRect(0, 0, size, size);
+    const k = size / zoom;
+    drawAvatar(ctx, cfg, 'down', 'stand', 0, size / 2, size * (zoom === 34 ? 1.98 : 1.62), k);
+  };
+  paint();
+  import('../art/assets.js').then(({ onAssetLoad }) => { const off = onAssetLoad(paint); setTimeout(off, 6000); });
+  return c;
+}
 
 function portrait(cfg, w = 60, hgt = 76) {
   const c = h('canvas', { width: w, height: hgt });
@@ -32,7 +48,7 @@ export function openAvatarEditor(app, { welcome = false, tab: startTab } = {}) {
   let hairColor = (IDX.heads.get(cfg.head) || {}).colorKey || 'black';
   let group = '';
 
-  const preview = h('canvas', { class: 'avatar-preview', width: 640, height: 130 });
+  const preview = h('canvas', { class: 'avatar-preview', width: 760, height: 170 });
   const nameInput = h('input', { type: 'text', maxlength: 24, value: app.me.name, placeholder: 'Seu nome', 'aria-label': 'Nome de exibição' });
   const tabsEl = h('div', { class: 'seg seg-wide' });
   const optionsBox = h('div', { class: 'avatar-options' });
@@ -44,13 +60,17 @@ export function openAvatarEditor(app, { welcome = false, tab: startTab } = {}) {
     ctx.imageSmoothingEnabled = false;
     const phase = Math.floor(t / 2200) % 3;
     const action = phase === 1 ? 'walk' : phase === 2 ? 'attack' : 'stand';
+    // retrato grande de frente (rosto bem visível) + as 8 direções animadas
+    ctx.fillStyle = 'rgba(255,255,255,0.35)';
+    ctx.fillRect(0, 0, 150, 170);
+    drawAvatar(ctx, cfg, 'down', 'stand', 0, 75, 252, 3.6);
     DIRS.forEach((dir, i) => {
-      const cx = 40 + i * 80;
+      const cx = 190 + i * 74;
       ctx.fillStyle = 'rgba(20,10,40,0.22)';
       ctx.beginPath();
-      ctx.ellipse(cx, 122, 18, 5, 0, 0, Math.PI * 2);
+      ctx.ellipse(cx, 160, 20, 5, 0, 0, Math.PI * 2);
       ctx.fill();
-      drawAvatar(ctx, cfg, dir, action, action === 'attack' ? ((t % 2200) / 1000) % 0.6 : t / 1000, cx, 124, 1.35);
+      drawAvatar(ctx, cfg, dir, action, action === 'attack' ? ((t % 2200) / 1000) % 0.6 : t / 1000, cx, 162, 1.75);
     });
     raf = requestAnimationFrame(drawPreview);
   }
@@ -87,14 +107,14 @@ export function openAvatarEditor(app, { welcome = false, tab: startTab } = {}) {
       const list = all.filter((x) => x.colorKey === hairColor);
       fill(optionsBox, gender,
         h('div', { class: 'chips' }, colors.map(([k, label]) => h('button', { type: 'button', class: `chip ${hairColor === k ? 'on' : ''}`, onclick: () => { hairColor = k; page = 0; render(); } }, label))),
-        grid(list, (x) => x.id === cfg.head, (x) => set({ head: x.id }), (x) => portrait({ ...cfg, head: x.id }, 56, 70)), pager(list.length));
+        grid(list, (x) => x.id === cfg.head, (x) => set({ head: x.id }), (x) => bust({ ...cfg, head: x.id, headgear: 'none' }, 64)), pager(list.length));
     } else if (tab === 'Acessório') {
       const groups = [...new Set(CAT.headgears.map((x) => x.group))];
       const list = CAT.headgears.filter((x) => !group || x.group === group);
       fill(optionsBox,
         h('div', { class: 'chips' }, h('button', { type: 'button', class: `chip ${cfg.headgear === 'none' ? 'on' : ''}`, onclick: () => set({ headgear: 'none' }) }, 'Nenhum'),
           groups.map((g) => h('button', { type: 'button', class: `chip ${group === g ? 'on' : ''}`, onclick: () => { group = g; page = 0; render(); } }, g))),
-        grid(list, (x) => x.id === cfg.headgear, (x) => set({ headgear: x.id }), (x) => frameCanvas(x.s, x.dirs[0], 48)), pager(list.length));
+        grid(list, (x) => x.id === cfg.headgear, (x) => set({ headgear: x.id }), (x) => bust({ ...cfg, headgear: x.id }, 64, 44)), pager(list.length));
     } else if (tab === 'Arma') {
       const groups = [...new Set(CAT.weapons.map((x) => x.group))];
       const list = CAT.weapons.filter((x) => !group || x.group === group);
@@ -105,8 +125,9 @@ export function openAvatarEditor(app, { welcome = false, tab: startTab } = {}) {
         grid(list, (x) => x.id === cfg.weapon, (x) => set({ weapon: x.id }), (x) => frameCanvas(x.s, x.icon, 48)), pager(list.length));
     } else if (tab === 'Mascote') {
       fill(optionsBox,
+        h('p', { class: 'muted small' }, 'O companheiro anda ao seu lado. Também dá para adotar um dos bichinhos do escritório (aperte X perto dele).'),
         h('div', { class: 'chips' }, h('button', { type: 'button', class: `chip ${cfg.pet === 'none' ? 'on' : ''}`, onclick: () => set({ pet: 'none' }) }, 'Sem mascote')),
-        grid(CAT.pets, (x) => x.id === cfg.pet, (x) => set({ pet: x.id }), (x) => frameCanvas(x.s, (x.idle && x.idle[0]) || x.frames[0], 48)));
+        grid(companionList(), (x) => x.id === cfg.pet, (x) => set({ pet: x.id }), (x) => petThumb(x.kind, x.skin, 48)));
     } else {
       fill(optionsBox, h('div', { class: 'desk-tab' },
         h('p', {}, 'Cada pessoa tem a sua mesa com uma área em volta. Lá você coloca objetos em cima e ao redor, escolhe as cores e troca a cadeira.'),

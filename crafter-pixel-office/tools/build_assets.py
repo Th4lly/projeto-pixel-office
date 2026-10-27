@@ -320,19 +320,27 @@ class Builder:
             else:
                 parts = [items]
             for it in parts:
+                # cada linha da folha é UM penteado com 15 quadros: os 5 primeiros são as direções paradas;
+                # os outros 10 são cabeça virada/de costas (sem rosto) — não viram penteados próprios
+                # (o número do id continua contando de 5 em 5 quadros, como nas versões antigas,
+                # para os avatares já salvos manterem o mesmo cabelo)
                 for k in range(0, len(it) - 4, 5):
-                    seqs.append(it[k:k + 5])
+                    seqs.append((it[k:k + 5], k % 15 == 0))
         n = 0
-        for s in seqs:
+        shown = 0
+        for s, first in seqs:
             if len(s) < 5:
                 continue
             n += 1
+            if not first:
+                continue
+            shown += 1
             self.cat['heads'].append({
-                'id': f'{slug(label)}-{n}', 'name': f'Cabelo {n}{" (clássico)" if orig else ""}', 'gender': gender,
+                'id': f'{slug(label)}-{n}', 'name': f'{"Clássico" if orig else "Cabelo"} {shown}', 'gender': gender,
                 'color': COLOR_PT.get(color, color), 'colorKey': slug(color), 's': sid, 'sc': 0.72, 'dirs': [rect(f) for f in s],
                 'doram': color == 'Doram',
             })
-        self.use(p, f'{n} penteados de cabelo ({COLOR_PT.get(color, color)}, {"masc." if gender == "m" else "fem."})')
+        self.use(p, f'{shown} penteados de cabelo ({COLOR_PT.get(color, color)}, {"masc." if gender == "m" else "fem."})')
 
     def ro_headgear(self, p, label):
         sid, rows = self.ro_sheet(p)

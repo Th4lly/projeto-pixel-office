@@ -24,7 +24,7 @@ export function buildTiles() {
   FLOORS.void = { name: 'Vazio', color: '#14101c', solid: true };
   FLOORS.none = { name: 'Transparente (mostra o fundo importado)', color: 'transparent', clear: true };
   // água: tudo que é dos tilesets de água bloqueia passagem
-  for (const f of CAT.floors) if (/water/.test(f.id)) FLOORS[f.id].solid = true;
+  for (const f of CAT.floors) if (/water/.test(f.id) || f.terrain === 'water') FLOORS[f.id].solid = true;
 
   const walls = [];
   for (const w of CAT.walls || []) {
