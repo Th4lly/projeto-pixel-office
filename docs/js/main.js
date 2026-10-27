@@ -1,9 +1,12 @@
 // Ponto de entrada: escolhe o backend, verifica a sessão e abre o login ou o escritório.
-import { createBackend } from './backend/index.js';
+import { createBackend } from './backend/index.js?v=a75cb96';
 import { showLogin } from './ui/login.js';
 import { applyTheme } from './ui/theme.js';
-import { App } from './app.js';
+import { App } from './app.js?v=v6-mesa';
 import { $ } from './ui/dom.js';
+import { loadCatalog } from './art/assets.js';
+import { buildTiles } from './art/tiles.js';
+import { buildObjects } from './art/objects.js';
 
 applyTheme();
 
@@ -21,6 +24,9 @@ async function enter(backend, user) {
 async function boot() {
   let backend;
   try {
+    await loadCatalog();
+    buildTiles();
+    buildObjects();
     backend = await createBackend();
   } catch (e) {
     $('#boot').innerHTML = `<p class="boot-error">Erro ao iniciar: ${e.message}</p>`;

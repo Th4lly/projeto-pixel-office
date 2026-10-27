@@ -57,7 +57,7 @@ export class LocalBackend {
 
   userFromRow(u) {
     this.uid = u.id;
-    return { id: u.id, email: u.email || '', name: u.name, avatar: u.avatar || null, admin: !!u.admin, xp: u.xp || 0, guest: !!u.guest, identities: [] };
+    return { id: u.id, email: u.email || '', name: u.name, avatar: u.avatar || null, admin: !!u.admin, xp: u.xp || 0, combat: u.combat || {}, inventory: u.inventory || {}, guest: !!u.guest, identities: [] };
   }
 
   users() { return read('users', {}); }
@@ -126,6 +126,8 @@ export class LocalBackend {
     if (!u) return;
     if (patch.name) u.name = patch.name;
     if (patch.avatar) u.avatar = patch.avatar;
+    if (patch.combat) u.combat = patch.combat;
+    if (patch.inventory) u.inventory = patch.inventory;
     this.saveUsers(users);
     this.changed('profiles');
   }
@@ -161,6 +163,192 @@ export class LocalBackend {
     write('map', { ...def.map, openEdit: !!open });
     write('objects', def.objects);
     write('zones', def.zones);
+  }
+
+  // ------------------------------------------------------------------ camadas, rotação e construção
+  async paintLayer(layer, cells) {
+    this.guard();
+    const map = read('map');
+    const L = map[layer] || (map[layer] = {});
+    for (const [x, y, v] of cells) { const k = `${x},${y}`; if (v === null || v === undefined || v === '') delete L[k]; else L[k] = v; }
+    write('map', map);
+  }
+
+  async setMapImage(which, value) {
+    this.guard();
+    const map = read('map');
+    map[which] = value || null;
+    write('map', map);
+  }
+
+  ownsPlaced(o) { return o && o.data && o.data.placed_by === this.uid; }
+
+  async moveObject(id, op) {
+    const list = read('objects', []);
+    const o = list.find((x) => x.id === id);
+    if (!o) return;
+    if (!this.canEdit() && !this.ownsPlaced(o)) throw new Error('Você não tem permissão para fazer isso.');
+    if (op.x !== undefined) { o.x = op.x; o.y = op.y; }
+    if (op.rot !== undefined) o.rot = op.rot;
+    if (op.flip !== undefined) o.flip = op.flip;
+    write('objects', list);
+  }
+
+  inMyDeskArea(x, y) {
+    const list = read('objects', []);
+    return read('zones', []).some((z) => z.kind === 'desk' && x >= z.x && y >= z.y && x < z.x + z.w && y < z.y + z.h
+      && list.some((d) => d.x >= z.x && d.y >= z.y && d.x < z.x + z.w && d.y < z.y + z.h && d.data && d.data.owner && d.data.owner.uid === this.uid));
+  }
+
+  async placeOwned(o, w = 1, h = 1) {
+    const u = this.users()[this.uid];
+    if (!u || u.guest) throw new Error('Convidados não constroem.');
+    if (!this.canEdit()) {
+      for (let i = 0; i < w; i++) for (let j = 0; j < h; j++) if (!this.inMyDeskArea(o.x + i, o.y + j)) throw new Error('Fora da área da sua mesa.');
+    }
+    const list = read('objects', []);
+    list.push({ ...o, state: o.state || {}, data: { ...(o.data || {}), placed_by: this.uid } });
+    write('objects', list);
+  }
+
+  async pickupObject(id) {
+    const list = read('objects', []);
+    const o = list.find((x) => x.id === id);
+    if (!o) return null;
+    if (!this.canEdit() && !this.ownsPlaced(o)) throw new Error('Você não tem permissão para fazer isso.');
+    write('objects', list.filter((x) => x.id !== id));
+    return o.type;
+  }
+
+  async customObjects() { return read('custom', []); }
+
+  async uploadMapAsset(blob) {
+    if (blob.size > 1.5e6) throw new Error('No modo demonstração as imagens ficam no navegador: até 1,5 MB.');
+    return new Promise((resolve, reject) => {
+      const r = new FileReader();
+      r.onload = () => resolve(r.result);
+      r.onerror = () => reject(new Error('Não consegui ler a imagem.'));
+      r.readAsDataURL(blob);
+    });
+  }
+
+  async addCustomObject(row) {
+    this.guard();
+    const full = { created_at: now(), created_by: this.uid, ...row };
+    write('custom', [...read('custom', []), full]);
+    return full;
+  }
+
+  async removeCustomObject(id) {
+    this.guard();
+    write('custom', read('custom', []).filter((c) => c.id !== id));
+  }
+
+  async upgradeWorld(def) {
+    const cur = read('map', null);
+    if (cur && (cur.version || 1) >= (def.map.version || 2)) return false;
+    // mesas reivindicadas passam para a mesa nova da mesma área (z-mesa-N)
+    const oldZones = read('zones', []).filter((z) => z.kind === 'desk');
+    const inZ = (o, z) => o.x >= z.x && o.x < z.x + z.w && o.y >= z.y && o.y < z.y + z.h;
+    const keep = {};
+    for (const o of read('objects', [])) {
+      if (!o.data || !o.data.owner) continue;
+      const z = oldZones.find((zz) => inZ(o, zz));
+      if (z) keep[z.id] = { owner: o.data.owner, decor: o.data.decor, chair: o.data.chair, deskSkin: o.data.deskSkin, deskColor: o.data.deskColor };
+    }
+    const objects = def.objects.map((o) => {
+      if (!o.data || o.data.slot === undefined) return o;
+      const z = def.zones.find((zz) => zz.kind === 'desk' && inZ(o, zz) && keep[zz.id]);
+      if (!z) return o;
+      const extra = Object.fromEntries(Object.entries(keep[z.id]).filter(([, v]) => v !== undefined));
+      return { ...o, data: { ...o.data, ...extra } };
+    });
+    write('map', { ...def.map, openEdit: !!(cur && cur.openEdit) });
+    write('objects', objects);
+    write('zones', def.zones);
+    return true;
+  }
+
+  // ------------------------------------------------------------------ mesas
+  async claimDesk(id) {
+    const u = this.users()[this.uid];
+    if (!u || u.guest) throw new Error('Convidados não podem reivindicar mesa.');
+    const list = read('objects', []);
+    const desk = list.find((o) => o.id === id);
+    if (!desk) throw new Error('Mesa não encontrada.');
+    if (desk.data && desk.data.owner && desk.data.owner.uid !== this.uid) throw new Error('Esta mesa já tem dono.');
+    for (const o of list) {
+      if (o !== desk && o.data && o.data.owner && o.data.owner.uid === this.uid) {
+        const { owner: _o, decor: _d, chair: _c, deskSkin: _s, deskColor: _k, ...rest } = o.data;
+        o.data = rest;
+      }
+    }
+    desk.data = { ...(desk.data || {}), owner: { uid: this.uid, name: u.name } };
+    write('objects', list);
+    return desk.data;
+  }
+
+  async releaseDesk(id) {
+    const list = read('objects', []);
+    const desk = list.find((o) => o.id === id);
+    if (!desk || !desk.data || !desk.data.owner) return;
+    if (desk.data.owner.uid !== this.uid && !this.isAdmin()) throw new Error('Só o dono libera a mesa.');
+    const { owner: _o, decor: _d, chair: _c, deskSkin: _s, deskColor: _k, ...rest } = desk.data;
+    desk.data = rest;
+    write('objects', list);
+  }
+
+  async setDeskDecor(id, decor, chair = null, color = null, skin = null) {
+    const list = read('objects', []);
+    const desk = list.find((o) => o.id === id);
+    if (!desk || !desk.data || !desk.data.owner || (desk.data.owner.uid !== this.uid && !this.isAdmin())) throw new Error('Só o dono da mesa pode decorá-la.');
+    if (!Array.isArray(decor) || decor.length > 60) throw new Error('Decoração inválida (máximo de 60 itens).');
+    desk.data = { ...desk.data, decor, chair: chair || '', deskColor: color || '', deskSkin: skin || '' };
+    write('objects', list);
+    return desk.data;
+  }
+
+  // ------------------------------------------------------------------ anexos e planilhas das reuniões
+  async meetingItems(room) {
+    return read('meeting', []).filter((m) => m.room === room).sort((a, b) => b.created_at.localeCompare(a.created_at));
+  }
+
+  async addMeetingItem(item, file) {
+    const u = this.users()[this.uid] || {};
+    const row = { id: uuid(), created_at: now(), created_by: this.uid, created_name: u.name, data: {}, ...item };
+    if (file) {
+      if (file.size > 2.5e6) throw new Error('No modo demonstração os anexos ficam no navegador: até 2,5 MB.');
+      row.url = await new Promise((resolve, reject) => {
+        const r = new FileReader();
+        r.onload = () => resolve(r.result);
+        r.onerror = () => reject(new Error('Não consegui ler o arquivo.'));
+        r.readAsDataURL(file);
+      });
+      Object.assign(row, { kind: 'file', title: item.title || file.name, size: file.size, mime: file.type });
+    }
+    write('meeting', [...read('meeting', []), row]);
+    this.changed('meeting_items', { new: row });
+    return row;
+  }
+
+  async removeMeetingItem(it) {
+    write('meeting', read('meeting', []).filter((m) => m.id !== it.id));
+    this.changed('meeting_items', { old: it });
+  }
+
+  async fileUrl(it) { return it.url; }
+
+  // ------------------------------------------------------------------ Notion (demonstração: sem servidor)
+  async notionBoards() { return read('notion', []).filter((b) => b.scope === 'company' || b.owner === this.uid); }
+  async addNotionBoard(b) {
+    const row = { id: uuid(), owner: this.uid, created_at: now(), ...b };
+    write('notion', [...read('notion', []), row]);
+    return row;
+  }
+  async removeNotionBoard(id) { write('notion', read('notion', []).filter((b) => b.id !== id)); }
+  async saveNotionToken() { throw new Error('No modo demonstração não há servidor para guardar o token do Notion.'); }
+  async notion() {
+    throw new Error('O Notion precisa do Supabase: a função "notion" faz a ponte (o navegador não pode chamar a API do Notion direto).');
   }
 
   async paintFloor(cells) {
@@ -373,6 +561,7 @@ export class LocalBackend {
     const bus = new BroadcastChannel('po-room');
     const peers = new Map(); // key -> { state, seen }
     let mine = initial;
+    room.connected = true;
 
     const publish = () => {
       const out = { [key]: mine };
@@ -403,17 +592,20 @@ export class LocalBackend {
       for (const [k, v] of peers) if (Date.now() - v.seen > 7000) { peers.delete(k); changed = true; }
       if (changed) publish();
     }, 2000);
+    const wake = () => { if (!document.hidden) { hb(); publish(); } };
+    document.addEventListener('visibilitychange', wake);
+    window.addEventListener('pageshow', wake);
     const bye = () => bus.postMessage({ t: 'bye', key });
     window.addEventListener('pagehide', bye);
 
-    setTimeout(() => {
+    const joinTimer = setTimeout(() => {
       room.emit('status', 'SUBSCRIBED');
       hb();
       publish();
       room.emit('ready');
     }, 30);
 
-    room.send = (type, payload) => bus.postMessage({ t: 'ev', key, type, payload });
+    room.send = (type, payload) => { bus.postMessage({ t: 'ev', key, type, payload }); return true; };
     room.track = (state) => {
       mine = state;
       hb();
@@ -421,7 +613,12 @@ export class LocalBackend {
       return Promise.resolve();
     };
     room.leave = () => {
+      room.connected = false;
       clearInterval(timer);
+      clearTimeout(joinTimer);
+      window.removeEventListener('pagehide', bye);
+      window.removeEventListener('pageshow', wake);
+      document.removeEventListener('visibilitychange', wake);
       bye();
       bus.close();
     };

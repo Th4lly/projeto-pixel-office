@@ -3,8 +3,13 @@ import { h, toast, fill } from '../ui/dom.js';
 import { openModal } from '../ui/modal.js';
 import { blip, playNote } from '../audio.js';
 import { openPiano } from './piano.js';
+import { runCustomAction, openObjectPanel } from './objectMenu.js';
+import { paper } from '../art/assets.js';
+import { arenaInteract } from './arena.js';
+import { openPet } from './pets.js';
+import { openStation, openTable, openMenu } from './cafe.js';
 
-const BUFFS = {
+export const BUFFS = {
   coffee: ['☕', 'Cafeinado: +energia', 10, 'Café quentinho!'],
   tea: ['🍵', 'Chá calmante', 10, 'Um chá para acalmar.'],
   feast: ['🍗', 'Bem alimentado', 20, 'Banquete servido!'],
@@ -28,17 +33,34 @@ const FORTUNES = [
 
 const LOOT = ['🎁', '🍪', '💎', '🧸', '📎', '🪙', '🍀', '🎈'];
 
-export function interact(app, o, def) {
+export function interact(app, o, def, useDefault = false) {
   const k = def.interact;
   const me = app.me;
   const st = o.state || {};
   const say = (e) => app.emote(e);
+  if (!useDefault && runCustomAction(app, o, def)) return;
 
   if (BUFFS[k]) {
     const [e, label, min, msg] = BUFFS[k];
     app.addBuff(e, label, min);
     say(e);
     toast(`${msg} (${label} por ${min} min)`, 'ok', 2500);
+    return;
+  }
+
+  if (arenaInteract(app, o, def)) return;
+  const skin = def.skin || {};
+  if (k === 'brew') return openStation(app, 'bar', def.name);
+  if (k === 'cook') return openStation(app, skin.station || 'fogao', def.name);
+  if (k === 'eat') return openTable(app, o);
+  if (k === 'menu') return openMenu();
+  if (k === 'cave') {
+    const z = app.world.zones.find((zz) => /calabou/i.test(zz.name || ''));
+    const spot = z ? app.npcRoles.spotIn(z) : null;
+    if (!spot) return toast('A caverna está desmoronada…', 'info');
+    app.teleport(spot.x, spot.y);
+    blip(180, 0.3, 0.07);
+    app.floatText(spot.x, spot.y - 1.2, 'Você desceu ao Calabouço…', '#cfd8ff');
     return;
   }
 
@@ -105,6 +127,7 @@ export function interact(app, o, def) {
       const next = app.world.nextPortal(o);
       if (!next) return toast('Coloque outro portal no mapa para criar a ligação.', 'warn');
       const exit = app.world.freeAround(next.x, next.y);
+      if (app.warpFx) app.warpFx();
       app.teleport(exit.x, exit.y);
       app.renderer.float(exit.x, exit.y, '✨ Teletransporte!', '#9be8ff');
       break;
@@ -151,7 +174,34 @@ export function interact(app, o, def) {
       app.games.openTicTacToe(o);
       break;
     case 'desk':
-      app.docs.openDesk(o);
+      app.desks.open(o);
+      break;
+    case 'meeting': {
+      const z = app.world.zonesAt(o.x, o.y).find((zz) => zz.kind === 'private' || zz.meeting);
+      app.meetings.open(z ? z.id : o.id, z ? z.name : 'Mesa de reunião');
+      break;
+    }
+    case 'phone': {
+      const z = app.world.zonesAt(o.x, o.y).find((zz) => zz.kind === 'private' || zz.meeting);
+      app.calls.openDialer({ place: z ? z.name : 'telefone' });
+      break;
+    }
+    case 'chart': {
+      const z = app.world.zonesAt(o.x, o.y).find((zz) => zz.kind === 'private' || zz.meeting);
+      app.meetings.open(z ? z.id : o.id, z ? z.name : def.name);
+      break;
+    }
+    case 'notion':
+      app.notion.open();
+      break;
+    case 'spawner':
+      app.combat.summon(o);
+      break;
+    case 'arena':
+      app.combat.openSheet();
+      break;
+    case 'slot':
+      app.games.openArcade ? app.games.openArcade(o) : inspect(app, o, def);
       break;
     case 'feed':
       app.docs.openFeed(o);
@@ -174,9 +224,64 @@ export function interact(app, o, def) {
     case 'calendar':
       app.integrations.openCalendar();
       break;
+    case 'petpet':
+      openPet(app, o);
+      break;
+    case 'npc':
+      app.npcRoles.open(o);
+      break;
+    case 'screen':
+      if (!(st.on)) app.setObjectState(o, { ...st, on: true });
+      app.docs.openMedia(o, `🖥️ ${def.name}`, 'Cole o link de um site, Google Docs, Figma, Miro, planilha ou vídeo para abrir nesta tela (todos veem o mesmo).');
+      break;
+    case 'picture':
+      openPicture(app, o, def);
+      break;
+    case 'window':
+      openWindow(app, def);
+      break;
+    case 'pickup':
+      app.inventory.pickup(o, { quiet: false });
+      break;
+    case 'table':
+      if (Object.values((app.inventory.s.food) || {}).some((n) => n > 0)) return openTable(app, o);
+      app.addBuff('🍵', 'Pausa na mesa', 10);
+      say('🍵');
+      toast('Você fez uma pausa à mesa. (+ Pausa por 10 min)', 'ok', 2200);
+      break;
+    case 'pet':
+      say('❤️');
+      app.floatText(o.x, o.y - 0.8, ['Ronrom… 😺', 'Au au! 🐶', '❤️'][(Math.random() * 3) | 0], '#ff9ab5');
+      break;
+    case 'craft':
+      app.inventory.craft(o, def);
+      break;
+    case 'examine':
+      openObjectPanel(app, o);
+      break;
     default:
       inspect(app, o, def);
   }
+}
+
+function openPicture(app, o, def) {
+  const img = o.data && o.data.image;
+  const text = (o.data && o.data.text) || '';
+  if (img) {
+    openModal({ title: def.name, className: 'modal-wide', content: h('div', {}, h('img', { src: img, alt: def.name, class: 'meet-preview' }), text ? h('p', {}, text) : null) });
+    return;
+  }
+  openObjectPanel(app, o);
+}
+
+function openWindow(app, def) {
+  const hr = new Date().getHours();
+  const phase = hr < 5 || hr >= 19 ? ['4-night', 'Noite lá fora. Estrelas e silêncio.'] : hr < 8 ? ['1-dawn', 'Amanhecendo…'] : hr < 16 ? ['3-noon', 'Dia claro e ensolarado.'] : ['2-day', 'Fim de tarde, sol baixo.'];
+  openModal({
+    title: def.name,
+    content: h('div', { class: 'window-view' }, h('img', { src: paper(`day-night-cycle/full/${phase[0]}/1`), alt: '', class: 'window-img' }), h('p', {}, phase[1]),
+      h('p', { class: 'muted small' }, new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }))),
+  });
 }
 
 function inspect(app, o, def) {

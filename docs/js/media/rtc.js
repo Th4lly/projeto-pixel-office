@@ -9,6 +9,17 @@ import { isNear, onStage } from '../game/world.js';
 
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 
+function mediaErrorMessage(error) {
+  const messages = {
+    NotAllowedError: 'Permita o acesso ao microfone e à câmera nas configurações do navegador.',
+    NotFoundError: 'Nenhum microfone ou câmera compatível foi encontrado.',
+    NotReadableError: 'O microfone ou a câmera já está sendo usado por outro aplicativo.',
+    OverconstrainedError: 'O microfone ou a câmera não atende aos requisitos do navegador.',
+    SecurityError: 'O navegador bloqueou o acesso ao dispositivo. Use HTTPS e confira as permissões.',
+  };
+  return messages[error && error.name] || 'Verifique as permissões de áudio e vídeo e tente novamente.';
+}
+
 export class Media {
   constructor(app) {
     this.app = app;
@@ -16,7 +27,10 @@ export class Media {
     this.screen = null;
     this.peers = new Map();
     this.tiles = new Map();
+    this.earlyCandidates = new Map();
+    this.signalQueues = new Map();
     this.ctx = null;
+    this.lastConnectionWarningAt = 0;
     setInterval(() => this.tick(), 700);
     setInterval(() => this.detectSpeaking(), 200);
     window.addEventListener('pointerdown', () => { if (this.ctx && this.ctx.state === 'suspended') this.ctx.resume(); });
@@ -40,6 +54,13 @@ export class Media {
   }
 
   async enable() {
+    if (this.stream) return true;
+    if (this.enabling) return this.enabling;
+    this.enabling = this.acquireMedia();
+    try { return await this.enabling; } finally { this.enabling = null; }
+  }
+
+  async acquireMedia() {
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
       toast('Câmera/microfone exigem HTTPS (o GitHub Pages já usa).', 'error', 5000);
       return false;
@@ -50,12 +71,14 @@ export class Media {
         audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true },
         video: { width: { ideal: 320 }, height: { ideal: 240 }, frameRate: { ideal: 20 } },
       });
-    } catch {
+    } catch (cameraError) {
+      console.warn('[rtc] Falha ao abrir áudio e vídeo; tentando somente áudio.', { stage: 'get-user-media', error: cameraError && cameraError.name });
       try {
         this.stream = await navigator.mediaDevices.getUserMedia({ audio: true });
         toast('Câmera indisponível — entrando só com áudio.', 'warn');
       } catch (e) {
-        toast(`Não foi possível acessar câmera/microfone: ${e.message}`, 'error', 5000);
+        console.warn('[rtc] Não foi possível abrir o microfone.', { stage: 'get-user-media-audio', error: e && e.name });
+        toast(mediaErrorMessage(e), 'error', 6000);
         return false;
       }
     }
@@ -98,7 +121,9 @@ export class Media {
     if (!navigator.mediaDevices.getDisplayMedia) return toast('Seu navegador não compartilha tela.', 'warn');
     try {
       this.screen = await navigator.mediaDevices.getDisplayMedia({ video: { frameRate: 12 }, audio: false });
-    } catch {
+    } catch (error) {
+      console.warn('[rtc] Falha ao compartilhar tela.', { stage: 'get-display-media', error: error && error.name });
+      toast('Não foi possível compartilhar a tela. Confira a permissão do navegador.', 'warn', 5000);
       return;
     }
     const track = this.screen.getVideoTracks()[0];
@@ -132,8 +157,8 @@ export class Media {
       if (!kind || t.stopped) continue;
       try {
         t.direction = 'sendrecv';
-        t.sender.replaceTrack(this.localTrack(kind));
-      } catch (e) { console.warn('[rtc] replaceTrack', e); }
+        t.sender.replaceTrack(this.localTrack(kind)).catch((error) => console.warn('[rtc] Falha ao atualizar a mídia.', { stage: 'replace-track', error: error && error.name }));
+      } catch (error) { console.warn('[rtc] Falha ao atualizar a mídia.', { stage: 'replace-track', error: error && error.name }); }
     }
   }
 
@@ -166,6 +191,7 @@ export class Media {
     const me = app.me;
     const connected = this.peers.has(p.id);
     if (this.on && p.media && p.media.on && isNear(app.world, me, p, app.proximity + (connected ? 1 : 0))) return true;
+    if (this.on && p.media && p.media.on && app.calls && (app.calls.wants(p) || app.calls.roomWants(p))) return true; // chamada direta
     if (onStage(app.world, p)) return true; // ouvir quem está no palco
     if (onStage(app.world, me) && this.on) return true; // estou no palco: todos me ouvem
     return false;
@@ -174,6 +200,18 @@ export class Media {
   tick() {
     const { app } = this;
     if (!app.me || !app.room) return;
+    if (typeof RTCPeerConnection === 'undefined') {
+      if (this.on) this.warnConnectionFailure('Este navegador não oferece suporte a chamadas de áudio e vídeo em tempo real.');
+      return;
+    }
+    for (const [id, early] of this.earlyCandidates) if (Date.now() - early.at > 15000) this.earlyCandidates.delete(id);
+    for (const [id, peer] of this.peers) {
+      const stalled = peer.pc.connectionState !== 'connected' && Date.now() - peer.createdAt > 20000;
+      if (stalled || (peer.disconnectedAt && Date.now() - peer.disconnectedAt > 8000)) {
+        this.warnConnectionFailure();
+        this.close(id, true);
+      }
+    }
     for (const p of app.players.values()) {
       if (p === app.me) continue;
       const want = this.wants(p);
@@ -187,7 +225,9 @@ export class Media {
 
   createPeer(id, initiator) {
     const pc = new RTCPeerConnection({ iceServers: this.app.iceServers });
-    const peer = { pc, pending: [], remote: new MediaStream(), audio: null };
+    const early = this.earlyCandidates.get(id);
+    this.earlyCandidates.delete(id);
+    const peer = { pc, pending: early && Date.now() - early.at < 15000 ? early.items : [], remote: new MediaStream(), audio: null, createdAt: Date.now(), disconnectedAt: 0 };
     this.peers.set(id, peer);
     if (initiator) {
       pc.addTransceiver('audio', { direction: 'sendrecv' });
@@ -202,23 +242,39 @@ export class Media {
       if (e.track.kind === 'audio') this.attachAudio(peer, e.track);
     };
     pc.onconnectionstatechange = () => {
-      if (['failed', 'closed'].includes(pc.connectionState)) this.close(id);
+      if (this.peers.get(id) !== peer) return;
+      peer.disconnectedAt = pc.connectionState === 'disconnected' ? Date.now() : 0;
+      if (pc.connectionState === 'failed') {
+        console.warn('[rtc] Negociação de mídia falhou.', { stage: 'peer-connection', state: pc.connectionState });
+        this.warnConnectionFailure();
+        this.close(id, true);
+      } else if (pc.connectionState === 'closed') this.close(id, true);
+      this.app.calls?.renderBar();
     };
     return peer;
   }
 
   async call(id) {
+    if (this.peers.has(id)) return;
     try {
       const peer = this.createPeer(id, true);
       await peer.pc.setLocalDescription(await peer.pc.createOffer());
-      this.send(id, { type: 'offer', sdp: peer.pc.localDescription.toJSON() });
+      if (!this.send(id, { type: 'offer', sdp: peer.pc.localDescription.toJSON() })) this.close(id);
     } catch (e) {
-      console.warn('[rtc] offer', e);
+      console.warn('[rtc] Falha ao criar oferta.', { stage: 'create-offer', error: e && e.name });
       this.close(id);
     }
   }
 
-  async onSignal({ to, from, data }) {
+  onSignal(message) {
+    const previous = this.signalQueues.get(message.from) || Promise.resolve();
+    const next = previous.catch(() => {}).then(() => this.handleSignal(message));
+    this.signalQueues.set(message.from, next);
+    next.finally(() => { if (this.signalQueues.get(message.from) === next) this.signalQueues.delete(message.from); });
+    return next;
+  }
+
+  async handleSignal({ to, from, data }) {
     if (to !== this.app.me.id || !data) return;
     try {
       if (data.type === 'offer') {
@@ -230,7 +286,7 @@ export class Media {
         this.applyLocalTracks(peer);
         await this.flush(peer);
         await peer.pc.setLocalDescription(await peer.pc.createAnswer());
-        this.send(from, { type: 'answer', sdp: peer.pc.localDescription.toJSON() });
+        if (!this.send(from, { type: 'answer', sdp: peer.pc.localDescription.toJSON() })) this.close(from);
       } else if (data.type === 'answer') {
         const peer = this.peers.get(from);
         if (peer && peer.pc.signalingState === 'have-local-offer') {
@@ -239,19 +295,29 @@ export class Media {
         }
       } else if (data.type === 'candidate') {
         const peer = this.peers.get(from);
-        if (!peer) return;
+        if (!peer) {
+          if (!this.app.players.has(from)) return;
+          let early = this.earlyCandidates.get(from);
+          if (!early || Date.now() - early.at > 15000) early = { at: Date.now(), items: [] };
+          if (early.items.length < 64) early.items.push(data.candidate);
+          this.earlyCandidates.set(from, early);
+          return;
+        }
         if (peer.pc.remoteDescription) await peer.pc.addIceCandidate(data.candidate);
-        else peer.pending.push(data.candidate);
+        else if (peer.pending.length < 64) peer.pending.push(data.candidate);
       } else if (data.type === 'bye') {
         this.close(from);
       }
     } catch (e) {
-      console.warn('[rtc]', e);
+      console.warn('[rtc] Falha ao processar sinalização.', { stage: 'handle-signal', error: e && e.name });
     }
   }
 
   async flush(peer) {
-    for (const c of peer.pending.splice(0)) await peer.pc.addIceCandidate(c).catch(() => {});
+    for (const c of peer.pending.splice(0)) {
+      try { await peer.pc.addIceCandidate(c); }
+      catch (error) { console.warn('[rtc] Falha ao aplicar candidato ICE.', { stage: 'add-ice-candidate', error: error && error.name }); }
+    }
   }
 
   close(id, notify = false) {
@@ -259,13 +325,19 @@ export class Media {
     if (!peer) return;
     this.peers.delete(id);
     try { peer.pc.close(); } catch { /* já fechado */ }
-    if (peer.audio) { try { peer.audio.src.disconnect(); peer.audio.gain.disconnect(); } catch { /* ok */ } }
+    if (peer.audio) { try { peer.audio.src.disconnect(); peer.audio.gain.disconnect(); peer.audio.pan?.disconnect(); peer.audio.analyser.disconnect(); } catch { /* ok */ } }
     this.removeTile(id);
     if (notify) this.send(id, { type: 'bye' });
   }
 
   send(to, data) {
-    this.app.room.send('signal', { to, from: this.app.me.id, data });
+    return this.app.room.send('signal', { to, from: this.app.me.id, data });
+  }
+
+  warnConnectionFailure(message = 'Não foi possível conectar áudio/vídeo. Verifique a rede; algumas redes exigem um servidor TURN.') {
+    if (Date.now() - this.lastConnectionWarningAt < 15000) return;
+    this.lastConnectionWarningAt = Date.now();
+    toast(message, 'warn', 6000);
   }
 
   // ------------------------------------------------------------------ áudio espacial
@@ -298,10 +370,12 @@ export class Media {
       let vol = clamp(1 - (dist - 1) / (app.proximity + 1), 0.15, 1);
       let pan = clamp((p.x - me.x) / (app.proximity + 1), -0.8, 0.8);
       if (sameRoom && near) vol = 1;
+      if (app.calls && (app.calls.wants(p) || app.calls.roomWants(p))) { vol = 1; pan = 0; }
       if (onStage(app.world, p) && !near) { vol = 1; pan = 0; }
       const audience = meOnStage && !near && !onStage(app.world, p);
       if (audience) vol = 0; // no palco, eu não ouço a plateia inteira
       if (peer.audio && this.ctx) {
+        if (tile) tile.video.muted = true;
         peer.audio.gain.gain.setTargetAtTime(vol, this.ctx.currentTime, 0.15);
         if (peer.audio.pan) peer.audio.pan.pan.setTargetAtTime(pan, this.ctx.currentTime, 0.15);
       } else if (tile) {

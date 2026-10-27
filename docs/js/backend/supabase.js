@@ -2,10 +2,20 @@
 import { Emitter } from './emitter.js';
 import { PROVIDERS } from './index.js';
 
-const TABLES = ['quests', 'quest_comments', 'object_feed', 'object_docs', 'profiles'];
+const TABLES = ['quests', 'quest_comments', 'object_feed', 'object_docs', 'profiles', 'meeting_items'];
 const REMEMBER = 'po.remember';
 const PENDING = 'po.pendingProvider';
 const TOKEN = (p) => `po.ptok.${p}`;
+
+function withTimeout(promise, ms) {
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error('Realtime operation timed out.')), ms);
+    Promise.resolve(promise).then(
+      (value) => { clearTimeout(timer); resolve(value); },
+      (error) => { clearTimeout(timer); reject(error); },
+    );
+  });
+}
 
 function loadScript(src) {
   return new Promise((resolve, reject) => {
@@ -58,7 +68,7 @@ async function run(q) {
   return data;
 }
 
-const toObj = (r) => ({ id: r.id, type: r.type, x: r.x, y: r.y, color: r.color || undefined, state: r.state || {}, data: r.data || {} });
+const toObj = (r) => ({ id: r.id, type: r.type, x: r.x, y: r.y, color: r.color || undefined, state: r.state || {}, data: r.data || {}, ...(r.rot !== null && r.rot !== undefined ? { rot: r.rot } : {}), ...(r.flip ? { flip: true } : {}) });
 
 export class SupabaseBackend {
   constructor(cfg) {
@@ -74,6 +84,11 @@ export class SupabaseBackend {
       auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true, flowType: 'pkce', storage },
       realtime: { params: { eventsPerSecond: 40 } },
     });
+    const { error: schemaError } = await this.sb.from('profiles').select('id').limit(0);
+    if (schemaError && schemaError.code === 'PGRST205') {
+      throw new Error('O banco ainda não foi configurado. Execute supabase/migrations/20261022000000_pixeloffice.sql no SQL Editor do Supabase.');
+    }
+    if (schemaError) throw friendly(schemaError);
     this.sb.auth.onAuthStateChange((_evt, session) => this.captureProviderToken(session));
     const { data } = await this.sb.auth.getSession();
     this.captureProviderToken(data.session);
@@ -116,6 +131,8 @@ export class SupabaseBackend {
       avatar: (profile && profile.avatar) || null,
       admin: !!(profile && profile.is_admin),
       xp: (profile && profile.xp) || 0,
+      combat: (profile && profile.combat) || {},
+      inventory: (profile && profile.inventory) || {},
       guest,
       identities: (authUser.identities || []).map((i) => i.provider),
     };
@@ -179,6 +196,8 @@ export class SupabaseBackend {
     const row = {};
     if (patch.name) row.name = patch.name;
     if (patch.avatar) row.avatar = patch.avatar;
+    if (patch.combat) row.combat = patch.combat;
+    if (patch.inventory) row.inventory = patch.inventory;
     if (!Object.keys(row).length) return;
     await run(this.sb.from('profiles').update(row).eq('id', this.uid));
   }
@@ -201,9 +220,9 @@ export class SupabaseBackend {
       run(this.sb.from('zones').select('*').eq('map_id', 'main')),
     ]);
     return {
-      map: { width: map.width, height: map.height, floor: map.floor, spawn: map.spawn, openEdit: map.open_edit },
+      map: { width: map.width, height: map.height, floor: map.floor, spawn: map.spawn, openEdit: map.open_edit, version: map.version || 1, fg: map.fg || {}, fx: map.fx || {}, bg: map.bg || null, fgImg: map.fg_img || null },
       objects: objects.map(toObj),
-      zones: zones.map((z) => ({ id: z.id, name: z.name, kind: z.kind, x: z.x, y: z.y, w: z.w, h: z.h })),
+      zones: zones.map((z) => ({ id: z.id, name: z.name, kind: z.kind, x: z.x, y: z.y, w: z.w, h: z.h, meeting: !!z.meeting })),
     };
   }
 
@@ -211,12 +230,118 @@ export class SupabaseBackend {
     return run(this.sb.rpc('reset_map', { p_map: def.map, p_objects: def.objects, p_zones: def.zones }));
   }
 
+  /** Troca o escritório antigo pelo v2 (uma vez, para todos). */
+  async upgradeWorld(def) {
+    try {
+      return await run(this.sb.rpc('upgrade_map', { p_map: def.map, p_objects: def.objects, p_zones: def.zones }));
+    } catch (e) {
+      if (/upgrade_map|function/i.test(e.message)) throw new Error('Rode as migrações v2, v3 e v5 (supabase/migrations/20261024000000_pixeloffice_v2.sql, 20261026000000_pixeloffice_v3.sql e 20261027000000_pixeloffice_v5.sql) no SQL Editor do Supabase para usar o escritório novo.');
+      throw e;
+    }
+  }
+
+  // ------------------------------------------------------------------ camadas, rotação e construção
+  paintLayer(layer, cells) { return run(this.sb.rpc('paint_layer', { p_layer: layer, p_cells: cells })); }
+  setMapImage(which, value) { return run(this.sb.rpc('set_map_image', { p_which: which, p_value: value })); }
+  moveObject(id, op) {
+    return run(this.sb.rpc('move_object', { p_id: id, p_x: op.x ?? null, p_y: op.y ?? null, p_rot: op.rot ?? null, p_flip: op.flip ?? null }));
+  }
+  placeOwned(o, w, h) {
+    return run(this.sb.rpc('place_owned_object', { p_obj: o, p_w: w, p_h: h }));
+  }
+  pickupObject(id) { return run(this.sb.rpc('pickup_object', { p_id: id })); }
+
+  async customObjects() {
+    const { data, error } = await this.sb.from('custom_objects').select('*').order('created_at');
+    if (error) return []; // migração v3 ainda não rodou
+    return data;
+  }
+
+  async uploadMapAsset(blob, name) {
+    const path = `${Date.now()}-${String(name).normalize('NFKD').replace(/[^\w.-]+/g, '_').slice(-60)}`;
+    const { error } = await this.sb.storage.from('map-assets').upload(path, blob, { contentType: blob.type || 'image/png' });
+    if (error) throw friendly(error);
+    return this.sb.storage.from('map-assets').getPublicUrl(path).data.publicUrl;
+  }
+
+  addCustomObject(row) {
+    return run(this.sb.from('custom_objects').insert(row).select().single());
+  }
+
+  removeCustomObject(id) {
+    return run(this.sb.from('custom_objects').delete().eq('id', id));
+  }
+
+  // ------------------------------------------------------------------ mesas
+  claimDesk(id) { return run(this.sb.rpc('claim_desk', { p_id: id })); }
+  releaseDesk(id) { return run(this.sb.rpc('release_desk', { p_id: id })); }
+  setDeskDecor(id, decor, chair = null, color = null, skin = null) {
+    return run(this.sb.rpc('set_desk_decor', { p_id: id, p_decor: decor, p_chair: chair, p_color: color, p_skin: skin }));
+  }
+
+  // ------------------------------------------------------------------ anexos e planilhas das reuniões
+  meetingItems(room) {
+    return run(this.sb.from('meeting_items').select('*').eq('room', room).order('created_at', { ascending: false }).limit(200));
+  }
+
+  async addMeetingItem(item, file) {
+    const row = { ...item };
+    if (file) {
+      const safeName = file.name.normalize('NFKD').replace(/[^\w.-]+/g, '_').slice(-80);
+      const path = `${item.room}/${Date.now()}-${safeName}`;
+      const { error } = await this.sb.storage.from('meeting-files').upload(path, file, { contentType: file.type || 'application/octet-stream' });
+      if (error) throw friendly(error);
+      Object.assign(row, { path, size: file.size, mime: file.type, kind: 'file', title: item.title || file.name });
+    }
+    return run(this.sb.from('meeting_items').insert(row).select().single());
+  }
+
+  async removeMeetingItem(it) {
+    if (it.path) await this.sb.storage.from('meeting-files').remove([it.path]);
+    return run(this.sb.from('meeting_items').delete().eq('id', it.id));
+  }
+
+  async fileUrl(it) {
+    if (!it.path) return it.url;
+    const { data, error } = await this.sb.storage.from('meeting-files').createSignedUrl(it.path, 3600);
+    if (error) throw friendly(error);
+    return data.signedUrl;
+  }
+
+  // ------------------------------------------------------------------ Notion
+  notionBoards() {
+    return run(this.sb.from('notion_boards').select('*').order('created_at'));
+  }
+
+  addNotionBoard(b) {
+    return run(this.sb.from('notion_boards').insert(b).select().single());
+  }
+
+  removeNotionBoard(id) {
+    return run(this.sb.from('notion_boards').delete().eq('id', id));
+  }
+
+  saveNotionToken(token) {
+    if (!token) return run(this.sb.from('notion_tokens').delete().eq('owner', this.uid));
+    return run(this.sb.from('notion_tokens').upsert({ owner: this.uid, token, updated_at: new Date().toISOString() }));
+  }
+
+  async notion(body) {
+    const { data, error } = await this.sb.functions.invoke('notion', { body });
+    if (error) {
+      let msg = error.message;
+      try { msg = (await error.context.json()).error || msg; } catch { /* sem corpo */ }
+      throw new Error(/not found|404/i.test(msg) ? 'A função "notion" não foi publicada no Supabase (veja o README).' : msg);
+    }
+    return data;
+  }
+
   paintFloor(cells) {
     return run(this.sb.rpc('paint_floor', { p_cells: cells }));
   }
 
   addObject(o) {
-    return run(this.sb.from('map_objects').insert({ id: o.id, type: o.type, x: o.x, y: o.y, color: o.color || null, state: o.state || {}, data: o.data || {} }));
+    return run(this.sb.from('map_objects').insert({ id: o.id, type: o.type, x: o.x, y: o.y, color: o.color || null, state: o.state || {}, data: o.data || {}, rot: o.rot ?? null, flip: !!o.flip }));
   }
 
   removeObject(id) {
@@ -373,34 +498,156 @@ export class SupabaseBackend {
   joinRoom(key, initial) {
     const room = new Emitter();
     let last = initial;
-    const ch = this.sb.channel('office:main', {
-      config: { presence: { key }, broadcast: { self: false, ack: false } },
-    });
-    ch.on('presence', { event: 'sync' }, () => {
-      const out = {};
-      for (const [k, metas] of Object.entries(ch.presenceState())) {
-        const m = metas[metas.length - 1];
-        if (m) {
-          const { presence_ref: _ref, ...state } = m;
-          out[k] = state;
+    let ch = null;
+    let generation = 0;
+    let left = false;
+    let retryTimer = 0;
+    let retryCount = 0;
+    let connectedAt = 0;
+    room.connected = false;
+
+    const connect = () => {
+      if (left || ch) return;
+      const current = ++generation;
+      const channel = this.sb.channel('office:main', {
+        config: { presence: { key }, broadcast: { self: false, ack: true } },
+      });
+      ch = channel;
+      room.connected = false;
+      channel.on('presence', { event: 'sync' }, () => {
+        if (left || current !== generation) return;
+        const out = {};
+        for (const [k, metas] of Object.entries(channel.presenceState())) {
+          const m = metas[metas.length - 1];
+          if (m) {
+            const { presence_ref: _ref, ...state } = m;
+            out[k] = state;
+          }
         }
-      }
-      room.emit('presence', out);
-    });
-    ch.on('broadcast', { event: '*' }, (msg) => room.emit(msg.event, msg.payload));
-    ch.subscribe(async (status) => {
+        room.emit('presence', out);
+      });
+      channel.on('broadcast', { event: '*' }, (msg) => { if (!left && current === generation) room.emit(msg.event, msg.payload); });
+      channel.subscribe(async (status, error) => {
+        if (left || current !== generation) return;
+        if (['CHANNEL_ERROR', 'TIMED_OUT', 'CLOSED'].includes(status)) {
+          retry(channel, current, status, error);
+          return;
+        }
+        room.emit('status', status);
+        if (status === 'SUBSCRIBED') {
+          connectedAt = Date.now();
+          try {
+            const result = await withTimeout(channel.track(last), 8000);
+            if (result !== 'ok') throw new Error(`Presence tracking failed: ${result}`);
+          } catch (trackError) {
+            retry(channel, current, 'CHANNEL_ERROR', trackError);
+            return;
+          }
+          if (!left && current === generation) {
+            room.connected = true;
+            room.emit('ready');
+          }
+        }
+      });
+    };
+
+    const retry = (channel, current, status, error) => {
+      if (left || current !== generation) return;
+      generation++;
+      ch = null;
+      room.connected = false;
+      if (connectedAt && Date.now() - connectedAt >= 30000) retryCount = 0;
+      connectedAt = 0;
       room.emit('status', status);
-      if (status === 'SUBSCRIBED') {
-        await ch.track(last);
-        room.emit('ready');
+      console.warn('[realtime] Sala indisponível; reconexão agendada.', { status, error: error && error.name });
+      const retryGeneration = generation;
+      this.sb.removeChannel(channel).catch((removeError) => {
+        console.warn('[realtime] Não foi possível remover o canal desconectado.', { error: removeError && removeError.name });
+      }).finally(() => {
+        if (left || retryGeneration !== generation || retryTimer) return;
+        const delay = Math.min(1000 * (2 ** retryCount), 30000);
+        retryCount++;
+        retryTimer = setTimeout(() => {
+          retryTimer = 0;
+          connect();
+        }, delay);
+      });
+    };
+
+    const refreshPresence = (channel, current) => {
+      withTimeout(channel.track(last), 8000).then((result) => {
+        if (result !== 'ok') throw new Error(`Presence tracking failed: ${result}`);
+        if (!left && current === generation && !room.connected) {
+          room.connected = true;
+          room.emit('ready');
+        }
+      }).catch((error) => retry(channel, current, 'CHANNEL_ERROR', error));
+    };
+
+    const retryWhenOnline = () => {
+      if (left) return;
+      if (ch) {
+        if (ch.state === 'joined') refreshPresence(ch, generation);
+        else retry(ch, generation, 'CHANNEL_ERROR', new Error('Network connection restored.'));
+        return;
       }
-    });
-    room.send = (type, payload) => ch.send({ type: 'broadcast', event: type, payload });
+      if (!retryTimer) return;
+      clearTimeout(retryTimer);
+      retryTimer = 0;
+      connect();
+    };
+
+    const wake = () => {
+      if (left || document.hidden) return;
+      retryWhenOnline();
+    };
+    document.addEventListener('visibilitychange', wake);
+    window.addEventListener('online', retryWhenOnline);
+    connect();
+    room.send = (type, payload) => {
+      if (!room.connected || !ch || ch.state !== 'joined') {
+        if (room.connected) {
+          if (ch) retry(ch, generation, 'CHANNEL_ERROR', new Error('Realtime channel is not joined.'));
+          else {
+            room.connected = false;
+            room.emit('status', 'CHANNEL_ERROR');
+            if (!retryTimer) connect();
+          }
+        }
+        return false;
+      }
+      const channel = ch;
+      const current = generation;
+      channel.send({ type: 'broadcast', event: type, payload }).then((result) => {
+        if (result !== 'ok') {
+          room.emit('send-error', type);
+          retry(channel, current, 'CHANNEL_ERROR', new Error(`Realtime broadcast failed: ${result}`));
+        }
+      }, (error) => {
+        room.emit('send-error', type);
+        retry(channel, current, 'CHANNEL_ERROR', error);
+      });
+      return true;
+    };
     room.track = (state) => {
       last = state;
-      return ch.track(state);
+      if (!room.connected || !ch || ch.state !== 'joined') return Promise.resolve('error');
+      const channel = ch;
+      const current = generation;
+      return withTimeout(channel.track(state), 8000).catch((error) => {
+        retry(channel, current, 'CHANNEL_ERROR', error);
+        throw error;
+      });
     };
-    room.leave = () => this.sb.removeChannel(ch);
+    room.leave = () => {
+      left = true;
+      room.connected = false;
+      clearTimeout(retryTimer);
+      window.removeEventListener('online', retryWhenOnline);
+      document.removeEventListener('visibilitychange', wake);
+      if (ch) return this.sb.removeChannel(ch);
+      return Promise.resolve('ok');
+    };
     return room;
   }
 }

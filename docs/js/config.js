@@ -18,7 +18,8 @@ export const CONFIG = {
   PROXIMITY: 4,
 
   // Servidores para conexões de vídeo. Em redes corporativas restritas,
-  // adicione um servidor TURN: { urls: 'turn:...', username: '...', credential: '...' }
+  // use credenciais TURN temporárias emitidas pelo seu backend autenticado.
+  // Nunca coloque a chave administrativa do provedor TURN neste arquivo público.
   ICE_SERVERS: [
     { urls: 'stun:stun.l.google.com:19302' },
     { urls: 'stun:stun1.l.google.com:19302' },

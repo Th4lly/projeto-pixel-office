@@ -1,12 +1,14 @@
 // Orquestra a aplicação: mundo, presença em tempo real, edição, objetos e módulos de interface.
+import { setPetWorld } from './features/pets.js';
 import { CONFIG } from './config.js';
-import { levelFromXp } from './backend/index.js';
+import { levelFromXp } from './backend/index.js?v=a75cb96';
 import { $, toast, h } from './ui/dom.js';
 import { World, isNear } from './game/world.js';
 import { Player, LocalPlayer } from './game/players.js';
 import { Input, isTyping } from './game/input.js';
 import { Renderer } from './game/renderer.js';
-import { buildDefaultMap } from './game/defaultMap.js';
+import { buildDefaultMap, MAP_VERSION } from './game/defaultMap.js';
+import { FLOORS } from './art/tiles.js';
 import { OBJECTS } from './art/objects.js';
 import { normalizeAvatar, randomAvatar } from './art/avatar.js';
 import { playNote, blip } from './audio.js';
@@ -24,6 +26,17 @@ import { Integrations } from './features/integrations.js';
 import { MiniMode } from './features/pip.js';
 import { DocsUi } from './features/docs.js';
 import { Media } from './media/rtc.js';
+import { Calls } from './media/calls.js';
+import { Desks } from './features/desks.js';
+import { Combat } from './features/combat.js';
+import { Meetings } from './features/meetings.js';
+import { NotionBoards } from './features/notion.js';
+import { Clock } from './ui/clock.js';
+import { NpcRoles } from './features/npcRoles.js';
+import { Inventory } from './features/inventory.js';
+import { registerCustomObjects, addCustomType } from './features/imports.js';
+import { openObjectPanel } from './features/objectMenu.js';
+import { dirFromVec } from './game/dirs.js';
 
 const TAB = Math.random().toString(36).slice(2, 7);
 
@@ -31,6 +44,7 @@ export class App {
   constructor(backend, user) {
     this.backend = backend;
     this.user = user;
+    this.connectionStatus = backend.mode === 'local' ? 'connected' : 'connecting';
     this.players = new Map();
     this.listeners = {};
     this.build = {};
@@ -56,8 +70,10 @@ export class App {
 
   // ------------------------------------------------------------------ início
   async start() {
-    const data = await this.backend.loadWorld(buildDefaultMap);
+    try { registerCustomObjects(await this.backend.customObjects()); } catch (e) { console.warn(e); }
+    const data = await this.loadWorldV2();
     this.world = new World(data);
+    setPetWorld(this.world);
     const spawn = this.spawnPoint();
     const xp = this.user.xp || 0;
     this.me = new LocalPlayer({
@@ -91,6 +107,14 @@ export class App {
     this.games = new Games(this);
     this.docs = new DocsUi(this);
     this.media = new Media(this);
+    this.calls = new Calls(this);
+    this.desks = new Desks(this);
+    this.meetings = new Meetings(this);
+    this.notion = new NotionBoards(this);
+    this.combat = new Combat(this);
+    this.clock = new Clock(this);
+    this.npcRoles = new NpcRoles(this);
+    this.inventory = new Inventory(this);
     this.mini = new MiniMode(this);
     this.integrations = new Integrations(this);
     this.hud = new Hud(this);
@@ -114,7 +138,19 @@ export class App {
     if (this.backend.mode === 'local') toast('Modo demonstração: abra outra aba para simular outra pessoa.', 'info', 6000);
   }
 
+  /** Carrega o mapa; se for o escritório antigo (desenhado em código), troca pelo novo com os sprites. */
+  async loadWorldV2() {
+    let data = await this.backend.loadWorld(buildDefaultMap);
+    const old = (data.map.version || 1) < MAP_VERSION || data.map.floor.some((t) => !FLOORS[t]);
+    if (!old) return data;
+    toast(this.user.admin ? 'Há um modelo de mapa mais recente. O mapa salvo foi preservado; use Construir para revisar ou restaurar o modelo conscientemente.' : 'O escritório está usando o mapa salvo pela equipe.', 'info', 5000);
+    return data;
+  }
+
   spawnPoint() {
+    // tiles de Spawn (efeito) têm prioridade; senão o ponto de entrada do mapa
+    const list = (this.world.spawns || []).filter((p) => this.world.walkable(p.x, p.y));
+    if (list.length) return list[Math.floor(Math.random() * list.length)];
     const s = this.world.map.spawn || { x: 1, y: 1 };
     for (let i = 0; i < 60; i++) {
       const x = s.x + Math.round((Math.random() - 0.5) * 6);
@@ -129,6 +165,9 @@ export class App {
     return {
       uid: m.uid, name: m.name, avatar: m.avatar, x: m.x, y: m.y, dir: m.dir, status: m.status, statusText: m.statusText || '',
       media: m.media, level: m.level, buffs: m.activeBuffs(), music: m.music || '', guest: m.guest, admin: m.admin,
+      call: m.call || null, hp: Math.round(m.hp || 0), maxHp: m.maxHp || 0, sp: Math.round(m.sp || 0), maxSp: m.maxSp || 0, dead: !!m.dead,
+      cls: m.cls || '', baseLevel: m.baseLevel || 1, statuses: m.statuses || [],
+      team: m.team || '', gear: m.gear && m.gear.until > Date.now() ? { ca: m.gear.ca, hit: m.gear.hit, until: m.gear.until } : null, floorSit: !!m.floorSit,
     };
   }
 
@@ -138,22 +177,39 @@ export class App {
     const wait = Math.max(150, 1000 - (Date.now() - this.lastTrack));
     this.trackTimer = setTimeout(() => {
       this.lastTrack = Date.now();
-      this.room.track(this.presenceState()).catch(() => {});
+      this.room.track(this.presenceState()).catch((error) => {
+        console.warn('[realtime] Falha ao atualizar presença.', { error: error && error.name });
+      });
     }, wait);
   }
 
   // ------------------------------------------------------------------ tempo real
+  setConnectionStatus(status, message) {
+    this.connectionStatus = status;
+    const conn = $('#conn-overlay');
+    if (message) $('#conn-message').textContent = message;
+    conn.hidden = status === 'connected';
+    this.emitUi('connection', status);
+  }
+
   bindRoom() {
     const r = this.room;
-    const conn = $('#conn-overlay');
+    if (this.connectionStatus !== 'connected') this.setConnectionStatus('connecting', 'Conectando ao escritório…');
     r.on('status', (s) => {
-      if (s === 'SUBSCRIBED') conn.hidden = true;
-      else if (['CHANNEL_ERROR', 'TIMED_OUT', 'CLOSED'].includes(s) && this.started) conn.hidden = false;
+      if (['CHANNEL_ERROR', 'TIMED_OUT', 'CLOSED'].includes(s)) {
+        this.setConnectionStatus('reconnecting', 'Conexão instável — tentando restaurar…');
+      } else if (s === 'SUBSCRIBED' && this.connectionStatus !== 'connected') {
+        this.setConnectionStatus('connecting', 'Conectado; sincronizando presença…');
+      }
     });
     r.on('ready', () => {
+      const recovered = this.started && this.connectionStatus !== 'connected';
+      this.setConnectionStatus('connected');
       this.started = true;
       this.media.reset();
+      if (recovered) toast('Conexão restabelecida.', 'ok', 2500);
     });
+    r.on('send-error', () => this.setConnectionStatus('reconnecting', 'Falha ao enviar dados — reconectando…'));
     r.on('presence', (all) => this.onPresence(all));
     r.on('move', (d) => {
       const p = this.players.get(d.id);
@@ -209,6 +265,15 @@ export class App {
     r.on('notes', (d) => this.notes.onRemoteState(d));
     r.on('ttt', (d) => this.games.onTicTacToe(d));
     r.on('signal', (d) => this.media.onSignal(d));
+    r.on('call', (d) => this.calls.onSignal(d));
+    r.on('custom', (row) => { addCustomType(row); this.renderer.invalidate(); if (this.build.on) this.buildPanel.render(); });
+    r.on('cbt', (d) => this.combat.onNet(d));
+    r.on('meeting', (d) => {
+      const z = this.world.zones.find((zz) => zz.id === d.room);
+      const here = z && this.world.zonesAt(this.me.x, this.me.y).includes(z);
+      const inCall = this.calls.call && (this.calls.call.room === d.room || this.calls.call.id === d.room);
+      if (here || inCall) toast(`📎 ${d.by} ${d.what} na reunião.`, 'info', 3000);
+    });
   }
 
   bindDb() {
@@ -295,7 +360,9 @@ export class App {
     const dt = Math.min(0.05, (t - this.lastT) / 1000);
     this.lastT = t;
     const me = this.me;
-    me.step(dt, this.input, this.world, (moved) => {
+    const frozen = me.dead || (this.combat && (this.combat.statuses.stun || this.combat.statuses.freeze || this.combat.statuses.petrify));
+    this.world.updateDoors(this.players, dt);
+    me.step(dt, frozen ? { direction: () => null } : this.input, this.world, (moved) => {
       this.room.send('move', { id: me.id, x: me.x, y: me.y, dir: me.dir });
       this.trackSoon();
       if (moved) this.onStep();
@@ -309,17 +376,67 @@ export class App {
       me.pendingInteract = null;
       if (this.world.objects.includes(o) && this.world.distanceToObject(o, me.x, me.y) <= 1) this.interact(o);
     }
+    // seguir alguém (como no Gather): recalcula o caminho a cada segundo
+    if (this.following) {
+      const p = this.players.get(this.following);
+      if (!p || this.input.direction()) this.follow(null);
+      else if (Date.now() - (this.followAt || 0) > 900 && Math.max(Math.abs(p.x - me.x), Math.abs(p.y - me.y)) > 1 && (!me.path || !me.path.length)) {
+        this.followAt = Date.now();
+        const path = this.world.pathTo(me.x, me.y, (x, y) => Math.max(Math.abs(x - p.x), Math.abs(y - p.y)) <= 1 && !(x === p.x && y === p.y));
+        if (path) me.path = path;
+      }
+    }
     this.hud.update();
     this.renderer.draw(t / 1000);
     requestAnimationFrame((tt) => this.loop(tt));
   }
 
+  /** Sentar no chão (Insert/C, como no RO): regeneração em dobro; levantar ao andar. */
+  toggleFloorSit(on = !this.me.floorSit) {
+    const me = this.me;
+    if (on && (me.moving || this.world.seatAt(me.x, me.y) || me.dead)) return;
+    me.floorSit = on;
+    me.path = null;
+    this.trackSoon();
+    if (on) this.renderer.float(me.x, me.y - 1.4, 'Sentou (regeneração ×2)', '#cfd8ff');
+  }
+
+  /** Transição do portal: um clarão azul que fecha e abre a tela. */
+  warpFx() {
+    let el = document.getElementById('warp');
+    if (!el) { el = document.createElement('div'); el.id = 'warp'; document.body.append(el); }
+    el.classList.remove('on');
+    void el.offsetWidth;
+    el.classList.add('on');
+  }
+
+  /** Seguir um colega (clique direito no avatar). */
+  follow(p) {
+    this.following = p ? p.id : null;
+    if (p) toast(`Seguindo ${p.name}. Ande ou aperte Esc para parar.`, 'info', 2500);
+  }
+
   onStep() {
+    if (this.me.floorSit) { this.me.floorSit = false; this.trackSoon(); }
+    // efeito de tile: portal com destino
+    const fx = this.world.fxAt(this.me.x, this.me.y);
+    if (fx && fx.t === 'o' && this.world.inBounds(fx.x, fx.y)) {
+      const exit = this.world.freeAround(fx.x, fx.y);
+      this.me.path = null;
+      this.warpFx();
+      setTimeout(() => {
+        this.teleport(exit.x, exit.y);
+        blip(520, 0.25, 0.06);
+        this.renderer.float(exit.x, exit.y, '✨ Portal!', '#9be8ff');
+      }, 150);
+      return;
+    }
     const portal = this.world.portalAt(this.me.x, this.me.y);
     if (portal && !this.me.path?.length) {
       const next = this.world.nextPortal(portal);
       if (next) {
         const exit = this.world.freeAround(next.x, next.y);
+        this.warpFx();
         setTimeout(() => {
           this.teleport(exit.x, exit.y);
           blip(520, 0.25, 0.06);
@@ -340,20 +457,21 @@ export class App {
   }
 
   // ------------------------------------------------------------------ ações
-  interact(o = this.target) {
+  interact(o = this.target, useDefault = false) {
     if (!o) return;
     const def = OBJECTS[o.type];
     if (!def || !def.interact) return;
     this.face(o);
-    interact(this, o, def);
+    interact(this, o, def, useDefault);
   }
 
   face(o) {
     const def = OBJECTS[o.type];
     const me = this.me;
-    const dx = o.x + (def.w - 1) / 2 - me.x;
-    const dy = o.y + (def.h - 1) / 2 - me.y;
-    const dir = Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? 'right' : 'left') : dy > 0 ? 'down' : 'up';
+    const dm = this.world.dimsOf(o);
+    const dx = o.x + (dm.w - 1) / 2 - me.x;
+    const dy = o.y + (dm.h - 1) / 2 - me.y;
+    const dir = dirFromVec(dx, dy);
     if (dir !== me.dir) {
       me.dir = dir;
       this.room.send('move', { id: me.id, x: me.x, y: me.y, dir });
@@ -401,7 +519,19 @@ export class App {
   clickTo(t) {
     const { world, me } = this;
     if (!world.inBounds(t.x, t.y) || (t.x === me.x && t.y === me.y)) return;
+    if (this.combat && this.combat.inArena()) {
+      const mob = [...this.combat.mobs.values()].find((m) => !m.dead && Math.floor(m.x) === t.x && Math.abs(Math.floor(m.y - 0.5) - t.y) <= 1);
+      if (mob) {
+        const dist = Math.hypot(mob.x - (me.x + 0.5), mob.y - (me.y + 0.9));
+        if (dist <= this.combat.sheet.range + 0.9) return this.combat.basic({ mob });
+        const path = world.pathTo(me.x, me.y, (x, y) => Math.hypot(mob.x - (x + 0.5), mob.y - (y + 0.9)) <= this.combat.sheet.range + 0.5);
+        if (path) me.path = path;
+        return;
+      }
+    }
     me.pendingInteract = null;
+    if (me.floorSit) { me.floorSit = false; this.trackSoon(); }
+    this.renderer.mark = { x: t.x, y: t.y, t: performance.now() };
     const objs = world.objectsAt(t.x, t.y).filter((o) => OBJECTS[o.type] && OBJECTS[o.type].interact);
     const obj = objs.find((o) => !OBJECTS[o.type].flat && OBJECTS[o.type].interact !== 'sit' && OBJECTS[o.type].interact !== 'portal');
     if (obj) {
@@ -455,6 +585,9 @@ export class App {
         else if (op.t === 'spawn') await this.backend.setSettings({ spawn: { x: op.x, y: op.y } });
         else if (op.t === 'settings') await this.backend.setSettings({ openEdit: op.openEdit });
         else if (op.t === 'data') await this.backend.setObjectData(op.id, op.data);
+        else if (op.t === 'layer') await this.backend.paintLayer(op.layer, op.cells);
+        else if (op.t === 'image') await this.backend.setMapImage(op.which, op.value);
+        else if (op.t === 'move') await this.backend.moveObject(op.id, op);
       } catch (e) {
         toast(e.message, 'error');
       }
@@ -501,6 +634,13 @@ export class App {
       canvas.setPointerCapture(e.pointerId);
       if (this.build.on) this.buildPanel.pointerDown(t, e);
       else if (e.button === 0) this.clickTo(t);
+      else if (e.button === 2) {
+        // botão direito: painel do objeto (examinar, girar, ação…)
+        const who = [...this.players.values()].find((p) => p !== this.me && p.x === t.x && (p.y === t.y || p.y === t.y + 1));
+        if (who) { this.follow(this.following === who.id ? null : who); return; }
+        const o = this.buildPanel.objectAt(t.x, t.y);
+        if (o) openObjectPanel(this, o);
+      }
     });
     canvas.addEventListener('pointermove', (e) => {
       const t = this.renderer.tileAt(e.clientX, e.clientY);
@@ -533,6 +673,12 @@ export class App {
         return;
       }
       if (e.ctrlKey || e.metaKey || e.altKey) return;
+      if (this.build.on) {
+        const d9 = /^Digit([1-9])$/.exec(e.code);
+        if (d9) return this.inventory.select(Number(d9[1]) - 1);
+        if (e.code === 'KeyR') { e.preventDefault(); return this.buildPanel.rotateGhost(e.shiftKey ? 15 : 45); }
+        if (e.code === 'KeyI') return this.inventory.open();
+      }
       const digit = /^Digit([1-6])$/.exec(e.code);
       if (digit) return this.emote(EMOTES[Number(digit[1]) - 1]);
       switch (e.code) {
@@ -549,6 +695,21 @@ export class App {
         case 'KeyQ':
           this.quests.open();
           break;
+        case 'KeyF':
+          this.combat.basic();
+          break;
+        case 'KeyR':
+          this.combat.skill(1);
+          break;
+        case 'KeyT':
+          this.combat.skill(2);
+          break;
+        case 'KeyG':
+          this.combat.amplify();
+          break;
+        case 'KeyL':
+          this.calls.openDialer();
+          break;
         case 'KeyN':
           this.notes.open();
           break;
@@ -561,9 +722,17 @@ export class App {
           this.renderer.zoomBy(-1);
           break;
         case 'KeyB':
-          if (this.canEdit) this.buildPanel.toggle();
+          this.buildPanel.toggle();
+          break;
+        case 'KeyI':
+          this.inventory.open();
+          break;
+        case 'Insert':
+        case 'KeyC':
+          this.toggleFloorSit();
           break;
         case 'Escape':
+          if (this.following) this.follow(null);
           if (this.build.on) this.buildPanel.toggle(false);
           else this.sidebar.close();
           break;

@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="css/login.css" />
   <link rel="stylesheet" href="css/game.css" />
   <link rel="stylesheet" href="css/panels.css" />
+  <link rel="stylesheet" href="css/pixel.css" />
+  <link rel="stylesheet" href="css/polish.css" />
   <script>
     try {
       var t = localStorage.getItem('po.theme');
@@ -126,6 +128,9 @@
         </div>
       </div>
       <div class="bar-group">
+        <button id="btn-phone" class="bar-btn phone-btn" title="Ligar para alguém (escolha com quem se conectar)" data-icon="phone"></button>
+      </div>
+      <div class="bar-group">
         <button id="btn-media" class="bar-btn" title="Ativar câmera e microfone" data-icon="video"></button>
         <button id="btn-mic" class="bar-btn" title="Microfone" data-icon="mic" hidden></button>
         <button id="btn-cam" class="bar-btn" title="Câmera" data-icon="cam" hidden></button>
@@ -135,6 +140,8 @@
       <div class="bar-group">
         <button id="btn-quests" class="bar-btn" title="Quadro de quests (Q)"><span data-icon="scroll"></span><span class="lbl">Quests</span></button>
         <button id="btn-notes" class="bar-btn" title="Notas de reunião (N)" data-icon="notes"></button>
+        <button id="btn-notion" class="bar-btn" title="Boards do Notion (empresa e individual)"><img class="bar-img" alt="" data-app-icon="Notion" /></button>
+        <button id="btn-desk" class="bar-btn" title="Minha mesa (decorar)" data-icon="board"></button>
         <button id="btn-build" class="bar-btn" title="Construir (B)" hidden><span data-icon="build"></span></button>
         <button id="btn-people" class="bar-btn" title="Pessoas"><span data-icon="users"></span><span id="people-count-bar" class="badge"></span></button>
         <button id="btn-chat" class="bar-btn" title="Chat (Enter)"><span data-icon="chat"></span><span id="chat-badge" class="badge accent" hidden></span></button>
@@ -150,13 +157,16 @@
       </div>
     </nav>
 
-    <div id="conn-overlay" class="conn-overlay" hidden><div class="spinner"></div>Reconectando…</div>
+    <div id="conn-overlay" class="conn-overlay" hidden>
+      <div id="conn-spinner" class="spinner"></div>
+      <p id="conn-message">Conexão instável — tentando restaurar…</p>
+    </div>
   </main>
 
   <div id="modal-root"></div>
   <div id="toasts" class="toasts"></div>
 
   <noscript>Ative o JavaScript para usar o PixelOffice.</noscript>
-  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/main.js?v=v6-mesa"></script>
 </body>
 </html>
