@@ -41,6 +41,7 @@ export class World {
     if (!this.map.fg || typeof this.map.fg !== 'object') this.map.fg = {};
     if (!this.map.fx || typeof this.map.fx !== 'object') this.map.fx = {};
     this.objects = objects || [];
+    this.doors = new Map();
     this.zones = zones || [];
     this.reindex();
   }
@@ -69,6 +70,18 @@ export class World {
     return parseFx(this.map.fx[key(x, y)]);
   }
 
+  updateDoors(players, dt) {
+    for (const o of this.objects) {
+      if (!OBJECTS[o.type]?.door) continue;
+      const state = this.doors.get(o.id) || { progress: 0, hold: 0 };
+      const near = [...players.values()].some(p => Math.abs(p.rx - o.x) <= 1.8 && Math.abs(p.ry - o.y) <= 1.8);
+      state.hold = near ? 0.9 : Math.max(0, state.hold - dt);
+      const open = !!o.state?.open || (o.data?.auto !== false && state.hold > 0);
+      state.progress = Math.max(0, Math.min(1, state.progress + (open ? 1 : -1) * dt / 0.22));
+      this.doors.set(o.id, state);
+    }
+  }
+
   /** Área no chão do objeto, considerando a rotação. */
   dimsOf(o) {
     return dims(o, OBJECTS[o.type]);
@@ -84,7 +97,7 @@ export class World {
       const d = OBJECTS[o.type];
       if (!d) continue;
       const { w, h } = this.dimsOf(o);
-      const blocks = (d.solid && !d.wall) || (d.door && !(o.state && o.state.open));
+      const blocks = (d.solid && !d.wall) || (d.door && o.data?.auto === false && !(o.state && o.state.open));
       for (let y = o.y; y < o.y + h; y++) {
         for (let x = o.x; x < o.x + w; x++) {
           if (!this.inBounds(x, y)) continue;

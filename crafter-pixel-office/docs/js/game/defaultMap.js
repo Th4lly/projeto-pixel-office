@@ -313,7 +313,7 @@ export function buildDefaultMap() {
   L('sofa-marinho', 44, 11, { rot: E }); L('mesinha-media', 44, 13); L('poltrona-marinho', 44, 14, { rot: E }); L('samambaia-no-vaso', 43, 16);
   L('bebedouro', 43, 1); L('arvore-no-vaso', 43, 3);
   lounge(69, 1, 'azul', 'cinza', 'tapete-vinhas-azul');
-  lounge(69, 11, 'vermelho', 'amarelo', 'tapete-vinhas-rosa');
+  lounge(59, 12, 'vermelho', 'amarelo', 'tapete-vinhas-rosa');
   pet('gato', 0, 73, 8, 'Mochi');
   L('luminaria-creme', 67, 6, on); L('luminaria-azul', 67, 10, on);
   rect(48, 13, 54, 15, (x, y) => { fx[`${x},${y}`] = 'n'; }); // pontos de chegada
@@ -356,10 +356,10 @@ export function buildDefaultMap() {
       add('chair', x - 1, y + i, { rot: E }); add('chair', x + 3, y + i, { rot: Wd });
     }
   };
-  meeting(55, 26);
+  meeting(55, 27);
   add('phone', 51, 23); L('tv', 60, 21); add('whiteboard', 52, 22); add('chart_board', 60, 33);
   L('samambaia-no-vaso', 50, 33); L('arvore-no-vaso', 63, 33); L('luminaria-creme', 63, 22, on); L('estante-baixa-2', 50, 22);
-  meeting(69, 26);
+  meeting(69, 27);
   add('phone', 66, 23); L('tv', 74, 21); add('notion_board', 66, 33); L('samambaia-no-vaso', 76, 33); L('topiaria', 65, 33); L('luminaria-dourada', 76, 22, on);
 
   // ----- cafeteria: cozinha ao fundo, balcão com banquetas, mesas

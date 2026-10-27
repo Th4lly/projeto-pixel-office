@@ -1,0 +1,38 @@
+/* Shared office palette; loaded after legacy theme rules. */
+:root, :root[data-theme="dark"] {
+ --title-a:#366d46; --title-b:#244d32; --border:#578666;
+ --win:#1c3025; --win-2:#263e30; --win-3:#35513d; --text:#edf6e9; --muted:#b5cbb8;
+ --input:#16271d; --accent:#9cdb9e; --accent-ink:#153820; --radius:4px;
+}
+:root[data-theme="light"] {
+ --title-a:#438851; --title-b:#2e633d; --border:#64896a;
+ --win:#f7faef; --win-2:#e9f1df; --win-3:#d6e6ce; --text:#233c2a; --muted:#526c58;
+ --input:#fffef8; --accent:#307644; --accent-ink:#fff; --bg:#e7efdd;
+}
+.modal, .win, .btn-primary, .btn-secondary, .bar-btn { border-radius:4px; }
+button:focus-visible, summary:focus-visible, select:focus-visible { outline:3px solid #4b995b; outline-offset:3px; }
+.bottombar { overflow:visible; max-width:calc(100vw - 16px); flex-wrap:wrap; justify-content:center; }
+.bottombar .bar-group { flex-shrink:0; }
+.bottombar .bar-group:empty { display:none; }
+.hud-menu summary { cursor:pointer; padding:10px; font-weight:800; color:var(--text); background:var(--win-2); border:1px solid var(--border); }
+.hud-menu > .hud-actions, .hud-menu > #emote-bar {
+ position:absolute; bottom:calc(100% + 10px); right:0; background:var(--win); color:var(--text);
+ border:2px solid var(--border); padding:12px; box-shadow:var(--shadow); max-height:60vh; overflow:auto;
+ width:min(360px, calc(100vw - 24px)); display:flex; flex-wrap:wrap; gap:8px;
+}
+.hud-menu:not([open]) > .hud-actions, .hud-menu:not([open]) > #emote-bar { display:none; }
+.hud-actions .bar-btn { width:100%; justify-content:flex-start; height:auto; min-height:40px; white-space:normal; text-align:left; }
+.hud-actions [hidden] { display:none !important; }
+.clock { transform:scale(.8); transform-origin:right bottom; pointer-events:none; }
+@media(max-width:760px) {
+ .bottombar { bottom:6px; gap:2px; }
+ .bottombar .me-info, .bottombar .lbl { display:none; }
+ .bar-group { padding:0 2px; gap:2px; }
+ .clock { display:none; }
+ #interact-hint { bottom:150px; }
+ .video-strip { max-width:calc(100vw - 24px); top:52px; }
+}
+
+.btn-primary { background:var(--accent); color:var(--accent-ink); box-shadow:0 3px 0 #183e2a; }
+.backend-mode { font-size:11px; color:var(--muted); padding:4px; }
+.hud-menu summary:focus-visible { outline-offset:2px; }

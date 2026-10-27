@@ -503,6 +503,7 @@ export class SupabaseBackend {
       });
       ch = channel;
       channel.on('presence', { event: 'sync' }, () => {
+        if (left || current !== generation) return;
         const out = {};
         for (const [k, metas] of Object.entries(channel.presenceState())) {
           const m = metas[metas.length - 1];
@@ -513,7 +514,7 @@ export class SupabaseBackend {
         }
         room.emit('presence', out);
       });
-      channel.on('broadcast', { event: '*' }, (msg) => room.emit(msg.event, msg.payload));
+      channel.on('broadcast', { event: '*' }, (msg) => { if (!left && current === generation) room.emit(msg.event, msg.payload); });
       channel.subscribe(async (status, error) => {
         if (left || current !== generation) return;
         if (['CHANNEL_ERROR', 'TIMED_OUT', 'CLOSED'].includes(status)) {
@@ -564,6 +565,12 @@ export class SupabaseBackend {
       connect();
     };
 
+    const wake = () => {
+      if (left || document.hidden) return;
+      if (ch?.state === 'joined') ch.track(last).catch(() => {});
+      else retryWhenOnline();
+    };
+    document.addEventListener('visibilitychange', wake);
     window.addEventListener('online', retryWhenOnline);
     connect();
     room.send = (type, payload) => {
@@ -578,6 +585,7 @@ export class SupabaseBackend {
       left = true;
       clearTimeout(retryTimer);
       window.removeEventListener('online', retryWhenOnline);
+      document.removeEventListener('visibilitychange', wake);
       if (ch) return this.sb.removeChannel(ch);
       return Promise.resolve('ok');
     };

@@ -60,6 +60,26 @@ export class Hud {
       $('#chat-badge').hidden = !n;
       $('#chat-badge').textContent = n > 9 ? '9+' : n;
     });
+    const reactions = h('details', { class: 'hud-menu' }, h('summary', { title: 'Reações e emotes' }, '☺ Reações'));
+    bar.before(reactions);
+    reactions.append(bar);
+    const more = h('details', { class: 'hud-menu' }, h('summary', {}, 'Mais'));
+    const actions = h('div', { class: 'hud-actions' });
+    for (const id of ['btn-notes', 'btn-notion', 'btn-desk', 'btn-build', 'btn-pip', 'btn-integrations', 'btn-theme', 'btn-help', 'btn-logout']) {
+      const button = document.getElementById(id);
+      button.append(h('span', { class: 'action-label' }, button.title));
+      actions.append(button);
+    }
+    more.append(actions);
+    document.querySelector('.bottombar').append(more);
+    for (const menu of [reactions, more]) {
+      menu.addEventListener('keydown', (e) => { if (e.key === 'Escape') { menu.open = false; menu.querySelector('summary').focus(); } });
+      menu.addEventListener('click', (e) => { if (e.target.closest('button')) menu.open = false; });
+    }
+    const backendLabel = this.app.backend.mode === 'local' ? 'Demonstração: conexão somente entre abas deste navegador.' : 'Escritório online';
+    $('#status-select').title = backendLabel;
+    const mode = h('span', { class: 'backend-mode', title: backendLabel }, this.app.backend.mode === 'local' ? 'Demo local' : 'Online');
+    document.querySelector('.bottombar').append(mode);
     this.renderMedia();
   }
 

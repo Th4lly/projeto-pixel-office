@@ -106,11 +106,14 @@ export class Calls {
     const c = this.call;
     if (room && !c.room) c.room = room;
     for (const to of ids) {
+      if (to === app.me.id || this.outgoing.has(to) || c.members.has(to)) continue;
       app.room.send('call', { type: 'ring', id: c.id, to, from: app.me.id, name: app.me.name, place: place || c.place, room: c.room });
       const t = setTimeout(() => {
         this.outgoing.delete(to);
+        app.room.send('call', { type: 'hangup', id: c.id, to, from: app.me.id });
         const p = app.players.get(to);
         toast(`${p ? p.name : 'A pessoa'} não atendeu.`, 'warn', 3000);
+        this.finishUnanswered();
         this.renderBar();
       }, RING_MS);
       this.outgoing.set(to, t);
@@ -122,7 +125,7 @@ export class Calls {
 
   onSignal(msg) {
     const app = this.app;
-    if (msg.from === app.me.id) return;
+    if (msg.from === app.me.id || (msg.to && msg.to !== app.me.id)) return;
     switch (msg.type) {
       case 'ring':
         if (msg.to !== app.me.id) return;
@@ -131,7 +134,7 @@ export class Calls {
         this.incoming(msg);
         break;
       case 'accept':
-        if (!this.call || this.call.id !== msg.id) return;
+        if (!this.call || this.call.id !== msg.id || !this.outgoing.has(msg.from)) return;
         clearTimeout(this.outgoing.get(msg.from));
         this.outgoing.delete(msg.from);
         this.call.members.add(msg.from);
@@ -142,10 +145,11 @@ export class Calls {
         break;
       case 'decline':
       case 'busy':
-        if (msg.to !== app.me.id) return;
+        if (msg.to !== app.me.id || !this.call || this.call.id !== msg.id || !this.outgoing.has(msg.from)) return;
         clearTimeout(this.outgoing.get(msg.from));
         this.outgoing.delete(msg.from);
         toast(msg.type === 'busy' ? `${msg.name || 'A pessoa'} está em outra chamada.` : `${msg.name} recusou a chamada.`, 'warn', 3000);
+        this.finishUnanswered();
         this.renderBar();
         break;
       case 'members':
@@ -165,6 +169,10 @@ export class Calls {
         break;
       default:
     }
+  }
+
+  finishUnanswered() {
+    if (this.call && !this.call.members.size && !this.outgoing.size) this.end(true);
   }
 
   incoming(msg) {
@@ -261,7 +269,7 @@ export class Calls {
     fill(this.bar,
       h('span', { class: 'call-dot' }),
       h('div', { class: 'call-info' },
-        h('strong', {}, room ? `Reunião: ${room.name}` : 'Em chamada'),
+        h('strong', {}, room ? `Reunião: ${room.name}` : !c.members.size ? 'Chamando…' : [...c.members].some(id => app.media.peers.get(id)?.pc.connectionState === 'connected') ? 'Em chamada' : 'Conectando áudio…'),
         h('span', { class: 'muted small' }, [names.length ? names.join(', ') : 'só você', waiting.length ? ` · chamando ${waiting.join(', ')}…` : ''].join(''))),
       h('button', { type: 'button', class: 'bar-btn small', title: 'Adicionar pessoa', html: ICONS.plus, onclick: () => this.openDialer({ place: c.place }) }),
       h('button', { type: 'button', class: 'bar-btn small', title: 'Anexos, planilhas e gráficos da reunião', html: ICONS.clip, onclick: () => app.meetings.open(c.room || c.id, room ? room.name : 'Chamada') }),

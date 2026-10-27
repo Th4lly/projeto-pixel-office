@@ -110,6 +110,10 @@ export class Renderer {
         if (f.src && f.src.terrain) continue; // terreno com autotile: logo abaixo
         const ok = f.wall ? paintWall(ctx, t, x, y, !isW(x, y + 1), (dx, dy) => isW(x + dx, y + dy)) : paintFloor(ctx, t, x, y);
         if (!ok) complete = false;
+        if (!f.wall && /carpete|carpet|checker|xadrez|diamond|geometric/.test(t)) {
+          ctx.fillStyle = 'rgba(186,181,159,0.18)';
+          ctx.fillRect(x * TILE, y * TILE, TILE, TILE);
+        }
       }
     }
     if (!this.paintTerrain(ctx, w)) complete = false;
@@ -402,12 +406,7 @@ export class Renderer {
     let oo = o;
     let dd = def;
     if (def.door && o.data && o.data.skin && OBJECTS[`lpc-${o.data.skin}`]) dd = { ...OBJECTS[`lpc-${o.data.skin}`], w: def.w, h: def.h, door: true };
-    if (def.door && !(o.state && o.state.open)) {
-      // porta abre sozinha quando alguém chega perto (e fecha depois)
-      for (const p of this.app.players.values()) {
-        if (Math.abs(p.rx - o.x) <= 1.2 && Math.abs(p.ry - o.y) <= 1.2) { oo = { ...o, state: { ...(o.state || {}), open: true } }; break; }
-      }
-    }
+    if (def.door) oo = { ...o, _doorProgress: this.app.world.doors.get(o.id)?.progress || 0 };
     if (sk) {
       oo = { ...o, type: sk.type, color: sk.color || o.color, rot: sk.rot || o.rot };
       const alt = OBJECTS[sk.type];
@@ -693,6 +692,7 @@ export class Renderer {
     const dpr = this.dpr;
     ctx.font = `700 ${12 * dpr}px ${FONT}`;
     ctx.textBaseline = 'middle';
+    const occupied = [];
     for (const z of this.app.world.zones) {
       if (!z.name) continue;
       if (z.kind === 'desk') continue; // mesas: o dono aparece no destaque da mesa
@@ -702,6 +702,9 @@ export class Renderer {
       const h = 22 * dpr;
       const x = ox + (z.x + z.w / 2) * T - w / 2;
       const y = oy + z.y * T + 6 * dpr;
+      if (w > z.w * T + 12 * dpr) continue;
+      if (occupied.some((r) => x < r.x + r.w + 6 * dpr && x + w + 6 * dpr > r.x && y < r.y + r.h + 4 * dpr && y + h + 4 * dpr > r.y)) continue;
+      occupied.push({ x, y, w, h });
       roundRect(ctx, x, y, w, h, h / 2);
       ctx.fillStyle = 'rgba(255,250,240,0.86)';
       ctx.fill();

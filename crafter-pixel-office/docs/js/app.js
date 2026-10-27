@@ -142,18 +142,8 @@ export class App {
     let data = await this.backend.loadWorld(buildDefaultMap);
     const old = (data.map.version || 1) < MAP_VERSION || data.map.floor.some((t) => !FLOORS[t]);
     if (!old) return data;
-    try {
-      if (this.backend.upgradeWorld) await this.backend.upgradeWorld(buildDefaultMap());
-      data = await this.backend.loadWorld(buildDefaultMap);
-      if ((data.map.version || 1) < MAP_VERSION || data.map.floor.some((t) => !FLOORS[t])) throw new Error('mapa antigo');
-      toast('O escritório foi atualizado para o visual novo.', 'ok', 4000);
-      return data;
-    } catch (e) {
-      console.warn(e);
-      toast(e.message && !/mapa antigo/.test(e.message) ? e.message : 'Usando o escritório novo só neste navegador (rode a migração v2 do Supabase para salvar para todos).', 'warn', 7000);
-      const def = buildDefaultMap();
-      return { map: { ...def.map, openEdit: false }, objects: def.objects, zones: def.zones };
-    }
+    toast(this.user.admin ? 'Há um modelo de mapa mais recente. O mapa salvo foi preservado; use Construir para revisar ou restaurar o modelo conscientemente.' : 'O escritório está usando o mapa salvo pela equipe.', 'info', 5000);
+    return data;
   }
 
   spawnPoint() {
@@ -357,6 +347,7 @@ export class App {
     this.lastT = t;
     const me = this.me;
     const frozen = me.dead || (this.combat && (this.combat.statuses.stun || this.combat.statuses.freeze || this.combat.statuses.petrify));
+    this.world.updateDoors(this.players, dt);
     me.step(dt, frozen ? { direction: () => null } : this.input, this.world, (moved) => {
       this.room.send('move', { id: me.id, x: me.x, y: me.y, dir: me.dir });
       this.trackSoon();

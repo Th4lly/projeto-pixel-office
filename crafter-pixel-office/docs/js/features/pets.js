@@ -50,12 +50,13 @@ function anim(kind, name) {
 }
 
 /** Desenha um bichinho (base em cx, by). */
-export function drawPetSprite(ctx, kind, skin, name, t, cx, by, k, flip = false, alpha = 1) {
+export function drawPetSprite(ctx, kind, skin, name, t, cx, by, k, flip = false, alpha = 1, hop = 0) {
   const a = anim(kind, name);
   if (!a || !a.frames.length) return false;
   const K = KINDS[kind] || KINDS.gato;
   const sk = K.skins[skin || 0] || K.skins[0];
-  const f = a.frames[Math.floor(t * a.fps) % a.frames.length];
+  const jumping = kind === 'coelho' || kind === 'gatinho';
+  const f = a.frames[jumping && name === 'idle' ? 0 : Math.floor(t * a.fps) % a.frames.length];
   ctx.save();
   if (sk[1]) ctx.filter = sk[1];
   // sombra
@@ -65,7 +66,7 @@ export function drawPetSprite(ctx, kind, skin, name, t, cx, by, k, flip = false,
   ctx.ellipse(cx, by - k, 8 * k, 2.5 * k, 0, 0, Math.PI * 2);
   ctx.fill();
   ctx.globalAlpha = alpha;
-  drawFrame(ctx, a.p.s, f, cx, by + 2 * k, a.sc * k, flip);
+  drawFrame(ctx, a.p.s, f, cx, by + (a.p.groundOffset || 0) * a.sc * k - hop * k, a.sc * k, flip);
   ctx.restore();
   return true;
 }
@@ -81,17 +82,11 @@ export function petPose(o, t) {
   const sleeping = !!K.sleep && cyc > 38 && !(st.happy > now - 6000) && !(st.fed > now - 8000);
   if (sleeping) return { dx: 0, dy: 0, flip: false, name: 'sleep' };
   if (st.fed > now - 6000) return { dx: 0, dy: 0, flip: false, name: 'idle', bowl: true };
-  // passeio suave em volta da casinha (só onde dá para andar)
-  let dx = Math.sin(t * 0.33 + ph) * 1.3;
-  let dy = Math.sin(t * 0.21 + ph * 2) * 0.6;
-  if (WORLD) {
-    const tx = Math.round(o.x + dx);
-    const ty = Math.round(o.y + dy);
-    if (!WORLD.walkable(tx, ty)) { dx *= 0.2; dy *= 0.2; }
-  }
-  const flip = Math.cos(t * 0.33 + ph) < 0;
-  const hop = st.happy > now - 2500 ? Math.abs(Math.sin((now - st.happy) / 120)) * 6 : 0;
-  return { dx, dy, flip, name: st.play > now - 15000 && K.play ? 'play' : 'idle', hop };
+  // Available packs have idle/jump clips, not directional walking. Keep feet grounded.
+  const playing = st.play > now - 15000;
+  const hop = st.happy > now - 2500 ? Math.abs(Math.sin((now - st.happy) / 120)) * 4 : 0;
+  return { dx: 0, dy: 0, flip: false, name: playing ? 'play' : 'idle', hop };
+
 }
 
 /** Bichinho do mapa (chamado pelo desenho de objetos). */
@@ -99,14 +94,14 @@ export function drawWorldPet(ctx, o, cx, by, k, t, alpha = 1) {
   const d = o.data || {};
   const pose = petPose(o, t);
   const x = cx + pose.dx * TILE * k;
-  const y = by + pose.dy * TILE * k - (pose.hop || 0) * k;
+  const y = by + pose.dy * TILE * k;
   if (pose.bowl) {
     ctx.fillStyle = '#c0504d';
     ctx.fillRect(x + 6 * k, by - 4 * k, 9 * k, 3 * k);
     ctx.fillStyle = '#8a5a2b';
     ctx.fillRect(x + 7 * k, by - 5 * k, 7 * k, 1.5 * k);
   }
-  const ok = drawPetSprite(ctx, d.kind || 'gato', d.skin || 0, pose.name, t, x, y, k, pose.flip, alpha);
+  const ok = drawPetSprite(ctx, d.kind || 'gato', d.skin || 0, pose.name, t, x, y, k, pose.flip, alpha, pose.hop || 0);
   if (o.state && o.state.happy > Date.now() - 2500) {
     ctx.font = `${10 * k}px serif`;
     ctx.textAlign = 'center';

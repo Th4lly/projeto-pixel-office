@@ -257,6 +257,20 @@ export function fitScale(def) {
 /** Desenha o objeto com a base no fundo da área (x0, y0 em px de tela do canto do tile; k = px de tela por px de mundo). */
 export function drawObjectSprite(ctx, o, def, x0, y0, k, t = 0, alpha = 1) {
   const dm = dims(o, def);
+  if (o.type === 'lpc-ponte-reta' && !o.rot) {
+    const w = 3 * TILE * k, height = 4 * TILE * k;
+    ctx.save(); ctx.globalAlpha = alpha;
+    ctx.fillStyle = '#30291f'; ctx.fillRect(x0, y0 + 3 * k, w, height);
+    ctx.fillStyle = '#6f5238'; ctx.fillRect(x0 + 3 * k, y0, w - 6 * k, height);
+    for (let y = 0; y < 4 * TILE; y += 8) {
+      ctx.fillStyle = y % 16 ? '#98734b' : '#a98253';
+      ctx.fillRect(x0 + 4 * k, y0 + y * k, w - 8 * k, 7 * k);
+      ctx.fillStyle = '#c19a68'; ctx.fillRect(x0 + 4 * k, y0 + y * k, w - 8 * k, k);
+    }
+    ctx.fillStyle = '#4e3b2c';
+    for (const dx of [0, 3 * TILE - 3]) ctx.fillRect(x0 + dx * k, y0, 3 * k, height);
+    ctx.restore(); return true;
+  }
   // ajuste fino (meio tile) para alinhar, p. ex., cadeira no centro de uma mesa de 2 tiles
   if (o.data && (o.data.ox || o.data.oy)) { x0 += (o.data.ox || 0) * k; y0 += (o.data.oy || 0) * k; }
   const cx = x0 + (dm.w * TILE * k) / 2;
@@ -282,10 +296,20 @@ export function drawObjectSprite(ctx, o, def, x0, y0, k, t = 0, alpha = 1) {
   const { art, rest } = pickRot(def, rotOf(o, def));
   if (art) ({ s: sid, f } = art);
   if (!art && s.frames && s.frames.length > 1) f = frameAt(s.frames, t + (o.x || 0) * 0.13, 8);
-  if (s.alt && o.state && (o.state.on || o.state.open)) { sid = s.alt.s; if (s.alt.f) f = s.alt.f; }
+  if (!def.door && s.alt && o.state && (o.state.on || o.state.open)) { sid = s.alt.s; if (s.alt.f) f = s.alt.f; }
   if (s.custom) sid = s.s;
   const ws = fitScale(def);
   const sc = ws * k;
+  if (def.door) {
+    const progress = o._doorProgress ?? (o.state?.open ? 1 : 0);
+    const width = f[2] * sc;
+    ctx.save();
+    ctx.translate(cx - width / 2, by);
+    ctx.scale(Math.max(0.12, Math.cos(progress * Math.PI / 2)), 1);
+    const ok = drawStyled(ctx, sid, f, width / 2, 0, ws, k, !!o.flip, alpha);
+    ctx.restore();
+    return ok;
+  }
   if (!rest) return drawStyled(ctx, sid, f, cx, by, ws, k, !!o.flip, alpha);
   // gira em volta do centro da área no chão
   const cy = y0 + (dm.h * TILE * k) / 2;
@@ -306,7 +330,7 @@ export function npcFrames(o) {
   if (!n) return null;
   if (n.anims) {
     const a = n.anims['idle-down'] || n.anims.idle || n.anims.idle_down || Object.values(n.anims)[0];
-    return { s: a.s ?? n.s, frames: a.frames, sc: n.sc || 1 };
+    return { s: a.s ?? n.s, frames: a.frames, sc: n.sc || 1, animated: true };
   }
   return { s: n.s, frames: n.frames, sc: n.sc || 1 };
 }
@@ -315,13 +339,13 @@ function drawNpc(ctx, o, cx, by, k, t, alpha) {
   const a = npcFrames(o);
   if (!a || !a.frames.length) return false;
   // NPCs do RO: a sequência costuma ter várias direções; usa só os primeiros quadros (parado, de frente)
-  const seq = a.frames.length > 8 ? a.frames.slice(0, 1) : a.frames;
+  const seq = a.animated ? a.frames : a.frames.slice(0, 1);
   const f = frameAt(seq, t + (o.x || 0) * 0.37, 4);
   ctx.fillStyle = 'rgba(20,10,40,0.25)';
   ctx.beginPath();
   ctx.ellipse(cx, by - 1 * k, 9 * k, 3 * k, 0, 0, Math.PI * 2);
   ctx.fill();
-  const sc = Math.min(a.sc, (TILE * 1.9) / f[3]) * k;
+  const sc = Math.min(a.sc, (TILE * 1.9) / Math.max(...seq.map(frame => frame[3]))) * k;
   return drawFrame(ctx, a.s, f, cx, by, sc, !!o.flip, alpha);
 }
 

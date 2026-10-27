@@ -16,6 +16,8 @@ export class Media {
     this.screen = null;
     this.peers = new Map();
     this.tiles = new Map();
+    this.earlyCandidates = new Map();
+    this.signalQueues = new Map();
     this.ctx = null;
     setInterval(() => this.tick(), 700);
     setInterval(() => this.detectSpeaking(), 200);
@@ -40,6 +42,13 @@ export class Media {
   }
 
   async enable() {
+    if (this.stream) return true;
+    if (this.enabling) return this.enabling;
+    this.enabling = this.acquireMedia();
+    try { return await this.enabling; } finally { this.enabling = null; }
+  }
+
+  async acquireMedia() {
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
       toast('Câmera/microfone exigem HTTPS (o GitHub Pages já usa).', 'error', 5000);
       return false;
@@ -132,7 +141,7 @@ export class Media {
       if (!kind || t.stopped) continue;
       try {
         t.direction = 'sendrecv';
-        t.sender.replaceTrack(this.localTrack(kind));
+        t.sender.replaceTrack(this.localTrack(kind)).catch(() => console.warn('[rtc] Não foi possível atualizar a mídia.'));
       } catch (e) { console.warn('[rtc] replaceTrack', e); }
     }
   }
@@ -175,6 +184,11 @@ export class Media {
   tick() {
     const { app } = this;
     if (!app.me || !app.room) return;
+    for (const [id, early] of this.earlyCandidates) if (Date.now() - early.at > 15000) this.earlyCandidates.delete(id);
+    for (const [id, peer] of this.peers) {
+      const stalled = peer.pc.connectionState !== 'connected' && Date.now() - peer.createdAt > 20000;
+      if (stalled || (peer.disconnectedAt && Date.now() - peer.disconnectedAt > 8000)) this.close(id, true);
+    }
     for (const p of app.players.values()) {
       if (p === app.me) continue;
       const want = this.wants(p);
@@ -188,7 +202,9 @@ export class Media {
 
   createPeer(id, initiator) {
     const pc = new RTCPeerConnection({ iceServers: this.app.iceServers });
-    const peer = { pc, pending: [], remote: new MediaStream(), audio: null };
+    const early = this.earlyCandidates.get(id);
+    this.earlyCandidates.delete(id);
+    const peer = { pc, pending: early && Date.now() - early.at < 15000 ? early.items : [], remote: new MediaStream(), audio: null, createdAt: Date.now(), disconnectedAt: 0 };
     this.peers.set(id, peer);
     if (initiator) {
       pc.addTransceiver('audio', { direction: 'sendrecv' });
@@ -203,12 +219,16 @@ export class Media {
       if (e.track.kind === 'audio') this.attachAudio(peer, e.track);
     };
     pc.onconnectionstatechange = () => {
-      if (['failed', 'closed'].includes(pc.connectionState)) this.close(id);
+      if (this.peers.get(id) !== peer) return;
+      peer.disconnectedAt = pc.connectionState === 'disconnected' ? Date.now() : 0;
+      if (['failed', 'closed'].includes(pc.connectionState)) this.close(id, true);
+      this.app.calls?.renderBar();
     };
     return peer;
   }
 
   async call(id) {
+    if (this.peers.has(id)) return;
     try {
       const peer = this.createPeer(id, true);
       await peer.pc.setLocalDescription(await peer.pc.createOffer());
@@ -219,7 +239,15 @@ export class Media {
     }
   }
 
-  async onSignal({ to, from, data }) {
+  onSignal(message) {
+    const previous = this.signalQueues.get(message.from) || Promise.resolve();
+    const next = previous.catch(() => {}).then(() => this.handleSignal(message));
+    this.signalQueues.set(message.from, next);
+    next.finally(() => { if (this.signalQueues.get(message.from) === next) this.signalQueues.delete(message.from); });
+    return next;
+  }
+
+  async handleSignal({ to, from, data }) {
     if (to !== this.app.me.id || !data) return;
     try {
       if (data.type === 'offer') {
@@ -240,7 +268,14 @@ export class Media {
         }
       } else if (data.type === 'candidate') {
         const peer = this.peers.get(from);
-        if (!peer) return;
+        if (!peer) {
+          if (!this.app.players.has(from)) return;
+          let early = this.earlyCandidates.get(from);
+          if (!early || Date.now() - early.at > 15000) early = { at: Date.now(), items: [] };
+          if (early.items.length < 64) early.items.push(data.candidate);
+          this.earlyCandidates.set(from, early);
+          return;
+        }
         if (peer.pc.remoteDescription) await peer.pc.addIceCandidate(data.candidate);
         else peer.pending.push(data.candidate);
       } else if (data.type === 'bye') {
@@ -260,7 +295,7 @@ export class Media {
     if (!peer) return;
     this.peers.delete(id);
     try { peer.pc.close(); } catch { /* já fechado */ }
-    if (peer.audio) { try { peer.audio.src.disconnect(); peer.audio.gain.disconnect(); } catch { /* ok */ } }
+    if (peer.audio) { try { peer.audio.src.disconnect(); peer.audio.gain.disconnect(); peer.audio.pan?.disconnect(); peer.audio.analyser.disconnect(); } catch { /* ok */ } }
     this.removeTile(id);
     if (notify) this.send(id, { type: 'bye' });
   }
@@ -304,6 +339,7 @@ export class Media {
       const audience = meOnStage && !near && !onStage(app.world, p);
       if (audience) vol = 0; // no palco, eu não ouço a plateia inteira
       if (peer.audio && this.ctx) {
+        if (tile) tile.video.muted = true;
         peer.audio.gain.gain.setTargetAtTime(vol, this.ctx.currentTime, 0.15);
         if (peer.audio.pan) peer.audio.pan.pan.setTargetAtTime(pan, this.ctx.currentTime, 0.15);
       } else if (tile) {

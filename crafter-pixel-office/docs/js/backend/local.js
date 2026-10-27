@@ -591,10 +591,13 @@ export class LocalBackend {
       for (const [k, v] of peers) if (Date.now() - v.seen > 7000) { peers.delete(k); changed = true; }
       if (changed) publish();
     }, 2000);
+    const wake = () => { if (!document.hidden) { hb(); publish(); } };
+    document.addEventListener('visibilitychange', wake);
+    window.addEventListener('pageshow', wake);
     const bye = () => bus.postMessage({ t: 'bye', key });
     window.addEventListener('pagehide', bye);
 
-    setTimeout(() => {
+    const joinTimer = setTimeout(() => {
       room.emit('status', 'SUBSCRIBED');
       hb();
       publish();
@@ -610,6 +613,10 @@ export class LocalBackend {
     };
     room.leave = () => {
       clearInterval(timer);
+      clearTimeout(joinTimer);
+      window.removeEventListener('pagehide', bye);
+      window.removeEventListener('pageshow', wake);
+      document.removeEventListener('visibilitychange', wake);
       bye();
       bus.close();
     };
