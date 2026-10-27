@@ -5,20 +5,13 @@ import { openModal } from '../ui/modal.js';
 import { CAT, frameCanvas } from '../art/assets.js';
 import { npcFrames, OBJECTS } from '../art/objects.js';
 import { blip } from '../audio.js';
-import { BUFFS } from './interactions.js';
-import { openStation, openMenu } from './cafe.js';
 
 export const ROLES = {
-  guide: { name: 'Recepcionista', title: 'Guia do escritório', hello: 'Olá! Posso te mostrar o escritório, te levar a algum lugar ou te ajudar a achar uma mesa.' },
-  kafra: { name: 'Kafra', title: 'Serviço de teletransporte Kafra', hello: 'Bem-vindo ao Serviço Kafra! Para onde deseja ir?' },
-  arena: { name: 'Mestre da Arena', title: 'Mestre da Arena', hello: 'Guerreiro! Aqui eu curo suas feridas, explico as regras d20 e solto monstros na arena.' },
-  merchant: { name: 'Mercador', title: 'Mercador', hello: 'Itens para decorar e construir! Pague com zeny que você ganha na arena.' },
-  barista: { name: 'Barista', title: 'Barista da copa', hello: 'O que vai ser hoje?' },
-  quests: { name: 'Mestre das Quests', title: 'Mestre das Quests', hello: 'As tarefas do time viram missões. Quer ver o quadro?' },
-  notion: { name: 'Assistente', title: 'Assistente de projetos', hello: 'Posso abrir o board do Notion da empresa ou o seu.' },
+  secretary: { name: 'Secretária', title: 'Secretária da recepção', hello: 'Bem-vindo ao escritório! Posso achar uma mesa para você, levar você a uma sala, ligar para alguém ou abrir a loja de decoração.' },
+  info: { name: 'Guia', title: 'Informações', hello: '' },
+  arena: { name: 'Mestre do Quartel', title: 'Mestre do Quartel', hello: 'Aqui eu curo suas feridas, explico as regras d20 e solto monstros nas arenas.' },
 };
 
-const DRINKS = [['coffee', 'Café'], ['tea', 'Chá'], ['drink', 'Suco'], ['snack', 'Lanche'], ['soup', 'Sopa mágica'], ['water_drink', 'Água']];
 
 export class NpcRoles {
   constructor(app) {
@@ -26,7 +19,7 @@ export class NpcRoles {
   }
 
   roleOf(o) {
-    return ROLES[(o.data && o.data.role) || 'guide'] || ROLES.guide;
+    return ROLES[(o.data && o.data.role) || 'secretary'] || ROLES.secretary;
   }
 
   nameOf(o) {
@@ -40,7 +33,7 @@ export class NpcRoles {
 
   open(o) {
     const app = this.app;
-    const role = (o.data && o.data.role) || 'guide';
+    const role = (o.data && o.data.role) || 'secretary';
     const R = this.roleOf(o);
     const body = h('div', { class: 'npc-dialog' });
     const m = openModal({ title: `${this.nameOf(o)} — ${R.title}`, content: body, className: 'modal-wide' });
@@ -48,9 +41,6 @@ export class NpcRoles {
     const opt = (label, fn) => h('button', { type: 'button', class: 'npc-opt', onclick: () => fn() }, label);
     let options = [];
     switch (role) {
-      case 'kafra':
-        options = [opt('🌀 Teletransporte', () => this.teleportMenu(body, m)), opt('🎒 Ver meu inventário', () => { m.close(); app.inventory.open(); })];
-        break;
       case 'arena':
         options = [
           opt('💖 Curar HP e SP', () => {
@@ -63,44 +53,30 @@ export class NpcRoles {
           }),
           opt('📜 Minha ficha e regras d20', () => { m.close(); app.combat.openSheet(); }),
           opt('🐉 Soltar uma onda de monstros', () => {
-            const z = app.world.zones.find((zz) => zz.kind === 'arena' && !/chefe|mvp|covil/i.test(zz.name));
+            const z = app.world.zones.find((zz) => zz.kind === 'arena' && /monstros/i.test(zz.name));
             if (!z) return toast('Não há arena de monstros no mapa.', 'warn');
             for (let i = 0; i < 3; i++) app.room.send('cbt', { type: 'summon', zone: z.id });
             if (app.combat.isAuthority(z)) for (let i = 0; i < 3; i++) app.combat.spawn(z);
             toast('Três monstros entraram na arena!', 'ok', 2000);
           }),
           opt('⚔️ Ranking PvP', () => this.ranking(body)),
-          opt('🌀 Ir para a arena', () => { m.close(); this.goZone(/arena dos monstros/i); }),
         ];
         break;
-      case 'merchant':
-        options = [opt('🛒 Comprar e vender', () => { m.close(); app.inventory.openShop(this.nameOf(o)); }), opt('🎒 Meu inventário', () => { m.close(); app.inventory.open(); })];
-        break;
-      case 'barista':
-        options = [opt('👩‍🍳 Preparar eu mesmo (minijogo)', () => { m.close(); openStation(app, 'bar', 'Balcão do café'); }), opt('📜 Cardápio', () => { m.close(); openMenu(); })].concat(DRINKS.map(([k, label]) => opt(`${BUFFS[k][0]} ${label}`, () => {
-          const [e, buff, min, msg] = BUFFS[k];
-          app.addBuff(e, buff, min);
-          app.emote(e);
-          toast(`${msg} (${buff} por ${min} min)`, 'ok', 2200);
-          m.close();
-        })));
-        break;
-      case 'quests':
-        options = [opt('📜 Quadro de quests', () => { m.close(); app.quests.open(); }), opt('🏆 Ranking de heróis', () => { m.close(); app.quests.openRanking(); }),
-          opt('🗂️ Minhas quests', () => { m.close(); app.sidebar.toggle('myquests'); })];
-        break;
-      case 'notion':
-        options = [opt('📋 Boards do Notion', () => { m.close(); app.notion.open(); }), opt('📎 Anexos da reunião desta sala', () => {
-          const z = app.world.zonesAt(o.x, o.y).find((zz) => zz.kind === 'private' || zz.meeting);
-          m.close();
-          app.meetings.open(z ? z.id : o.id, z ? z.name : 'Reunião');
-        })];
-        break;
-      default: // guia
+      case 'info': {
+        // faz o papel das antigas placas: o texto da área + atalhos para onde ela indica
+        const text = (o.data && (o.data.text || o.data.hello)) || 'Olá!';
+        fill(body, h('div', { class: 'npc-head' }, this.portrait(o), h('p', { class: 'npc-hello' }, text)),
+          h('div', { class: 'npc-opts' }, opt('🗺️ Me leve até…', () => this.teleportMenu(body, m, true)), opt('👋 Obrigado!', () => m.close())));
+        return;
+      }
+      default: // secretária
         options = [
-          opt('🗺️ Me leve até…', () => this.teleportMenu(body, m, true)),
           opt('🪑 Achar uma mesa para mim', () => { m.close(); this.findDesk(); }),
+          opt('🗺️ Me leve até…', () => this.teleportMenu(body, m, true)),
           opt('📞 Ligar para alguém', () => { m.close(); app.calls.openDialer({ place: 'recepção' }); }),
+          opt('🛒 Loja de decoração (zeny)', () => { m.close(); app.inventory.openShop(this.nameOf(o)); }),
+          opt('📋 Quadro de quests', () => { m.close(); app.quests.open(); }),
+          opt('📅 Minha agenda', () => { m.close(); app.integrations.openCalendar(); }),
           opt('❓ Como funciona o escritório', () => { m.close(); document.getElementById('btn-help').click(); }),
         ];
     }
@@ -160,9 +136,9 @@ export class NpcRoles {
   edit(o) {
     const app = this.app;
     const d = o.data || {};
-    const role = h('select', {}, Object.entries(ROLES).map(([k, r]) => h('option', { value: k, selected: (d.role || 'guide') === k }, `${r.name} — ${r.title}`)));
+    const role = h('select', {}, Object.entries(ROLES).map(([k, r]) => h('option', { value: k, selected: (d.role || 'secretary') === k }, `${r.name} — ${r.title}`)));
     const name = h('input', { type: 'text', maxlength: 30, value: d.name || '', placeholder: 'Nome (opcional)' });
-    const hello = h('textarea', { rows: 2, maxlength: 300, placeholder: 'Fala de boas-vindas (opcional)' }, d.hello || '');
+    const hello = h('textarea', { rows: 3, maxlength: 600, placeholder: 'Fala (para o guia: o texto informativo da área)' }, d.text || d.hello || '');
     let sprite = d.sprite || '';
     const grid = h('div', { class: 'palette npc-sprites' });
     const paintGrid = () => fill(grid, CAT.npcs.slice(0, 160).map((n) => {
@@ -174,7 +150,7 @@ export class NpcRoles {
       title: 'Editar NPC', className: 'modal-wide',
       content: h('div', { class: 'form-stack' }, h('label', {}, 'Função', role), h('label', {}, 'Nome', name), h('label', {}, 'Fala', hello), h('div', { class: 'opt-label' }, 'Aparência'), grid),
       footer: [h('button', { class: 'btn-primary', onclick: () => {
-        app.edit([{ t: 'data', id: o.id, data: { ...d, role: role.value, name: name.value.trim(), hello: hello.value.trim(), sprite } }]);
+        app.edit([{ t: 'data', id: o.id, data: { ...d, role: role.value, name: name.value.trim(), hello: hello.value.trim(), text: role.value === 'info' ? hello.value.trim() : d.text, sprite } }]);
         m.close();
       } }, 'Salvar')],
     });

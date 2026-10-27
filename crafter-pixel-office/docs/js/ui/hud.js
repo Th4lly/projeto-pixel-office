@@ -150,7 +150,6 @@ function showHelp() {
         row(['🖱️ dir.'], 'Botão direito num móvel: examinar, girar, ação, guardar'),
         row(['🖱️ dir.'], 'Botão direito num colega: seguir (Esc para parar)'),
         row(['Insert', 'C'], 'Sentar no chão (regenera HP/SP em dobro)'),
-        row(['M'], 'Mostrar/esconder o minimapa (clique nele para andar)'),
         row(['Esc'], 'Fechar janelas')),
       h('ul', { class: 'tips' },
         h('li', {}, 'Ative câmera/microfone e chegue perto de alguém: a conversa abre sozinha. O som vem do lado em que a pessoa está.'),

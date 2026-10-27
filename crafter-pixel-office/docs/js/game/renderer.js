@@ -8,8 +8,8 @@ import { dirFromAngle } from './dirs.js';
 import { FX, parseFx } from './world.js';
 import { drawAvatar, drawPet, drawWeapon } from '../art/avatar.js';
 import { onStage } from './world.js';
-import { drawDecorItem } from '../features/desks.js';
-import { IDX, image, drawFrame, frameAt } from '../art/assets.js';
+import { drawDeskSet, deskMeta } from '../features/deskSlots.js';
+import { IDX, CAT, image, drawFrame, frameAt } from '../art/assets.js';
 
 const ZOOMS = [0.5, 0.75, 1, 1.25, 1.5, 2, 2.5];
 const STATUS_COLORS = { online: '#3ddc84', busy: '#ff5d5d', away: '#ffc93c' };
@@ -107,10 +107,12 @@ export class Renderer {
       for (let x = 0; x < w.width; x++) {
         const t = w.floorAt(x, y);
         const f = FLOORS[t] || FLOORS.void;
+        if (f.src && f.src.terrain) continue; // terreno com autotile: logo abaixo
         const ok = f.wall ? paintWall(ctx, t, x, y, !isW(x, y + 1), (dx, dy) => isW(x + dx, y + dy)) : paintFloor(ctx, t, x, y);
         if (!ok) complete = false;
       }
     }
+    if (!this.paintTerrain(ctx, w)) complete = false;
     // bordas orgânicas: a grama "morde" a terra/caminho vizinho (como num tileset de bosque)
     const GRASS = (id) => /seasonal-sample-summer-png-(1|8)$|extra-floor-grama/.test(id || '');
     const hash = (a, b, c) => { let n = (a * 374761393 + b * 668265263 + c * 2147483647) | 0; n = (n ^ (n >>> 13)) * 1274126177; return ((n ^ (n >>> 16)) >>> 0); };
@@ -177,7 +179,8 @@ export class Renderer {
         const tr = w.floorAt(x + 1, y);
         const tb = w.floorAt(x, y + 1);
         ctx.fillStyle = 'rgba(15,10,22,.45)';
-        const hard = (o) => o !== t && FLOORS[o] && !FLOORS[o].wall && o !== 'void' && !GRASS(o) && !GRASS(t);
+        const terr = (id) => !!(FLOORS[id] && FLOORS[id].src && FLOORS[id].src.terrain);
+        const hard = (o) => o !== t && FLOORS[o] && !FLOORS[o].wall && o !== 'void' && !GRASS(o) && !GRASS(t) && !terr(o) && !terr(t);
         if (x + 1 < w.width && hard(tr)) ctx.fillRect(px + TILE - 1, py, 2, TILE);
         if (y + 1 < w.height && hard(tb)) ctx.fillRect(px, py + TILE - 1, TILE, 2);
       }
@@ -210,6 +213,123 @@ export class Renderer {
     }
     this.dirty = false;
     this.complete = complete;
+  }
+
+  /**
+   * Terreno do LPC (grama, terra, água, areia) com bordas automáticas: cada canto do tile
+   * (vértice) é "grama" ou "água" quando os 4 tiles em volta são; a peça certa do tileset
+   * (ilha 3x3 + cantos internos 2x2) sai dos 4 cantos. Margens e caminhos ficam orgânicos.
+   */
+  paintTerrain(ctx, w) {
+    const TER = CAT.terrain;
+    if (!TER) return true;
+    const img = image(TER.s);
+    let ok = true;
+    const kindAt = (x, y) => {
+      if (!w.inBounds(x, y)) return 'out';
+      const f = FLOORS[w.floorAt(x, y)];
+      return (f && f.src && f.src.terrain) || 'out';
+    };
+    const hash = (a, b) => { let n = (a * 374761393 + b * 668265263) | 0; n = (n ^ (n >>> 13)) * 1274126177; return ((n ^ (n >>> 16)) >>> 0); };
+    const blit = (cx, cy, x, y) => ctx.drawImage(img, cx * 32, cy * 32, 32, 32, x * TILE, y * TILE, TILE, TILE);
+    const ISL = {};
+    for (let cy = 0; cy < 3; cy++) for (let cx = 0; cx < 3; cx++) ISL[`${+(cx > 0 && cy > 0)}${+(cx < 2 && cy > 0)}${+(cx > 0 && cy < 2)}${+(cx < 2 && cy < 2)}`] = [cx, cy];
+    const INNER = { '1110': [0, 0], '1101': [1, 0], '1011': [0, 1], '0111': [1, 1] };
+    const piece = (set, key, x, y, fullList, seed) => {
+      if (key === '0000') return;
+      if (key === '1111') { const v = fullList[seed % fullList.length]; blit(v[0], v[1], x, y); return; }
+      if (INNER[key]) { const [a, b] = INNER[key]; blit(set.inner[0] + a, set.inner[1] + b, x, y); return; }
+      if (ISL[key]) { const [a, b] = ISL[key]; blit(set.island[0] + a, set.island[1] + b, x, y); return; }
+      // diagonal: duas peças de canto
+      if (key === '1001') { piece(set, '1000', x, y, fullList, seed); piece(set, '0001', x, y, fullList, seed); }
+      else if (key === '0110') { piece(set, '0100', x, y, fullList, seed); piece(set, '0010', x, y, fullList, seed); }
+    };
+    const vtx = (vx, vy, test) => test(kindAt(vx - 1, vy - 1)) && test(kindAt(vx, vy - 1)) && test(kindAt(vx - 1, vy)) && test(kindAt(vx, vy));
+    const isGrass = (k) => k === 'grass' || k === 'water' || k === 'out';
+    const isWater = (k) => k === 'water';
+    for (let y = 0; y < w.height; y++) {
+      for (let x = 0; x < w.width; x++) {
+        const k = kindAt(x, y);
+        if (k === 'out') continue;
+        if (!img) { ctx.fillStyle = (FLOORS[w.floorAt(x, y)] || {}).color || '#4a7a3a'; ctx.fillRect(x * TILE, y * TILE, TILE, TILE); ok = false; continue; }
+        const seed = hash(x, y);
+        // base: terra (ou areia)
+        const base = k === 'sand' ? TER.sand.full : TER.dirt.full;
+        const bv = base[seed % base.length];
+        blit(bv[0], bv[1], x, y);
+        const g = `${+vtx(x, y, isGrass)}${+vtx(x + 1, y, isGrass)}${+vtx(x, y + 1, isGrass)}${+vtx(x + 1, y + 1, isGrass)}`;
+        if (k !== 'sand') piece(TER.grass, g, x, y, TER.grass.full, seed >>> 3);
+        if (k === 'grass' && g === '1111' && seed % 11 === 0) { const d = TER.deco[seed % TER.deco.length]; blit(d[0], d[1], x, y); }
+        const wv = `${+vtx(x, y, isWater)}${+vtx(x + 1, y, isWater)}${+vtx(x, y + 1, isWater)}${+vtx(x + 1, y + 1, isWater)}`;
+        piece(TER.water, wv, x, y, TER.water.full, seed >>> 5);
+      }
+    }
+    return ok;
+  }
+
+  /** Mesas reivindicadas: piso destacado na cor do dono, borda tracejada e plaquinha com o nome. */
+  drawDeskAreas(ox, oy, S, T) {
+    const { ctx } = this;
+    const w = this.app.world;
+    const dpr = this.dpr;
+    for (const z of w.zones) {
+      if (z.kind !== 'desk') continue;
+      const desk = w.deskOfZone(z);
+      const own = desk && desk.data && desk.data.owner;
+      if (!own) continue;
+      const mine = own.uid === this.app.user.id;
+      const hue = [...String(own.uid)].reduce((a, c) => (a * 31 + c.charCodeAt(0)) % 360, 7);
+      const x = ox + z.x * T;
+      const y = oy + z.y * T;
+      ctx.save();
+      ctx.fillStyle = `hsla(${hue},70%,60%,${mine ? 0.16 : 0.1})`;
+      ctx.fillRect(x, y, z.w * T, z.h * T);
+      ctx.setLineDash([4 * S, 3 * S]);
+      ctx.lineWidth = Math.max(1, S);
+      ctx.strokeStyle = `hsla(${hue},70%,${mine ? 70 : 55}%,0.85)`;
+      ctx.strokeRect(x + S, y + S, z.w * T - 2 * S, z.h * T - 2 * S);
+      ctx.setLineDash([]);
+      const label = `${deskMeta(desk).private ? '🔒 ' : ''}${own.name}`;
+      ctx.font = `700 ${10 * dpr}px ${FONT}`;
+      ctx.textBaseline = 'middle';
+      const tw = ctx.measureText(label).width + 12 * dpr;
+      const th = 16 * dpr;
+      const lx = x + (z.w * T) / 2 - tw / 2;
+      const ly = y + 2 * S;
+      roundRect(ctx, lx, ly, tw, th, th / 2);
+      ctx.fillStyle = `hsla(${hue},55%,28%,0.88)`;
+      ctx.fill();
+      ctx.fillStyle = '#fff';
+      ctx.fillText(label, lx + 6 * dpr, ly + th / 2 + 0.5 * dpr);
+      ctx.restore();
+    }
+  }
+
+  /** Portais: anel que pulsa e faíscas subindo (o pad de pedra é desenhado no piso). */
+  drawPortals(ox, oy, S, T, time) {
+    const { ctx } = this;
+    for (const o of this.app.world.objects) {
+      if (o.type !== 'portal') continue;
+      const cx = ox + (o.x + 0.5) * T;
+      const cy = oy + (o.y + 0.62) * T;
+      ctx.save();
+      ctx.globalCompositeOperation = 'lighter';
+      const pulse = 0.5 + 0.5 * Math.sin(time * 3 + o.x);
+      ctx.strokeStyle = `rgba(140,220,255,${0.35 + pulse * 0.35})`;
+      ctx.lineWidth = 2 * S;
+      ctx.beginPath();
+      ctx.ellipse(cx, cy, (12 + pulse * 3) * S, (6 + pulse * 1.5) * S, 0, 0, Math.PI * 2);
+      ctx.stroke();
+      for (let i = 0; i < 7; i++) {
+        const ph = (time * 0.6 + i / 7 + o.y * 0.13) % 1;
+        const a = i * 2.39 + o.x;
+        const px = cx + Math.cos(a) * 9 * S * (1 - ph * 0.5);
+        const py = cy - ph * 30 * S;
+        ctx.fillStyle = `rgba(170,235,255,${(1 - ph) * 0.9})`;
+        ctx.fillRect(Math.round(px), Math.round(py), Math.max(1, Math.round(2 * S)), Math.max(1, Math.round(2 * S)));
+      }
+      ctx.restore();
+    }
   }
 
   draw(time) {
@@ -246,12 +366,9 @@ export class Renderer {
       // cadeira de costas (virada para cima): o encosto fica na frente de quem senta
       if (def.sit) { const a = rotOf(o, def); if (a > 100 && a < 260) z = o.y + dm.h + 0.01; }
       items.push({ z, o, def });
-      if (def.desk && o.data && Array.isArray(o.data.decor) && o.data.decor.length && app.desks) {
-        const zone = app.desks.zoneOf(o);
-        for (const d of o.data.decor) {
-          const dz = d.layer === 'top' ? z + 0.01 : zone.y + d.dy / TILE;
-          items.push({ z: dz, draw: (c, ox2, oy2, S2) => drawDecorItem(c, d, ox2 + (zone.x * TILE + d.dx) * S2, oy2 + (zone.y * TILE + d.dy) * S2, S2, time) });
-        }
+      if (def.desk && def.w === 2 && def.h === 1) {
+        // computador + itens dos 7 espaços, na escala da mesa
+        items.push({ z: z + 0.01, draw: (c, ox2, oy2, S2) => drawDeskSet(c, o, def, ox2 + o.x * TILE * S2, oy2 + o.y * TILE * S2, S2, time) });
       }
     }
     for (const p of app.players.values()) items.push({ z: p.ry + 1.001 + (this.isSitting(p) ? 0.002 : 0), p });
@@ -264,6 +381,8 @@ export class Renderer {
     }
 
     this.drawForeground(ox, oy, S, T);
+    this.drawDeskAreas(ox, oy, S, T, time);
+    this.drawPortals(ox, oy, S, T, time);
     this.drawGlows(ox, oy, S, T, time);
     this.drawZoneLabels(ox, oy, T);
     this.drawBadges(ox, oy, S, T);
@@ -282,6 +401,13 @@ export class Renderer {
     const sk = this.app.desks && this.app.desks.skinFor(o);
     let oo = o;
     let dd = def;
+    if (def.door && o.data && o.data.skin && OBJECTS[`lpc-${o.data.skin}`]) dd = { ...OBJECTS[`lpc-${o.data.skin}`], w: def.w, h: def.h, door: true };
+    if (def.door && !(o.state && o.state.open)) {
+      // porta abre sozinha quando alguém chega perto (e fecha depois)
+      for (const p of this.app.players.values()) {
+        if (Math.abs(p.rx - o.x) <= 1.2 && Math.abs(p.ry - o.y) <= 1.2) { oo = { ...o, state: { ...(o.state || {}), open: true } }; break; }
+      }
+    }
     if (sk) {
       oo = { ...o, type: sk.type, color: sk.color || o.color, rot: sk.rot || o.rot };
       const alt = OBJECTS[sk.type];
@@ -317,7 +443,9 @@ export class Renderer {
     for (let y = Math.max(0, Math.floor(vy0)); y < Math.min(w.height, vy1); y++) {
       for (let x = Math.max(0, Math.floor(vx0)); x < Math.min(w.width, vx1); x++) {
         const t = w.floorAt(x, y);
-        if (!/water|seasonal-sample-summer-png-2$/.test(t)) continue;
+        const ff = FLOORS[t];
+        if (!/water|seasonal-sample-summer-png-2$/.test(t) && !(ff && ff.src && ff.src.terrain === 'water')) continue;
+        if (ff && ff.src && ff.src.terrain === 'water' && !(w.floorAt(x + 1, y) === t && w.floorAt(x, y + 1) === t && w.floorAt(x + 1, y + 1) === t)) continue;
         const hsh = ((x * 92821) ^ (y * 68917)) >>> 0;
         if (hsh % 5 > 1) continue;
         const row = hsh % 3;
@@ -567,6 +695,7 @@ export class Renderer {
     ctx.textBaseline = 'middle';
     for (const z of this.app.world.zones) {
       if (!z.name) continue;
+      if (z.kind === 'desk') continue; // mesas: o dono aparece no destaque da mesa
       const icon = z.kind === 'private' ? '🔒 ' : z.kind === 'spotlight' ? '📢 ' : z.kind === 'pvp' ? '⚔️ ' : z.kind === 'arena' ? '🐉 ' : z.kind === 'desk' ? '🪑 ' : '';
       const text = icon + z.name;
       const w = ctx.measureText(text).width + 20 * dpr;

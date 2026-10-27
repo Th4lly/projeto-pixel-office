@@ -170,7 +170,17 @@ export class World {
       const named = this.zonesAt(x, y).find((z) => z.kind === 'private' || z.kind === 'desk');
       return { id: `fx:${fx.id}`, name: named ? named.name : `Área ${fx.id}`, kind: 'private', fx: true };
     }
-    return this.zonesAt(x, y).find((z) => z.kind === 'private') || null;
+    const zs = this.zonesAt(x, y);
+    const priv = zs.find((z) => z.kind === 'private');
+    if (priv) return priv;
+    // mesa reivindicada vira área privada do dono (dá para desligar no painel da mesa)
+    const dz = zs.find((z) => z.kind === 'desk');
+    if (dz) {
+      const desk = this.deskOfZone(dz);
+      const meta = Array.isArray(desk && desk.data && desk.data.decor) ? desk.data.decor.find((d) => d && d.meta) : null;
+      if (desk && desk.data && desk.data.owner && desk.data.private !== false && !(meta && meta.private === false)) return { id: dz.id, name: `Mesa de ${desk.data.owner.name}`, kind: 'private', desk: true };
+    }
+    return null;
   }
 
   spotlightAt(x, y) {

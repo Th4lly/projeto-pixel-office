@@ -4,6 +4,7 @@
 // Direções das folhas: 0 = S (frente), 1 = SO, 2 = O (esquerda), 3 = NO, 4 = N (costas).
 // "right" usa a esquerda espelhada.
 import { CAT, IDX, drawFrame, image, onAssetLoad } from './assets.js';
+import { drawPetSprite, parseCompanion } from '../features/pets.js';
 import { RO_DIR, isLeftish, isRightish } from '../game/dirs.js';
 
 const DIR = RO_DIR;
@@ -111,7 +112,9 @@ export function drawAvatar(ctx, cfg, dir = 'down', action = 'stand', t = 0, cx =
       const seq = hg.anim && hg.anim.length > 5 ? null : null;
       const gf = seq || hg.dirs[d] || hg.dirs[0];
       const gs = hg.sc * k;
-      const gb = headTop + Math.min(gf[3], hf[3] * 0.62) * gs + 2 * gs;
+      // o pé do acessório para na testa (≈40% da cabeça): nunca cobre olhos e boca
+      const face = hg.group === 'Máscara de orc' ? 0.78 : hg.group === 'Black power' ? 0.5 : 0.4;
+      const gb = headTop + Math.min(gf[3] * gs, hf[3] * hs * face) + 1 * gs;
       drawFrame(ctx, hg.s, gf, cx, gb, gs, flip, alpha);
       top = Math.min(headTop, gb - gf[3] * gs);
       return top;
@@ -138,6 +141,12 @@ export function drawWeapon(ctx, cfg, dir, cx, by, k, swing = 0) {
 /** Mascote andando ao lado (segue o dono com atraso). */
 export function drawPet(ctx, cfg, dir, t, cx, by, k) {
   if (!cfg.pet || cfg.pet === 'none') return;
+  const comp = parseCompanion(cfg.pet);
+  if (comp) {
+    const off = isLeftish(dir) ? 20 : -20;
+    drawPetSprite(ctx, comp.kind, comp.skin, 'idle', t, cx + off * k, by, k, isLeftish(dir));
+    return;
+  }
   const p = IDX.pets.get(cfg.pet);
   if (!p) return;
   const frames = p.idle && p.idle.length ? p.idle : p.frames;

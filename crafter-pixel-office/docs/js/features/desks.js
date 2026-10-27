@@ -7,11 +7,8 @@ import { ICONS } from '../ui/icons.js';
 import { CAT, IDX, TILE, drawFrame, image, onAssetLoad, frameCanvas, url } from '../art/assets.js';
 import { OBJECTS, drawObjectSprite, objectThumb } from '../art/objects.js';
 import { paintFloor, paintWall, FLOORS } from '../art/tiles.js';
+import { SLOTS, MAX_SLOTS, PCS, deskMeta, slotItems, drawDeskSet, drawPc } from './deskSlots.js';
 
-const TOP_CATS = ['Itens de mesa', 'Itens pequenos', 'Itens', 'Eletrônicos', 'Escritório pixel', 'Cozinha', 'Mágico', 'Tesouros', 'Pets'];
-const AROUND_CATS = ['Escritório', 'Escritório pixel', 'Decoração', 'Plantas', 'Móveis nobres', 'Cantinho de leitura', 'Café', 'Quadros', 'Móveis', 'Cantinho dos gatos', 'Natureza', 'Floresta'];
-const MAX_ITEMS = 60;
-const SCALE = 3; // zoom do editor
 
 /** Desenha um item de decoração (objeto do catálogo ou adesivo de app). */
 export function drawDecorItem(ctx, d, x, by, k, time = 0) {
@@ -134,7 +131,7 @@ export class Desks {
       mine || app.canEdit ? [h('div', { class: 'opt-label' }, 'Conectar ferramentas'), app.docs.webhookBox(desk)] : null);
   }
 
-  // ------------------------------------------------------------------ editor de decoração
+  // ------------------------------------------------------------------ editor da mesa (slots)
   openDecorator(desk = this.myDesk) {
     const app = this.app;
     if (!desk) {
@@ -142,69 +139,75 @@ export class Desks {
       return null;
     }
     const zone = this.zoneOf(desk);
-    const ddef = OBJECTS[desk.type];
-    let decor = JSON.parse(JSON.stringify((desk.data && desk.data.decor) || []));
+    const meta0 = deskMeta(desk);
+    const items = Array(MAX_SLOTS).fill(null);
+    for (const d of slotItems(desk)) items[d.slot] = { ...d };
+    let pc = meta0.pc;
+    let priv = meta0.private;
     let chair = (desk.data && desk.data.chair) || '';
     let deskSkin = (desk.data && desk.data.deskSkin) || '';
-    let deskColor = (desk.data && desk.data.deskColor) || '';
-    let layer = 'top';
-    let cat = TOP_CATS[0];
-    let pick = null; // {p} | {icon}
-    let sel = -1;
-    let drag = null;
+    let tab = 'itens';
+    let cat = 'Tudo';
+    let sel = items.findIndex((x) => !x);
+    if (sel < 0) sel = 0;
     let raf = 0;
-    let page = 0;
-    const PAGE = 48;
 
+    const SC = 4;
     const W = zone.w * TILE;
     const H = zone.h * TILE;
-    const canvas = h('canvas', { class: 'decor-canvas', width: W * SCALE, height: H * SCALE });
+    const canvas = h('canvas', { class: 'decor-canvas', width: W * SC, height: H * SC });
     const ctx = canvas.getContext('2d');
     const deskX = (desk.x - zone.x) * TILE;
     const deskY = (desk.y - zone.y) * TILE;
-    const palette = h('div', { class: 'decor-palette' });
+    const ddef = OBJECTS[desk.type];
+    const right = h('div', { class: 'decor-palette' });
     const props = h('div', { class: 'decor-props' });
     const tabs = h('div', { class: 'seg seg-wide' });
-    const counter = h('span', { class: 'muted small' });
+    const slotBar = h('div', { class: 'chips slot-bar' });
 
-    const deskObj = () => ({ ...desk, x: 0, y: 0, type: deskSkin && OBJECTS[deskSkin] ? deskSkin : desk.type, color: deskColor || desk.color, data: {} });
+    const decorList = () => [{ meta: 1, pc, private: priv }, ...items.map((d, i) => (d ? { ...d, slot: i } : null)).filter(Boolean)];
+    const tmpDesk = () => ({ ...desk, data: { ...(desk.data || {}), decor: decorList() } });
+    const deskType = () => (deskSkin && OBJECTS[deskSkin] ? deskSkin : desk.type);
 
     const draw = (t) => {
+      const tt = t / 1000;
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.imageSmoothingEnabled = false;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.save();
-      ctx.scale(SCALE, SCALE);
+      ctx.scale(SC, SC);
       for (let y = 0; y < zone.h; y++) for (let x = 0; x < zone.w; x++) {
-        const tt = app.world.floorAt(zone.x + x, zone.y + y);
-        if (FLOORS[tt] && FLOORS[tt].wall) paintWall(ctx, tt, x, y, true); else paintFloor(ctx, tt, x, y);
+        const ft = app.world.floorAt(zone.x + x, zone.y + y);
+        if (FLOORS[ft] && FLOORS[ft].wall) paintWall(ctx, ft, x, y, true); else paintFloor(ctx, ft, x, y);
       }
-      ctx.strokeStyle = 'rgba(255,255,255,.12)';
-      ctx.lineWidth = 0.5;
-      for (let x = 0; x <= zone.w; x++) { ctx.beginPath(); ctx.moveTo(x * TILE, 0); ctx.lineTo(x * TILE, H); ctx.stroke(); }
-      for (let y = 0; y <= zone.h; y++) { ctx.beginPath(); ctx.moveTo(0, y * TILE); ctx.lineTo(W, y * TILE); ctx.stroke(); }
       ctx.restore();
-      const items = decor.map((d, i) => ({ d, i, z: d.dy + (d.layer === 'top' ? 0.5 : 0) }));
-      // cadeira e outros objetos reais dentro da área
-      const others = app.world.objects.filter((o) => o !== desk && OBJECTS[o.type] && o.x >= zone.x && o.y >= zone.y && o.x < zone.x + zone.w && o.y < zone.y + zone.h);
-      const list = [
-        { z: deskY + ddef.h * TILE - 1, draw: () => drawObjectSprite(ctx, deskObj(), OBJECTS[deskObj().type], deskX * SCALE, deskY * SCALE, SCALE, t / 1000) },
-        ...others.map((o) => ({ z: (o.y - zone.y + OBJECTS[o.type].h) * TILE, draw: () => {
-          const ov = OBJECTS[o.type].sit && chair && OBJECTS[chair] ? { ...o, type: chair } : o;
-          drawObjectSprite(ctx, ov, OBJECTS[ov.type], (o.x - zone.x) * TILE * SCALE, (o.y - zone.y) * TILE * SCALE, SCALE, t / 1000);
-        } })),
-        ...items.map((it) => ({ z: it.d.layer === 'top' ? deskY + ddef.h * TILE : it.d.dy, draw: () => {
-          drawDecorItem(ctx, it.d, it.d.dx * SCALE, it.d.dy * SCALE, SCALE, t / 1000);
-          if (it.i === sel) {
-            ctx.strokeStyle = '#ffd84d';
-            ctx.lineWidth = 2;
-            ctx.setLineDash([4, 3]);
-            ctx.strokeRect(it.d.dx * SCALE - 14 * SCALE, it.d.dy * SCALE - 26 * SCALE, 28 * SCALE, 28 * SCALE);
-            ctx.setLineDash([]);
-          }
-        } })),
-      ].sort((a, b) => a.z - b.z);
-      list.forEach((x) => x.draw());
+      const dt = deskType();
+      const others = app.world.objects.filter((o) => o !== desk && OBJECTS[o.type] && OBJECTS[o.type].sit && o.x >= zone.x && o.y >= zone.y && o.x < zone.x + zone.w && o.y < zone.y + zone.h);
+      drawObjectSprite(ctx, { ...desk, x: 0, y: 0, type: dt, data: {} }, OBJECTS[dt], deskX * SC, deskY * SC, SC, tt);
+      drawDeskSet(ctx, tmpDesk(), ddef, deskX * SC, deskY * SC, SC, tt);
+      for (const o of others) {
+        const ov = chair && OBJECTS[chair] ? { ...o, type: chair } : o;
+        drawObjectSprite(ctx, ov, OBJECTS[ov.type], (o.x - zone.x) * TILE * SC, (o.y - zone.y) * TILE * SC, SC, tt, 0.55);
+      }
+      // contorno dos espaços
+      const cx = (deskX + (ddef.w * TILE) / 2) * SC;
+      const by = (deskY + ddef.h * TILE - 2) * SC;
+      if (tab === 'itens') {
+        SLOTS.forEach(([dx, dy, mw, mh], i) => {
+          const x = cx + (dx - mw / 2) * SC;
+          const y = by + (dy - mh) * SC;
+          ctx.setLineDash(i === sel ? [] : [3, 3]);
+          ctx.lineWidth = i === sel ? 3 : 1.5;
+          ctx.strokeStyle = i === sel ? '#ffd84d' : items[i] ? 'rgba(255,255,255,.35)' : 'rgba(155,232,255,.8)';
+          ctx.strokeRect(x, y, mw * SC, mh * SC);
+          ctx.setLineDash([]);
+          ctx.fillStyle = i === sel ? '#ffd84d' : 'rgba(20,16,40,.75)';
+          ctx.fillRect(x - 2, y - 14, 14, 13);
+          ctx.fillStyle = i === sel ? '#1a1626' : '#fff';
+          ctx.font = '700 11px monospace';
+          ctx.fillText(String(i + 1), x + 1, y - 3);
+        });
+      }
       raf = requestAnimationFrame(draw);
     };
 
@@ -212,146 +215,135 @@ export class Desks {
       const r = canvas.getBoundingClientRect();
       return { x: ((e.clientX - r.left) / r.width) * W, y: ((e.clientY - r.top) / r.height) * H };
     };
-    const hit = (p) => {
-      for (let i = decor.length - 1; i >= 0; i--) {
-        const d = decor[i];
-        if (Math.abs(p.x - d.dx) < 14 && p.y <= d.dy + 3 && p.y >= d.dy - 26) return i;
-      }
-      return -1;
-    };
     canvas.addEventListener('contextmenu', (e) => e.preventDefault());
     canvas.addEventListener('pointerdown', (e) => {
       const p = pos(e);
-      const i = hit(p);
-      if (e.button === 2) {
-        if (i >= 0) { decor.splice(i, 1); sel = -1; renderProps(); }
-        return;
-      }
-      if (i >= 0 && !pick) {
-        sel = i;
-        drag = { i, ox: p.x - decor[i].dx, oy: p.y - decor[i].dy };
-        canvas.setPointerCapture(e.pointerId);
-        renderProps();
-        return;
-      }
-      if (!pick) { sel = -1; renderProps(); return; }
-      if (decor.length >= MAX_ITEMS) return toast(`Máximo de ${MAX_ITEMS} itens na mesa.`, 'warn');
-      decor.push({ ...pick, dx: Math.round(p.x), dy: Math.round(p.y), layer });
-      sel = decor.length - 1;
-      renderProps();
+      const cx = deskX + (ddef.w * TILE) / 2;
+      const by = deskY + ddef.h * TILE - 2;
+      // o menor espaço que contém o clique
+      let best = -1; let area = 1e9;
+      SLOTS.forEach(([dx, dy, mw, mh], i) => {
+        const x = cx + dx - mw / 2 - 1; const y = by + dy - mh - 1;
+        if (p.x >= x && p.x <= x + mw + 2 && p.y >= y && p.y <= y + mh + 2 && mw * mh < area) { best = i; area = mw * mh; }
+      });
+      if (best < 0) return;
+      if (e.button === 2) { items[best] = null; }
+      sel = best;
+      tab = 'itens';
+      render();
     });
-    canvas.addEventListener('pointermove', (e) => {
-      if (!drag) return;
-      const p = pos(e);
-      decor[drag.i].dx = Math.round(Math.max(0, Math.min(W, p.x - drag.ox)));
-      decor[drag.i].dy = Math.round(Math.max(4, Math.min(H, p.y - drag.oy)));
-    });
-    canvas.addEventListener('pointerup', () => { drag = null; });
 
-    const slider = (label, key, min, max, def, unit = '') => {
-      const d = decor[sel];
-      const out = h('span', { class: 'muted small' }, `${d[key] ?? def}${unit}`);
+    const slider = (label, key, min, max, def, unit = '', mul = 1) => {
+      const d = items[sel];
+      const val = Math.round((d[key] ?? def) * mul);
+      const out = h('span', { class: 'muted small' }, `${val}${unit}`);
       return h('label', { class: 'slider-row' }, label,
-        h('input', { type: 'range', min, max, value: d[key] ?? def, oninput: (e) => { d[key] = Number(e.target.value); out.textContent = `${d[key]}${unit}`; } }), out);
+        h('input', { type: 'range', min, max, value: val, oninput: (e) => { d[key] = Number(e.target.value) / mul; out.textContent = `${e.target.value}${unit}`; } }), out);
     };
 
+    const ITEM_CATS = ['Tudo', 'Itens de mesa LPC', 'Itens de mesa', 'Itens', 'Itens pequenos', 'Plantas', 'Mágico', 'Tesouros', 'Cozinha', 'Pets'];
+    const itemOk = (d) => d.small && d.interact !== 'screen' && !d.functional && !d.flat && !d.desk && !d.sit && d.skin && ITEM_CATS.includes(d.cat);
+
+    function renderSlots() {
+      fill(slotBar, SLOTS.map(([, , , , nm], i) => h('button', { type: 'button', class: `chip ${i === sel && tab === 'itens' ? 'on' : ''}`, title: nm,
+        onclick: () => { sel = i; tab = 'itens'; render(); } },
+      items[i] ? objectThumb(items[i].p, 18) : h('span', { class: 'muted' }, '＋'), ` ${i + 1}`)),
+      h('span', { class: 'muted small' }, `${items.filter(Boolean).length}/${MAX_SLOTS} espaços`));
+    }
+
     function renderProps() {
-      counter.textContent = `${decor.length}/${MAX_ITEMS} itens`;
-      if (sel < 0 || !decor[sel]) {
-        fill(props, h('p', { class: 'muted small' }, pick ? 'Clique na área para colocar o item escolhido. Clique com o botão direito num item para remover.' : 'Escolha um item na lista e clique na área da mesa. Clique num item já colocado para mover, mudar a cor ou o tamanho.'));
+      const d = items[sel];
+      if (tab !== 'itens') { fill(props); return; }
+      if (!d) {
+        fill(props, h('p', { class: 'muted small' }, `Espaço ${sel + 1} — ${SLOTS[sel][4]}: escolha um item na lista ao lado. Cada item é ajustado para caber no espaço, na escala da mesa.`));
         return;
       }
-      const d = decor[sel];
-      const def = d.p && OBJECTS[d.p];
+      const def = OBJECTS[d.p];
       fill(props,
-        h('div', { class: 'opt-label' }, d.icon ? `Adesivo: ${(IDX.icons.get(d.icon) || {}).name}` : def ? def.name : 'Item'),
+        h('div', { class: 'opt-label' }, `Espaço ${sel + 1}: ${def ? def.name : 'Item'}`),
         slider('Cor (matiz)', 'hue', 0, 360, 0, '°'),
         slider('Saturação', 'sat', 0, 200, 100, '%'),
         slider('Brilho', 'bri', 40, 160, 100, '%'),
-        d.icon ? slider('Tamanho', 'size', 6, 32, 12, 'px') : h('label', { class: 'slider-row' }, 'Tamanho',
-          h('input', { type: 'range', min: 40, max: 160, value: Math.round((d.k || 1) * 100), oninput: (e) => { d.k = Number(e.target.value) / 100; } })),
-        def && def.variants ? h('label', { class: 'slider-row' }, 'Cor do móvel', h('select', { onchange: (e) => { d.color = e.target.value; } }, Object.keys(def.variants).map((c) => h('option', { value: c, selected: d.color === c }, c)))) : null,
+        slider('Tamanho', 'k', 60, 100, 1, '%', 100),
+        def && def.variants ? h('label', { class: 'slider-row' }, 'Variação', h('select', { onchange: (e) => { d.color = e.target.value; } }, Object.keys(def.variants).map((c) => h('option', { value: c, selected: d.color === c }, c)))) : null,
         h('div', { class: 'chips' },
           h('button', { type: 'button', class: 'chip', onclick: () => { d.flip = !d.flip; } }, '↔ Espelhar'),
-          h('button', { type: 'button', class: 'chip', onclick: () => { d.layer = d.layer === 'top' ? 'around' : 'top'; renderProps(); } }, d.layer === 'top' ? 'Em cima da mesa' : 'Em volta'),
-          h('button', { type: 'button', class: 'chip', onclick: () => { decor.push({ ...d, dx: d.dx + 6, dy: d.dy + 2 }); sel = decor.length - 1; renderProps(); } }, 'Duplicar'),
-          h('button', { type: 'button', class: 'chip danger', onclick: () => { decor.splice(sel, 1); sel = -1; renderProps(); } }, 'Remover')));
+          h('button', { type: 'button', class: 'chip danger', onclick: () => { items[sel] = null; render(); } }, 'Esvaziar espaço')));
     }
 
-    function renderPalette() {
-      const cats = layer === 'top' ? [...TOP_CATS, 'Adesivos'] : [...AROUND_CATS, 'Adesivos'];
-      if (!cats.includes(cat)) cat = cats[0];
-      const head = h('div', { class: 'chips' }, cats.map((c) => h('button', { type: 'button', class: `chip ${cat === c ? 'on' : ''}`, onclick: () => { cat = c; page = 0; renderPalette(); } }, c)));
-      let entries;
-      if (cat === 'Adesivos') {
-        entries = CAT.icons.map((ic) => ({ key: `i:${ic.id}`, name: ic.name, pick: { icon: ic.id, size: 12 }, thumb: () => frameCanvas(ic.big ?? ic.small, null, 40) }));
-      } else {
-        entries = Object.entries(OBJECTS).filter(([, d]) => d.cat === cat && !d.functional && !d.flat)
-          .map(([type, d]) => ({ key: type, name: d.name, pick: { p: type, ...(d.variants ? { color: Object.keys(d.variants)[0] } : {}) }, thumb: () => objectThumb(type, 40) }));
+    const pal = (list, isOn, onPick, thumb = (k) => objectThumb(k, 40)) => h('div', { class: 'palette' },
+      list.map(([key, name]) => h('button', { type: 'button', class: `pal-item ${isOn(key) ? 'on' : ''}`, title: name, onclick: () => { onPick(key); render(); } }, thumb(key), h('span', {}, name))));
+
+    function renderRight() {
+      if (tab === 'itens') {
+        const all = Object.entries(OBJECTS).filter(([, d]) => itemOk(d) && (cat === 'Tudo' || d.cat === cat));
+        all.sort((a, b) => (a[1].cat === 'Itens de mesa LPC' ? 0 : 1) - (b[1].cat === 'Itens de mesa LPC' ? 0 : 1));
+        fill(right,
+          h('div', { class: 'chips' }, ITEM_CATS.map((c) => h('button', { type: 'button', class: `chip ${cat === c ? 'on' : ''}`, onclick: () => { cat = c; renderRight(); } }, c))),
+          pal(all.slice(0, 160).map(([k, d]) => [k, d.name]), (k) => items[sel] && items[sel].p === k, (k) => {
+            const d = OBJECTS[k];
+            items[sel] = { p: k, ...(d.variants ? { color: Object.keys(d.variants)[0] } : {}) };
+            // avança para o próximo espaço vazio
+            const nx = items.findIndex((x, i) => !x && i > sel);
+            if (nx >= 0) sel = nx;
+          }));
+      } else if (tab === 'pc') {
+        fill(right, h('p', { class: 'muted small' }, 'O computador fica no centro da mesa, com teclado e mouse.'),
+          pal(Object.entries(PCS), (k) => pc === k, (k) => { pc = k; }, (k) => pcThumb(k)));
+      } else if (tab === 'cadeira') {
+        const chairs = Object.entries(OBJECTS).filter(([, d]) => d.sit && d.rot && d.rot.n && d.w === 1 && !d.functional && !d.flat).map(([k, d]) => [k, d.name]);
+        fill(right, h('p', { class: 'muted small' }, 'A cadeira fica virada para a mesa.'),
+          pal([['', 'Cadeira padrão'], ...chairs], (k) => chair === k, (k) => { chair = k; }, (k) => objectThumb(k || 'chair', 40)));
+      } else if (tab === 'mesa') {
+        const desks = Object.entries(OBJECTS).filter(([k, d]) => d.desk && !d.functional && k.startsWith('lpc-')).map(([k, d]) => [k, d.name]);
+        fill(right, pal([['', 'Mesa padrão'], ...desks], (k) => deskSkin === k, (k) => { deskSkin = k; }, (k) => objectThumb(k || desk.type, 40)));
+      } else if (tab === 'priv') {
+        fill(right,
+          h('p', {}, 'Com a mesa privada, quem entra na área destacada da sua mesa fala só com quem está nela (áudio e vídeo), como numa cabine.'),
+          h('div', { class: 'seg' },
+            h('button', { type: 'button', class: priv ? 'on' : '', onclick: () => { priv = true; render(); } }, '🔒 Mesa privada'),
+            h('button', { type: 'button', class: priv ? '' : 'on', onclick: () => { priv = false; render(); } }, '🔓 Aberta')));
       }
-      const pages = Math.ceil(entries.length / PAGE);
-      fill(palette, head,
-        h('div', { class: 'palette' }, entries.slice(page * PAGE, page * PAGE + PAGE).map((en) =>
-          h('button', { type: 'button', class: `pal-item ${pick && (pick.p || `i:${pick.icon}`) === (en.pick.p || `i:${en.pick.icon}`) ? 'on' : ''}`, title: en.name,
-            onclick: () => { pick = en.pick; sel = -1; renderPalette(); renderProps(); } }, en.thumb(), h('span', {}, en.name)))),
-        pages > 1 ? h('div', { class: 'pager' },
-          h('button', { type: 'button', class: 'chip', disabled: page === 0, onclick: () => { page -= 1; renderPalette(); } }, '‹'),
-          h('span', { class: 'muted small' }, `${page + 1} / ${pages}`),
-          h('button', { type: 'button', class: 'chip', disabled: page >= pages - 1, onclick: () => { page += 1; renderPalette(); } }, '›')) : null);
     }
 
     function renderTabs() {
-      const chairs = Object.entries(OBJECTS).filter(([, d]) => d.sit && !d.functional && !d.flat);
-      const desks = Object.entries(OBJECTS).filter(([, d]) => d.desk && !d.functional);
-      fill(tabs,
-        h('button', { type: 'button', class: layer === 'top' ? 'on' : '', onclick: () => { layer = 'top'; pick = null; renderTabs(); renderPalette(); } }, 'Em cima da mesa'),
-        h('button', { type: 'button', class: layer === 'around' ? 'on' : '', onclick: () => { layer = 'around'; pick = null; renderTabs(); renderPalette(); } }, 'Em volta'),
-        h('button', { type: 'button', class: layer === 'chair' ? 'on' : '', onclick: () => {
-          layer = 'chair';
-          renderTabs();
-          fill(palette, h('div', { class: 'palette' },
-            h('button', { type: 'button', class: `pal-item ${!chair ? 'on' : ''}`, onclick: () => { chair = ''; tabs.querySelector('.on').click(); } }, h('span', {}, 'Cadeira padrão')),
-            chairs.map(([type, d]) => h('button', { type: 'button', class: `pal-item ${chair === type ? 'on' : ''}`, title: d.name, onclick: () => { chair = type; tabs.querySelector('.on').click(); } }, objectThumb(type, 40), h('span', {}, d.name)))));
-        } }, 'Cadeira'),
-        h('button', { type: 'button', class: layer === 'desk' ? 'on' : '', onclick: () => {
-          layer = 'desk';
-          renderTabs();
-          const cur = deskSkin && OBJECTS[deskSkin];
-          fill(palette,
-            h('div', { class: 'palette' },
-              h('button', { type: 'button', class: `pal-item ${!deskSkin ? 'on' : ''}`, onclick: () => { deskSkin = ''; deskColor = ''; tabs.querySelector('.on').click(); } }, objectThumb(desk.type, 40), h('span', {}, 'Mesa padrão')),
-              desks.map(([type, d]) => h('button', { type: 'button', class: `pal-item ${deskSkin === type ? 'on' : ''}`, title: d.name, onclick: () => { deskSkin = type; deskColor = d.variants ? Object.keys(d.variants)[0] : ''; tabs.querySelector('.on').click(); } }, objectThumb(type, 40), h('span', {}, d.name)))),
-            cur && cur.variants ? h('div', {}, h('div', { class: 'opt-label' }, 'Cor da mesa'),
-              h('div', { class: 'chips' }, Object.keys(cur.variants).map((c) => {
-                const sw = (CAT.deskColors || []).find((x) => x.id === c);
-                return h('button', { type: 'button', class: `chip ${deskColor === c ? 'on' : ''}`, onclick: () => { deskColor = c; tabs.querySelector('.on').click(); } },
-                  sw ? h('img', { src: url(sw.s), alt: '', class: 'swatch-img' }) : null, (sw && sw.name) || c);
-              }))) : h('p', { class: 'muted small' }, 'As mesas da linha nobre têm 8 cores. Para os itens, use os controles de cor (matiz, saturação e brilho).'));
-        } }, 'Modelo e cor da mesa'));
+      const T = [['itens', '🧸 Itens (7)'], ['pc', '🖥️ Computador'], ['cadeira', '🪑 Cadeira'], ['mesa', '🗄️ Mesa'], ['priv', priv ? '🔒 Privada' : '🔓 Aberta']];
+      fill(tabs, T.map(([k, l]) => h('button', { type: 'button', class: tab === k ? 'on' : '', onclick: () => { tab = k; render(); } }, l)));
     }
 
+    function render() { renderTabs(); renderSlots(); renderProps(); renderRight(); }
+
     const content = h('div', { class: 'decorator' },
-      h('div', { class: 'decor-left' }, canvas, h('div', { class: 'decor-foot' }, counter, h('span', { class: 'muted small' }, ' · arraste para mover · botão direito remove')), props),
-      h('div', { class: 'decor-right' }, tabs, palette));
+      h('div', { class: 'decor-left' }, canvas, slotBar, h('div', { class: 'decor-foot' }, h('span', { class: 'muted small' }, 'Clique num espaço numerado para escolher · botão direito esvazia')), props),
+      h('div', { class: 'decor-right' }, tabs, right));
 
     const m = openModal({
-      title: '🎨 Decorar minha mesa',
+      title: '🎨 Minha mesa',
       content,
       className: 'modal-xl',
       footer: [
-        h('button', { type: 'button', class: 'btn-secondary', onclick: () => { decor = []; sel = -1; renderProps(); } }, 'Limpar tudo'),
+        h('button', { type: 'button', class: 'btn-secondary', onclick: () => { items.fill(null); sel = 0; render(); } }, 'Esvaziar tudo'),
         h('button', { type: 'button', class: 'btn-primary', onclick: async () => {
-          if (await this.save(desk, { decor, chair, deskSkin, deskColor })) { toast('Mesa decorada!', 'ok', 1800); m.close(); }
-        } }, 'Salvar decoração'),
+          if (await this.save(desk, { decor: decorList(), chair, deskSkin, deskColor: '', private: priv })) { toast('Mesa salva!', 'ok', 1800); m.close(); }
+        } }, 'Salvar mesa'),
       ],
       onClose: () => cancelAnimationFrame(raf),
     });
-    renderTabs();
-    renderPalette();
-    renderProps();
+    render();
     raf = requestAnimationFrame(draw);
     return m;
   }
+}
+
+/** Miniatura de um computador. */
+function pcThumb(k) {
+  const c = h('canvas', { width: 40, height: 40 });
+  const x = c.getContext('2d');
+  x.imageSmoothingEnabled = false;
+  drawPc(x, k, 20, 40 + 18 * 1, 1, 0);
+  if (k === 'nenhum') { x.fillStyle = '#ff5d73'; x.font = '20px sans-serif'; x.fillText('∅', 13, 27); }
+  c.style.imageRendering = 'pixelated';
+  return c;
 }
 
 export { onAssetLoad, drawFrame };

@@ -1,4 +1,5 @@
 // Orquestra a aplicação: mundo, presença em tempo real, edição, objetos e módulos de interface.
+import { setPetWorld } from './features/pets.js';
 import { CONFIG } from './config.js';
 import { levelFromXp } from './backend/index.js?v=a75cb96';
 import { $, toast, h } from './ui/dom.js';
@@ -15,7 +16,6 @@ import { Chat } from './ui/chat.js';
 import { Sidebar, People, MyQuests } from './ui/people.js';
 import { Hud, EMOTES } from './ui/hud.js';
 import { BuildPanel } from './ui/buildPanel.js';
-import { Minimap } from './ui/minimap.js';
 import { openAvatarEditor } from './ui/avatarEditor.js';
 import { interact } from './features/interactions.js';
 import { Whiteboards } from './features/whiteboard.js';
@@ -72,6 +72,7 @@ export class App {
     try { registerCustomObjects(await this.backend.customObjects()); } catch (e) { console.warn(e); }
     const data = await this.loadWorldV2();
     this.world = new World(data);
+    setPetWorld(this.world);
     const spawn = this.spawnPoint();
     const xp = this.user.xp || 0;
     this.me = new LocalPlayer({
@@ -116,7 +117,6 @@ export class App {
     this.mini = new MiniMode(this);
     this.integrations = new Integrations(this);
     this.hud = new Hud(this);
-    this.minimap = new Minimap(this);
     this.bindPointer();
     this.bindKeys();
 
@@ -383,7 +383,6 @@ export class App {
     }
     this.hud.update();
     this.renderer.draw(t / 1000);
-    this.minimap.update();
     requestAnimationFrame((tt) => this.loop(tt));
   }
 
@@ -395,6 +394,15 @@ export class App {
     me.path = null;
     this.trackSoon();
     if (on) this.renderer.float(me.x, me.y - 1.4, 'Sentou (regeneração ×2)', '#cfd8ff');
+  }
+
+  /** Transição do portal: um clarão azul que fecha e abre a tela. */
+  warpFx() {
+    let el = document.getElementById('warp');
+    if (!el) { el = document.createElement('div'); el.id = 'warp'; document.body.append(el); }
+    el.classList.remove('on');
+    void el.offsetWidth;
+    el.classList.add('on');
   }
 
   /** Seguir um colega (clique direito no avatar). */
@@ -410,6 +418,7 @@ export class App {
     if (fx && fx.t === 'o' && this.world.inBounds(fx.x, fx.y)) {
       const exit = this.world.freeAround(fx.x, fx.y);
       this.me.path = null;
+      this.warpFx();
       setTimeout(() => {
         this.teleport(exit.x, exit.y);
         blip(520, 0.25, 0.06);
@@ -422,6 +431,7 @@ export class App {
       const next = this.world.nextPortal(portal);
       if (next) {
         const exit = this.world.freeAround(next.x, next.y);
+        this.warpFx();
         setTimeout(() => {
           this.teleport(exit.x, exit.y);
           blip(520, 0.25, 0.06);
@@ -715,9 +725,6 @@ export class App {
         case 'Insert':
         case 'KeyC':
           this.toggleFloorSit();
-          break;
-        case 'KeyM':
-          this.minimap.toggle();
           break;
         case 'Escape':
           if (this.following) this.follow(null);
